@@ -6,13 +6,9 @@
 package SistemaPuntoVenta;
 
 import Views.Sistema;
-import java.awt.Frame;
 import static java.awt.Frame.MAXIMIZED_BOTH;
-import static java.lang.Short.MAX_VALUE;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
+
 
 /**
  *
