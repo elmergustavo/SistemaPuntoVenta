@@ -22,12 +22,12 @@ public class Sistema extends javax.swing.JFrame {
      * Creates new form Sistema
      */
     public Sistema() {
-        
+
         initComponents();
-        
+
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelLogo, "src/Recursos/xd.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelImgCliente, "src/Recursos/xd.png");
-        
+
     }
 
     /**
@@ -210,6 +210,11 @@ public class Sistema extends javax.swing.JFrame {
         jLabelCliente_Nombre.setText("Nombre");
 
         TextFieldClienteNombre.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        TextFieldClienteNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldClienteNombreActionPerformed(evt);
+            }
+        });
         TextFieldClienteNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 TextFieldClienteNombreKeyReleased(evt);
@@ -305,7 +310,6 @@ public class Sistema extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelCliente_Nid, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGap(35, 35, 35)
                                 .addComponent(jButtonClienteAgregar)
@@ -313,19 +317,20 @@ public class Sistema extends javax.swing.JFrame {
                                 .addComponent(jButtonClienteCancelar))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabelCliente_tel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelCliente_apellido, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(TextFieldClienteApellido, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
                                     .addComponent(TextFielCliente_Nid, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TextFieldTelefono, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(TextFieldTelefono, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelCliente_Nid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabelCliente_tel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabelCliente_apellido, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(30, 30, 30)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabelCliente_direcc, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelCliente_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(TextFieldClienteNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
-                                    .addComponent(jLabelCliente_email, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(TextFieldEmail)
-                                    .addComponent(TextFieldDireccion)))))
+                                    .addComponent(TextFieldDireccion)
+                                    .addComponent(jLabelCliente_email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabelCliente_direcc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabelCliente_Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -470,24 +475,24 @@ public class Sistema extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="CODIGO DE CLIENTE">  
     private ClientesVM cliente;
     private void jButtonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClienteActionPerformed
-        ArrayList <JLabel> label = new ArrayList();
+        ArrayList<JLabel> label = new ArrayList();
         label.add(jLabelCliente_Nid);
         label.add(jLabelCliente_Nombre);
         label.add(jLabelCliente_apellido);
         label.add(jLabelCliente_email);
         label.add(jLabelCliente_tel);
         label.add(jLabelCliente_direcc);
-        
-        ArrayList <JTextField> textField = new ArrayList();
+
+        ArrayList<JTextField> textField = new ArrayList();
         textField.add(TextFielCliente_Nid);
         textField.add(TextFieldClienteNombre);
         textField.add(TextFieldClienteApellido);
         textField.add(TextFieldEmail);
         textField.add(TextFieldTelefono);
         textField.add(TextFieldDireccion);
-        
+
         Object[] objects = {};
-        cliente = new ClientesVM(objects,label,textField);
+        cliente = new ClientesVM(objects, label, textField);
         TabbedPanePrincipal.setSelectedIndex(1); // cuando presionamos este boton indicamos que pasamos a la tab 1 donde esta clientes
 
 //        alertas.AlertWarningSalir alerta = new alertas.AlertWarningSalir(this,true);
@@ -496,28 +501,36 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonClienteActionPerformed
 
     private void jButtonClienteAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClienteAgregarActionPerformed
-        alertas.AlertSuccess alerta = new alertas.AlertSuccess(this, true);
-        alerta.Texto("Se ha registrado Correctamente");
-        alerta.setVisible(true);
+
+        if (!(TextFielCliente_Nid.getText().equals("")) && !(TextFieldClienteNombre.getText().equals(""))
+                && !(TextFieldClienteApellido.getText().equals("")) && !(TextFieldDireccion.getText().equals(""))
+                && !(TextFieldEmail.getText().equals("")) && !(TextFieldTelefono.getText().equals(""))) {
+            alertas.AlertSuccess alerta = new alertas.AlertSuccess(this, true);
+            alerta.Texto("Se ha registrado Correctamente");
+            alerta.setVisible(true);
+        }
+        cliente.RegistrarCliente();
+
+
     }//GEN-LAST:event_jButtonClienteAgregarActionPerformed
 
     private void jButtonClienteCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClienteCancelarActionPerformed
         alertas.AlertWarning alerta = new alertas.AlertWarning(this, true);
-        alerta.AgregarTexto("Seguro quieres cancelar","Si","No");
+        alerta.AgregarTexto("Seguro quieres cancelar", "Si", "No");
         alerta.setVisible(true);
     }//GEN-LAST:event_jButtonClienteCancelarActionPerformed
 
     private void jLabelImgClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelImgClienteMouseClicked
         Objetos.uploadimagen.CargarImagen(jLabelImgCliente);
-        
+
     }//GEN-LAST:event_jLabelImgClienteMouseClicked
 
     private void TextFielCliente_NidKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFielCliente_NidKeyReleased
-        if (TextFielCliente_Nid.getText().equals("")){
-            jLabelCliente_Nid.setForeground(new Color(102,102,102));
+        if (TextFielCliente_Nid.getText().equals("")) {
+            jLabelCliente_Nid.setForeground(new Color(102, 102, 102));
         } else {
             jLabelCliente_Nid.setText("Nid");
-            jLabelCliente_Nid.setForeground(new Color(0,153,51));
+            jLabelCliente_Nid.setForeground(new Color(0, 153, 51));
         }
     }//GEN-LAST:event_TextFielCliente_NidKeyReleased
 
@@ -526,11 +539,11 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_TextFielCliente_NidKeyTyped
 
     private void TextFieldClienteNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldClienteNombreKeyReleased
-        if (TextFieldClienteNombre.getText().equals("")){
-            jLabelCliente_Nombre.setForeground(new Color(102,102,102));
+        if (TextFieldClienteNombre.getText().equals("")) {
+            jLabelCliente_Nombre.setForeground(new Color(102, 102, 102));
         } else {
             jLabelCliente_Nombre.setText("Nombre");
-            jLabelCliente_Nombre.setForeground(new Color(0,153,51));
+            jLabelCliente_Nombre.setForeground(new Color(0, 153, 51));
         }
     }//GEN-LAST:event_TextFieldClienteNombreKeyReleased
 
@@ -539,11 +552,11 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_TextFieldClienteNombreKeyTyped
 
     private void TextFieldClienteApellidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldClienteApellidoKeyReleased
-        if (TextFieldClienteApellido.getText().equals("")){
-            jLabelCliente_apellido.setForeground(new Color(102,102,102));
+        if (TextFieldClienteApellido.getText().equals("")) {
+            jLabelCliente_apellido.setForeground(new Color(102, 102, 102));
         } else {
             jLabelCliente_apellido.setText("Apellido");
-            jLabelCliente_apellido.setForeground(new Color(0,153,51));
+            jLabelCliente_apellido.setForeground(new Color(0, 153, 51));
         }
     }//GEN-LAST:event_TextFieldClienteApellidoKeyReleased
 
@@ -552,20 +565,20 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_TextFieldClienteApellidoKeyTyped
 
     private void TextFieldEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldEmailKeyReleased
-        if (TextFieldEmail.getText().equals("")){
-            jLabelCliente_email.setForeground(new Color(102,102,102));
+        if (TextFieldEmail.getText().equals("")) {
+            jLabelCliente_email.setForeground(new Color(102, 102, 102));
         } else {
             jLabelCliente_email.setText("Email");
-            jLabelCliente_email.setForeground(new Color(0,153,51));
+            jLabelCliente_email.setForeground(new Color(0, 153, 51));
         }
     }//GEN-LAST:event_TextFieldEmailKeyReleased
 
     private void TextFieldTelefonoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldTelefonoKeyReleased
-        if (TextFieldTelefono.getText().equals("")){
-            jLabelCliente_tel.setForeground(new Color(102,102,102));
+        if (TextFieldTelefono.getText().equals("")) {
+            jLabelCliente_tel.setForeground(new Color(102, 102, 102));
         } else {
             jLabelCliente_tel.setText("Telefono");
-            jLabelCliente_tel.setForeground(new Color(0,153,51));
+            jLabelCliente_tel.setForeground(new Color(0, 153, 51));
         }
     }//GEN-LAST:event_TextFieldTelefonoKeyReleased
 
@@ -574,17 +587,21 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_TextFieldTelefonoKeyTyped
 
     private void TextFieldDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldDireccionActionPerformed
-        
+
     }//GEN-LAST:event_TextFieldDireccionActionPerformed
 
     private void TextFieldDireccionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldDireccionKeyReleased
-        if (TextFieldDireccion.getText().equals("")){
-            jLabelCliente_direcc.setForeground(new Color(102,102,102));
+        if (TextFieldDireccion.getText().equals("")) {
+            jLabelCliente_direcc.setForeground(new Color(102, 102, 102));
         } else {
             jLabelCliente_direcc.setText("Dirección");
-            jLabelCliente_direcc.setForeground(new Color(0,153,51));
+            jLabelCliente_direcc.setForeground(new Color(0, 153, 51));
         }
     }//GEN-LAST:event_TextFieldDireccionKeyReleased
+
+    private void TextFieldClienteNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldClienteNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldClienteNombreActionPerformed
 // </editor-fold>
 
     /**
