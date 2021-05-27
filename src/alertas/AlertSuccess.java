@@ -135,6 +135,7 @@ public class AlertSuccess extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         task = new TimerTask() {
             @Override
@@ -152,6 +153,10 @@ public class AlertSuccess extends javax.swing.JDialog {
         timer.schedule(task, 0, 2);
     }//GEN-LAST:event_formWindowOpened
 
+    public void Texto(String texto){
+        jLabel2.setText(texto);
+        
+    }
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         setVisible(false);
         dispose();

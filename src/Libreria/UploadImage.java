@@ -32,8 +32,11 @@ public class UploadImage extends javax.swing.JFrame{
             archivo = abrirArchivo.getSelectedFile();
             urlOrigen = archivo.getAbsolutePath();
             Image foto = getToolkit().getImage(urlOrigen);
-            foto = foto.getScaledInstance(140, 140, 1);
-            label.setIcon(new ImageIcon(foto));
+            
+          //  foto = foto.getScaledInstance(140, 140, 1);
+            
+           // label.setIcon(new ImageIcon(foto));
+            rsscalelabel.RSScaleLabel.setScaleLabel(label,urlOrigen );
             imageByte = new byte[(int) archivo.length()];
         }
     }

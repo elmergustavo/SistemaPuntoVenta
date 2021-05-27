@@ -5,9 +5,8 @@
         <group>
             <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Libreria/UploadImage.java</file>
             <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Views/Sistema.java</file>
-            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/SistemaPuntoVenta/SistemaPuntoVenta.java</file>
-            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/componente/AWTUtilities.java</file>
-            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Libreria/Objetos.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/alertas/AlertWarningSalir.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/alertas/AlertWarning.java</file>
         </group>
     </open-files>
 </project-private>
