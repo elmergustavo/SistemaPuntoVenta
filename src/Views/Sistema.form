@@ -318,7 +318,7 @@
                                       <Group type="102" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel6" min="-2" pref="38" max="-2" attributes="0"/>
+                                              <Component id="jLabelCliente_Nid" min="-2" pref="38" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                                   <Component id="jButtonClienteAgregar" min="-2" max="-2" attributes="0"/>
@@ -327,20 +327,20 @@
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                      <Component id="jLabel9" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                                      <Component id="jLabel10" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                                      <Component id="TextFieldBuscarCliente5" alignment="0" pref="133" max="32767" attributes="0"/>
-                                                      <Component id="TextFieldBuscarCliente1" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="TextFieldBuscarCliente4" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabelCliente_tel" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                                                      <Component id="jLabelCliente_apellido" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                                                      <Component id="TextFieldClienteApellido" alignment="0" pref="133" max="32767" attributes="0"/>
+                                                      <Component id="TextFielCliente_Nid" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="TextFieldTelefono" alignment="0" max="32767" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="jLabel11" min="-2" pref="71" max="-2" attributes="0"/>
-                                                      <Component id="jLabel7" min="-2" pref="68" max="-2" attributes="0"/>
-                                                      <Component id="TextFieldBuscarCliente2" pref="133" max="32767" attributes="0"/>
-                                                      <Component id="jLabel8" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                                      <Component id="TextFieldBuscarCliente3" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="TextFieldBuscarCliente6" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabelCliente_direcc" min="-2" pref="71" max="-2" attributes="0"/>
+                                                      <Component id="jLabelCliente_Nombre" min="-2" pref="68" max="-2" attributes="0"/>
+                                                      <Component id="TextFieldClienteNombre" pref="133" max="32767" attributes="0"/>
+                                                      <Component id="jLabelCliente_email" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                                                      <Component id="TextFieldEmail" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="TextFieldDireccion" alignment="0" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
@@ -368,36 +368,36 @@
                                   <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel6" alignment="1" min="-2" pref="25" max="-2" attributes="0"/>
-                                      <Component id="jLabel7" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="jLabelCliente_Nid" alignment="1" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="jLabelCliente_Nombre" min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="TextFieldBuscarCliente1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="TextFieldBuscarCliente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="TextFielCliente_Nid" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="TextFieldClienteNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel8" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="jLabelCliente_email" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="jLabelCliente_apellido" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                          <Component id="jLabel9" min="-2" pref="25" max="-2" attributes="0"/>
+                                          <Component id="jLabelCliente_tel" min="-2" pref="25" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="TextFieldBuscarCliente4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="TextFieldBuscarCliente6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="TextFieldTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="TextFieldDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="TextFieldBuscarCliente3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="TextFieldBuscarCliente5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="TextFieldEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="TextFieldClienteApellido" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel11" min="-2" pref="25" max="-2" attributes="0"/>
+                                          <Component id="jLabelCliente_direcc" min="-2" pref="25" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -464,7 +464,7 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JLabel" name="jLabel6">
+                        <Component class="javax.swing.JLabel" name="jLabelCliente_Nid">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Dialog" size="14" style="1"/>
@@ -475,14 +475,18 @@
                             <Property name="text" type="java.lang.String" value="Nid"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="TextFieldBuscarCliente1">
+                        <Component class="javax.swing.JTextField" name="TextFielCliente_Nid">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Dialog" size="14" style="0"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFielCliente_NidKeyReleased"/>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFielCliente_NidKeyTyped"/>
+                          </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel7">
+                        <Component class="javax.swing.JLabel" name="jLabelCliente_Nombre">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Dialog" size="14" style="1"/>
@@ -493,14 +497,18 @@
                             <Property name="text" type="java.lang.String" value="Nombre"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="TextFieldBuscarCliente2">
+                        <Component class="javax.swing.JTextField" name="TextFieldClienteNombre">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Dialog" size="14" style="0"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldClienteNombreKeyReleased"/>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldClienteNombreKeyTyped"/>
+                          </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel8">
+                        <Component class="javax.swing.JLabel" name="jLabelCliente_email">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Dialog" size="14" style="1"/>
@@ -511,14 +519,17 @@
                             <Property name="text" type="java.lang.String" value="Email"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="TextFieldBuscarCliente3">
+                        <Component class="javax.swing.JTextField" name="TextFieldEmail">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Dialog" size="14" style="0"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldEmailKeyReleased"/>
+                          </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel9">
+                        <Component class="javax.swing.JLabel" name="jLabelCliente_tel">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Dialog" size="14" style="1"/>
@@ -529,14 +540,18 @@
                             <Property name="text" type="java.lang.String" value="Telefono"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="TextFieldBuscarCliente4">
+                        <Component class="javax.swing.JTextField" name="TextFieldTelefono">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Dialog" size="14" style="0"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldTelefonoKeyReleased"/>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldTelefonoKeyTyped"/>
+                          </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel10">
+                        <Component class="javax.swing.JLabel" name="jLabelCliente_apellido">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Dialog" size="14" style="1"/>
@@ -547,14 +562,18 @@
                             <Property name="text" type="java.lang.String" value="Apellido"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="TextFieldBuscarCliente5">
+                        <Component class="javax.swing.JTextField" name="TextFieldClienteApellido">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Dialog" size="14" style="0"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldClienteApellidoKeyReleased"/>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldClienteApellidoKeyTyped"/>
+                          </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel11">
+                        <Component class="javax.swing.JLabel" name="jLabelCliente_direcc">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Dialog" size="14" style="1"/>
@@ -565,12 +584,16 @@
                             <Property name="text" type="java.lang.String" value="Direcci&#xf3;n"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="TextFieldBuscarCliente6">
+                        <Component class="javax.swing.JTextField" name="TextFieldDireccion">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Dialog" size="14" style="0"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextFieldDireccionActionPerformed"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldDireccionKeyReleased"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="jButtonClienteAgregar">
                           <Properties>

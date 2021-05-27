@@ -179,8 +179,10 @@ public class AlertWarning extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_formWindowClosing
 
-    public void AgregarTexto(String texto){
+    public void AgregarTexto(String texto, String btn1, String btn2){
         jLabel2.setText(texto);
+        materialButton1.setText(btn1);
+        cancelar.setText(btn2);
     }
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
         task = new TimerTask() {
