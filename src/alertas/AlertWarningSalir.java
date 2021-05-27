@@ -5,7 +5,7 @@
  */
 package alertas;
 
-import componente.AWTUtilities;
+import Libreria.AWTUtilities;
 import java.util.TimerTask;
 import java.util.Timer;
 import javax.swing.JFrame;
@@ -59,12 +59,10 @@ public class AlertWarningSalir extends javax.swing.JDialog {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         org.jdesktop.swingx.border.DropShadowBorder dropShadowBorder1 = new org.jdesktop.swingx.border.DropShadowBorder();
-        dropShadowBorder1.setShowLeftShadow(true);
-        dropShadowBorder1.setShowTopShadow(true);
         jPanel1.setBorder(dropShadowBorder1);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/warning.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/warning.png"))); // NOI18N
 
         titulo.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -75,7 +73,7 @@ public class AlertWarningSalir extends javax.swing.JDialog {
         cancelar.setBackground(new java.awt.Color(255, 255, 255));
         cancelar.setForeground(new java.awt.Color(255, 153, 0));
         cancelar.setText("CANCELAR");
-        cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cancelar.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +84,7 @@ public class AlertWarningSalir extends javax.swing.JDialog {
         materialButton1.setBackground(new java.awt.Color(255, 255, 255));
         materialButton1.setForeground(new java.awt.Color(255, 153, 0));
         materialButton1.setText("ACEPTAR");
-        materialButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        materialButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         materialButton1.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         materialButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,13 +240,10 @@ public class AlertWarningSalir extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private principal.MaterialButton cancelar;
-    private principal.MaterialButton cancelar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private principal.MaterialButton materialButton1;
-    private principal.MaterialButton materialButton2;
     public static javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 

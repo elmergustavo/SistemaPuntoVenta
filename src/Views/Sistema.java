@@ -6,7 +6,11 @@
 package Views;
 
 import Libreria.Objetos;
+import ViewModels.ClientesVM;
 import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -463,8 +467,27 @@ public class Sistema extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    // <editor-fold defaultstate="collapsed" desc="CODIGO DE CLIENTE">   
+    // <editor-fold defaultstate="collapsed" desc="CODIGO DE CLIENTE">  
+    private ClientesVM cliente;
     private void jButtonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClienteActionPerformed
+        ArrayList <JLabel> label = new ArrayList();
+        label.add(jLabelCliente_Nid);
+        label.add(jLabelCliente_Nombre);
+        label.add(jLabelCliente_apellido);
+        label.add(jLabelCliente_email);
+        label.add(jLabelCliente_tel);
+        label.add(jLabelCliente_direcc);
+        
+        ArrayList <JTextField> textField = new ArrayList();
+        textField.add(TextFielCliente_Nid);
+        textField.add(TextFieldClienteNombre);
+        textField.add(TextFieldClienteApellido);
+        textField.add(TextFieldEmail);
+        textField.add(TextFieldTelefono);
+        textField.add(TextFieldDireccion);
+        
+        Object[] objects = {};
+        cliente = new ClientesVM(objects,label,textField);
         TabbedPanePrincipal.setSelectedIndex(1); // cuando presionamos este boton indicamos que pasamos a la tab 1 donde esta clientes
 
 //        alertas.AlertWarningSalir alerta = new alertas.AlertWarningSalir(this,true);
@@ -499,7 +522,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_TextFielCliente_NidKeyReleased
 
     private void TextFielCliente_NidKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFielCliente_NidKeyTyped
-        
+        Objetos.eventos.NumberKeyPress(evt);
     }//GEN-LAST:event_TextFielCliente_NidKeyTyped
 
     private void TextFieldClienteNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldClienteNombreKeyReleased
@@ -512,7 +535,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_TextFieldClienteNombreKeyReleased
 
     private void TextFieldClienteNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldClienteNombreKeyTyped
-        // TODO add your handling code here:
+        Objetos.eventos.textKeyPress(evt);
     }//GEN-LAST:event_TextFieldClienteNombreKeyTyped
 
     private void TextFieldClienteApellidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldClienteApellidoKeyReleased
@@ -525,7 +548,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_TextFieldClienteApellidoKeyReleased
 
     private void TextFieldClienteApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldClienteApellidoKeyTyped
-        // TODO add your handling code here:
+        Objetos.eventos.textKeyPress(evt);
     }//GEN-LAST:event_TextFieldClienteApellidoKeyTyped
 
     private void TextFieldEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldEmailKeyReleased
@@ -547,7 +570,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_TextFieldTelefonoKeyReleased
 
     private void TextFieldTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldTelefonoKeyTyped
-        // TODO add your handling code here:
+        Objetos.eventos.NumberKeyPress(evt);
     }//GEN-LAST:event_TextFieldTelefonoKeyTyped
 
     private void TextFieldDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldDireccionActionPerformed

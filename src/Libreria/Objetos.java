@@ -11,5 +11,6 @@ package Libreria;
  */
 public class Objetos {
     public static UploadImage uploadimagen = new UploadImage();
+    public static TextFieldEvent eventos = new TextFieldEvent();
     
 }

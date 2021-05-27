@@ -19,4 +19,11 @@ public class TextFieldEvent {
             evt.consume();
         }
     }
+    
+    public void NumberKeyPress(KeyEvent evt){
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car != (char) KeyEvent.VK_BACK_SPACE)){
+            evt.consume();
+        }
+    }
 }
