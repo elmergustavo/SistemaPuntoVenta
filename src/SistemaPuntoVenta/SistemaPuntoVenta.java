@@ -12,7 +12,7 @@ import javax.swing.UIManager;
 
 /**
  *
- * @author Gustavo
+ * @author Gustavo :v
  */
 public class SistemaPuntoVenta {
 
