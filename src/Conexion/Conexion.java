@@ -34,9 +34,9 @@ public class Conexion {
             //obtenemos el driver de para SQL Server
 //            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 //            conn =DriverManager.getConnection(urlSql);
-//             if (conn != null) {
-//                System.out.println("Conexión a la base de datos " + this.db + "...... Listo ");
-//            }
+            if (conn != null) {
+                System.out.println("Conexión a la base de datos " + this.db + "...... Listo ");
+            }
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println("Error : " + ex);
         }
