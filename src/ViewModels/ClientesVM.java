@@ -17,6 +17,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -34,11 +35,21 @@ public class ClientesVM extends Cosult {
     private final ArrayList<JLabel> _label;
     private final ArrayList<JTextField> _textField;
     private JCheckBox _checkBoxCredito;
+    public boolean valor;
+
+    public boolean isValor() {
+        return valor;
+    }
+
+    public void setValor(boolean valor) {
+        this.valor = valor;
+    }
 
     public ClientesVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
         _label = label;
         _textField = textField;
         _checkBoxCredito = (JCheckBox) objects[0];
+        valor = false;
         new Conexion();
     }
 
@@ -47,36 +58,43 @@ public class ClientesVM extends Cosult {
             _label.get(0).setText("Ingrese el nid");
             _label.get(0).setForeground(Color.RED);
             _textField.get(0).requestFocus();
+            valor = false;
         } else {
             if (_textField.get(1).getText().equals("")) {
                 _label.get(1).setText("Ingrese el nombre");
                 _label.get(1).setForeground(Color.RED);
                 _textField.get(1).requestFocus();
+                valor = false;
             } else {
                 if (_textField.get(2).getText().equals("")) {
                     _label.get(2).setText("Ingrese el apellido");
                     _label.get(2).setForeground(Color.RED);
                     _textField.get(2).requestFocus();
+                    valor = false;
                 } else {
                     if (_textField.get(3).getText().equals("")) {
                         _label.get(3).setText("Ingrese el email");
                         _label.get(3).setForeground(Color.RED);
                         _textField.get(3).requestFocus();
+                        valor = false;
                     } else {
                         if (!Objetos.eventos.isEmail(_textField.get(3).getText())) {
                             _label.get(3).setText("Ingrese un email valido");
                             _label.get(3).setForeground(Color.RED);
                             _textField.get(3).requestFocus();
+                            valor = false;
                         } else {
                             if (_textField.get(4).getText().equals("")) {
                                 _label.get(4).setText("Ingrese el telefono");
                                 _label.get(4).setForeground(Color.RED);
                                 _textField.get(4).requestFocus();
+                                valor = false;
                             } else {
                                 if (_textField.get(5).getText().equals("")) {
                                     _label.get(5).setText("Ingrese la direccion");
                                     _label.get(5).setForeground(Color.RED);
                                     _textField.get(5).requestFocus();
+                                    valor = false;
                                 } else {
                                     int count;
                                     List<TClientes> listEmail = clientes().stream()
@@ -97,11 +115,13 @@ public class ClientesVM extends Cosult {
                                                     _label.get(3).setText("El email ya esta registrado");
                                                     _label.get(3).setForeground(Color.RED);
                                                     _textField.get(3).requestFocus();
+                                                    valor = false;
                                                 }
                                                 if (!listNid.isEmpty()) {
                                                     _label.get(0).setText("El nid ya esta registrado");
                                                     _label.get(0).setForeground(Color.RED);
                                                     _textField.get(0).requestFocus();
+                                                    valor = false;
                                                 }
                                             }
                                         } catch (SQLException ex) {
@@ -154,11 +174,40 @@ public class ClientesVM extends Cosult {
                 cliente.get(cliente.size() - 1).getID(),};
             qr.insert(getConn(), sqlReport, new ColumnListHandler(), dataReport);
             getConn().commit();
-
+            valor = true;
+            restablecer();
         } catch (SQLException ex) {
             getConn().rollback();
             JOptionPane.showMessageDialog(null, ex);
         }
+    }
+
+    public final void restablecer() {
+        _accion = "insert";
+        _textField.get(0).setText("");
+        _textField.get(1).setText("");
+        _textField.get(2).setText("");
+        _textField.get(3).setText("");
+        _textField.get(4).setText("");
+        _textField.get(5).setText("");
+        _checkBoxCredito.setSelected(false);
+        _checkBoxCredito.setForeground(new Color(102, 102, 102));
+        _label.get(0).setText("Nid");
+        _label.get(0).setForeground(new Color(102, 102, 102));
+        _label.get(1).setText("Nombre");
+        _label.get(1).setForeground(new Color(102, 102, 102));
+        _label.get(2).setText("Apellido");
+        _label.get(2).setForeground(new Color(102, 102, 102));
+        _label.get(3).setText("Email");
+        _label.get(3).setForeground(new Color(102, 102, 102));
+        _label.get(4).setText("Telefono");
+        _label.get(4).setForeground(new Color(102, 102, 102));
+        _label.get(5).setText("Direccion");
+        _label.get(5).setForeground(new Color(102, 102, 102));
+
+        _label.get(6).setIcon(new ImageIcon(getClass().getClassLoader()
+                .getResource("Recursos/xd.png")));
+
     }
 
 }
