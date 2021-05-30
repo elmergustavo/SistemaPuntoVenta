@@ -6,6 +6,7 @@
 package alertas;
 
 import Libreria.AWTUtilities;
+import ViewModels.ClientesVM;
 import java.util.TimerTask;
 import java.util.Timer;
 import javax.swing.JFrame;
@@ -19,7 +20,7 @@ public class AlertWarning extends javax.swing.JDialog {
     Timer timer = null;
     TimerTask task;
     int i = 32;
-
+   
     /**
      * Creates new form AlertSuccess
      */
@@ -153,6 +154,7 @@ public class AlertWarning extends javax.swing.JDialog {
     private void materialButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialButton1ActionPerformed
         this.dispose();
         new AlertSuccess(new JFrame(), true).setVisible(true);
+        
     }//GEN-LAST:event_materialButton1ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

@@ -8,6 +8,7 @@ package Views;
 import Libreria.Objetos;
 import ViewModels.ClientesVM;
 import java.awt.Color;
+import java.awt.image.BandCombineOp;
 import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -26,7 +27,7 @@ public class Sistema extends javax.swing.JFrame {
         initComponents();
 
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelLogo, "src/Recursos/xd.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelImgCliente, "src/Recursos/xd.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelImgCliente, "src/Recursos/login.png");
 
     }
 
@@ -67,15 +68,17 @@ public class Sistema extends javax.swing.JFrame {
         jLabelCliente_direcc = new javax.swing.JLabel();
         TextFieldDireccion = new javax.swing.JTextField();
         CheckBoxCliente_Credito = new javax.swing.JCheckBox();
-        jLabelCliente_Nombre1 = new javax.swing.JLabel();
+        jLabelCliente_Nombre = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jButtonClienteAgregar = new javax.swing.JButton();
         jButtonClienteCancelar = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel10 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel11 = new javax.swing.JPanel();
-        jLabelCliente_Nombre = new javax.swing.JLabel();
+        jLabelCliente_Nombre1 = new javax.swing.JLabel();
         jSpinner1 = new javax.swing.JSpinner();
         jButtonCliente1 = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
@@ -298,10 +301,10 @@ public class Sistema extends javax.swing.JFrame {
         CheckBoxCliente_Credito.setText("Credito");
         jPanel6.add(CheckBoxCliente_Credito, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 352, -1, -1));
 
-        jLabelCliente_Nombre1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabelCliente_Nombre1.setForeground(new java.awt.Color(70, 106, 124));
-        jLabelCliente_Nombre1.setText("Nombre");
-        jPanel6.add(jLabelCliente_Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 154, 133, 25));
+        jLabelCliente_Nombre.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabelCliente_Nombre.setForeground(new java.awt.Color(70, 106, 124));
+        jLabelCliente_Nombre.setText("Nombre");
+        jPanel6.add(jLabelCliente_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 154, 133, 25));
 
         TabbedPaneCliente.addTab("Registro de Cliente", jPanel6);
 
@@ -373,15 +376,34 @@ public class Sistema extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
         jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 889, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 877, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 379, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Lista de Clientes", jPanel10);
@@ -399,9 +421,9 @@ public class Sistema extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Pagos y reportes", jPanel11);
 
-        jLabelCliente_Nombre.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        jLabelCliente_Nombre.setForeground(new java.awt.Color(70, 106, 124));
-        jLabelCliente_Nombre.setText("Registro por páginas");
+        jLabelCliente_Nombre1.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        jLabelCliente_Nombre1.setForeground(new java.awt.Color(70, 106, 124));
+        jLabelCliente_Nombre1.setText("Registro por páginas");
 
         jButtonCliente1.setBackground(new java.awt.Color(102, 102, 102));
         jButtonCliente1.setForeground(new java.awt.Color(255, 255, 255));
@@ -419,7 +441,7 @@ public class Sistema extends javax.swing.JFrame {
 
         jButtonCliente2.setBackground(new java.awt.Color(102, 102, 102));
         jButtonCliente2.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonCliente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/people.png"))); // NOI18N
+        jButtonCliente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Left-12.png"))); // NOI18N
         jButtonCliente2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonCliente2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -429,7 +451,7 @@ public class Sistema extends javax.swing.JFrame {
 
         jButtonCliente3.setBackground(new java.awt.Color(102, 102, 102));
         jButtonCliente3.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonCliente3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/people.png"))); // NOI18N
+        jButtonCliente3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Left.png"))); // NOI18N
         jButtonCliente3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonCliente3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -439,7 +461,7 @@ public class Sistema extends javax.swing.JFrame {
 
         jButtonCliente4.setBackground(new java.awt.Color(102, 102, 102));
         jButtonCliente4.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonCliente4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/people.png"))); // NOI18N
+        jButtonCliente4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Right.png"))); // NOI18N
         jButtonCliente4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonCliente4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -449,7 +471,7 @@ public class Sistema extends javax.swing.JFrame {
 
         jButtonCliente5.setBackground(new java.awt.Color(102, 102, 102));
         jButtonCliente5.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonCliente5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/people.png"))); // NOI18N
+        jButtonCliente5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Right-12.png"))); // NOI18N
         jButtonCliente5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonCliente5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -459,7 +481,9 @@ public class Sistema extends javax.swing.JFrame {
 
         jLabelCliente_Nombre2.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         jLabelCliente_Nombre2.setForeground(new java.awt.Color(70, 106, 124));
+        jLabelCliente_Nombre2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelCliente_Nombre2.setText("Páginas");
+        jLabelCliente_Nombre2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -467,17 +491,17 @@ public class Sistema extends javax.swing.JFrame {
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelCliente_Nombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addComponent(jButtonCliente2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                         .addComponent(jButtonCliente3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonCliente4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonCliente5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonCliente4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonCliente5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelCliente_Nombre2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -508,9 +532,9 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelCliente_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
+                    .addComponent(jLabelCliente_Nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -527,8 +551,8 @@ public class Sistema extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabelCliente_Nombre)
-                        .addGap(12, 12, 12)
+                        .addComponent(jLabelCliente_Nombre1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
@@ -562,7 +586,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 489, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -610,7 +634,7 @@ public class Sistema extends javax.swing.JFrame {
     private void jButtonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClienteActionPerformed
         ArrayList<JLabel> label = new ArrayList();
         label.add(jLabelCliente_Nid);
-        label.add(jLabelCliente_Nombre);
+        label.add(jLabelCliente_Nombre1);
         label.add(jLabelCliente_apellido);
         label.add(jLabelCliente_email);
         label.add(jLabelCliente_tel);
@@ -637,21 +661,28 @@ public class Sistema extends javax.swing.JFrame {
     private void jButtonClienteAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClienteAgregarActionPerformed
 
         cliente.RegistrarCliente();
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelImgCliente, "src/Recursos/xd.png");
+
         if (cliente.valor == true) {
             alertas.AlertSuccess alerta = new alertas.AlertSuccess(this, true);
             alerta.Texto("Se ha registrado Correctamente");
             alerta.setVisible(true);
+            rsscalelabel.RSScaleLabel.setScaleLabel(jLabelImgCliente, "src/Recursos/xd.png");
         }
     }//GEN-LAST:event_jButtonClienteAgregarActionPerformed
 
     private void jButtonClienteCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClienteCancelarActionPerformed
+
         alertas.AlertWarning alerta = new alertas.AlertWarning(this, true);
         alerta.AgregarTexto("Seguro quieres cancelar", "Si", "No");
-        alerta.setVisible(true);
+         alerta.setVisible(true);
+            cliente.restablecer();
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelImgCliente, "src/Recursos/login.png");
+        if (alerta.bandera) {
+            
+           
+        }
 
-        cliente.restablecer();
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelImgCliente, "src/Recursos/xd.png");
+        
 
     }//GEN-LAST:event_jButtonClienteCancelarActionPerformed
 
@@ -675,10 +706,10 @@ public class Sistema extends javax.swing.JFrame {
 
     private void TextFieldClienteNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldClienteNombreKeyReleased
         if (TextFieldClienteNombre.getText().equals("")) {
-            jLabelCliente_Nombre.setForeground(new Color(102, 102, 102));
+            jLabelCliente_Nombre1.setForeground(new Color(102, 102, 102));
         } else {
-            jLabelCliente_Nombre.setText("Nombre");
-            jLabelCliente_Nombre.setForeground(new Color(0, 153, 51));
+            jLabelCliente_Nombre1.setText("Nombre");
+            jLabelCliente_Nombre1.setForeground(new Color(0, 153, 51));
         }
     }//GEN-LAST:event_TextFieldClienteNombreKeyReleased
 
@@ -798,7 +829,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JCheckBox CheckBoxCliente_Credito;
     private javax.swing.JTabbedPane TabbedPaneCliente;
     private javax.swing.JTabbedPane TabbedPanePrincipal;
-    private javax.swing.JTextField TextFielCliente_Nid;
+    public javax.swing.JTextField TextFielCliente_Nid;
     private javax.swing.JTextField TextFieldBuscarCliente;
     private javax.swing.JTextField TextFieldClienteApellido;
     private javax.swing.JTextField TextFieldClienteNombre;
@@ -839,7 +870,9 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

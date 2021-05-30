@@ -44,7 +44,7 @@ public class ClientesVM extends Cosult {
     public void setValor(boolean valor) {
         this.valor = valor;
     }
-
+    
     public ClientesVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
         _label = label;
         _textField = textField;
@@ -205,8 +205,8 @@ public class ClientesVM extends Cosult {
         _label.get(5).setText("Direccion");
         _label.get(5).setForeground(new Color(102, 102, 102));
 
-        _label.get(6).setIcon(new ImageIcon(getClass().getClassLoader()
-                .getResource("Recursos/xd.png")));
+//        _label.get(6).setIcon(new ImageIcon(getClass().getClassLoader()
+//                .getResource("Recursos/xd.png")));
 
     }
 
