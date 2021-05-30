@@ -12,4 +12,7 @@ Sistema desarrollado en java, curso análisis y diseño II
 * [HeidiSQL](https://www.heidisql.com/)
 * [XAMPP](https://www.apachefriends.org/es/index.html)
 
+## Páginas adicionales
+* [Icono](https://material.io/)
+
 ![](https://github.com/elmergustavo/SistemaPuntoVenta/blob/master/Capturas/1.PNG)
