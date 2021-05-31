@@ -674,15 +674,12 @@ public class Sistema extends javax.swing.JFrame {
 
         alertas.AlertWarning alerta = new alertas.AlertWarning(this, true);
         alerta.AgregarTexto("Seguro quieres cancelar", "Si", "No");
-         alerta.setVisible(true);
-            cliente.restablecer();
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabelImgCliente, "src/Recursos/login.png");
+        alerta.setVisible(true);
         if (alerta.bandera) {
             
-           
+            cliente.restablecer();
+            rsscalelabel.RSScaleLabel.setScaleLabel(jLabelImgCliente, "src/Recursos/login.png");
         }
-
-        
 
     }//GEN-LAST:event_jButtonClienteCancelarActionPerformed
 

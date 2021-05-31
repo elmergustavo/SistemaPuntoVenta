@@ -20,6 +20,7 @@ public class AlertWarning extends javax.swing.JDialog {
     Timer timer = null;
     TimerTask task;
     int i = 32;
+    public boolean bandera = false;
    
     /**
      * Creates new form AlertSuccess
@@ -153,6 +154,7 @@ public class AlertWarning extends javax.swing.JDialog {
 
     private void materialButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materialButton1ActionPerformed
         this.dispose();
+        bandera = true;
         new AlertSuccess(new JFrame(), true).setVisible(true);
         
     }//GEN-LAST:event_materialButton1ActionPerformed
@@ -185,6 +187,7 @@ public class AlertWarning extends javax.swing.JDialog {
         cancelar.setText(btn2);
     }
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        bandera = false;
         task = new TimerTask() {
             @Override
             public void run() {
