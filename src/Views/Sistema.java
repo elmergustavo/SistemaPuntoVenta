@@ -76,11 +76,14 @@ public class Sistema extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel10 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Table_Cliente = Table_Cliente = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex){
+                return false;
+            }
+        };
         jPanel11 = new javax.swing.JPanel();
         jLabelCliente_Nombre1 = new javax.swing.JLabel();
         jSpinner1 = new javax.swing.JSpinner();
-        jButtonCliente1 = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jButtonCliente2 = new javax.swing.JButton();
         jButtonCliente3 = new javax.swing.JButton();
@@ -376,18 +379,18 @@ public class Sistema extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
         jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Table_Cliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(Table_Cliente);
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -424,17 +427,6 @@ public class Sistema extends javax.swing.JFrame {
         jLabelCliente_Nombre1.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         jLabelCliente_Nombre1.setForeground(new java.awt.Color(70, 106, 124));
         jLabelCliente_Nombre1.setText("Registro por páginas");
-
-        jButtonCliente1.setBackground(new java.awt.Color(102, 102, 102));
-        jButtonCliente1.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonCliente1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/people.png"))); // NOI18N
-        jButtonCliente1.setText("Clientes");
-        jButtonCliente1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonCliente1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCliente1ActionPerformed(evt);
-            }
-        });
 
         jPanel12.setBackground(new java.awt.Color(255, 255, 255));
         jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -537,11 +529,6 @@ public class Sistema extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel9Layout.createSequentialGroup()
-                    .addGap(378, 378, 378)
-                    .addComponent(jButtonCliente1)
-                    .addContainerGap(378, Short.MAX_VALUE)))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -558,11 +545,6 @@ public class Sistema extends javax.swing.JFrame {
                         .addGap(1, 1, 1)
                         .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(14, 14, 14))
-            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel9Layout.createSequentialGroup()
-                    .addGap(229, 229, 229)
-                    .addComponent(jButtonCliente1)
-                    .addContainerGap(216, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -649,7 +631,8 @@ public class Sistema extends javax.swing.JFrame {
         textField.add(TextFieldTelefono);
         textField.add(TextFieldDireccion);
 
-        Object[] objects = {CheckBoxCliente_Credito};
+        Object[] objects = {CheckBoxCliente_Credito,
+            Table_Cliente};
         cliente = new ClientesVM(objects, label, textField);
         TabbedPanePrincipal.setSelectedIndex(1); // cuando presionamos este boton indicamos que pasamos a la tab 1 donde esta clientes
 
@@ -676,7 +659,7 @@ public class Sistema extends javax.swing.JFrame {
         alerta.AgregarTexto("Seguro quieres cancelar", "Si", "No");
         alerta.setVisible(true);
         if (alerta.bandera) {
-            
+
             cliente.restablecer();
             rsscalelabel.RSScaleLabel.setScaleLabel(jLabelImgCliente, "src/Recursos/login.png");
         }
@@ -766,10 +749,6 @@ public class Sistema extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextFieldClienteNombreActionPerformed
 
-    private void jButtonCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCliente1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCliente1ActionPerformed
-
     private void jButtonCliente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCliente2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonCliente2ActionPerformed
@@ -826,6 +805,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JCheckBox CheckBoxCliente_Credito;
     private javax.swing.JTabbedPane TabbedPaneCliente;
     private javax.swing.JTabbedPane TabbedPanePrincipal;
+    private javax.swing.JTable Table_Cliente;
     public javax.swing.JTextField TextFielCliente_Nid;
     private javax.swing.JTextField TextFieldBuscarCliente;
     private javax.swing.JTextField TextFieldClienteApellido;
@@ -834,7 +814,6 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JTextField TextFieldEmail;
     private javax.swing.JTextField TextFieldTelefono;
     private javax.swing.JButton jButtonCliente;
-    private javax.swing.JButton jButtonCliente1;
     private javax.swing.JButton jButtonCliente2;
     private javax.swing.JButton jButtonCliente3;
     private javax.swing.JButton jButtonCliente4;
@@ -870,6 +849,5 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
