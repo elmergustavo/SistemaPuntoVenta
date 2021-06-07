@@ -5,12 +5,11 @@
  */
 package ViewModels;
 
-import Conexion.Conexion;
 import Conexion.Cosult;
 import Libreria.*;
-import static Libreria.Objetos.uploadimagen;
 import Libreria.Render_CheckBox;
 import Models.TClientes;
+import Models.TReportes_clientes;
 import java.awt.Color;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -31,23 +30,36 @@ public class ClientesVM extends Cosult {
     private final ArrayList<JLabel> _label;
     private final ArrayList<JTextField> _textField;
     private final JCheckBox _checkBoxCredito;
-    private final JTable _tableCliente;
-    private DefaultTableModel modelo1;
-    private JSpinner _spinnerPaginas;
+    private final JTable _tableCliente, _tableReporte;
+    ;
+    private DefaultTableModel modelo1, modelo2;
+    private final JSpinner _spinnerPaginas;
     private int _idCliente = 0;
     private int _reg_por_pagina = 10;
     private int _num_pagina = 1;
     private Paginador<TClientes> _paginadorClientes;
-    private int seccion;
-    public boolean valor;
+    private Paginador<TReportes_clientes> _paginadorReportes;
+    public int seccion;
+    private boolean Insert;
+    private boolean Update;
 
-    public boolean isValor() {
-        return valor;
+    // <editor-fold defaultstate="collapsed" desc="SET AND GET Alertas">  
+    public boolean getInsert() {
+        return Insert;
     }
 
-    public void setValor(boolean valor) {
-        this.valor = valor;
+    public void setInsert(boolean Insert) {
+        this.Insert = Insert;
     }
+
+    public boolean getUpdate() {
+        return Update;
+    }
+
+    public void setUpdate(boolean Update) {
+        this.Update = Update;
+    }
+    // </editor-fold>
 
     public ClientesVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
         _label = label;
@@ -55,8 +67,12 @@ public class ClientesVM extends Cosult {
         _checkBoxCredito = (JCheckBox) objects[0];
         _tableCliente = (JTable) objects[1];
         _spinnerPaginas = (JSpinner) objects[2];
+        _tableReporte = (JTable) objects[3];
         restablecer();
-        valor = false;
+        RestablecerReport();
+
+        this.Insert = false;
+        this.Update = false;
     }
 
     // <editor-fold defaultstate="collapsed" desc="CODIGO DE REGISTRAR CLIENTE">  
@@ -190,9 +206,9 @@ public class ClientesVM extends Cosult {
             }
             switch (_accion) {
                 case "insert":
-                    String sqlCliente = "INSERT INTO tclientes(Nid,Nombre, Apellido,Email,"
+                    String sqlCliente1 = "INSERT INTO tclientes(Nid,Nombre, Apellido,Email,"
                             + " Telefono,Direccion,Credito,Fecha,Imagen) VALUES(?,?,?,?,?,?,?,?,?)";
-                    Object[] dataCliente = {
+                    Object[] dataCliente1 = {
                         _textField.get(0).getText(),
                         _textField.get(1).getText(),
                         _textField.get(2).getText(),
@@ -202,7 +218,7 @@ public class ClientesVM extends Cosult {
                         _checkBoxCredito.isSelected(),//tynyint
                         new Calendario().getFecha(),
                         image,};
-                    qr.insert(getConn(), sqlCliente, new ColumnListHandler(), dataCliente);
+                    qr.insert(getConn(), sqlCliente1, new ColumnListHandler(), dataCliente1);
                     String sqlReport = "INSERT INTO treportes_clientes (DeudaActual,FechaDeuda,"
                             + " UltimoPago,FechaPago,Ticket,FechaLimite,IdCliente)"
                             + " VALUES (?,?,?,?,?,?,?)";
@@ -216,9 +232,23 @@ public class ClientesVM extends Cosult {
                         "--/--/--",
                         cliente.get(cliente.size() - 1).getID(),};
                     qr.insert(getConn(), sqlReport, new ColumnListHandler(), dataReport);
+                    Insert = true;
                     break;
                 case "update":
-
+                    Object[] dataCliente2 = {
+                        _textField.get(0).getText(),
+                        _textField.get(1).getText(),
+                        _textField.get(2).getText(),
+                        _textField.get(3).getText(),
+                        _textField.get(4).getText(),
+                        _textField.get(5).getText(),
+                        _checkBoxCredito.isSelected(),
+                        image,};
+                    String sqlCliente2 = "UPDATE tclientes SET Nid = ?,Nombre = ?,Apellido = ?,"
+                            + "Email = ?,Telefono = ?,Direccion = ?,Credito = ?,"
+                            + "Imagen = ? WHERE ID =" + _idCliente;
+                    qr.update(getConn(), sqlCliente2, dataCliente2); // se conecta con la base de datos
+                    Update = true;
                     break;
             }
 
@@ -274,6 +304,7 @@ public class ClientesVM extends Cosult {
         _tableCliente.getColumnModel().getColumn(7).setCellRenderer(new Render_CheckBox());
     }
 
+    // se obtiene la informacion seleccionada de la tabla
     public void GetCliente() {
         _accion = "update";
         int filas = _tableCliente.getSelectedRow();
@@ -331,7 +362,59 @@ public class ClientesVM extends Cosult {
     }
     // </editor-fold>
 
+    // <editor-fold defaultstate="collapsed" desc="CODIGO DE PAGOS Y REPORTES">
+    public void SearchReportes(String valor) {
+        String[] titulos = {"ID", "NID", "Nombre", "Apellido", "Deuda actual", "Fecha deuda",
+            "Ultimo pago", "Fecha pago", "Ticket", "Fecha limite"};
+        modelo2 = new DefaultTableModel(null, titulos);
+        int inicio = (_num_pagina - 1) * _reg_por_pagina;
+        List<TReportes_clientes> reporteFilter;
+        if (valor.equals("")) {
+            reporteFilter = reportesClientes().stream()
+                    .skip(inicio).limit(_reg_por_pagina)
+                    .collect(Collectors.toList());
+        } else {
+            reporteFilter = reportesClientes().stream().filter(C -> C.getNid()
+                    .startsWith(valor) || C.getNombre().startsWith(valor)
+                    || C.getApellido().startsWith(valor))
+                    .skip(inicio).limit(_reg_por_pagina)
+                    .collect(Collectors.toList());
+        }
+        if (!reporteFilter.isEmpty()) {
+            reporteFilter.forEach(item -> {
+                Object[] registros = {
+                    item.getIdReporte(),
+                    item.getNid(),
+                    item.getNombre(),
+                    item.getApellido(),
+                    item.getDeudaActual(),
+                    item.getFechaDeuda(),
+                    item.getUltimoPago(),
+                    item.getFechaPago(),
+                    item.getTicket(),
+                    item.getFechaLimite()
+                };
+                modelo2.addRow(registros);
+            });
+        }
+        _tableReporte.setModel(modelo2);
+        _tableReporte.setRowHeight(30);
+        _tableReporte.getColumnModel().getColumn(0).setMaxWidth(0);
+        _tableReporte.getColumnModel().getColumn(0).setMinWidth(0);
+        _tableReporte.getColumnModel().getColumn(0).setPreferredWidth(0);
+    }
+
+    public final void RestablecerReport() {
+        listReportes = reportesClientes();
+        if (!listReportes.isEmpty()) {
+            _paginadorReportes = new Paginador<>(listReportes, _label.get(7), _reg_por_pagina);
+        }
+        SearchReportes("");
+    }
+
+    // </editor-fold>
     private List<TClientes> listClientes;
+    private List<TReportes_clientes> listReportes;
 
     public void Paginador(String metodo) {
         switch (metodo) {
@@ -340,6 +423,11 @@ public class ClientesVM extends Cosult {
                     case 1:
                         if (!listClientes.isEmpty()) {
                             _num_pagina = _paginadorClientes.primero();
+                        }
+                        break;
+                    case 2:
+                        if (!listReportes.isEmpty()) {
+                            _num_pagina = _paginadorReportes.primero();
                         }
                         break;
                 }
@@ -351,6 +439,11 @@ public class ClientesVM extends Cosult {
                             _num_pagina = _paginadorClientes.anterior();
                         }
                         break;
+                    case 2:
+                        if (!listReportes.isEmpty()) {
+                            _num_pagina = _paginadorReportes.anterior();
+                        }
+                        break;
                 }
                 break;
             case "Siguiente":
@@ -358,6 +451,11 @@ public class ClientesVM extends Cosult {
                     case 1:
                         if (!listClientes.isEmpty()) {
                             _num_pagina = _paginadorClientes.siguiente();
+                        }
+                        break;
+                    case 2:
+                        if (!listReportes.isEmpty()) {
+                            _num_pagina = _paginadorReportes.siguiente();
                         }
                         break;
                 }
@@ -369,12 +467,20 @@ public class ClientesVM extends Cosult {
                             _num_pagina = _paginadorClientes.ultimo();
                         }
                         break;
+                    case 2:
+                        if (!listReportes.isEmpty()) {
+                            _num_pagina = _paginadorReportes.ultimo();
+                        }
+                        break;
                 }
                 break;
         }
         switch (seccion) {
             case 1:
                 SearchClientes("");
+                break;
+            case 2:
+                SearchReportes("");
                 break;
         }
     }
@@ -383,10 +489,21 @@ public class ClientesVM extends Cosult {
         _num_pagina = 1;
         Number caja = (Number) _spinnerPaginas.getValue();
         _reg_por_pagina = caja.intValue();
-        if (!listClientes.isEmpty()) {
-            _paginadorClientes = new Paginador<>(listClientes,
-                    _label.get(7), _reg_por_pagina);
-            SearchClientes("");
+        switch (seccion) {
+            case 1:
+                if (!listClientes.isEmpty()) {
+                    _paginadorClientes = new Paginador<>(listClientes,
+                            _label.get(7), _reg_por_pagina);
+                }
+                SearchClientes("");
+                break;
+            case 2:
+                if (!listReportes.isEmpty()) {
+                    _paginadorReportes = new Paginador<>(listReportes,
+                            _label.get(7), _reg_por_pagina);
+                }
+                SearchReportes("");
+                break;
         }
     }
 }

@@ -9,7 +9,7 @@ package Models;
  *
  * @author elmer
  */
-public class TReportes_clientes {
+public class TReportes_clientes extends TClientes{
     private int IdReporte;
     private double DeudaActual;
     private String FechaDeuda;
