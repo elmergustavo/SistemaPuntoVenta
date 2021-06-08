@@ -50,6 +50,8 @@ public class ClientesVM extends Consult {
         _tableReporte = (JTable) objects[3];
         restablecer();
         RestablecerReport();
+        this.Insert = false;
+        this.Update = false;
 
     }
 
@@ -245,7 +247,7 @@ public class ClientesVM extends Consult {
                             + "Email = ?,Telefono = ?,Direccion = ?,Credito = ?,"
                             + "Imagen = ? WHERE ID =" + _idCliente;
                     qr.update(getConn(), sqlCliente2, dataCliente2);
-                    Insert = true;
+                    Update = true;
                     break;
             }
 
@@ -341,7 +343,7 @@ public class ClientesVM extends Consult {
         _label.get(5).setText("Direccion");
         _label.get(5).setForeground(new Color(102, 102, 102));
         _label.get(6).setIcon(new ImageIcon(getClass().getClassLoader()
-                .getResource("Resources/logo-google_1.png")));
+                .getResource("Resources/login.png")));
         listClientes = clientes();
         if (!listClientes.isEmpty()) {
             _paginadorClientes = new Paginador<>(listClientes,
