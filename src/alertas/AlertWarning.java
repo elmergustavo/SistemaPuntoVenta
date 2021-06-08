@@ -5,7 +5,7 @@
  */
 package alertas;
 
-import Libreria.AWTUtilities;
+import Library.AWTUtilities;
 import ViewModels.ClientesVM;
 import java.util.TimerTask;
 import java.util.Timer;
@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author Rojeru San
+ * @author Gustavo
  */
 public class AlertWarning extends javax.swing.JDialog {
 
@@ -64,7 +64,7 @@ public class AlertWarning extends javax.swing.JDialog {
         jPanel1.setBorder(dropShadowBorder1);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/warning.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/warning.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

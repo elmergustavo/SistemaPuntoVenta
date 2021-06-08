@@ -7,10 +7,9 @@ package Models;
 
 /**
  *
- * @author elmer
+ * @author Gustavo
  */
 public class TClientes {
-
     private int ID;
     private String Nid;
     private String Nombre;
@@ -21,17 +20,7 @@ public class TClientes {
     private String Fecha;
     private boolean Credito;
     private byte[] Imagen;
-    
-    
     public TClientes() {
-    }
-
-    public byte[] getImagen() {
-        return Imagen;
-    }
-
-    public void setImagen(byte[] Imagen) {
-        this.Imagen = Imagen;
     }
 
     public int getID() {
@@ -40,6 +29,22 @@ public class TClientes {
 
     public void setID(int ID) {
         this.ID = ID;
+    }
+
+    public String getFecha() {
+        return Fecha;
+    }
+
+    public void setFecha(String Fecha) {
+        this.Fecha = Fecha;
+    }
+
+    public boolean isCredito() {
+        return Credito;
+    }
+
+    public void setCredito(boolean Credito) {
+        this.Credito = Credito;
     }
 
     public String getNid() {
@@ -90,21 +95,13 @@ public class TClientes {
         this.Telefono = Telefono;
     }
 
-    public String getFecha() {
-        return Fecha;
+    public byte[] getImagen() {
+        return Imagen;
     }
 
-    public void setFecha(String Fecha) {
-        this.Fecha = Fecha;
+    public void setImagen(byte[] Imagen) {
+        this.Imagen = Imagen;
     }
-
-    public boolean isCredito() {
-        return Credito;
-    }
-
-    public void setCredito(boolean Credito) {
-        this.Credito = Credito;
-    }
-
+    
     
 }

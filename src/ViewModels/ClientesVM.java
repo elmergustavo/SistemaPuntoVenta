@@ -5,9 +5,8 @@
  */
 package ViewModels;
 
-import Conexion.Cosult;
-import Libreria.*;
-import Libreria.Render_CheckBox;
+import Conexion.Consult;
+import Library.*;
 import Models.TClientes;
 import Models.TReportes_clientes;
 import java.awt.Color;
@@ -22,26 +21,37 @@ import org.apache.commons.dbutils.handlers.ColumnListHandler;
 
 /**
  *
- * @author elmer
+ * @author Gustavo
  */
-public class ClientesVM extends Cosult {
+public class ClientesVM extends Consult {
 
     private String _accion = "insert";
     private final ArrayList<JLabel> _label;
     private final ArrayList<JTextField> _textField;
     private final JCheckBox _checkBoxCredito;
     private final JTable _tableCliente, _tableReporte;
-    ;
     private DefaultTableModel modelo1, modelo2;
     private final JSpinner _spinnerPaginas;
     private int _idCliente = 0;
     private int _reg_por_pagina = 10;
     private int _num_pagina = 1;
+    public int seccion;
     private Paginador<TClientes> _paginadorClientes;
     private Paginador<TReportes_clientes> _paginadorReportes;
-    public int seccion;
     private boolean Insert;
     private boolean Update;
+
+    public ClientesVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
+        _label = label;
+        _textField = textField;
+        _checkBoxCredito = (JCheckBox) objects[0];
+        _tableCliente = (JTable) objects[1];
+        _spinnerPaginas = (JSpinner) objects[2];
+        _tableReporte = (JTable) objects[3];
+        restablecer();
+        RestablecerReport();
+
+    }
 
     // <editor-fold defaultstate="collapsed" desc="SET AND GET Alertas">  
     public boolean getInsert() {
@@ -61,21 +71,7 @@ public class ClientesVM extends Cosult {
     }
     // </editor-fold>
 
-    public ClientesVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
-        _label = label;
-        _textField = textField;
-        _checkBoxCredito = (JCheckBox) objects[0];
-        _tableCliente = (JTable) objects[1];
-        _spinnerPaginas = (JSpinner) objects[2];
-        _tableReporte = (JTable) objects[3];
-        restablecer();
-        RestablecerReport();
-
-        this.Insert = false;
-        this.Update = false;
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="CODIGO DE REGISTRAR CLIENTE">  
+    // <editor-fold defaultstate="collapsed" desc="CODIGO DE REGISTRAR CLIENTE">
     public void RegistrarCliente() {
         if (_textField.get(0).getText().equals("")) {
             _label.get(0).setText("Ingrese el nid");
@@ -97,7 +93,7 @@ public class ClientesVM extends Cosult {
                         _label.get(3).setForeground(Color.RED);
                         _textField.get(3).requestFocus();
                     } else {
-                        if (!Objetos.eventos.isEmail(_textField.get(3).getText())) {
+                        if (!Objectos.eventos.isEmail(_textField.get(3).getText())) {
                             _label.get(3).setText("Ingrese un email valido");
                             _label.get(3).setForeground(Color.RED);
                             _textField.get(3).requestFocus();
@@ -200,9 +196,9 @@ public class ClientesVM extends Cosult {
 
             final QueryRunner qr = new QueryRunner(true);
             getConn().setAutoCommit(false);
-            byte[] image = UploadImage.getImageByte();
+            byte[] image = Uploadimage.getImageByte();
             if (image == null) {
-                image = Objetos.uploadimagen.getTransFoto(_label.get(6));
+                image = Objectos.uploadimage.getTransFoto(_label.get(6));
             }
             switch (_accion) {
                 case "insert":
@@ -243,12 +239,13 @@ public class ClientesVM extends Cosult {
                         _textField.get(4).getText(),
                         _textField.get(5).getText(),
                         _checkBoxCredito.isSelected(),
-                        image,};
+                        image
+                    };
                     String sqlCliente2 = "UPDATE tclientes SET Nid = ?,Nombre = ?,Apellido = ?,"
                             + "Email = ?,Telefono = ?,Direccion = ?,Credito = ?,"
                             + "Imagen = ? WHERE ID =" + _idCliente;
-                    qr.update(getConn(), sqlCliente2, dataCliente2); // se conecta con la base de datos
-                    Update = true;
+                    qr.update(getConn(), sqlCliente2, dataCliente2);
+                    Insert = true;
                     break;
             }
 
@@ -292,6 +289,7 @@ public class ClientesVM extends Cosult {
                 };
                 modelo1.addRow(registros);
             });
+
         }
         _tableCliente.setModel(modelo1);
         _tableCliente.setRowHeight(30);
@@ -304,7 +302,6 @@ public class ClientesVM extends Cosult {
         _tableCliente.getColumnModel().getColumn(7).setCellRenderer(new Render_CheckBox());
     }
 
-    // se obtiene la informacion seleccionada de la tabla
     public void GetCliente() {
         _accion = "update";
         int filas = _tableCliente.getSelectedRow();
@@ -316,7 +313,7 @@ public class ClientesVM extends Cosult {
         _textField.get(4).setText((String) modelo1.getValueAt(filas, 5));
         _textField.get(5).setText((String) modelo1.getValueAt(filas, 6));
         _checkBoxCredito.setSelected((Boolean) modelo1.getValueAt(filas, 7));
-        Objetos.uploadimagen.byteImage(_label.get(6), (byte[]) modelo1.getValueAt(filas, 8));
+        Objectos.uploadimage.byteImage(_label.get(6), (byte[]) modelo1.getValueAt(filas, 8));
 
     }
 
@@ -343,9 +340,8 @@ public class ClientesVM extends Cosult {
         _label.get(4).setForeground(new Color(102, 102, 102));
         _label.get(5).setText("Direccion");
         _label.get(5).setForeground(new Color(102, 102, 102));
-
-//        _label.get(6).setIcon(new ImageIcon(getClass().getClassLoader()
-//                .getResource("Recursos/xd.png")));
+        _label.get(6).setIcon(new ImageIcon(getClass().getClassLoader()
+                .getResource("Resources/logo-google_1.png")));
         listClientes = clientes();
         if (!listClientes.isEmpty()) {
             _paginadorClientes = new Paginador<>(listClientes,
@@ -411,8 +407,8 @@ public class ClientesVM extends Cosult {
         }
         SearchReportes("");
     }
-
     // </editor-fold>
+
     private List<TClientes> listClientes;
     private List<TReportes_clientes> listReportes;
 
@@ -505,5 +501,6 @@ public class ClientesVM extends Cosult {
                 SearchReportes("");
                 break;
         }
+
     }
 }

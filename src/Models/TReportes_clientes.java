@@ -7,7 +7,7 @@ package Models;
 
 /**
  *
- * @author elmer
+ * @author Gustavo
  */
 public class TReportes_clientes extends TClientes{
     private int IdReporte;
@@ -85,6 +85,5 @@ public class TReportes_clientes extends TClientes{
     public void setIdCliente(int IdCliente) {
         this.IdCliente = IdCliente;
     }
-    
     
 }

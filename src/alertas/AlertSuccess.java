@@ -5,13 +5,13 @@
  */
 package alertas;
 
-import Libreria.AWTUtilities;
+import Library.AWTUtilities;
 import java.util.TimerTask;
 import java.util.Timer;
 
 /**
  *
- * @author Rojeru San
+ * @author Gustavo
  */
 public class AlertSuccess extends javax.swing.JDialog {
 
@@ -59,7 +59,7 @@ public class AlertSuccess extends javax.swing.JDialog {
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, java.awt.Color.gray));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/success.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/success.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

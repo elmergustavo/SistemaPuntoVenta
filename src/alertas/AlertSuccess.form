@@ -85,7 +85,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Recursos/success.png"/>
+              <Image iconType="3" name="/Resources/success.png"/>
             </Property>
           </Properties>
         </Component>
