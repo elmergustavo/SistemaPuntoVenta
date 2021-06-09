@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * @author Gustavo
  */
 public class Conexion {
-
+    // datos para la conexion a un servidor de BD
     private String db = "punto_de_ventas";
     private String user = "root";
     private String password = "hacker.net";
