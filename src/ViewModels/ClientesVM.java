@@ -5,6 +5,7 @@
  */
 package ViewModels;
 
+import Conexion.Conexion;
 import Conexion.Consult;
 import Library.*;
 import Models.TClientes;
@@ -41,6 +42,8 @@ public class ClientesVM extends Consult {
     private boolean Insert;
     private boolean Update;
 
+    private Conexion conexion = Conexion.createInstance();
+    
     public ClientesVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
         _label = label;
         _textField = textField;
@@ -197,7 +200,7 @@ public class ClientesVM extends Consult {
         try {
 
             final QueryRunner qr = new QueryRunner(true);
-            getConn().setAutoCommit(false);
+            conexion.getConnection().setAutoCommit(false);
             byte[] image = Uploadimage.getImageByte();
             if (image == null) {
                 image = Objectos.uploadimage.getTransFoto(_label.get(6));
@@ -216,7 +219,7 @@ public class ClientesVM extends Consult {
                         _checkBoxCredito.isSelected(),//tynyint
                         new Calendario().getFecha(),
                         image,};
-                    qr.insert(getConn(), sqlCliente1, new ColumnListHandler(), dataCliente1);
+                    qr.insert(conexion.getConnection(), sqlCliente1, new ColumnListHandler(), dataCliente1);
                     String sqlReport = "INSERT INTO treportes_clientes (DeudaActual,FechaDeuda,"
                             + " UltimoPago,FechaPago,Ticket,FechaLimite,IdCliente)"
                             + " VALUES (?,?,?,?,?,?,?)";
@@ -229,7 +232,7 @@ public class ClientesVM extends Consult {
                         "0000000000",
                         "--/--/--",
                         cliente.get(cliente.size() - 1).getID(),};
-                    qr.insert(getConn(), sqlReport, new ColumnListHandler(), dataReport);
+                    qr.insert(conexion.getConnection(), sqlReport, new ColumnListHandler(), dataReport);
                     Insert = true;
                     break;
                 case "update":
@@ -246,15 +249,15 @@ public class ClientesVM extends Consult {
                     String sqlCliente2 = "UPDATE tclientes SET Nid = ?,Nombre = ?,Apellido = ?,"
                             + "Email = ?,Telefono = ?,Direccion = ?,Credito = ?,"
                             + "Imagen = ? WHERE ID =" + _idCliente;
-                    qr.update(getConn(), sqlCliente2, dataCliente2);
+                    qr.update(conexion.getConnection(), sqlCliente2, dataCliente2);
                     Update = true;
                     break;
             }
 
-            getConn().commit();
+            conexion.getConnection().commit();
             restablecer();
         } catch (SQLException ex) {
-            getConn().rollback();
+            conexion.getConnection().rollback();
             JOptionPane.showMessageDialog(null, ex);
         }
     }

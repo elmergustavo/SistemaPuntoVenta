@@ -22,9 +22,10 @@ public class Conexion {
     private String urlSql = "jdbc:sqlserver://localhost:1433;databaseName=" + db
             + ";integratedSecurity=true;";
     private Connection conn = null;
+    private static Conexion instance = null;
     // 
 
-    public Conexion() {
+    private Conexion() {
         try {
             //obtenemos el driver de para mysql
             Class.forName("com.mysql.jdbc.Driver");
@@ -41,8 +42,15 @@ public class Conexion {
             System.out.println("Error : " + ex);
         }
     }
+    
+    public static Conexion createInstance(){
+        if (instance == null){
+            instance = new Conexion();
+        }
+        return instance;
+    }
 
-    public Connection getConn() {
+    public Connection getConnection() {
         return conn;
     }
 

@@ -18,14 +18,14 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
  *
  * @author Gustavo
  */
-public class Consult extends Conexion {
-
+public class Consult /*extends Conexion*/ {
+    private Conexion conexion = Conexion.createInstance();
     private QueryRunner QR = new QueryRunner();
 
     public List<TClientes> clientes() {
         List<TClientes> cliente = new ArrayList();
         try {
-            cliente = (List<TClientes>) QR.query(getConn(), "SELECT * FROM tclientes",
+            cliente = (List<TClientes>) QR.query(conexion.getConnection(), "SELECT * FROM tclientes",
                     new BeanListHandler(TClientes.class));
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error : " + ex);
@@ -43,7 +43,7 @@ public class Consult extends Conexion {
                 + "treportes_clientes.FechaPago, treportes_clientes.Ticket,"
                 + "treportes_clientes.FechaLimite";
         try {
-            reportes = (List<TReportes_clientes>) QR.query(getConn(),
+            reportes = (List<TReportes_clientes>) QR.query(conexion.getConnection(),
                     "SELECT" + campos + " FROM treportes_clientes Inner Join tclientes ON"
                     + condicion + where, new BeanListHandler(TReportes_clientes.class));
         } catch (SQLException ex) {
