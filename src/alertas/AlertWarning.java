@@ -6,7 +6,7 @@
 package alertas;
 
 import Library.AWTUtilities;
-import ViewModels.ClientesVM;
+import Controller.ClientesVM;
 import java.util.TimerTask;
 import java.util.Timer;
 import javax.swing.JFrame;

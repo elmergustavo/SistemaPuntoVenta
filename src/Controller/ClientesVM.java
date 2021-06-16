@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ViewModels;
+package Controller;
 
 import Conexion.Conexion;
 import Conexion.Consult;

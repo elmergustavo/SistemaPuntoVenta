@@ -6,7 +6,7 @@
 package Views;
 
 import Library.Objectos;
-import ViewModels.ClientesVM;
+import Controller.ClientesVM;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JLabel;
@@ -110,6 +110,11 @@ public class Sistema extends javax.swing.JFrame {
         LabelCliente_Paginas = new javax.swing.JLabel();
         ButtonCliente = new javax.swing.JButton();
         about = new javax.swing.JButton();
+        ButtonCliente1 = new javax.swing.JButton();
+        ButtonCliente2 = new javax.swing.JButton();
+        ButtonCliente3 = new javax.swing.JButton();
+        ButtonCliente4 = new javax.swing.JButton();
+        ButtonCliente5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 102));
@@ -866,6 +871,61 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        ButtonCliente1.setBackground(new java.awt.Color(51, 51, 51));
+        ButtonCliente1.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonCliente1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/shopping_cart.png"))); // NOI18N
+        ButtonCliente1.setText("Ventas");
+        ButtonCliente1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ButtonCliente1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCliente1ActionPerformed(evt);
+            }
+        });
+
+        ButtonCliente2.setBackground(new java.awt.Color(51, 51, 51));
+        ButtonCliente2.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonCliente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        ButtonCliente2.setText("Inventario");
+        ButtonCliente2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ButtonCliente2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCliente2ActionPerformed(evt);
+            }
+        });
+
+        ButtonCliente3.setBackground(new java.awt.Color(51, 51, 51));
+        ButtonCliente3.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonCliente3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/search.png"))); // NOI18N
+        ButtonCliente3.setText("Cotizaciones");
+        ButtonCliente3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ButtonCliente3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCliente3ActionPerformed(evt);
+            }
+        });
+
+        ButtonCliente4.setBackground(new java.awt.Color(51, 51, 51));
+        ButtonCliente4.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonCliente4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Reporte.png"))); // NOI18N
+        ButtonCliente4.setText("Administracion Financiera");
+        ButtonCliente4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ButtonCliente4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCliente4ActionPerformed(evt);
+            }
+        });
+
+        ButtonCliente5.setBackground(new java.awt.Color(51, 51, 51));
+        ButtonCliente5.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonCliente5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Settings.png"))); // NOI18N
+        ButtonCliente5.setText("Configuración");
+        ButtonCliente5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ButtonCliente5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCliente5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -878,7 +938,17 @@ public class Sistema extends javax.swing.JFrame {
                         .addComponent(TabbedPanePrincipal))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(158, 158, 158)
-                        .addComponent(ButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(ButtonCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(ButtonCliente2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(ButtonCliente3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(ButtonCliente4)
+                        .addGap(18, 18, 18)
+                        .addComponent(ButtonCliente5, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(about)))
                 .addContainerGap())
@@ -890,7 +960,12 @@ public class Sistema extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonCliente)
-                    .addComponent(about))
+                    .addComponent(about)
+                    .addComponent(ButtonCliente1)
+                    .addComponent(ButtonCliente2)
+                    .addComponent(ButtonCliente3)
+                    .addComponent(ButtonCliente4)
+                    .addComponent(ButtonCliente5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TabbedPanePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(61, Short.MAX_VALUE))
@@ -929,79 +1004,86 @@ public class Sistema extends javax.swing.JFrame {
         TabbedPanePrincipal.setSelectedIndex(1);
     }//GEN-LAST:event_ButtonClienteActionPerformed
 
-    private void LabelImage_ClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelImage_ClienteMouseClicked
-         Objectos.uploadimage.CargarImagen(LabelImage_Cliente);
-    }//GEN-LAST:event_LabelImage_ClienteMouseClicked
+    private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
+       new about.About(this, "", true).setVisible(true);
+    }//GEN-LAST:event_aboutActionPerformed
 
-    private void TextFieldCliente_NidKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_NidKeyReleased
-        if(TextFieldCliente_Nid.getText().equals("")){
-            LabelCliente_Nid.setForeground(new Color(102, 102, 102));
-        }else{
-            LabelCliente_Nid.setText("Nid");
-            LabelCliente_Nid.setForeground(new Color(0, 153, 51));
+    private void ButtonCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonCliente1ActionPerformed
+
+    private void ButtonCliente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonCliente2ActionPerformed
+
+    private void ButtonCliente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonCliente3ActionPerformed
+
+    private void ButtonCliente4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonCliente4ActionPerformed
+
+    private void ButtonCliente5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonCliente5ActionPerformed
+
+    private void ButtonCliente_Paginas4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas4ActionPerformed
+        cliente.Paginador("Ultimo");
+    }//GEN-LAST:event_ButtonCliente_Paginas4ActionPerformed
+
+    private void ButtonCliente_Paginas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas3ActionPerformed
+        cliente.Paginador("Siguiente");
+    }//GEN-LAST:event_ButtonCliente_Paginas3ActionPerformed
+
+    private void ButtonCliente_Paginas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas1ActionPerformed
+        cliente.Paginador("Primero");
+    }//GEN-LAST:event_ButtonCliente_Paginas1ActionPerformed
+
+    private void ButtonCliente_Paginas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas2ActionPerformed
+        cliente.Paginador("Anterior");
+    }//GEN-LAST:event_ButtonCliente_Paginas2ActionPerformed
+
+    private void SpinnerPaginas_ClientesStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SpinnerPaginas_ClientesStateChanged
+        cliente.Registro_Paginas();
+    }//GEN-LAST:event_SpinnerPaginas_ClientesStateChanged
+
+    private void TabbedPaneCliente2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabbedPaneCliente2StateChanged
+        switch (TabbedPaneCliente2.getSelectedIndex()) {
+            case 0:
+            if (TabbedPaneCliente1.getSelectedIndex() > 0) {
+                TabbedPaneCliente1.setSelectedIndex(0);
+                cliente.seccion = 1;
+                cliente.Registro_Paginas();
+            }
+            break;
+            case 1:
+            cliente.seccion = 2;
+            TabbedPaneCliente1.setSelectedIndex(1);
+            cliente.Registro_Paginas();
+            break;
         }
-    }//GEN-LAST:event_TextFieldCliente_NidKeyReleased
+    }//GEN-LAST:event_TabbedPaneCliente2StateChanged
 
-    private void TextFieldCliente_NidKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_NidKeyTyped
-        Objectos.eventos.numberKeyPres(evt);
-    }//GEN-LAST:event_TextFieldCliente_NidKeyTyped
+    private void TableCliente_ReportKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TableCliente_ReportKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TableCliente_ReportKeyReleased
 
-    private void TextFieldCliente_NombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_NombreKeyReleased
-        if(TextFieldCliente_Nombre.getText().equals("")){
-            LabelCliente_Nombre.setForeground(new Color(102, 102, 102));
-        }else{
-            LabelCliente_Nombre.setText("Nombre");
-            LabelCliente_Nombre.setForeground(new Color(0, 153, 51));
+    private void TableCliente_ReportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableCliente_ReportMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TableCliente_ReportMouseClicked
+
+    private void Table_ClientesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Table_ClientesKeyReleased
+        if (Table_Clientes.getSelectedRows().length > 0) {
+            cliente.GetCliente();
         }
-    }//GEN-LAST:event_TextFieldCliente_NombreKeyReleased
+    }//GEN-LAST:event_Table_ClientesKeyReleased
 
-    private void TextFieldCliente_NombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_NombreKeyTyped
-        Objectos.eventos.textKeyPress(evt);
-    }//GEN-LAST:event_TextFieldCliente_NombreKeyTyped
-
-    private void TextFieldCliente_ApellidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_ApellidoKeyReleased
-         if(TextFieldCliente_Apellido.getText().equals("")){
-            LabelCliente_Apellido.setForeground(new Color(102, 102, 102));
-        }else{
-            LabelCliente_Apellido.setText("Apellido");
-            LabelCliente_Apellido.setForeground(new Color(0, 153, 51));
+    private void Table_ClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Table_ClientesMouseClicked
+        if (Table_Clientes.getSelectedRows().length > 0) {
+            cliente.GetCliente();
         }
-    }//GEN-LAST:event_TextFieldCliente_ApellidoKeyReleased
-
-    private void TextFieldCliente_ApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_ApellidoKeyTyped
-        Objectos.eventos.textKeyPress(evt);
-    }//GEN-LAST:event_TextFieldCliente_ApellidoKeyTyped
-
-    private void TextFieldCliente_EmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_EmailKeyReleased
-        if(TextFieldCliente_Email.getText().equals("")){
-            LabelCliente_Email.setForeground(new Color(102, 102, 102));
-        }else{
-            LabelCliente_Email.setText("Email");
-            LabelCliente_Email.setForeground(new Color(0, 153, 51));
-        }
-    }//GEN-LAST:event_TextFieldCliente_EmailKeyReleased
-
-    private void TextFieldCliente_TelefonoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_TelefonoKeyReleased
-        if(TextFieldCliente_Telefono.getText().equals("")){
-            LabelCliente_Telefono.setForeground(new Color(102, 102, 102));
-        }else{
-            LabelCliente_Telefono.setText("Telefono");
-            LabelCliente_Telefono.setForeground(new Color(0, 153, 51));
-        }
-    }//GEN-LAST:event_TextFieldCliente_TelefonoKeyReleased
-
-    private void TextFieldCliente_TelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_TelefonoKeyTyped
-        Objectos.eventos.numberKeyPres(evt);
-    }//GEN-LAST:event_TextFieldCliente_TelefonoKeyTyped
-
-    private void TextFieldCliente_DireccionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_DireccionKeyReleased
-        if(TextFieldCliente_Direccion.getText().equals("")){
-            LabelCliente_Direccion.setForeground(new Color(102, 102, 102));
-        }else{
-            LabelCliente_Direccion.setText("Direccion");
-            LabelCliente_Direccion.setForeground(new Color(0, 153, 51));
-        }
-    }//GEN-LAST:event_TextFieldCliente_DireccionKeyReleased
+    }//GEN-LAST:event_Table_ClientesMouseClicked
 
     private void ButtonCliente_AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_AgregarActionPerformed
         cliente.RegistrarCliente();
@@ -1029,83 +1111,96 @@ public class Sistema extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ButtonCliente_CancelarActionPerformed
 
-    private void ButtonCliente_Paginas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas2ActionPerformed
-         cliente.Paginador("Anterior");
-    }//GEN-LAST:event_ButtonCliente_Paginas2ActionPerformed
-
-    private void ButtonCliente_Paginas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas1ActionPerformed
-        cliente.Paginador("Primero");
-    }//GEN-LAST:event_ButtonCliente_Paginas1ActionPerformed
-
-    private void ButtonCliente_Paginas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas3ActionPerformed
-         cliente.Paginador("Siguiente");
-    }//GEN-LAST:event_ButtonCliente_Paginas3ActionPerformed
-
-    private void ButtonCliente_Paginas4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas4ActionPerformed
-       cliente.Paginador("Ultimo");
-    }//GEN-LAST:event_ButtonCliente_Paginas4ActionPerformed
-
-    private void SpinnerPaginas_ClientesStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SpinnerPaginas_ClientesStateChanged
-        cliente.Registro_Paginas();
-    }//GEN-LAST:event_SpinnerPaginas_ClientesStateChanged
-
-    private void Table_ClientesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Table_ClientesKeyReleased
-        if (Table_Clientes.getSelectedRows().length > 0) {
-            cliente.GetCliente();
-        }
-    }//GEN-LAST:event_Table_ClientesKeyReleased
-
-    private void Table_ClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Table_ClientesMouseClicked
-        if (Table_Clientes.getSelectedRows().length > 0) {
-            cliente.GetCliente();
-        }
-    }//GEN-LAST:event_Table_ClientesMouseClicked
-
     private void TabbedPaneCliente1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabbedPaneCliente1StateChanged
         switch (TabbedPaneCliente1.getSelectedIndex()) {
             case 0:
-                if (TabbedPaneCliente2.getSelectedIndex() > 0) {
-                    TabbedPaneCliente2.setSelectedIndex(0);
-                    cliente.seccion = 1;
-                    cliente.Registro_Paginas();
-                }
-                break;
-            case 1:
-                cliente.seccion = 2;
-                TabbedPaneCliente2.setSelectedIndex(1);
+            if (TabbedPaneCliente2.getSelectedIndex() > 0) {
+                TabbedPaneCliente2.setSelectedIndex(0);
+                cliente.seccion = 1;
                 cliente.Registro_Paginas();
-                break;
+            }
+            break;
+            case 1:
+            cliente.seccion = 2;
+            TabbedPaneCliente2.setSelectedIndex(1);
+            cliente.Registro_Paginas();
+            break;
         }
     }//GEN-LAST:event_TabbedPaneCliente1StateChanged
 
-    private void TabbedPaneCliente2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabbedPaneCliente2StateChanged
-        switch (TabbedPaneCliente2.getSelectedIndex()) {
-            case 0:
-                if (TabbedPaneCliente1.getSelectedIndex() > 0) {
-                    TabbedPaneCliente1.setSelectedIndex(0);
-                    cliente.seccion = 1;
-                    cliente.Registro_Paginas();
-                }
-                break;
-            case 1:
-                cliente.seccion = 2;
-                TabbedPaneCliente1.setSelectedIndex(1);
-                cliente.Registro_Paginas();
-                break;
+    private void TextFieldCliente_DireccionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_DireccionKeyReleased
+        if(TextFieldCliente_Direccion.getText().equals("")){
+            LabelCliente_Direccion.setForeground(new Color(102, 102, 102));
+        }else{
+            LabelCliente_Direccion.setText("Direccion");
+            LabelCliente_Direccion.setForeground(new Color(0, 153, 51));
         }
-    }//GEN-LAST:event_TabbedPaneCliente2StateChanged
+    }//GEN-LAST:event_TextFieldCliente_DireccionKeyReleased
 
-    private void TableCliente_ReportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableCliente_ReportMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TableCliente_ReportMouseClicked
+    private void TextFieldCliente_TelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_TelefonoKeyTyped
+        Objectos.eventos.numberKeyPres(evt);
+    }//GEN-LAST:event_TextFieldCliente_TelefonoKeyTyped
 
-    private void TableCliente_ReportKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TableCliente_ReportKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TableCliente_ReportKeyReleased
+    private void TextFieldCliente_TelefonoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_TelefonoKeyReleased
+        if(TextFieldCliente_Telefono.getText().equals("")){
+            LabelCliente_Telefono.setForeground(new Color(102, 102, 102));
+        }else{
+            LabelCliente_Telefono.setText("Telefono");
+            LabelCliente_Telefono.setForeground(new Color(0, 153, 51));
+        }
+    }//GEN-LAST:event_TextFieldCliente_TelefonoKeyReleased
 
-    private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
-       new about.About(this, "", true).setVisible(true);
-    }//GEN-LAST:event_aboutActionPerformed
+    private void TextFieldCliente_EmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_EmailKeyReleased
+        if(TextFieldCliente_Email.getText().equals("")){
+            LabelCliente_Email.setForeground(new Color(102, 102, 102));
+        }else{
+            LabelCliente_Email.setText("Email");
+            LabelCliente_Email.setForeground(new Color(0, 153, 51));
+        }
+    }//GEN-LAST:event_TextFieldCliente_EmailKeyReleased
+
+    private void TextFieldCliente_ApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_ApellidoKeyTyped
+        Objectos.eventos.textKeyPress(evt);
+    }//GEN-LAST:event_TextFieldCliente_ApellidoKeyTyped
+
+    private void TextFieldCliente_ApellidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_ApellidoKeyReleased
+        if(TextFieldCliente_Apellido.getText().equals("")){
+            LabelCliente_Apellido.setForeground(new Color(102, 102, 102));
+        }else{
+            LabelCliente_Apellido.setText("Apellido");
+            LabelCliente_Apellido.setForeground(new Color(0, 153, 51));
+        }
+    }//GEN-LAST:event_TextFieldCliente_ApellidoKeyReleased
+
+    private void TextFieldCliente_NombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_NombreKeyTyped
+        Objectos.eventos.textKeyPress(evt);
+    }//GEN-LAST:event_TextFieldCliente_NombreKeyTyped
+
+    private void TextFieldCliente_NombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_NombreKeyReleased
+        if(TextFieldCliente_Nombre.getText().equals("")){
+            LabelCliente_Nombre.setForeground(new Color(102, 102, 102));
+        }else{
+            LabelCliente_Nombre.setText("Nombre");
+            LabelCliente_Nombre.setForeground(new Color(0, 153, 51));
+        }
+    }//GEN-LAST:event_TextFieldCliente_NombreKeyReleased
+
+    private void TextFieldCliente_NidKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_NidKeyTyped
+        Objectos.eventos.numberKeyPres(evt);
+    }//GEN-LAST:event_TextFieldCliente_NidKeyTyped
+
+    private void TextFieldCliente_NidKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_NidKeyReleased
+        if(TextFieldCliente_Nid.getText().equals("")){
+            LabelCliente_Nid.setForeground(new Color(102, 102, 102));
+        }else{
+            LabelCliente_Nid.setText("Nid");
+            LabelCliente_Nid.setForeground(new Color(0, 153, 51));
+        }
+    }//GEN-LAST:event_TextFieldCliente_NidKeyReleased
+
+    private void LabelImage_ClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelImage_ClienteMouseClicked
+        Objectos.uploadimage.CargarImagen(LabelImage_Cliente);
+    }//GEN-LAST:event_LabelImage_ClienteMouseClicked
 
     
     // </editor-fold>
@@ -1146,6 +1241,11 @@ public class Sistema extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonCliente;
+    private javax.swing.JButton ButtonCliente1;
+    private javax.swing.JButton ButtonCliente2;
+    private javax.swing.JButton ButtonCliente3;
+    private javax.swing.JButton ButtonCliente4;
+    private javax.swing.JButton ButtonCliente5;
     private javax.swing.JButton ButtonCliente_Agregar;
     private javax.swing.JButton ButtonCliente_Cancelar;
     private javax.swing.JButton ButtonCliente_Paginas1;

@@ -23,8 +23,7 @@ public class Conexion {
             + ";integratedSecurity=true;";
     private Connection conn = null;
     private static Conexion instance = null;
-    // 
-
+     
     private Conexion() {
         try {
             //obtenemos el driver de para mysql
