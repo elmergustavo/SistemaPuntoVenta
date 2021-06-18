@@ -26,7 +26,8 @@ public class Render_CheckBox extends JCheckBox implements TableCellRenderer {
 
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-        ((JCheckBox) component).setBackground(new Color(0, 200, 0));
+        ((JCheckBox) component).setBackground(new Color(255, 102, 0));
+        //[255,102,0]
         //obtiene valor boolean y coloca valor en el JCheckBox
         boolean b = ((Boolean) value).booleanValue();
         ((JCheckBox) component).setSelected(b);

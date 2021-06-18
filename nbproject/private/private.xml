@@ -1,25 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Controller/Interface.java</file>
             <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Views/Sistema.java</file>
-            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Conexion/Conexion.java</file>
-            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/sistema/punto/de/ventas/SistemaPuntoDeVentas.java</file>
-            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Controller/ClientesVM.java</file>
-            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Models/TClientes.java</file>
-            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Library/TextFieldEvent.java</file>
-            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Library/Uploadimage.java</file>
-            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Models/TReportes_clientes.java</file>
-            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Conexion/Consult.java</file>
-=======
-            <file>file:/C:/Users/Jose-PC/Documents/proyecto_analisis/SistemaPuntoVenta/src/Models/TClientes.java</file>
-            <file>file:/C:/Users/Jose-PC/Documents/proyecto_analisis/SistemaPuntoVenta/src/ViewModels/ClientesVM.java</file>
-            <file>file:/C:/Users/Jose-PC/Documents/proyecto_analisis/SistemaPuntoVenta/src/Conexion/Consult.java</file>
-            <file>file:/C:/Users/Jose-PC/Documents/proyecto_analisis/SistemaPuntoVenta/src/Conexion/Conexion.java</file>
-            <file>file:/C:/Users/Jose-PC/Documents/proyecto_analisis/SistemaPuntoVenta/src/Models/TReportes_clientes.java</file>
->>>>>>> b6714234ab6f8b584326872bfe809b0dee62bfc7
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Library/Render_CheckBox.java</file>
         </group>
     </open-files>
 </project-private>
