@@ -224,7 +224,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(493, Short.MAX_VALUE))
+                .addContainerGap(494, Short.MAX_VALUE))
         );
 
         TabbedPanePrincipal.addTab("Ventas", jPanel3);
@@ -1163,6 +1163,7 @@ public class Sistema extends javax.swing.JFrame {
 
         ButtonClienteConfig1.setBackground(new java.awt.Color(51, 51, 51));
         ButtonClienteConfig1.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonClienteConfig1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/about.png"))); // NOI18N
         ButtonClienteConfig1.setText("About");
         ButtonClienteConfig1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         ButtonClienteConfig1.addActionListener(new java.awt.event.ActionListener() {
@@ -1195,7 +1196,7 @@ public class Sistema extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(ButtonClienteConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ButtonClienteConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ButtonClienteConfig1)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -1214,7 +1215,7 @@ public class Sistema extends javax.swing.JFrame {
                     .addComponent(ButtonClienteConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TabbedPanePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();

@@ -102,6 +102,5 @@ public class TClientes {
     public void setImagen(byte[] Imagen) {
         this.Imagen = Imagen;
     }
-    
-    
+  
 }
