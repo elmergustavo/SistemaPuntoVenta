@@ -8,6 +8,7 @@ package sistema.punto.de.ventas;
 
 import Views.Splash;
 import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -24,7 +25,7 @@ public class SistemaPuntoDeVentas {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
 
 //           UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception e) {
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
             
         }
 //        Sistema sistema = new Sistema();

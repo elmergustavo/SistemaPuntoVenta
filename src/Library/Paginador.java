@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 /**
  *
  * @author Gustavo
+ * @param <T>
  */
 public class Paginador<T> {
 

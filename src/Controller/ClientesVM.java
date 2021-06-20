@@ -42,9 +42,10 @@ public class ClientesVM extends Consult {
     private boolean Insert;
     private boolean Update;
 
-    private Conexion conexion = Conexion.createInstance();
+    private final Conexion conexion;
     
     public ClientesVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
+        this.conexion = Conexion.createInstance();
         _label = label;
         _textField = textField;
         _checkBoxCredito = (JCheckBox) objects[0];
