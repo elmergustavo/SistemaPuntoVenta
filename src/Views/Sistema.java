@@ -1287,7 +1287,8 @@ public class Sistema extends javax.swing.JFrame {
         TextField_BuscarCliente1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
         rSLabelFecha1.setForeground(new java.awt.Color(255, 255, 255));
-        rSLabelFecha1.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
+        rSLabelFecha1.setToolTipText("");
+        rSLabelFecha1.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 24)); // NOI18N
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -1313,7 +1314,7 @@ public class Sistema extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addComponent(jLabel6)
                         .addComponent(TextField_BuscarCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(rSLabelFecha1, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(rSLabelFecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 

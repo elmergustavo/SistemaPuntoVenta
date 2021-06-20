@@ -5,8 +5,8 @@
  */
 package sistema.punto.de.ventas;
 
-import Views.Sistema;
-import static java.awt.Frame.MAXIMIZED_BOTH;
+
+import Views.Splash;
 import javax.swing.UIManager;
 
 /**
@@ -22,14 +22,17 @@ public class SistemaPuntoDeVentas {
         try {
             //     UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-            
+
 //           UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
-
+            
         }
-        Sistema sistema = new Sistema();
-        sistema.setExtendedState(MAXIMIZED_BOTH);
-        sistema.setVisible(true);
+//        Sistema sistema = new Sistema();
+//        sistema.setExtendedState(MAXIMIZED_BOTH);
+//        sistema.setVisible(true);
+        Splash splash = new Splash();
+        splash.setVisible(true);
+        
     }
-
+    
 }
