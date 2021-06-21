@@ -3,7 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/about/About.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Views/Sistema.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Controller/SuministroVM.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Controller/ClientesVM.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Library/Paginador.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Models/TClientes.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Models/TReportes_clientes.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Models/TSuministro.java</file>
         </group>
     </open-files>
 </project-private>
