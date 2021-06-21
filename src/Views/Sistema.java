@@ -1654,7 +1654,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TabbedPanePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         pack();
@@ -1690,7 +1690,8 @@ public class Sistema extends javax.swing.JFrame {
             CheckBoxCliente_Credito,
             Table_Clientes,
             SpinnerPaginas_Clientes,
-            TableCliente_Report
+            TableCliente_Report,
+            rSTableMetro3
         };
         cliente = new ClientesVM(objects, label, textField);
         
@@ -1791,18 +1792,6 @@ public class Sistema extends javax.swing.JFrame {
     private void TableCliente_ReportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableCliente_ReportMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_TableCliente_ReportMouseClicked
-
-    private void Table_ClientesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Table_ClientesKeyReleased
-        if (Table_Clientes.getSelectedRows().length > 0) {
-            cliente.GetCliente();
-        }
-    }//GEN-LAST:event_Table_ClientesKeyReleased
-
-    private void Table_ClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Table_ClientesMouseClicked
-        if (Table_Clientes.getSelectedRows().length > 0) {
-            cliente.GetCliente();
-        }
-    }//GEN-LAST:event_Table_ClientesMouseClicked
 
     private void TabbedPaneCliente1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabbedPaneCliente1StateChanged
         switch (TabbedPaneCliente1.getSelectedIndex()) {
@@ -1968,6 +1957,18 @@ public class Sistema extends javax.swing.JFrame {
     private void ButtonCliente_Paginas12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas12ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonCliente_Paginas12ActionPerformed
+
+    private void Table_ClientesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Table_ClientesKeyReleased
+        if (Table_Clientes.getSelectedRows().length > 0) {
+            cliente.GetCliente();
+        }
+    }//GEN-LAST:event_Table_ClientesKeyReleased
+
+    private void Table_ClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Table_ClientesMouseClicked
+        if (Table_Clientes.getSelectedRows().length > 0) {
+            cliente.GetCliente();
+        }
+    }//GEN-LAST:event_Table_ClientesMouseClicked
 
     // </editor-fold>
     /**
