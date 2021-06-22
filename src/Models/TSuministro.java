@@ -13,9 +13,14 @@ public class TSuministro {
     private int IdSuministro;
     private String codigo;
     private String nombre;
-    private int stock;
-    private double precio;
+    private String stock;
+    private String precio;
+    
 
+    public TSuministro() {
+    }
+
+    
     public int getIdSuministro() {
         return IdSuministro;
     }
@@ -40,19 +45,19 @@ public class TSuministro {
         this.nombre = nombre;
     }
 
-    public int getStock() {
+    public String getStock() {
         return stock;
     }
 
-    public void setStock(int stock) {
+    public void setStock(String stock) {
         this.stock = stock;
     }
 
-    public double getPrecio() {
+    public String getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(String precio) {
         this.precio = precio;
     }
     

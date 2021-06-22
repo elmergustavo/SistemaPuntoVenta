@@ -7,6 +7,7 @@ package Conexion;
 
 import Models.TClientes;
 import Models.TReportes_clientes;
+import Models.TSuministro;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,5 +52,18 @@ public class Consult /*extends Conexion*/ {
         }
         return reportes;
     }
+    
+    
+    public List<TSuministro> suministros() {
+        List<TSuministro> suministro = new ArrayList();
+        try {
+            suministro = (List<TSuministro>) QR.query(conexion.getConnection(), "SELECT * FROM suministros",
+                    new BeanListHandler(TSuministro.class));
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error : " + ex);
+        }
+        return suministro;
+    }
+
 }
 

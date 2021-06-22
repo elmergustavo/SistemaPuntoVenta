@@ -7,8 +7,12 @@ package Views;
 
 import Library.Objectos;
 import Controller.ClientesVM;
+import Controller.SuministroVM;
 import java.awt.Color;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
@@ -134,21 +138,25 @@ public class Sistema extends javax.swing.JFrame {
         jPanel29 = new javax.swing.JPanel();
         jPanel30 = new javax.swing.JPanel();
         labelReport_Nombre1 = new javax.swing.JLabel();
-        LabelCliente_Nid1 = new javax.swing.JLabel();
-        TextFieldCliente_Nid1 = new javax.swing.JTextField();
-        LabelCliente_Nombre10 = new javax.swing.JLabel();
-        TextFieldCliente_Nombre1 = new javax.swing.JTextField();
-        LabelCliente_Apellido1 = new javax.swing.JLabel();
-        TextFieldCliente_Apellido1 = new javax.swing.JTextField();
-        LabelCliente_Email1 = new javax.swing.JLabel();
-        TextFieldCliente_Email1 = new javax.swing.JTextField();
+        LabelInventario_codigo = new javax.swing.JLabel();
+        TextFieldInventario_codigo = new javax.swing.JTextField();
+        LabelInventario_nombre = new javax.swing.JLabel();
+        TextFieldInventario_nombre = new javax.swing.JTextField();
+        LabelInventario_stock = new javax.swing.JLabel();
+        TextFieldInventario_stock = new javax.swing.JTextField();
+        LabelInventario_precio = new javax.swing.JLabel();
+        TextFieldInventario_precio = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
-        TableInventario_Suministro = new rojerusan.RSTableMetro();
+        TableInventario_Suministro =   TableInventario_Suministro= new rojerusan.RSTableMetro(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
         rSMaterialButtonRectangle8 = new rojerusan.RSMaterialButtonRectangle();
         rSMaterialButtonRectangle9 = new rojerusan.RSMaterialButtonRectangle();
         LabelCliente_Nombre9 = new javax.swing.JLabel();
-        SpinnerPaginas_Clientes3 = new javax.swing.JSpinner();
-        LabelCliente_Paginas3 = new javax.swing.JLabel();
+        SpinnerPaginasInventario_suministro = new javax.swing.JSpinner();
+        LabelInventarioSuministro_Paginas = new javax.swing.JLabel();
         ButtonCliente_Paginas13 = new javax.swing.JButton();
         ButtonCliente_Paginas14 = new javax.swing.JButton();
         ButtonCliente_Paginas15 = new javax.swing.JButton();
@@ -1144,52 +1152,52 @@ public class Sistema extends javax.swing.JFrame {
         labelReport_Nombre1.setBackground(new java.awt.Color(70, 106, 124));
         labelReport_Nombre1.setText("Administrar Suministro");
 
-        LabelCliente_Nid1.setBackground(new java.awt.Color(70, 106, 124));
-        LabelCliente_Nid1.setText("Código");
+        LabelInventario_codigo.setBackground(new java.awt.Color(70, 106, 124));
+        LabelInventario_codigo.setText("Código");
 
-        TextFieldCliente_Nid1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        TextFieldCliente_Nid1.addKeyListener(new java.awt.event.KeyAdapter() {
+        TextFieldInventario_codigo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        TextFieldInventario_codigo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                TextFieldCliente_Nid1KeyReleased(evt);
+                TextFieldInventario_codigoKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                TextFieldCliente_Nid1KeyTyped(evt);
+                TextFieldInventario_codigoKeyTyped(evt);
             }
         });
 
-        LabelCliente_Nombre10.setBackground(new java.awt.Color(70, 106, 124));
-        LabelCliente_Nombre10.setText("Nombre");
+        LabelInventario_nombre.setBackground(new java.awt.Color(70, 106, 124));
+        LabelInventario_nombre.setText("Nombre");
 
-        TextFieldCliente_Nombre1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        TextFieldCliente_Nombre1.addKeyListener(new java.awt.event.KeyAdapter() {
+        TextFieldInventario_nombre.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        TextFieldInventario_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                TextFieldCliente_Nombre1KeyReleased(evt);
+                TextFieldInventario_nombreKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                TextFieldCliente_Nombre1KeyTyped(evt);
+                TextFieldInventario_nombreKeyTyped(evt);
             }
         });
 
-        LabelCliente_Apellido1.setBackground(new java.awt.Color(70, 106, 124));
-        LabelCliente_Apellido1.setText("Stock");
+        LabelInventario_stock.setBackground(new java.awt.Color(70, 106, 124));
+        LabelInventario_stock.setText("Stock");
 
-        TextFieldCliente_Apellido1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        TextFieldCliente_Apellido1.addKeyListener(new java.awt.event.KeyAdapter() {
+        TextFieldInventario_stock.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        TextFieldInventario_stock.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                TextFieldCliente_Apellido1KeyReleased(evt);
+                TextFieldInventario_stockKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                TextFieldCliente_Apellido1KeyTyped(evt);
+                TextFieldInventario_stockKeyTyped(evt);
             }
         });
 
-        LabelCliente_Email1.setBackground(new java.awt.Color(70, 106, 124));
-        LabelCliente_Email1.setText("Precio");
+        LabelInventario_precio.setBackground(new java.awt.Color(70, 106, 124));
+        LabelInventario_precio.setText("Precio");
 
-        TextFieldCliente_Email1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        TextFieldCliente_Email1.addKeyListener(new java.awt.event.KeyAdapter() {
+        TextFieldInventario_precio.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        TextFieldInventario_precio.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                TextFieldCliente_Email1KeyReleased(evt);
+                TextFieldInventario_precioKeyReleased(evt);
             }
         });
 
@@ -1204,26 +1212,26 @@ public class Sistema extends javax.swing.JFrame {
                         .addComponent(labelReport_Nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel30Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(TextFieldCliente_Nid1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TextFieldInventario_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(TextFieldCliente_Nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(TextFieldInventario_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(jPanel30Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel30Layout.createSequentialGroup()
-                        .addComponent(LabelCliente_Nid1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LabelInventario_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(LabelCliente_Nombre10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LabelInventario_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20))
                     .addGroup(jPanel30Layout.createSequentialGroup()
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(TextFieldCliente_Apellido1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelCliente_Apellido1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
+                            .addComponent(TextFieldInventario_stock, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LabelInventario_stock, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelCliente_Email1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TextFieldCliente_Email1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LabelInventario_precio, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextFieldInventario_precio, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel30Layout.setVerticalGroup(
@@ -1233,20 +1241,20 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(labelReport_Nombre1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelCliente_Nid1)
-                    .addComponent(LabelCliente_Nombre10))
+                    .addComponent(LabelInventario_codigo)
+                    .addComponent(LabelInventario_nombre))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TextFieldCliente_Nid1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TextFieldCliente_Nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TextFieldInventario_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TextFieldInventario_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelCliente_Apellido1)
-                    .addComponent(LabelCliente_Email1))
+                    .addComponent(LabelInventario_stock)
+                    .addComponent(LabelInventario_precio))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TextFieldCliente_Apellido1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TextFieldCliente_Email1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TextFieldInventario_stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TextFieldInventario_precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(175, Short.MAX_VALUE))
         );
 
@@ -1261,6 +1269,16 @@ public class Sistema extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableInventario_Suministro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableInventario_SuministroMouseClicked(evt);
+            }
+        });
+        TableInventario_Suministro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TableInventario_SuministroKeyReleased(evt);
+            }
+        });
         jScrollPane4.setViewportView(TableInventario_Suministro);
 
         rSMaterialButtonRectangle8.setBackground(new java.awt.Color(255, 102, 0));
@@ -1284,14 +1302,14 @@ public class Sistema extends javax.swing.JFrame {
         LabelCliente_Nombre9.setBackground(new java.awt.Color(70, 106, 124));
         LabelCliente_Nombre9.setText("Registros por paginas");
 
-        SpinnerPaginas_Clientes3.addChangeListener(new javax.swing.event.ChangeListener() {
+        SpinnerPaginasInventario_suministro.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                SpinnerPaginas_Clientes3StateChanged(evt);
+                SpinnerPaginasInventario_suministroStateChanged(evt);
             }
         });
 
-        LabelCliente_Paginas3.setBackground(new java.awt.Color(70, 106, 124));
-        LabelCliente_Paginas3.setText("Paaginas");
+        LabelInventarioSuministro_Paginas.setBackground(new java.awt.Color(70, 106, 124));
+        LabelInventarioSuministro_Paginas.setText("Paaginas");
 
         ButtonCliente_Paginas13.setBackground(new java.awt.Color(51, 51, 51));
         ButtonCliente_Paginas13.setForeground(new java.awt.Color(51, 51, 51));
@@ -1355,9 +1373,9 @@ public class Sistema extends javax.swing.JFrame {
                             .addGroup(jPanel29Layout.createSequentialGroup()
                                 .addComponent(LabelCliente_Nombre9)
                                 .addGap(373, 373, 373)
-                                .addComponent(LabelCliente_Paginas3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(LabelInventarioSuministro_Paginas, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel29Layout.createSequentialGroup()
-                                .addComponent(SpinnerPaginas_Clientes3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(SpinnerPaginasInventario_suministro, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(295, 295, 295)
                                 .addComponent(ButtonCliente_Paginas13, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1386,10 +1404,10 @@ public class Sistema extends javax.swing.JFrame {
                         .addGap(5, 5, 5)
                         .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LabelCliente_Nombre9)
-                            .addComponent(LabelCliente_Paginas3))
+                            .addComponent(LabelInventarioSuministro_Paginas))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SpinnerPaginas_Clientes3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SpinnerPaginasInventario_suministro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ButtonCliente_Paginas13, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ButtonCliente_Paginas14, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ButtonCliente_Paginas15, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1986,8 +2004,33 @@ public class Sistema extends javax.swing.JFrame {
         ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(true);
 
+        ArrayList<JLabel> label = new ArrayList();
+        label.add(LabelCliente_Nid);
+        label.add(LabelCliente_Nombre);
+        label.add(LabelCliente_Apellido);
+        label.add(LabelCliente_Email);
+        label.add(LabelCliente_Telefono);
+        label.add(LabelCliente_Direccion);
+        label.add(LabelImage_Cliente);
+        label.add(LabelCliente_Paginas1);
+        ArrayList<JTextField> textField = new ArrayList();
+        textField.add(TextFieldCliente_Nid);
+        textField.add(TextFieldCliente_Nombre);
+        textField.add(TextFieldCliente_Apellido);
+        textField.add(TextFieldCliente_Email);
+        textField.add(TextFieldCliente_Telefono);
+        textField.add(TextFieldCliente_Direccion);
+        Object[] objects = {
+            CheckBoxCliente_Credito,
+            rSTableMetro1,
+            SpinnerPaginas_Clientes1,
+            TableCliente_Report
+        };
+        cliente = new ClientesVM(objects, label, textField);
+
 
     }//GEN-LAST:event_BtnVentasActionPerformed
+    private SuministroVM suministro;
 
     private void ButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInventarioActionPerformed
         TabbedPanePrincipal.setSelectedIndex(1);
@@ -1997,32 +2040,24 @@ public class Sistema extends javax.swing.JFrame {
         ButtonCotizacion.setEnabled(true);
         ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(true);
-        
-        // aqui van a ir todos los datos del inventario
-//        ArrayList<JLabel> label = new ArrayList();
-//        label.add(LabelCliente_Nid);
-//        label.add(LabelCliente_Nombre);
-//        label.add(LabelCliente_Apellido);
-//        label.add(LabelCliente_Email);
-//        label.add(LabelCliente_Telefono);
-//        label.add(LabelCliente_Direccion);
-//        label.add(LabelImage_Cliente);
-//        label.add(LabelCliente_Paginas);
-//        ArrayList<JTextField> textField = new ArrayList();
-//        textField.add(TextFieldCliente_Nid);
-//        textField.add(TextFieldCliente_Nombre);
-//        textField.add(TextFieldCliente_Apellido);
-//        textField.add(TextFieldCliente_Email);
-//        textField.add(TextFieldCliente_Telefono);
-//        textField.add(TextFieldCliente_Direccion);
-//        Object[] objects = {
-//            CheckBoxCliente_Credito,
-//            TableInventario_Suministro,
-//            SpinnerPaginas_Clientes,
-//            TableCliente_Report
-//        };
-//        cliente = new ClientesVM(objects, label, textField);
 
+        //  aqui van a ir todos los datos del inventario
+        ArrayList<JLabel> label = new ArrayList();
+        label.add(LabelInventario_codigo);
+        label.add(LabelInventario_nombre);
+        label.add(LabelInventario_stock);
+        label.add(LabelInventario_precio);
+        label.add(LabelInventarioSuministro_Paginas);
+        ArrayList<JTextField> textField = new ArrayList();
+        textField.add(TextFieldInventario_codigo);
+        textField.add(TextFieldInventario_nombre);
+        textField.add(TextFieldInventario_stock);
+        textField.add(TextFieldInventario_precio);
+        Object[] objects1 = {
+            TableInventario_Suministro,
+            SpinnerPaginasInventario_suministro
+        };
+        suministro = new SuministroVM(objects1, label, textField);
 
     }//GEN-LAST:event_ButtonInventarioActionPerformed
 
@@ -2278,31 +2313,48 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_Table_ClientesMouseClicked
 
     private void rSMaterialButtonRectangle8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle8ActionPerformed
-        // TODO add your handling code here:
+        suministro.RegistrarSuministro();
+
+        if (suministro.getInsert()) {
+            alertas.AlertSuccess alerta = new alertas.AlertSuccess(this, true);
+            alerta.Texto("Se ha registrado Correctamente");
+            alerta.setVisible(true);
+            suministro.setInsert(false);
+        }
+        if (suministro.getUpdate()) {
+            alertas.AlertSuccess alerta = new alertas.AlertSuccess(this, true);
+            alerta.Texto("Se ha Modificado Correctamente");
+            alerta.setVisible(true);
+            suministro.setUpdate(false);
+        }
     }//GEN-LAST:event_rSMaterialButtonRectangle8ActionPerformed
 
     private void rSMaterialButtonRectangle9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSMaterialButtonRectangle9ActionPerformed
+        alertas.AlertWarning alerta = new alertas.AlertWarning(this, true);
+        alerta.AgregarTexto("Seguro quieres cancelar", "Si", "No");
+        alerta.setVisible(true);
+        if (alerta.bandera) {
+            suministro.restablecer();
+        }    }//GEN-LAST:event_rSMaterialButtonRectangle9ActionPerformed
 
-    private void SpinnerPaginas_Clientes3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SpinnerPaginas_Clientes3StateChanged
+    private void SpinnerPaginasInventario_suministroStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SpinnerPaginasInventario_suministroStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_SpinnerPaginas_Clientes3StateChanged
+    }//GEN-LAST:event_SpinnerPaginasInventario_suministroStateChanged
 
     private void ButtonCliente_Paginas13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas13ActionPerformed
-        // TODO add your handling code here:
+        suministro.Paginador("Primero");
     }//GEN-LAST:event_ButtonCliente_Paginas13ActionPerformed
 
     private void ButtonCliente_Paginas14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas14ActionPerformed
-        // TODO add your handling code here:
+        suministro.Paginador("Anterior");
     }//GEN-LAST:event_ButtonCliente_Paginas14ActionPerformed
 
     private void ButtonCliente_Paginas15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas15ActionPerformed
-        // TODO add your handling code here:
+        suministro.Paginador("Siguiente");
     }//GEN-LAST:event_ButtonCliente_Paginas15ActionPerformed
 
     private void ButtonCliente_Paginas16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas16ActionPerformed
-        // TODO add your handling code here:
+        suministro.Paginador("Ultimo");
     }//GEN-LAST:event_ButtonCliente_Paginas16ActionPerformed
 
     private void jTabbedPaneInventarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTabbedPaneInventarioKeyPressed
@@ -2313,46 +2365,60 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_jTabbedPaneInventarioKeyPressed
 
     private void jTabbedPaneInventarioStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPaneInventarioStateChanged
-        switch (jTabbedPaneInventario.getSelectedIndex()) {
-            case 1:
-                TextField_BuscarInventario.setEditable(false);
-                break;
 
-            case 0:
-                TextField_BuscarInventario.setEditable(true);
-                break;
-        }
 
+//        switch (jTabbedPaneInventario.getSelectedIndex()) {
+//            case 1:
+//
+//                TextField_BuscarInventario.setEditable(false);
+//                break;
+//
+//            case 0:
+//                TextField_BuscarInventario.setEditable(true);
+//                break;
+//        }
 
     }//GEN-LAST:event_jTabbedPaneInventarioStateChanged
 
-    private void TextFieldCliente_Nid1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_Nid1KeyReleased
+    private void TextFieldInventario_codigoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_codigoKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldCliente_Nid1KeyReleased
+    }//GEN-LAST:event_TextFieldInventario_codigoKeyReleased
 
-    private void TextFieldCliente_Nid1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_Nid1KeyTyped
+    private void TextFieldInventario_codigoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_codigoKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldCliente_Nid1KeyTyped
+    }//GEN-LAST:event_TextFieldInventario_codigoKeyTyped
 
-    private void TextFieldCliente_Nombre1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_Nombre1KeyReleased
+    private void TextFieldInventario_nombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_nombreKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldCliente_Nombre1KeyReleased
+    }//GEN-LAST:event_TextFieldInventario_nombreKeyReleased
 
-    private void TextFieldCliente_Nombre1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_Nombre1KeyTyped
+    private void TextFieldInventario_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_nombreKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldCliente_Nombre1KeyTyped
+    }//GEN-LAST:event_TextFieldInventario_nombreKeyTyped
 
-    private void TextFieldCliente_Apellido1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_Apellido1KeyReleased
+    private void TextFieldInventario_stockKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_stockKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldCliente_Apellido1KeyReleased
+    }//GEN-LAST:event_TextFieldInventario_stockKeyReleased
 
-    private void TextFieldCliente_Apellido1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_Apellido1KeyTyped
+    private void TextFieldInventario_stockKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_stockKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldCliente_Apellido1KeyTyped
+    }//GEN-LAST:event_TextFieldInventario_stockKeyTyped
 
-    private void TextFieldCliente_Email1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldCliente_Email1KeyReleased
+    private void TextFieldInventario_precioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_precioKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldCliente_Email1KeyReleased
+    }//GEN-LAST:event_TextFieldInventario_precioKeyReleased
+
+    private void TableInventario_SuministroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TableInventario_SuministroKeyReleased
+        if (TableInventario_Suministro.getSelectedRows().length > 0) {
+            suministro.GetCliente();
+        }
+    }//GEN-LAST:event_TableInventario_SuministroKeyReleased
+
+    private void TableInventario_SuministroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableInventario_SuministroMouseClicked
+        if (TableInventario_Suministro.getSelectedRows().length > 0) {
+            suministro.GetCliente();
+        }
+    }//GEN-LAST:event_TableInventario_SuministroMouseClicked
 
     // </editor-fold>
     /**
@@ -2415,15 +2481,11 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JButton ButtonInventario;
     private javax.swing.JCheckBox CheckBoxCliente_Credito;
     private javax.swing.JLabel LabelCliente_Apellido;
-    private javax.swing.JLabel LabelCliente_Apellido1;
     private javax.swing.JLabel LabelCliente_Direccion;
     private javax.swing.JLabel LabelCliente_Email;
-    private javax.swing.JLabel LabelCliente_Email1;
     private javax.swing.JLabel LabelCliente_Nid;
-    private javax.swing.JLabel LabelCliente_Nid1;
     private javax.swing.JLabel LabelCliente_Nombre;
     private javax.swing.JLabel LabelCliente_Nombre1;
-    private javax.swing.JLabel LabelCliente_Nombre10;
     private javax.swing.JLabel LabelCliente_Nombre2;
     private javax.swing.JLabel LabelCliente_Nombre3;
     private javax.swing.JLabel LabelCliente_Nombre4;
@@ -2435,13 +2497,17 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel LabelCliente_Paginas;
     private javax.swing.JLabel LabelCliente_Paginas1;
     private javax.swing.JLabel LabelCliente_Paginas2;
-    private javax.swing.JLabel LabelCliente_Paginas3;
     private javax.swing.JLabel LabelCliente_Telefono;
     private javax.swing.JLabel LabelImage_Cliente;
+    private javax.swing.JLabel LabelInventarioSuministro_Paginas;
+    private javax.swing.JLabel LabelInventario_codigo;
+    private javax.swing.JLabel LabelInventario_nombre;
+    private javax.swing.JLabel LabelInventario_precio;
+    private javax.swing.JLabel LabelInventario_stock;
+    private javax.swing.JSpinner SpinnerPaginasInventario_suministro;
     private javax.swing.JSpinner SpinnerPaginas_Clientes;
     private javax.swing.JSpinner SpinnerPaginas_Clientes1;
     private javax.swing.JSpinner SpinnerPaginas_Clientes2;
-    private javax.swing.JSpinner SpinnerPaginas_Clientes3;
     private javax.swing.JTabbedPane TabbedPaneCliente1;
     private javax.swing.JTabbedPane TabbedPaneCliente2;
     private javax.swing.JTabbedPane TabbedPanePrincipal;
@@ -2449,16 +2515,16 @@ public class Sistema extends javax.swing.JFrame {
     private rojerusan.RSTableMetro TableInventario_Suministro;
     private javax.swing.JTable Table_Clientes;
     private javax.swing.JTextField TextFieldCliente_Apellido;
-    private javax.swing.JTextField TextFieldCliente_Apellido1;
     private javax.swing.JTextField TextFieldCliente_Direccion;
     private javax.swing.JTextField TextFieldCliente_Email;
-    private javax.swing.JTextField TextFieldCliente_Email1;
     private javax.swing.JTextField TextFieldCliente_Nid;
-    private javax.swing.JTextField TextFieldCliente_Nid1;
     private javax.swing.JTextField TextFieldCliente_Nombre;
-    private javax.swing.JTextField TextFieldCliente_Nombre1;
     private javax.swing.JTextField TextFieldCliente_Telefono;
     private javax.swing.JTextField TextFieldClientes_Pagos;
+    private javax.swing.JTextField TextFieldInventario_codigo;
+    private javax.swing.JTextField TextFieldInventario_nombre;
+    private javax.swing.JTextField TextFieldInventario_precio;
+    private javax.swing.JTextField TextFieldInventario_stock;
     private javax.swing.JTextField TextField_BuscarCliente;
     private javax.swing.JTextField TextField_BuscarCliente3;
     private javax.swing.JTextField TextField_BuscarCliente4;

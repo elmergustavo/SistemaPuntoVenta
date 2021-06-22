@@ -1778,10 +1778,10 @@
                                               <Group type="102" attributes="0">
                                                   <Component id="LabelCliente_Nombre9" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="373" max="-2" attributes="0"/>
-                                                  <Component id="LabelCliente_Paginas3" min="-2" pref="112" max="-2" attributes="0"/>
+                                                  <Component id="LabelInventarioSuministro_Paginas" min="-2" pref="112" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="SpinnerPaginas_Clientes3" min="-2" pref="54" max="-2" attributes="0"/>
+                                                  <Component id="SpinnerPaginasInventario_suministro" min="-2" pref="54" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="295" max="-2" attributes="0"/>
                                                   <Component id="ButtonCliente_Paginas13" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -1819,11 +1819,11 @@
                                           <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="LabelCliente_Nombre9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="LabelCliente_Paginas3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="LabelInventarioSuministro_Paginas" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="SpinnerPaginas_Clientes3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="SpinnerPaginasInventario_suministro" min="-2" max="-2" attributes="0"/>
                                               <Component id="ButtonCliente_Paginas13" min="-2" pref="36" max="-2" attributes="0"/>
                                               <Component id="ButtonCliente_Paginas14" min="-2" pref="36" max="-2" attributes="0"/>
                                               <Component id="ButtonCliente_Paginas15" min="-2" pref="36" max="-2" attributes="0"/>
@@ -1860,9 +1860,9 @@
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="TextFieldCliente_Nid1" min="-2" pref="166" max="-2" attributes="0"/>
+                                              <Component id="TextFieldInventario_codigo" min="-2" pref="166" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="TextFieldCliente_Nombre1" min="-2" pref="166" max="-2" attributes="0"/>
+                                              <Component id="TextFieldInventario_nombre" min="-2" pref="166" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace pref="18" max="32767" attributes="0"/>
@@ -1871,20 +1871,20 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Component id="LabelCliente_Nid1" min="-2" pref="113" max="-2" attributes="0"/>
+                                              <Component id="LabelInventario_codigo" min="-2" pref="113" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="LabelCliente_Nombre10" min="-2" pref="160" max="-2" attributes="0"/>
+                                              <Component id="LabelInventario_nombre" min="-2" pref="160" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="TextFieldCliente_Apellido1" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="LabelCliente_Apellido1" alignment="0" pref="166" max="32767" attributes="0"/>
+                                                  <Component id="TextFieldInventario_stock" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="LabelInventario_stock" alignment="0" pref="166" max="32767" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="LabelCliente_Email1" min="-2" pref="166" max="-2" attributes="0"/>
-                                                  <Component id="TextFieldCliente_Email1" min="-2" pref="166" max="-2" attributes="0"/>
+                                                  <Component id="LabelInventario_precio" min="-2" pref="166" max="-2" attributes="0"/>
+                                                  <Component id="TextFieldInventario_precio" min="-2" pref="166" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="32767" attributes="0"/>
                                           </Group>
@@ -1899,23 +1899,23 @@
                                       <Component id="labelReport_Nombre1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="LabelCliente_Nid1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="LabelCliente_Nombre10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelInventario_codigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelInventario_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="TextFieldCliente_Nid1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="TextFieldCliente_Nombre1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="TextFieldInventario_codigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="TextFieldInventario_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="LabelCliente_Apellido1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="LabelCliente_Email1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelInventario_stock" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelInventario_precio" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="TextFieldCliente_Apellido1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="TextFieldCliente_Email1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="TextFieldInventario_stock" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="TextFieldInventario_precio" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="175" max="32767" attributes="0"/>
                                   </Group>
@@ -1931,7 +1931,7 @@
                                 <Property name="text" type="java.lang.String" value="Administrar Suministro"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JLabel" name="LabelCliente_Nid1">
+                            <Component class="javax.swing.JLabel" name="LabelInventario_codigo">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="7c" green="6a" red="46" type="rgb"/>
@@ -1939,18 +1939,18 @@
                                 <Property name="text" type="java.lang.String" value="C&#xf3;digo"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="TextFieldCliente_Nid1">
+                            <Component class="javax.swing.JTextField" name="TextFieldInventario_codigo">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Dialog" size="14" style="0"/>
                                 </Property>
                               </Properties>
                               <Events>
-                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldCliente_Nid1KeyReleased"/>
-                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldCliente_Nid1KeyTyped"/>
+                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldInventario_codigoKeyReleased"/>
+                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldInventario_codigoKeyTyped"/>
                               </Events>
                             </Component>
-                            <Component class="javax.swing.JLabel" name="LabelCliente_Nombre10">
+                            <Component class="javax.swing.JLabel" name="LabelInventario_nombre">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="7c" green="6a" red="46" type="rgb"/>
@@ -1958,18 +1958,18 @@
                                 <Property name="text" type="java.lang.String" value="Nombre"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="TextFieldCliente_Nombre1">
+                            <Component class="javax.swing.JTextField" name="TextFieldInventario_nombre">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Dialog" size="14" style="0"/>
                                 </Property>
                               </Properties>
                               <Events>
-                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldCliente_Nombre1KeyReleased"/>
-                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldCliente_Nombre1KeyTyped"/>
+                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldInventario_nombreKeyReleased"/>
+                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldInventario_nombreKeyTyped"/>
                               </Events>
                             </Component>
-                            <Component class="javax.swing.JLabel" name="LabelCliente_Apellido1">
+                            <Component class="javax.swing.JLabel" name="LabelInventario_stock">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="7c" green="6a" red="46" type="rgb"/>
@@ -1977,18 +1977,18 @@
                                 <Property name="text" type="java.lang.String" value="Stock"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="TextFieldCliente_Apellido1">
+                            <Component class="javax.swing.JTextField" name="TextFieldInventario_stock">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Dialog" size="14" style="0"/>
                                 </Property>
                               </Properties>
                               <Events>
-                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldCliente_Apellido1KeyReleased"/>
-                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldCliente_Apellido1KeyTyped"/>
+                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldInventario_stockKeyReleased"/>
+                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldInventario_stockKeyTyped"/>
                               </Events>
                             </Component>
-                            <Component class="javax.swing.JLabel" name="LabelCliente_Email1">
+                            <Component class="javax.swing.JLabel" name="LabelInventario_precio">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="7c" green="6a" red="46" type="rgb"/>
@@ -1996,14 +1996,14 @@
                                 <Property name="text" type="java.lang.String" value="Precio"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="TextFieldCliente_Email1">
+                            <Component class="javax.swing.JTextField" name="TextFieldInventario_precio">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Dialog" size="14" style="0"/>
                                 </Property>
                               </Properties>
                               <Events>
-                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldCliente_Email1KeyReleased"/>
+                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldInventario_precioKeyReleased"/>
                               </Events>
                             </Component>
                           </SubComponents>
@@ -2026,6 +2026,13 @@
                                   </Table>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TableInventario_SuministroMouseClicked"/>
+                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TableInventario_SuministroKeyReleased"/>
+                              </Events>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="  TableInventario_Suministro= new rojerusan.RSTableMetro(){&#xd;&#xa;    public boolean isCellEditable(int rowIndex, int colIndex) {&#xd;&#xa;        return false; //Disallow the editing of any cell&#xd;&#xa;    }&#xd;&#xa;};"/>
+                              </AuxValues>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -2065,12 +2072,12 @@
                             <Property name="text" type="java.lang.String" value="Registros por paginas"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JSpinner" name="SpinnerPaginas_Clientes3">
+                        <Component class="javax.swing.JSpinner" name="SpinnerPaginasInventario_suministro">
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="SpinnerPaginas_Clientes3StateChanged"/>
+                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="SpinnerPaginasInventario_suministroStateChanged"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelCliente_Paginas3">
+                        <Component class="javax.swing.JLabel" name="LabelInventarioSuministro_Paginas">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="7c" green="6a" red="46" type="rgb"/>
