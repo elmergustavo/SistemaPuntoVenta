@@ -5,6 +5,7 @@
  */
 package Conexion;
 
+import Models.TCategoria;
 import Models.TClientes;
 import Models.TReportes_clientes;
 import Models.TSuministro;
@@ -63,6 +64,17 @@ public class Consult /*extends Conexion*/ {
             JOptionPane.showMessageDialog(null, "Error : " + ex);
         }
         return suministro;
+    }
+    
+    public List<TCategoria> categorias() {
+        List<TCategoria> categoria = new ArrayList();
+        try {
+            categoria = (List<TCategoria>) QR.query(conexion.getConnection(), "SELECT * FROM categorias",
+                    new BeanListHandler(TCategoria.class));
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error : " + ex);
+        }
+        return categoria;
     }
 
 }

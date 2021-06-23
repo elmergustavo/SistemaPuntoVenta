@@ -39,14 +39,14 @@ import org.apache.commons.dbutils.handlers.ColumnListHandler;
 public class SuministroVM extends Consult {
 
     private String _accion = "insert";
-    private final  ArrayList<JLabel> _label;
-    private final  ArrayList<JTextField> _textField;
-    private final  JTable _tableSuministro, _tableBodega;
+    private final ArrayList<JLabel> _label;
+    private final ArrayList<JTextField> _textField;
+    private final JTable _tableSuministro, _tableBodega;
     private DefaultTableModel modelo1;
-    private   JSpinner _spinnerPaginas;
+    private JSpinner _spinnerPaginas;
     private int _idCliente = 0;
-    private  int _reg_por_pagina = 10;
-    private  int _num_pagina = 1;
+    private int _reg_por_pagina = 10;
+    private int _num_pagina = 1;
     public int seccion;
     private Paginador<TSuministro> _paginadorSuministro;
     private boolean Insert;
@@ -61,8 +61,8 @@ public class SuministroVM extends Consult {
         _tableSuministro = (JTable) objects[0];
         _tableBodega = (JTable) objects[1];
         _spinnerPaginas = (JSpinner) objects[2];
-         restablecer();
-       //  RestablecerReport();
+        restablecer();
+        //  RestablecerReport();
         this.Insert = false;
         this.Update = false;
     }
@@ -195,16 +195,17 @@ public class SuministroVM extends Consult {
             conexion.getConnection().setAutoCommit(false);
             switch (_accion) {
                 case "insert":
-                    String sqlInventario1 = "INSERT INTO suministros(Codigo, Nombre, Stock,Precio)"
-                            + " VALUES(?,?,?,?)";
+                    String sqlInventario1 = "INSERT INTO suministros(Codigo, Nombre, Stock,Precio,Categoria)"
+                            + " VALUES(?,?,?,?,?)";
                     Object[] dataInventarioSuministro = {
                         _textField.get(0).getText(),
                         _textField.get(1).getText(),
                         _textField.get(2).getText(),
-                        _textField.get(3).getText(),};
+                        _textField.get(3).getText(),
+                        _textField.get(4).getText(),};
                     qr.insert(conexion.getConnection(), sqlInventario1, new ColumnListHandler(), dataInventarioSuministro);
                     List<TSuministro> suministro = suministros();
-                    suministro.get(suministro.size() -1).getIdSuministro();
+                    suministro.get(suministro.size() - 1).getIdSuministro();
                     Insert = true;
                     break;
                 case "update":
@@ -212,9 +213,10 @@ public class SuministroVM extends Consult {
                         _textField.get(0).getText(),
                         _textField.get(1).getText(),
                         _textField.get(2).getText(),
-                        _textField.get(3).getText(),};
-                    String sqlInventario2 = "UPDATE suministros SET Codigo = ?,Nombre = ?,Stock = ?,"
-                            + "Precio = ? WHERE IdSuministro =" + _idCliente;
+                        _textField.get(3).getText(),
+                        _textField.get(4).getText(),};
+                    String sqlInventario2 = "UPDATE suministros SET Codigo = ?,Nombre = ?,Stock = ?,Precio = ?"
+                            + "Categoria = ? WHERE IdSuministro =" + _idCliente;
                     qr.update(conexion.getConnection(), sqlInventario2, dataCliente2);
                     Update = true;
                     break;
@@ -228,7 +230,6 @@ public class SuministroVM extends Consult {
         }
     }
 
-     
     public void GetCliente() {
         _accion = "update";
         System.out.println("entro a getCliente");
@@ -238,6 +239,7 @@ public class SuministroVM extends Consult {
         _textField.get(1).setText((String) modelo1.getValueAt(filas, 2));
         _textField.get(2).setText((String) modelo1.getValueAt(filas, 3));
         _textField.get(3).setText((String) modelo1.getValueAt(filas, 4));
+        _textField.get(4).setText((String) modelo1.getValueAt(filas, 5));
     }
 
     public final void restablecer() {
@@ -269,13 +271,13 @@ public class SuministroVM extends Consult {
         _spinnerPaginas.setModel(model);
         SearchClientes("");
     }
-    
+
     private List<TSuministro> listSuministros;
-   
+
     public void SearchClientes(String campo) {
         List<TSuministro> suministroFilter;
         String[] titulos = {"IdSuministro", "Codigo", "Nombre", "Stock",
-            "Precio"};
+            "Precio", "Categoria"};
         modelo1 = new DefaultTableModel(null, titulos);
         int inicio = (_num_pagina - 1) * _reg_por_pagina;
         if (campo.equals("")) {
@@ -295,7 +297,8 @@ public class SuministroVM extends Consult {
                     item.getCodigo(),
                     item.getNombre(),
                     item.getStock(),
-                    item.getPrecio()
+                    item.getPrecio(),
+                    item.getCategoria(),
                 };
                 modelo1.addRow(registros);
             });
@@ -306,15 +309,15 @@ public class SuministroVM extends Consult {
         _tableSuministro.getColumnModel().getColumn(0).setMaxWidth(0);
         _tableSuministro.getColumnModel().getColumn(0).setMinWidth(0);
         _tableSuministro.getColumnModel().getColumn(0).setPreferredWidth(0);
-        
+
         _tableBodega.setModel(modelo1);
         _tableBodega.setRowHeight(30);
         _tableBodega.getColumnModel().getColumn(0).setMaxWidth(0);
         _tableBodega.getColumnModel().getColumn(0).setMinWidth(0);
         _tableBodega.getColumnModel().getColumn(0).setPreferredWidth(0);
-      
+
     }
-    
+
     public void Paginador(String metodo) {
         switch (metodo) {
             case "Primero":

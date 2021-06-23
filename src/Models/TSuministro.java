@@ -15,6 +15,15 @@ public class TSuministro {
     private String nombre;
     private String stock;
     private String precio;
+    private String categoria;
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
     
 
     public TSuministro() {

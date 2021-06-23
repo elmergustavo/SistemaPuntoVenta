@@ -5,7 +5,12 @@
         <group>
             <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Views/Sistema.java</file>
             <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Controller/SuministroVM.java</file>
-            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Controller/ClientesVM.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Models/TCategoria.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Library/Paginador.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Controller/CategoriaVM.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Models/TClientes.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Models/TReportes_clientes.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Models/TSuministro.java</file>
             <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Conexion/Consult.java</file>
         </group>
     </open-files>

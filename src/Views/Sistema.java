@@ -5,6 +5,7 @@
  */
 package Views;
 
+import Controller.CategoriaVM;
 import Library.Objectos;
 import Controller.ClientesVM;
 import Controller.SuministroVM;
@@ -137,6 +138,8 @@ public class Sistema extends javax.swing.JFrame {
         TextFieldInventario_stock = new javax.swing.JTextField();
         LabelInventario_precio = new javax.swing.JLabel();
         TextFieldInventario_precio = new javax.swing.JTextField();
+        LabelInventario_precio1 = new javax.swing.JLabel();
+        TextFieldInventario_categoria = new javax.swing.JTextField();
         rSMaterialButtonRectangle8 = new rojerusan.RSMaterialButtonRectangle();
         rSMaterialButtonRectangle9 = new rojerusan.RSMaterialButtonRectangle();
         ButtonCliente_Paginas16 = new javax.swing.JButton();
@@ -147,6 +150,14 @@ public class Sistema extends javax.swing.JFrame {
         LabelCliente_Nombre9 = new javax.swing.JLabel();
         SpinnerPaginasInventario_suministro = new javax.swing.JSpinner();
         jPanel23 = new javax.swing.JPanel();
+        labelReport_Nombre2 = new javax.swing.JLabel();
+        LabelInventario_CategoriaNombre = new javax.swing.JLabel();
+        TextFieldInventario_categoriaDescrip = new javax.swing.JTextField();
+        LabelInventario_CategoriaDescrip = new javax.swing.JLabel();
+        TextFieldInventario_CategoriaNombre = new javax.swing.JTextField();
+        rSMaterialButtonRectangle10 = new rojerusan.RSMaterialButtonRectangle();
+        rSMaterialButtonRectangle11 = new rojerusan.RSMaterialButtonRectangle();
+        jPanel35 = new javax.swing.JPanel();
         jTabbedPaneInventario2 = new javax.swing.JTabbedPane();
         jPanel24 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -159,6 +170,13 @@ public class Sistema extends javax.swing.JFrame {
             }
         };
         jPanel34 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        TableInventario_categoria = TableInventario_categoria = new rojerusan.RSTableMetro(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
+        jPanel36 = new javax.swing.JPanel();
         LabelCliente_Nombre2 = new javax.swing.JLabel();
         SpinnerPaginasInventario_suministro2 = new javax.swing.JSpinner();
         LabelInventarioSuministro_Paginas2 = new javax.swing.JLabel();
@@ -1121,6 +1139,19 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        LabelInventario_precio1.setBackground(new java.awt.Color(70, 106, 124));
+        LabelInventario_precio1.setText("Categoria");
+
+        TextFieldInventario_categoria.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        TextFieldInventario_categoria.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TextFieldInventario_categoriaKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TextFieldInventario_categoriaKeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
         jPanel30Layout.setHorizontalGroup(
@@ -1152,7 +1183,12 @@ public class Sistema extends javax.swing.JFrame {
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LabelInventario_precio, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TextFieldInventario_precio, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel30Layout.createSequentialGroup()
+                        .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(TextFieldInventario_categoria, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LabelInventario_precio1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1175,7 +1211,11 @@ public class Sistema extends javax.swing.JFrame {
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TextFieldInventario_stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TextFieldInventario_precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(LabelInventario_precio1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(TextFieldInventario_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         rSMaterialButtonRectangle8.setBackground(new java.awt.Color(255, 102, 0));
@@ -1189,7 +1229,7 @@ public class Sistema extends javax.swing.JFrame {
 
         rSMaterialButtonRectangle9.setBackground(new java.awt.Color(255, 102, 0));
         rSMaterialButtonRectangle9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
-        rSMaterialButtonRectangle9.setText("Eliminar");
+        rSMaterialButtonRectangle9.setText("Cancelar");
         rSMaterialButtonRectangle9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSMaterialButtonRectangle9ActionPerformed(evt);
@@ -1327,18 +1367,126 @@ public class Sistema extends javax.swing.JFrame {
 
         jTabbedPaneInventario1.addTab("Suministros", jPanel28);
 
+        jPanel23.setBackground(new java.awt.Color(255, 255, 255));
+
+        labelReport_Nombre2.setBackground(new java.awt.Color(70, 106, 124));
+        labelReport_Nombre2.setText("Administrar Categoria");
+
+        LabelInventario_CategoriaNombre.setBackground(new java.awt.Color(70, 106, 124));
+        LabelInventario_CategoriaNombre.setText("Nombre");
+
+        TextFieldInventario_categoriaDescrip.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        TextFieldInventario_categoriaDescrip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldInventario_categoriaDescripActionPerformed(evt);
+            }
+        });
+        TextFieldInventario_categoriaDescrip.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TextFieldInventario_categoriaDescripKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TextFieldInventario_categoriaDescripKeyTyped(evt);
+            }
+        });
+
+        LabelInventario_CategoriaDescrip.setBackground(new java.awt.Color(70, 106, 124));
+        LabelInventario_CategoriaDescrip.setText("Descripcion");
+
+        TextFieldInventario_CategoriaNombre.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        TextFieldInventario_CategoriaNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldInventario_CategoriaNombreActionPerformed(evt);
+            }
+        });
+        TextFieldInventario_CategoriaNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TextFieldInventario_CategoriaNombreKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TextFieldInventario_CategoriaNombreKeyTyped(evt);
+            }
+        });
+
+        rSMaterialButtonRectangle10.setBackground(new java.awt.Color(255, 102, 0));
+        rSMaterialButtonRectangle10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
+        rSMaterialButtonRectangle10.setText("Ingresar");
+        rSMaterialButtonRectangle10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSMaterialButtonRectangle10ActionPerformed(evt);
+            }
+        });
+
+        rSMaterialButtonRectangle11.setBackground(new java.awt.Color(255, 102, 0));
+        rSMaterialButtonRectangle11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
+        rSMaterialButtonRectangle11.setText("Cancelar");
+        rSMaterialButtonRectangle11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSMaterialButtonRectangle11ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
         jPanel23Layout.setHorizontalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 397, Short.MAX_VALUE)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGap(123, 123, 123)
+                        .addComponent(labelReport_Nombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(LabelInventario_CategoriaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(LabelInventario_CategoriaDescrip, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(TextFieldInventario_CategoriaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(rSMaterialButtonRectangle10, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextFieldInventario_categoriaDescrip, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(rSMaterialButtonRectangle11, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelReport_Nombre2)
+                .addGap(28, 28, 28)
+                .addComponent(LabelInventario_CategoriaNombre)
+                .addGap(29, 29, 29)
+                .addComponent(TextFieldInventario_CategoriaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(LabelInventario_CategoriaDescrip)
+                .addGap(18, 18, 18)
+                .addComponent(TextFieldInventario_categoriaDescrip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rSMaterialButtonRectangle10, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSMaterialButtonRectangle11, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(88, 88, 88))
+        );
+
+        jTabbedPaneInventario1.addTab("Categoria", jPanel23);
+
+        javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
+        jPanel35.setLayout(jPanel35Layout);
+        jPanel35Layout.setHorizontalGroup(
+            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 397, Short.MAX_VALUE)
+        );
+        jPanel35Layout.setVerticalGroup(
+            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 449, Short.MAX_VALUE)
         );
 
-        jTabbedPaneInventario1.addTab("platillos", jPanel23);
+        jTabbedPaneInventario1.addTab("Platillos", jPanel35);
 
         jPanel24.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1418,18 +1566,62 @@ public class Sistema extends javax.swing.JFrame {
 
         jTabbedPaneInventario2.addTab("Suministros", jPanel33);
 
+        jPanel34.setBackground(new java.awt.Color(255, 255, 255));
+
+        TableInventario_categoria.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        TableInventario_categoria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableInventario_categoriaMouseClicked(evt);
+            }
+        });
+        TableInventario_categoria.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TableInventario_categoriaKeyReleased(evt);
+            }
+        });
+        jScrollPane5.setViewportView(TableInventario_categoria);
+
         javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
         jPanel34Layout.setHorizontalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1321, Short.MAX_VALUE)
+            .addGroup(jPanel34Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 1309, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel34Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jTabbedPaneInventario2.addTab("Categoria", jPanel34);
+
+        javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
+        jPanel36.setLayout(jPanel36Layout);
+        jPanel36Layout.setHorizontalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1321, Short.MAX_VALUE)
+        );
+        jPanel36Layout.setVerticalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 351, Short.MAX_VALUE)
         );
 
-        jTabbedPaneInventario2.addTab("Platillos", jPanel34);
+        jTabbedPaneInventario2.addTab("Platillos", jPanel36);
 
         LabelCliente_Nombre2.setBackground(new java.awt.Color(70, 106, 124));
         LabelCliente_Nombre2.setText("Registros por paginas");
@@ -1957,6 +2149,7 @@ public class Sistema extends javax.swing.JFrame {
 
     }//GEN-LAST:event_BtnVentasActionPerformed
     private SuministroVM suministro;
+    private CategoriaVM categoria;
 
     private void ButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInventarioActionPerformed
         TabbedPanePrincipal.setSelectedIndex(1);
@@ -1979,6 +2172,7 @@ public class Sistema extends javax.swing.JFrame {
         textField.add(TextFieldInventario_nombreg);
         textField.add(TextFieldInventario_stock);
         textField.add(TextFieldInventario_precio);
+        textField.add(TextFieldInventario_categoria);
         Object[] objects1 = {
             xd,
             rSTableMetro3,
@@ -1986,6 +2180,19 @@ public class Sistema extends javax.swing.JFrame {
         };
         suministro = new SuministroVM(objects1, label, textField);
 
+        // datos de la categoria
+        ArrayList<JLabel> label2 = new ArrayList();
+        label2.add(LabelInventario_CategoriaNombre);
+        label2.add(LabelInventario_CategoriaDescrip);
+        label2.add(LabelInventarioSuministro_Paginas2);
+        ArrayList<JTextField> textField2 = new ArrayList();
+        textField2.add(TextFieldInventario_CategoriaNombre);
+        textField2.add(TextFieldInventario_categoriaDescrip);
+        Object[] objects2 = {
+            TableInventario_categoria,
+            SpinnerPaginasInventario_suministro2
+        };
+        categoria = new CategoriaVM(objects2, label2, textField2);
     }//GEN-LAST:event_ButtonInventarioActionPerformed
 
     private void ButtonCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCotizacionActionPerformed
@@ -2258,6 +2465,18 @@ public class Sistema extends javax.swing.JFrame {
                 jTabbedPaneInventario2.setSelectedIndex(1);
                 suministro.Registro_PaginasInventario();
                 break;
+            case 2:
+                suministro.seccion = 1;
+                jTabbedPaneInventario2.setSelectedIndex(2);
+                suministro.Registro_PaginasInventario();
+
+                break;
+
+            case 3:
+                //categoria.seccion = 1;
+                jTabbedPaneInventario2.setSelectedIndex(3);
+                // categoria.Registro_PaginasInventario();
+                break;
         }
 
     }//GEN-LAST:event_jTabbedPaneInventario1StateChanged
@@ -2296,6 +2515,8 @@ public class Sistema extends javax.swing.JFrame {
 
     private void SpinnerPaginasInventario_suministro2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SpinnerPaginasInventario_suministro2StateChanged
         suministro.Registro_PaginasInventario();
+
+
     }//GEN-LAST:event_SpinnerPaginasInventario_suministro2StateChanged
 
     private void ButtonCliente_Paginas5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas5ActionPerformed
@@ -2338,6 +2559,76 @@ public class Sistema extends javax.swing.JFrame {
             suministro.GetCliente();
         }
     }//GEN-LAST:event_xdMouseClicked
+
+    private void TextFieldInventario_categoriaDescripActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldInventario_categoriaDescripActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldInventario_categoriaDescripActionPerformed
+
+    private void TextFieldInventario_categoriaDescripKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_categoriaDescripKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldInventario_categoriaDescripKeyReleased
+
+    private void TextFieldInventario_categoriaDescripKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_categoriaDescripKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldInventario_categoriaDescripKeyTyped
+
+    private void TextFieldInventario_CategoriaNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldInventario_CategoriaNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldInventario_CategoriaNombreActionPerformed
+
+    private void TextFieldInventario_CategoriaNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_CategoriaNombreKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldInventario_CategoriaNombreKeyReleased
+
+    private void TextFieldInventario_CategoriaNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_CategoriaNombreKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldInventario_CategoriaNombreKeyTyped
+
+    private void TextFieldInventario_categoriaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_categoriaKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldInventario_categoriaKeyReleased
+
+    private void TextFieldInventario_categoriaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_categoriaKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldInventario_categoriaKeyTyped
+
+    private void rSMaterialButtonRectangle10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle10ActionPerformed
+        categoria.RegistrarSuministro();
+
+        if (categoria.getInsert()) {
+            alertas.AlertSuccess alerta = new alertas.AlertSuccess(this, true);
+            alerta.Texto("Se ha registrado Correctamente");
+            alerta.setVisible(true);
+            categoria.setInsert(false);
+        }
+        if (categoria.getUpdate()) {
+            alertas.AlertSuccess alerta = new alertas.AlertSuccess(this, true);
+            alerta.Texto("Se ha Modificado Correctamente");
+            alerta.setVisible(true);
+            categoria.setUpdate(false);
+        }
+    }//GEN-LAST:event_rSMaterialButtonRectangle10ActionPerformed
+
+    private void rSMaterialButtonRectangle11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle11ActionPerformed
+        alertas.AlertWarning alerta = new alertas.AlertWarning(this, true);
+        alerta.AgregarTexto("Seguro quieres cancelar", "Si", "No");
+        alerta.setVisible(true);
+        if (alerta.bandera) {
+            categoria.restablecer();
+        }
+    }//GEN-LAST:event_rSMaterialButtonRectangle11ActionPerformed
+
+    private void TableInventario_categoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableInventario_categoriaMouseClicked
+        if (TableInventario_categoria.getSelectedRows().length > 0) {
+            categoria.GetCategoria();
+        }
+    }//GEN-LAST:event_TableInventario_categoriaMouseClicked
+
+    private void TableInventario_categoriaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TableInventario_categoriaKeyReleased
+        if (TableInventario_categoria.getSelectedRows().length > 0) {
+            categoria.GetCategoria();
+        }
+    }//GEN-LAST:event_TableInventario_categoriaKeyReleased
 
     // </editor-fold>
     /**
@@ -2413,9 +2704,12 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel LabelImage_Cliente;
     private javax.swing.JLabel LabelInventarioSuministro_Paginas;
     private javax.swing.JLabel LabelInventarioSuministro_Paginas2;
+    private javax.swing.JLabel LabelInventario_CategoriaDescrip;
+    private javax.swing.JLabel LabelInventario_CategoriaNombre;
     private javax.swing.JLabel LabelInventario_codigo;
     private javax.swing.JLabel LabelInventario_nombre;
     private javax.swing.JLabel LabelInventario_precio;
+    private javax.swing.JLabel LabelInventario_precio1;
     private javax.swing.JLabel LabelInventario_stock;
     private javax.swing.JSpinner SpinnerPaginasInventario_suministro;
     private javax.swing.JSpinner SpinnerPaginasInventario_suministro2;
@@ -2424,6 +2718,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JTabbedPane TabbedPaneCliente2;
     private javax.swing.JTabbedPane TabbedPanePrincipal;
     private javax.swing.JTable TableCliente_Report;
+    private rojerusan.RSTableMetro TableInventario_categoria;
     private javax.swing.JTable Table_Clientes;
     private javax.swing.JTextField TextFieldCliente_Apellido;
     private javax.swing.JTextField TextFieldCliente_Direccion;
@@ -2432,6 +2727,9 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JTextField TextFieldCliente_Nombre;
     private javax.swing.JTextField TextFieldCliente_Telefono;
     private javax.swing.JTextField TextFieldClientes_Pagos;
+    private javax.swing.JTextField TextFieldInventario_CategoriaNombre;
+    private javax.swing.JTextField TextFieldInventario_categoria;
+    private javax.swing.JTextField TextFieldInventario_categoriaDescrip;
     private javax.swing.JTextField TextFieldInventario_codigo;
     private javax.swing.JTextField TextFieldInventario_nombreg;
     private javax.swing.JTextField TextFieldInventario_precio;
@@ -2482,6 +2780,8 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel34;
+    private javax.swing.JPanel jPanel35;
+    private javax.swing.JPanel jPanel36;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -2492,6 +2792,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPaneInventario1;
     private javax.swing.JTabbedPane jTabbedPaneInventario2;
     private javax.swing.JLabel labelCliente_Deuda;
@@ -2502,9 +2803,12 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel labelCliente_Ticket;
     private javax.swing.JLabel labelReport_Nombre;
     private javax.swing.JLabel labelReport_Nombre1;
+    private javax.swing.JLabel labelReport_Nombre2;
     private javax.swing.JLabel labelReport_Pagos;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelHora rSLabelHora1;
+    private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle10;
+    private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle11;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle6;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle7;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle8;
