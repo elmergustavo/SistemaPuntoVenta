@@ -41,7 +41,7 @@ public class SuministroVM extends Consult {
     private String _accion = "insert";
     private final  ArrayList<JLabel> _label;
     private final  ArrayList<JTextField> _textField;
-    private final  JTable _tableSuministro;
+    private final  JTable _tableSuministro, _tableBodega;
     private DefaultTableModel modelo1;
     private   JSpinner _spinnerPaginas;
     private int _idCliente = 0;
@@ -59,7 +59,8 @@ public class SuministroVM extends Consult {
         _label = label;
         _textField = textField;
         _tableSuministro = (JTable) objects[0];
-        _spinnerPaginas = (JSpinner) objects[1];
+        _tableBodega = (JTable) objects[1];
+        _spinnerPaginas = (JSpinner) objects[2];
          restablecer();
        //  RestablecerReport();
         this.Insert = false;
@@ -230,6 +231,7 @@ public class SuministroVM extends Consult {
      
     public void GetCliente() {
         _accion = "update";
+        System.out.println("entro a getCliente");
         int filas = _tableSuministro.getSelectedRow();
         _idCliente = (Integer) modelo1.getValueAt(filas, 0);
         _textField.get(0).setText((String) modelo1.getValueAt(filas, 1));
@@ -304,6 +306,12 @@ public class SuministroVM extends Consult {
         _tableSuministro.getColumnModel().getColumn(0).setMaxWidth(0);
         _tableSuministro.getColumnModel().getColumn(0).setMinWidth(0);
         _tableSuministro.getColumnModel().getColumn(0).setPreferredWidth(0);
+        
+        _tableBodega.setModel(modelo1);
+        _tableBodega.setRowHeight(30);
+        _tableBodega.getColumnModel().getColumn(0).setMaxWidth(0);
+        _tableBodega.getColumnModel().getColumn(0).setMinWidth(0);
+        _tableBodega.getColumnModel().getColumn(0).setPreferredWidth(0);
       
     }
     

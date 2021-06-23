@@ -1095,7 +1095,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane1" pref="1306" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane1" pref="1327" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1166,7 +1166,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane2" pref="1306" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane2" pref="1327" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1342,7 +1342,34 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jPanel17" max="32767" attributes="0"/>
-                          <Component id="jTabbedPaneInventario" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jTabbedPaneInventario1" min="-2" pref="399" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTabbedPaneInventario2" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="LabelCliente_Nombre2" min="-2" pref="160" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="272" max="-2" attributes="0"/>
+                                              <Component id="LabelInventarioSuministro_Paginas2" min="-2" pref="112" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="SpinnerPaginasInventario_suministro2" min="-2" pref="54" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="243" max="-2" attributes="0"/>
+                                              <Component id="ButtonCliente_Paginas5" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="ButtonCliente_Paginas6" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="ButtonCliente_Paginas7" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="ButtonCliente_Paginas8" min="-2" pref="80" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -1353,8 +1380,27 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel17" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jTabbedPaneInventario" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jTabbedPaneInventario1" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jTabbedPaneInventario2" min="-2" pref="377" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="LabelCliente_Nombre2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LabelInventarioSuministro_Paginas2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="SpinnerPaginasInventario_suministro2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ButtonCliente_Paginas6" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="ButtonCliente_Paginas5" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="ButtonCliente_Paginas7" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="ButtonCliente_Paginas8" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1396,7 +1442,7 @@
                               <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="TextField_BuscarInventario" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="11" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1433,15 +1479,20 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JTabbedPane" name="jTabbedPaneInventario">
+            <Container class="javax.swing.JTabbedPane" name="jTabbedPaneInventario1">
               <Events>
-                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jTabbedPaneInventarioStateChanged"/>
-                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTabbedPaneInventarioKeyPressed"/>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jTabbedPaneInventario1StateChanged"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTabbedPaneInventario1KeyPressed"/>
               </Events>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="jPanel25">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                       <JTabbedPaneConstraints tabName="Bodega">
@@ -1453,12 +1504,15 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel27" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jPanel27" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="jPanel27" min="-2" pref="440" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="9" max="32767" attributes="0"/>
                           </Group>
@@ -1492,32 +1546,7 @@
                                           <Component id="rSMaterialButtonRectangle7" min="-2" pref="130" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPane5" max="32767" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="LabelCliente_Nombre8" min="-2" pref="160" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="309" max="-2" attributes="0"/>
-                                                  <Component id="LabelCliente_Paginas2" min="-2" pref="112" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="SpinnerPaginas_Clientes2" min="-2" pref="63" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="252" max="-2" attributes="0"/>
-                                                  <Component id="ButtonCliente_Paginas9" min="-2" pref="80" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="ButtonCliente_Paginas10" min="-2" pref="80" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="ButtonCliente_Paginas11" min="-2" pref="80" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="ButtonCliente_Paginas12" min="-2" pref="80" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace min="0" pref="631" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1525,33 +1554,11 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jScrollPane5" pref="341" max="32767" attributes="0"/>
-                                      <Component id="jPanel26" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="rSMaterialButtonRectangle6" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                                              <Component id="rSMaterialButtonRectangle7" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="LabelCliente_Nombre8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="LabelCliente_Paginas2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="SpinnerPaginas_Clientes2" min="-2" max="-2" attributes="0"/>
-                                              <Component id="ButtonCliente_Paginas9" min="-2" pref="36" max="-2" attributes="0"/>
-                                              <Component id="ButtonCliente_Paginas10" min="-2" pref="36" max="-2" attributes="0"/>
-                                              <Component id="ButtonCliente_Paginas11" min="-2" pref="36" max="-2" attributes="0"/>
-                                              <Component id="ButtonCliente_Paginas12" min="-2" pref="36" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                  <Component id="jPanel26" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="rSMaterialButtonRectangle6" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                                      <Component id="rSMaterialButtonRectangle7" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                               </Group>
@@ -1579,31 +1586,10 @@
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="339" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                           </Layout>
-                        </Container>
-                        <Container class="javax.swing.JScrollPane" name="jScrollPane5">
-                          <AuxValues>
-                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                          </AuxValues>
-
-                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                          <SubComponents>
-                            <Component class="rojerusan.RSTableMetro" name="rSTableMetro3">
-                              <Properties>
-                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="4" rowCount="4">
-                                    <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                                  </Table>
-                                </Property>
-                              </Properties>
-                            </Component>
-                          </SubComponents>
                         </Container>
                         <Component class="rojerusan.RSMaterialButtonRectangle" name="rSMaterialButtonRectangle6">
                           <Properties>
@@ -1626,99 +1612,8 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Ingresar"/>
                           </Properties>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="LabelCliente_Nombre8">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="7c" green="6a" red="46" type="rgb"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Registros por paginas"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JSpinner" name="SpinnerPaginas_Clientes2">
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="LabelCliente_Paginas2">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="7c" green="6a" red="46" type="rgb"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Paaginas"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JButton" name="ButtonCliente_Paginas9">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/Resources/Left-12.png"/>
-                            </Property>
-                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
-                            </Property>
-                          </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas9ActionPerformed"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JButton" name="ButtonCliente_Paginas10">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/Resources/Left.png"/>
-                            </Property>
-                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas10ActionPerformed"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JButton" name="ButtonCliente_Paginas11">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/Resources/Right.png"/>
-                            </Property>
-                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas11ActionPerformed"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JButton" name="ButtonCliente_Paginas12">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/Resources/Right-12.png"/>
-                            </Property>
-                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas12ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSMaterialButtonRectangle7ActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -1726,6 +1621,11 @@
                   </SubComponents>
                 </Container>
                 <Container class="javax.swing.JPanel" name="jPanel28">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                       <JTabbedPaneConstraints tabName="Suministros">
@@ -1737,12 +1637,61 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel29" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jPanel29" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="LabelCliente_Nombre9" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                              <Component id="SpinnerPaginasInventario_suministro" min="-2" pref="54" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="ButtonCliente_Paginas13" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="ButtonCliente_Paginas14" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="ButtonCliente_Paginas15" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="ButtonCliente_Paginas16" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="LabelInventarioSuministro_Paginas" min="-2" pref="112" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel29" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jPanel29" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="LabelInventarioSuministro_Paginas" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="ButtonCliente_Paginas13" min="-2" pref="36" max="-2" attributes="0"/>
+                                          <Component id="ButtonCliente_Paginas14" min="-2" pref="36" max="-2" attributes="0"/>
+                                          <Component id="ButtonCliente_Paginas15" min="-2" pref="36" max="-2" attributes="0"/>
+                                          <Component id="ButtonCliente_Paginas16" min="-2" pref="36" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="LabelCliente_Nombre9" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="SpinnerPaginasInventario_suministro" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
@@ -1770,32 +1719,7 @@
                                           <Component id="rSMaterialButtonRectangle9" min="-2" pref="140" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPane4" max="32767" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="LabelCliente_Nombre9" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="373" max="-2" attributes="0"/>
-                                                  <Component id="LabelInventarioSuministro_Paginas" min="-2" pref="112" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="SpinnerPaginasInventario_suministro" min="-2" pref="54" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="295" max="-2" attributes="0"/>
-                                                  <Component id="ButtonCliente_Paginas13" min="-2" pref="80" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="ButtonCliente_Paginas14" min="-2" pref="80" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="ButtonCliente_Paginas15" min="-2" pref="80" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="ButtonCliente_Paginas16" min="-2" pref="80" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace min="0" pref="612" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1803,33 +1727,11 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jScrollPane4" pref="0" max="32767" attributes="0"/>
-                                      <Component id="jPanel30" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="rSMaterialButtonRectangle8" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                                              <Component id="rSMaterialButtonRectangle9" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="LabelCliente_Nombre9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="LabelInventarioSuministro_Paginas" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="SpinnerPaginasInventario_suministro" min="-2" max="-2" attributes="0"/>
-                                              <Component id="ButtonCliente_Paginas13" min="-2" pref="36" max="-2" attributes="0"/>
-                                              <Component id="ButtonCliente_Paginas14" min="-2" pref="36" max="-2" attributes="0"/>
-                                              <Component id="ButtonCliente_Paginas15" min="-2" pref="36" max="-2" attributes="0"/>
-                                              <Component id="ButtonCliente_Paginas16" min="-2" pref="36" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                  <Component id="jPanel30" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="rSMaterialButtonRectangle8" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                                      <Component id="rSMaterialButtonRectangle9" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="24" max="32767" attributes="0"/>
                               </Group>
@@ -1862,7 +1764,7 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="TextFieldInventario_codigo" min="-2" pref="166" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="TextFieldInventario_nombre" min="-2" pref="166" max="-2" attributes="0"/>
+                                              <Component id="TextFieldInventario_nombreg" min="-2" pref="166" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace pref="18" max="32767" attributes="0"/>
@@ -1905,7 +1807,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="TextFieldInventario_codigo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="TextFieldInventario_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="TextFieldInventario_nombreg" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -1946,6 +1848,7 @@
                                 </Property>
                               </Properties>
                               <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextFieldInventario_codigoActionPerformed"/>
                                 <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldInventario_codigoKeyReleased"/>
                                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldInventario_codigoKeyTyped"/>
                               </Events>
@@ -1958,15 +1861,16 @@
                                 <Property name="text" type="java.lang.String" value="Nombre"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="TextFieldInventario_nombre">
+                            <Component class="javax.swing.JTextField" name="TextFieldInventario_nombreg">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Dialog" size="14" style="0"/>
                                 </Property>
                               </Properties>
                               <Events>
-                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldInventario_nombreKeyReleased"/>
-                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldInventario_nombreKeyTyped"/>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextFieldInventario_nombregActionPerformed"/>
+                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldInventario_nombregKeyReleased"/>
+                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextFieldInventario_nombregKeyTyped"/>
                               </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="LabelInventario_stock">
@@ -2008,34 +1912,6 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Container class="javax.swing.JScrollPane" name="jScrollPane4">
-                          <AuxValues>
-                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                          </AuxValues>
-
-                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                          <SubComponents>
-                            <Component class="rojerusan.RSTableMetro" name="TableInventario_Suministro">
-                              <Properties>
-                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="4" rowCount="4">
-                                    <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                                  </Table>
-                                </Property>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TableInventario_SuministroMouseClicked"/>
-                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TableInventario_SuministroKeyReleased"/>
-                              </Events>
-                              <AuxValues>
-                                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="  TableInventario_Suministro= new rojerusan.RSTableMetro(){&#xd;&#xa;    public boolean isCellEditable(int rowIndex, int colIndex) {&#xd;&#xa;        return false; //Disallow the editing of any cell&#xd;&#xa;    }&#xd;&#xa;};"/>
-                              </AuxValues>
-                            </Component>
-                          </SubComponents>
-                        </Container>
                         <Component class="rojerusan.RSMaterialButtonRectangle" name="rSMaterialButtonRectangle8">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -2064,109 +1940,379 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSMaterialButtonRectangle9ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelCliente_Nombre9">
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JButton" name="ButtonCliente_Paginas16">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="33" green="33" red="33" type="rgb"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="33" green="33" red="33" type="rgb"/>
+                        </Property>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Resources/Right-12.png"/>
+                        </Property>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Default Cursor"/>
+                        </Property>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas16ActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="ButtonCliente_Paginas15">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="33" green="33" red="33" type="rgb"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="33" green="33" red="33" type="rgb"/>
+                        </Property>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Resources/Right.png"/>
+                        </Property>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Default Cursor"/>
+                        </Property>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas15ActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="ButtonCliente_Paginas14">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="33" green="33" red="33" type="rgb"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="33" green="33" red="33" type="rgb"/>
+                        </Property>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Resources/Left.png"/>
+                        </Property>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Default Cursor"/>
+                        </Property>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas14ActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="ButtonCliente_Paginas13">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="33" green="33" red="33" type="rgb"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="33" green="33" red="33" type="rgb"/>
+                        </Property>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Resources/Left-12.png"/>
+                        </Property>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Default Cursor"/>
+                        </Property>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas13ActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="LabelInventarioSuministro_Paginas">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="7c" green="6a" red="46" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Paaginas"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="LabelCliente_Nombre9">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="7c" green="6a" red="46" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Registros por paginas"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JSpinner" name="SpinnerPaginasInventario_suministro">
+                      <Events>
+                        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="SpinnerPaginasInventario_suministroStateChanged"/>
+                      </Events>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="jPanel23">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="platillos">
+                        <Property name="tabTitle" type="java.lang.String" value="platillos"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <EmptySpace min="0" pref="397" max="32767" attributes="0"/>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <EmptySpace min="0" pref="449" max="32767" attributes="0"/>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JTabbedPane" name="jTabbedPaneInventario2">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="jPanel24">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Bodega">
+                        <Property name="tabTitle" type="java.lang.String" value="Bodega"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane3" pref="1309" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane3" min="-2" pref="335" max="-2" attributes="0"/>
+                              <EmptySpace pref="10" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="rojerusan.RSTableMetro" name="rSTableMetro3">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="7c" green="6a" red="46" type="rgb"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Registros por paginas"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JSpinner" name="SpinnerPaginasInventario_suministro">
-                          <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="SpinnerPaginasInventario_suministroStateChanged"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="LabelInventarioSuministro_Paginas">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="7c" green="6a" red="46" type="rgb"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Paaginas"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JButton" name="ButtonCliente_Paginas13">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/Resources/Left-12.png"/>
-                            </Property>
-                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="4" rowCount="4">
+                                <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                                <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                                <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                                <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                              </Table>
                             </Property>
                           </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas13ActionPerformed"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JButton" name="ButtonCliente_Paginas14">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/Resources/Left.png"/>
-                            </Property>
-                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas14ActionPerformed"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JButton" name="ButtonCliente_Paginas15">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/Resources/Right.png"/>
-                            </Property>
-                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas15ActionPerformed"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JButton" name="ButtonCliente_Paginas16">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/Resources/Right-12.png"/>
-                            </Property>
-                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas16ActionPerformed"/>
-                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
                 </Container>
+                <Container class="javax.swing.JPanel" name="jPanel33">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Suministros">
+                        <Property name="tabTitle" type="java.lang.String" value="Suministros"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane4" pref="1309" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace pref="7" max="32767" attributes="0"/>
+                              <Component id="jScrollPane4" min="-2" pref="338" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="rojerusan.RSTableMetro" name="xd">
+                          <Properties>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="4" rowCount="4">
+                                <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                                <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                                <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                                <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="xdMouseClicked"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="xdKeyReleased"/>
+                          </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="xd= new rojerusan.RSTableMetro(){&#xd;&#xa;    public boolean isCellEditable(int rowIndex, int colIndex) {&#xd;&#xa;        return false; //Disallow the editing of any cell&#xd;&#xa;    }&#xd;&#xa;};"/>
+                          </AuxValues>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="jPanel34">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Platillos">
+                        <Property name="tabTitle" type="java.lang.String" value="Platillos"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <EmptySpace min="0" pref="1321" max="32767" attributes="0"/>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <EmptySpace min="0" pref="351" max="32767" attributes="0"/>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                </Container>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JLabel" name="LabelCliente_Nombre2">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="7c" green="6a" red="46" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Registros por paginas"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSpinner" name="SpinnerPaginasInventario_suministro2">
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="SpinnerPaginasInventario_suministro2StateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="LabelInventarioSuministro_Paginas2">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="7c" green="6a" red="46" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Paaginas"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="ButtonCliente_Paginas8">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="33" red="33" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="33" red="33" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Resources/Right-12.png"/>
+                </Property>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Default Cursor"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas8ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="ButtonCliente_Paginas5">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="33" red="33" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="33" red="33" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Resources/Left-12.png"/>
+                </Property>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Default Cursor"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas5ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="ButtonCliente_Paginas7">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="33" red="33" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="33" red="33" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Resources/Right.png"/>
+                </Property>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Default Cursor"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas7ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="ButtonCliente_Paginas6">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="33" red="33" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="33" red="33" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Resources/Left.png"/>
+                </Property>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Default Cursor"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas6ActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel18">
@@ -2231,7 +2377,7 @@
                           <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="TextField_BuscarCliente3" min="-2" pref="216" max="-2" attributes="0"/>
-                          <EmptySpace pref="985" max="32767" attributes="0"/>
+                          <EmptySpace pref="1006" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2345,7 +2491,7 @@
                           <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="TextField_BuscarCliente4" min="-2" pref="216" max="-2" attributes="0"/>
-                          <EmptySpace pref="831" max="32767" attributes="0"/>
+                          <EmptySpace pref="852" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2420,51 +2566,8 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jPanel15" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jPanel23" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                                      <Component id="rSMaterialButtonRectangle5" min="-2" pref="140" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="rSMaterialButtonRectangle4" min="-2" pref="140" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jPanel24" max="32767" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="LabelCliente_Nombre2" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="LabelCliente_Paginas1" min="-2" pref="112" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="SpinnerPaginas_Clientes1" min="-2" pref="54" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="266" max="-2" attributes="0"/>
-                                              <Component id="ButtonCliente_Paginas5" min="-2" pref="80" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="ButtonCliente_Paginas6" min="-2" pref="80" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="ButtonCliente_Paginas7" min="-2" pref="80" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="ButtonCliente_Paginas8" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel15" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -2474,36 +2577,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel15" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jPanel24" max="32767" attributes="0"/>
-                          <Component id="jPanel23" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="LabelCliente_Nombre2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LabelCliente_Paginas1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="SpinnerPaginas_Clientes1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ButtonCliente_Paginas5" min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Component id="ButtonCliente_Paginas6" min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Component id="ButtonCliente_Paginas7" min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Component id="ButtonCliente_Paginas8" min="-2" pref="36" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="rSMaterialButtonRectangle5" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                                  <Component id="rSMaterialButtonRectangle4" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <EmptySpace pref="30" max="32767" attributes="0"/>
+                      <EmptySpace pref="491" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2531,7 +2605,7 @@
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="TextField_BuscarVentas" min="-2" pref="216" max="-2" attributes="0"/>
-                          <EmptySpace pref="869" max="32767" attributes="0"/>
+                          <EmptySpace pref="890" max="32767" attributes="0"/>
                           <Component id="rSLabelFecha1" min="-2" pref="180" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -2597,35 +2671,44 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="rojerusan.RSMaterialButtonRectangle" name="rSMaterialButtonRectangle4">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="66" red="ff" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Resources/Agregar.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Eliminar"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSMaterialButtonRectangle4ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="rojerusan.RSMaterialButtonRectangle" name="rSMaterialButtonRectangle5">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="66" red="ff" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Resources/Agregar.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Ingresar"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSMaterialButtonRectangle5ActionPerformed"/>
-              </Events>
-            </Component>
-            <Container class="javax.swing.JPanel" name="jPanel23">
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel31">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Pedido">
+                <Property name="tabTitle" type="java.lang.String" value="Pedido"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel32" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="1260" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel32" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="54" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="jPanel32">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2640,181 +2723,16 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="346" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="486" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="491" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel24">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
-                </Property>
-              </Properties>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane3" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane3" pref="353" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane3">
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Component class="rojerusan.RSTableMetro" name="rSTableMetro1">
-                      <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                        <Property name="colorBackgoundHead" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="0" green="66" red="ff" type="rgb"/>
-                        </Property>
-                        <Property name="colorFilasForeground1" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="33" green="33" red="33" type="rgb"/>
-                        </Property>
-                        <Property name="colorFilasForeground2" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="33" green="33" red="33" type="rgb"/>
-                        </Property>
-                        <Property name="colorSelBackgound" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="33" green="33" red="33" type="rgb"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JLabel" name="LabelCliente_Nombre2">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="7c" green="6a" red="46" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Registros por paginas"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JSpinner" name="SpinnerPaginas_Clientes1">
-              <Events>
-                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="SpinnerPaginas_Clientes1StateChanged"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="LabelCliente_Paginas1">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="7c" green="6a" red="46" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Paaginas"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="ButtonCliente_Paginas5">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Resources/Left-12.png"/>
-                </Property>
-                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas5ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="ButtonCliente_Paginas6">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Resources/Left.png"/>
-                </Property>
-                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas6ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="ButtonCliente_Paginas7">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Resources/Right.png"/>
-                </Property>
-                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas7ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="ButtonCliente_Paginas8">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Resources/Right-12.png"/>
-                </Property>
-                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCliente_Paginas8ActionPerformed"/>
-              </Events>
-            </Component>
           </SubComponents>
         </Container>
       </SubComponents>
@@ -2987,7 +2905,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Resources/Settings.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Configuraci&#xf3;n"/>
+            <Property name="text" type="java.lang.String" value="Pedido"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Default Cursor"/>
             </Property>
