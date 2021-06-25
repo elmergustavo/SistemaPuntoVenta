@@ -7,14 +7,23 @@ package Controller;
 
 import Conexion.Conexion;
 import Conexion.Consult;
+
+import Library.GenerarCodigos;
 import Library.Paginador;
 import Models.TAlimentos;
 import Models.TSuministro;
+import static Views.Sistema.codigo;
 import app.bolivia.swing.JCTextField;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -46,8 +55,13 @@ public class AlimentosVM extends Consult{
     private boolean Insert;
     private boolean Update;
 
-    private final Conexion conexion;
+    private  Conexion conexion;
+   // private Connection conn = null;
 
+    
+    static PreparedStatement ps;
+  
+    
     public AlimentosVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JCTextField> textField) {
         this.conexion = Conexion.createInstance();
         _label = label;
@@ -55,6 +69,7 @@ public class AlimentosVM extends Consult{
         _tableSuministro = (JTable) objects[0];
         _spinnerPaginas = (JSpinner) objects[1];
         restablecer();
+        extraerID();
         //  RestablecerReport();
         this.Insert = false;
         this.Update = false;
@@ -275,8 +290,8 @@ public class AlimentosVM extends Consult{
                    };
                 modelo1.addRow(registros);
             });
-
         }
+        
         _tableSuministro.setModel(modelo1);
         _tableSuministro.setRowHeight(30);
         _tableSuministro.getColumnModel().getColumn(0).setMaxWidth(0);
@@ -286,6 +301,44 @@ public class AlimentosVM extends Consult{
        
 
     }
+    
+    public void extraerID() {
+        int j;
+        int cont = 1;
+        String num = "";
+        String c = "";
+        String SQL = "SELECT MAX(codigo_al) FROM alimentos";
+
+        try {
+            Statement st = conexion.getConnection().createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            while (rs.next()) {
+                c = rs.getString(1);
+            }
+
+            if (c == null) {
+                _textField.get(0).setText("AL0001");
+               // alimentos.Alimentos.codigo.setText("AL0001");
+            } else {
+                char r1 = c.charAt(2);
+                char r2 = c.charAt(3);
+                char r3 = c.charAt(4);
+                char r4 = c.charAt(5);
+                String r = "";
+                r = "" + r1 + r2 + r3 + r4;
+                j = Integer.parseInt(r);
+                GenerarCodigos gen = new GenerarCodigos();
+                gen.generar(j);
+                _textField.get(0).setText("AL" + gen.serie());
+              //  alimentos.Alimentos.codigo.setText("AL" + gen.serie());
+
+            }
+
+        } catch (SQLException ex) {
+          //  Logger.getLogger(OpcionesAl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
 
     public void Paginador(String metodo) {
         switch (metodo) {

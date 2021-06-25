@@ -31,13 +31,76 @@ public class Sistema extends javax.swing.JFrame {
     /**
      * Creates new form Sistema
      */
+    
     public Sistema() {
 
         initComponents();
+        JTextField categoria = new JTextField();
+        categoria.setText("");
         TabbedPanePrincipal.setSelectedIndex(4);
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabel2, "src/Resources/logo.png");
         //rsscalelabel.RSScaleLabel.setScaleLabel(jLabel6, "src/Resources/logo.png");
         //   TextField_BuscarVentas.setEditable(false);
+        
+        
+        tipoAl.addItemListener(new ItemListener() {
+
+            @Override
+            public void itemStateChanged(ItemEvent ie) {
+                if (tipoAl.getSelectedIndex() == 0) {
+                    tipoL.setIcon(new ImageIcon(getClass().getResource("/Resources/tipoAlL.png")));
+                    nombreL.setIcon(new ImageIcon(getClass().getResource("/Resources/nombreL.png")));
+                }
+                if (tipoAl.getSelectedIndex() == 1) {
+                    System.out.println("entro");
+                    tipoL.setIcon(new ImageIcon(getClass().getResource("/Resources/bebida.png")));
+                    nombreL.setIcon(new ImageIcon(getClass().getResource("/Resources/bebida1.png")));
+                    
+                    categoria.setText("1");
+                }
+                if (tipoAl.getSelectedIndex() == 2) {
+                    tipoL.setIcon(new ImageIcon(getClass().getResource("/Resources/botana.png")));
+                    nombreL.setIcon(new ImageIcon(getClass().getResource("/Resources/botana1.png")));
+                    categoria.setText("2");
+                }
+                if (tipoAl.getSelectedIndex() == 3) {
+                    tipoL.setIcon(new ImageIcon(getClass().getResource("/Resources/caldo.png")));
+                    nombreL.setIcon(new ImageIcon(getClass().getResource("/Resources/caldo1.png")));
+                }
+                if (tipoAl.getSelectedIndex() == 4) {
+                    tipoL.setIcon(new ImageIcon(getClass().getResource("/Resources/camaron.png")));
+                    nombreL.setIcon(new ImageIcon(getClass().getResource("/Resources/camaron1.png")));
+                }
+                if (tipoAl.getSelectedIndex() == 5) {
+                    tipoL.setIcon(new ImageIcon(getClass().getResource("/Resources/coctel.png")));
+                    nombreL.setIcon(new ImageIcon(getClass().getResource("/Resources/coctel1.png")));
+                }
+                if (tipoAl.getSelectedIndex() == 6) {
+                    tipoL.setIcon(new ImageIcon(getClass().getResource("/Resources/desayuno.png")));
+                    nombreL.setIcon(new ImageIcon(getClass().getResource("/Resources/desayuno1.png")));
+                }
+                if (tipoAl.getSelectedIndex() == 7) {
+                    tipoL.setIcon(new ImageIcon(getClass().getResource("/Resources/filete.png")));
+                    nombreL.setIcon(new ImageIcon(getClass().getResource("/Resources/filete1.png")));
+                }
+                if (tipoAl.getSelectedIndex() == 8) {
+                    tipoL.setIcon(new ImageIcon(getClass().getResource("/Resources/langosta.png")));
+                    nombreL.setIcon(new ImageIcon(getClass().getResource("/Resources/langosta1.png")));
+                }
+                if (tipoAl.getSelectedIndex() == 9) {
+                    tipoL.setIcon(new ImageIcon(getClass().getResource("/Resources/langostino.png")));
+                    nombreL.setIcon(new ImageIcon(getClass().getResource("/Resources/langostino1.png")));
+                }
+                if (tipoAl.getSelectedIndex() == 10) {
+                    tipoL.setIcon(new ImageIcon(getClass().getResource("/Resources/pescado.png")));
+                    nombreL.setIcon(new ImageIcon(getClass().getResource("/Resources/pescado1.png")));
+                }
+                if (tipoAl.getSelectedIndex() == 11) {
+                    tipoL.setIcon(new ImageIcon(getClass().getResource("/Resources/pulpo.png")));
+                    nombreL.setIcon(new ImageIcon(getClass().getResource("/Resources/pulpo1.png")));
+                }
+            }
+        });
 
     }
 
@@ -57,9 +120,8 @@ public class Sistema extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        TextField_BuscarCliente = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        buscar1 = new app.bolivia.swing.JCTextField();
+        codigoL2 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         TabbedPaneCliente1 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
@@ -305,50 +367,35 @@ public class Sistema extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(34, 102, 145));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Clientes");
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 7, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Buscar");
+        buscar1.setBackground(new java.awt.Color(34, 102, 145));
+        buscar1.setBorder(null);
+        buscar1.setForeground(new java.awt.Color(255, 255, 255));
+        buscar1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        buscar1.setOpaque(false);
+        buscar1.setPhColor(new java.awt.Color(255, 255, 255));
+        buscar1.setPlaceholder("CÓDIGO/NOMBRE");
+        buscar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buscar1MouseClicked(evt);
+            }
+        });
+        buscar1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                buscar1KeyReleased(evt);
+            }
+        });
+        jPanel4.add(buscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, 180, -1));
 
-        TextField_BuscarCliente.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/search.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addGap(289, 289, 289)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TextField_BuscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addContainerGap(10, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TextField_BuscarCliente)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        codigoL2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        codigoL2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/buscarL.png"))); // NOI18N
+        jPanel4.add(codigoL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 250, 52));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -985,12 +1032,12 @@ public class Sistema extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         TabbedPanePrincipal.addTab("Clientes", jPanel2);
@@ -1538,6 +1585,7 @@ public class Sistema extends javax.swing.JFrame {
         jPanel41.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "REGISTRO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel41.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        codigo.setEditable(false);
         codigo.setBackground(new java.awt.Color(34, 102, 145));
         codigo.setBorder(null);
         codigo.setForeground(new java.awt.Color(255, 255, 255));
@@ -1545,7 +1593,7 @@ public class Sistema extends javax.swing.JFrame {
         codigo.setOpaque(false);
         codigo.setPhColor(new java.awt.Color(255, 255, 255));
         codigo.setPlaceholder("CÓDIGO");
-        jPanel41.add(codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 180, -1));
+        jPanel41.add(codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 180, -1));
 
         tipoAl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TIPO ALIMENTO", "BEBIDAS", "BOTANAS", "CALDOS", "CAMARONES", "COCTELES", "DESAYUNOS", "FILETE", "LANGOSTA", "LANGOSTINO", "PESCADO", "PULPO" }));
         tipoAl.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -1554,13 +1602,13 @@ public class Sistema extends javax.swing.JFrame {
                 tipoAlActionPerformed(evt);
             }
         });
-        jPanel41.add(tipoAl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 183, -1));
+        jPanel41.add(tipoAl, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 183, -1));
 
         tipoL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/alimentos/tipoAlL.png"))); // NOI18N
-        jPanel41.add(tipoL, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, -1, 52));
+        jPanel41.add(tipoL, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, -1, 52));
 
         codigoL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/codigoL.png"))); // NOI18N
-        jPanel41.add(codigoL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 250, 60));
+        jPanel41.add(codigoL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 250, 60));
 
         nombre.setBackground(new java.awt.Color(34, 102, 145));
         nombre.setBorder(null);
@@ -1577,10 +1625,10 @@ public class Sistema extends javax.swing.JFrame {
                 nombreKeyTyped(evt);
             }
         });
-        jPanel41.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 180, -1));
+        jPanel41.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 180, -1));
 
         nombreL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/nombreL.png"))); // NOI18N
-        jPanel41.add(nombreL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 250, 60));
+        jPanel41.add(nombreL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 250, 60));
 
         precio.setBackground(new java.awt.Color(34, 102, 145));
         precio.setBorder(null);
@@ -1594,14 +1642,14 @@ public class Sistema extends javax.swing.JFrame {
                 precioKeyTyped(evt);
             }
         });
-        jPanel41.add(precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 180, -1));
+        jPanel41.add(precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 180, -1));
 
         nombreL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/precioL.png"))); // NOI18N
-        jPanel41.add(nombreL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 243, 52));
+        jPanel41.add(nombreL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 243, 52));
         jPanel41.add(jLabelInventario_platillosCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 80, 40));
-        jPanel41.add(jLabelInventario_platillosNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 90, 40));
-        jPanel41.add(jLabelInventario_platillosPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 90, 50));
-        jPanel41.add(jLabelInventario_platillosTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 80, 50));
+        jPanel41.add(jLabelInventario_platillosNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 90, 40));
+        jPanel41.add(jLabelInventario_platillosPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 90, 50));
+        jPanel41.add(jLabelInventario_platillosTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 80, 50));
 
         jPanel42.setBackground(new java.awt.Color(255, 255, 255));
         jPanel42.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "OPCIONES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
@@ -1892,6 +1940,11 @@ public class Sistema extends javax.swing.JFrame {
         TableInventario_platillos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TableInventario_platillosMouseClicked(evt);
+            }
+        });
+        TableInventario_platillos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TableInventario_platillosKeyReleased(evt);
             }
         });
         jScrollPane7.setViewportView(TableInventario_platillos);
@@ -2613,6 +2666,7 @@ public class Sistema extends javax.swing.JFrame {
     private AlimentosVM alimento;
 
     private void ButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInventarioActionPerformed
+        sexo.setSelectedItem("PERECEDEROS");
         TabbedPanePrincipal.setSelectedIndex(1);
         BtnVentas.setEnabled(true);
         ButtonCliente.setEnabled(true);
@@ -2903,6 +2957,7 @@ public class Sistema extends javax.swing.JFrame {
         alertas.AlertWarning alerta = new alertas.AlertWarning(this, true);
         alerta.AgregarTexto("Seguro quieres cancelar", "Si", "No");
         alerta.setVisible(true);
+        sexo.setSelectedItem("XD sf");
         if (alerta.bandera) {
             suministro.restablecer();
         }    }//GEN-LAST:event_rSMaterialButtonRectangle9ActionPerformed
@@ -3155,6 +3210,7 @@ public class Sistema extends javax.swing.JFrame {
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
         alimento.RegistrarSuministro();
+        alimento.extraerID();
 
         if (alimento.getInsert()) {
             alertas.AlertSuccess alerta = new alertas.AlertSuccess(this, true);
@@ -3192,14 +3248,18 @@ public class Sistema extends javax.swing.JFrame {
 
     private void limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarActionPerformed
         alimento.restablecer();
+        alimento.extraerID();
+        buscar.setText("");
     }//GEN-LAST:event_limpiarActionPerformed
 
     private void buscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscarMouseClicked
-
+       // alimento.restablecer();
     }//GEN-LAST:event_buscarMouseClicked
 
     private void buscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscarKeyReleased
-
+        buscar.setText(buscar.getText().toUpperCase());
+        alimento.SearchClientes(buscar.getText());
+        System.out.println("entro buscar");
     }//GEN-LAST:event_buscarKeyReleased
 
     private void tipoAlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAlActionPerformed
@@ -3211,6 +3271,20 @@ public class Sistema extends javax.swing.JFrame {
             alimento.GetCliente();
         }
     }//GEN-LAST:event_TableInventario_platillosMouseClicked
+
+    private void TableInventario_platillosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TableInventario_platillosKeyReleased
+        if (TableInventario_platillos.getSelectedRows().length > 0) {
+            alimento.GetCliente();
+        }
+    }//GEN-LAST:event_TableInventario_platillosKeyReleased
+
+    private void buscar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscar1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buscar1MouseClicked
+
+    private void buscar1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscar1KeyReleased
+        cliente.SearchClientes(buscar1.getText());
+    }//GEN-LAST:event_buscar1KeyReleased
 
     
     
@@ -3336,7 +3410,6 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JTextField TextFieldInventario_nombreg;
     private javax.swing.JTextField TextFieldInventario_precio;
     private javax.swing.JTextField TextFieldInventario_stock;
-    private javax.swing.JTextField TextField_BuscarCliente;
     private javax.swing.JTextField TextField_BuscarCliente3;
     private javax.swing.JTextField TextField_BuscarCliente4;
     private javax.swing.JTextField TextField_BuscarInventario;
@@ -3344,19 +3417,20 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JButton borrar;
     private javax.swing.JButton busca;
     private app.bolivia.swing.JCTextField buscar;
+    private app.bolivia.swing.JCTextField buscar1;
     private javax.swing.JButton calculo;
     public static app.bolivia.swing.JCTextField cambio;
     private javax.swing.JButton cancelar;
     public static app.bolivia.swing.JCTextField codigo;
     private javax.swing.JLabel codigoL;
     private javax.swing.JLabel codigoL1;
+    private javax.swing.JLabel codigoL2;
     private javax.swing.JLabel codigoL3;
     private javax.swing.JLabel codigoL4;
     private javax.swing.JLabel codigoL5;
     private javax.swing.JLabel codigoL6;
     private javax.swing.JLabel codigoL7;
     private javax.swing.JButton eliminar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3364,7 +3438,6 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
