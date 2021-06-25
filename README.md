@@ -15,4 +15,31 @@ Sistema desarrollado en java, curso análisis y diseño II
 ## Páginas adicionales
 * [Icono](https://material.io/)
 
+### Contributors
+
+<table><tbody><tr><td align="center" valign="top" width="11%">
+<a href="https://github.com/elmergustavo">
+<img src="https://github.com/elmergustavo.png?s=75" width="75" height="75"><br />
+Elmer Gustavo Pú
+</a>
+</td><td align="center" valign="top" width="11%">
+<a href="https://github.com/alextax">
+<img src="https://github.com/alextax.png?s=75" width="75" height="75"><br />
+Alex Omar Tzul
+</a>
+</td><td align="center" valign="top" width="11%">
+<a href="https://github.com/Fredy720">
+<img src="https://github.com/Fredy720.png?s=75" width="75" height="75"><br />
+Freddy Mateo
+</a>
+</td><td align="center" valign="top" width="11%">
+<a href="https://github.com/rosariogs">
+<img src="https://github.com/rosariogs.png?s=75" width="75" height="75"><br />
+Rosario Gómez
+</a>
+</td></tr></tbody></table>
+
+
+<!--teamend-->
+
 ![](https://github.com/elmergustavo/SistemaPuntoVenta/blob/master/Capturas/1.PNG)
