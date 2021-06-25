@@ -5,6 +5,7 @@
  */
 package Conexion;
 
+import Models.TAlimentos;
 import Models.TCategoria;
 import Models.TClientes;
 import Models.TReportes_clientes;
@@ -76,6 +77,16 @@ public class Consult /*extends Conexion*/ {
         }
         return categoria;
     }
+    
+    public List<TAlimentos> alimentos() {
+        List<TAlimentos> alimento = new ArrayList();
+        try {
+            alimento = (List<TAlimentos>) QR.query(conexion.getConnection(), "SELECT * FROM alimentos",
+                    new BeanListHandler(TAlimentos.class));
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error : " + ex);
+        }
+        return alimento;
+    }
 
 }
-

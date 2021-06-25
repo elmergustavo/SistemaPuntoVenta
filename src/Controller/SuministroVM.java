@@ -195,7 +195,7 @@ public class SuministroVM extends Consult {
             conexion.getConnection().setAutoCommit(false);
             switch (_accion) {
                 case "insert":
-                    String sqlInventario1 = "INSERT INTO suministros(Codigo, Nombre, Stock,Precio,Categoria)"
+                    String sqlInventario1 = "INSERT INTO suministros(Nombre, Codigo, Stock,Precio,Categoria)"
                             + " VALUES(?,?,?,?,?)";
                     Object[] dataInventarioSuministro = {
                         _textField.get(0).getText(),
@@ -204,8 +204,7 @@ public class SuministroVM extends Consult {
                         _textField.get(3).getText(),
                         _textField.get(4).getText(),};
                     qr.insert(conexion.getConnection(), sqlInventario1, new ColumnListHandler(), dataInventarioSuministro);
-                    List<TSuministro> suministro = suministros();
-                    suministro.get(suministro.size() - 1).getIdSuministro();
+                    
                     Insert = true;
                     break;
                 case "update":
@@ -215,7 +214,7 @@ public class SuministroVM extends Consult {
                         _textField.get(2).getText(),
                         _textField.get(3).getText(),
                         _textField.get(4).getText(),};
-                    String sqlInventario2 = "UPDATE suministros SET Codigo = ?,Nombre = ?,Stock = ?,Precio = ?"
+                    String sqlInventario2 = "UPDATE suministros SET Nombre = ?,Codigo = ?,Stock = ?,Precio = ?,"
                             + "Categoria = ? WHERE IdSuministro =" + _idCliente;
                     qr.update(conexion.getConnection(), sqlInventario2, dataCliente2);
                     Update = true;
@@ -249,6 +248,7 @@ public class SuministroVM extends Consult {
         _textField.get(1).setText("");
         _textField.get(2).setText("");
         _textField.get(3).setText("");
+        _textField.get(4).setText("");
         _label.get(0).setText("Codigo");
         _label.get(0).setForeground(new Color(102, 102, 102));
         _label.get(1).setText("Nombre");
@@ -257,6 +257,8 @@ public class SuministroVM extends Consult {
         _label.get(2).setForeground(new Color(102, 102, 102));
         _label.get(3).setText("Precio");
         _label.get(3).setForeground(new Color(102, 102, 102));
+        _label.get(4).setText("Categoria");
+        _label.get(4).setForeground(new Color(102, 102, 102));
         listSuministros = suministros();
         if (!listSuministros.isEmpty()) {
             _paginadorSuministro = new Paginador<>(listSuministros,
@@ -294,8 +296,8 @@ public class SuministroVM extends Consult {
             suministroFilter.forEach(item -> {
                 Object[] registros = {
                     item.getIdSuministro(),
-                    item.getCodigo(),
                     item.getNombre(),
+                    item.getCodigo(),
                     item.getStock(),
                     item.getPrecio(),
                     item.getCategoria(),
