@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b36632d2-b505-4f4b-89d8-7d5c4559a8d9">
+	<property name="ireport.zoom" value="1.2100000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     cotizaciones.`id` AS cotizaciones_id,
+     cotizaciones.`nombreCliente` AS cotizaciones_nombreCliente,
+     cotizaciones.`fechaRecibido` AS cotizaciones_fechaRecibido,
+     cotizaciones.`fechaEntrega` AS cotizaciones_fechaEntrega,
+     cotizaciones.`telefono` AS cotizaciones_telefono
+FROM
+     `cotizaciones` cotizaciones]]>
+	</queryString>
+	<field name="cotizaciones_id" class="java.lang.Integer"/>
+	<field name="cotizaciones_nombreCliente" class="java.lang.String"/>
+	<field name="cotizaciones_fechaRecibido" class="java.sql.Date"/>
+	<field name="cotizaciones_fechaEntrega" class="java.sql.Date"/>
+	<field name="cotizaciones_telefono" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="116" splitType="Stretch">
+			<staticText>
+				<reportElement x="200" y="21" width="228" height="67" uuid="570db2b1-3100-4be5-bba7-0b56ce668bd0"/>
+				<textElement>
+					<font size="32" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Cotizaciones]]></text>
+			</staticText>
+			<textField pattern="EEE, MMM d, &apos;&apos;yy">
+				<reportElement x="442" y="41" width="100" height="20" uuid="a544d0b9-29f0-43fa-b7c2-9e762fce2ed2"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="4" width="200" height="112" uuid="c660647b-9fbb-4a02-ab1b-94c46ba214b4"/>
+				<imageExpression><![CDATA["C:\\Users\\Jose-PC\\Documents\\proyecto_analisis\\SistemaPuntoVenta\\src\\Resources\\LOGO CALLE REAL .png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="442" y="21" width="100" height="20" uuid="ead74315-b43d-40aa-ad3c-ae0b4713f8fd"/>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="115" width="555" height="1" uuid="54b0bf30-bbdb-4552-ada3-319b4fabe4af"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="4" width="43" height="20" uuid="aee33f88-5e40-421b-8abd-1cb55c7d4f92"/>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="43" y="4" width="116" height="20" uuid="1ec6bff5-ad9a-40d3-9933-1de9476efe2e"/>
+				<textFieldExpression><![CDATA[$F{cotizaciones_nombreCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="394" y="4" width="100" height="20" uuid="5860d01f-fac9-43fd-b92b-b1a08442c6b2"/>
+				<textFieldExpression><![CDATA[$F{cotizaciones_fechaEntrega}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="172" y="3" width="49" height="40" uuid="e8ba14db-a94d-45e6-8773-7c8cbb808e48"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Fecha de recibido: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="347" y="3" width="47" height="40" uuid="4e054e4e-bb7f-4ab8-9d18-f2958f96a062"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Fecha de    entrega:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="236" y="4" width="100" height="20" uuid="0f94dfaf-256c-45e9-a8be-124df0589813"/>
+				<textFieldExpression><![CDATA[$F{cotizaciones_fechaRecibido}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="336" y="0" width="1" height="44" uuid="e7a5f96e-2632-434e-a659-caee87730da7"/>
+			</line>
+			<line>
+				<reportElement x="171" y="3" width="1" height="40" uuid="254d7b32-18b4-4644-88f8-038cff8c1c50"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="d2e4efd9-85df-49b0-a8c2-666f17c5f46b"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="19" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="23" splitType="Stretch"/>
+	</summary>
+</jasperReport>
