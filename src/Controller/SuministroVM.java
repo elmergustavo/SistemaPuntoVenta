@@ -8,6 +8,7 @@ package Controller;
 import Conexion.Conexion;
 import Conexion.Consult;
 import Library.Calendario;
+import Library.GenerarCodigos;
 import Library.Objectos;
 import Library.Paginador;
 import Library.Render_CheckBox;
@@ -16,7 +17,9 @@ import Models.TClientes;
 import Models.TReportes_clientes;
 import Models.TSuministro;
 import java.awt.Color;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,6 +34,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.table.DefaultTableModel;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.ColumnListHandler;
+import org.bolivia.combo.SComboBoxBlue;
 
 /**
  *
@@ -51,6 +55,7 @@ public class SuministroVM extends Consult {
     private Paginador<TSuministro> _paginadorSuministro;
     private boolean Insert;
     private boolean Update;
+    private SComboBoxBlue categoria;
 
     private final Conexion conexion;
 
@@ -61,7 +66,9 @@ public class SuministroVM extends Consult {
         _tableSuministro = (JTable) objects[0];
         _tableBodega = (JTable) objects[1];
         _spinnerPaginas = (JSpinner) objects[2];
+        categoria = (SComboBoxBlue) objects[3];
         restablecer();
+        
         //  RestablecerReport();
         this.Insert = false;
         this.Update = false;
@@ -87,22 +94,22 @@ public class SuministroVM extends Consult {
 
     public void RegistrarSuministro() {
         if (_textField.get(0).getText().equals("")) {
-            _label.get(0).setText("Ingrese el codigo");
+            _label.get(0).setText("!Llenar!");
             _label.get(0).setForeground(Color.RED);
             _textField.get(0).requestFocus();
         } else {
             if (_textField.get(1).getText().equals("")) {
-                _label.get(1).setText("Ingrese el nombre");
+                _label.get(1).setText("!Llenar!");
                 _label.get(1).setForeground(Color.RED);
                 _textField.get(1).requestFocus();
             } else {
                 if (_textField.get(2).getText().equals("")) {
-                    _label.get(2).setText("Ingrese el stock");
+                    _label.get(2).setText("!Llenar!");
                     _label.get(2).setForeground(Color.RED);
                     _textField.get(2).requestFocus();
                 } else {
                     if (_textField.get(3).getText().equals("")) {
-                        _label.get(3).setText("Ingrese el precio");
+                        _label.get(3).setText("!Llenar!");
                         _label.get(3).setForeground(Color.RED);
                         _textField.get(3).requestFocus();
 
@@ -123,12 +130,12 @@ public class SuministroVM extends Consult {
                                         SaveData();
                                     } else {
                                         if (!listCodigo.isEmpty()) {
-                                            _label.get(0).setText("El Codigo ya esta registrado");
+                                            _label.get(0).setText("!Ya existe!");
                                             _label.get(0).setForeground(Color.RED);
                                             _textField.get(0).requestFocus();
                                         }
                                         if (!listNombre.isEmpty()) {
-                                            _label.get(1).setText("El nombre ya esta registrado");
+                                            _label.get(1).setText("!Ya existe!");
                                             _label.get(1).setForeground(Color.RED);
                                             _textField.get(1).requestFocus();
                                         }
@@ -142,12 +149,12 @@ public class SuministroVM extends Consult {
                                             SaveData();
                                         } else {
                                             if (listCodigo.get(0).getIdSuministro() != _idCliente) {
-                                                _label.get(0).setText("El codigo ya esta registrado");
+                                                _label.get(0).setText("!Ya existe!");
                                                 _label.get(0).setForeground(Color.RED);
                                                 _textField.get(0).requestFocus();
                                             }
                                             if (listNombre.get(0).getIdSuministro() != _idCliente) {
-                                                _label.get(1).setText("El Nombre ya esta registrado");
+                                                _label.get(1).setText("!Ya existe!");
                                                 _label.get(1).setForeground(Color.RED);
                                                 _textField.get(1).requestFocus();
                                             }
@@ -160,7 +167,7 @@ public class SuministroVM extends Consult {
                                                 if (listCodigo.get(0).getIdSuministro() == _idCliente) {
                                                     SaveData();
                                                 } else {
-                                                    _label.get(0).setText("El codigo ya esta registrado");
+                                                    _label.get(0).setText("!Ya existe!");
                                                     _label.get(0).setForeground(Color.RED);
                                                     _textField.get(0).requestFocus();
                                                 }
@@ -169,7 +176,7 @@ public class SuministroVM extends Consult {
                                                 if (listNombre.get(0).getIdSuministro() == _idCliente) {
                                                     SaveData();
                                                 } else {
-                                                    _label.get(1).setText("El nombre ya esta registrado");
+                                                    _label.get(1).setText("!Ya existe!");
                                                     _label.get(1).setForeground(Color.RED);
                                                     _textField.get(1).requestFocus();
                                                 }
@@ -195,14 +202,15 @@ public class SuministroVM extends Consult {
             conexion.getConnection().setAutoCommit(false);
             switch (_accion) {
                 case "insert":
-                    String sqlInventario1 = "INSERT INTO suministros(Nombre, Codigo, Stock,Precio,Categoria)"
+                    String sqlInventario1 = "INSERT INTO suministros(Codigo, Nombre, Stock,Precio,Categoria)"
                             + " VALUES(?,?,?,?,?)";
                     Object[] dataInventarioSuministro = {
                         _textField.get(0).getText(),
                         _textField.get(1).getText(),
                         _textField.get(2).getText(),
                         _textField.get(3).getText(),
-                        _textField.get(4).getText(),};
+                        categoria.getSelectedItem().toString()
+                            };
                     qr.insert(conexion.getConnection(), sqlInventario1, new ColumnListHandler(), dataInventarioSuministro);
                     
                     Insert = true;
@@ -213,8 +221,8 @@ public class SuministroVM extends Consult {
                         _textField.get(1).getText(),
                         _textField.get(2).getText(),
                         _textField.get(3).getText(),
-                        _textField.get(4).getText(),};
-                    String sqlInventario2 = "UPDATE suministros SET Nombre = ?,Codigo = ?,Stock = ?,Precio = ?,"
+                        categoria.getSelectedItem().toString()};
+                    String sqlInventario2 = "UPDATE suministros SET Codigo = ?,Nombre = ?,Stock = ?,Precio = ?,"
                             + "Categoria = ? WHERE IdSuministro =" + _idCliente;
                     qr.update(conexion.getConnection(), sqlInventario2, dataCliente2);
                     Update = true;
@@ -238,27 +246,28 @@ public class SuministroVM extends Consult {
         _textField.get(1).setText((String) modelo1.getValueAt(filas, 2));
         _textField.get(2).setText((String) modelo1.getValueAt(filas, 3));
         _textField.get(3).setText((String) modelo1.getValueAt(filas, 4));
-        _textField.get(4).setText((String) modelo1.getValueAt(filas, 5));
+        categoria.setSelectedItem((String) modelo1.getValueAt(filas, 5));
     }
 
     public final void restablecer() {
         seccion = 1;
         _accion = "insert";
+        categoria.setSelectedItem("CATEGORIA");
         _textField.get(0).setText("");
         _textField.get(1).setText("");
         _textField.get(2).setText("");
         _textField.get(3).setText("");
-        _textField.get(4).setText("");
-        _label.get(0).setText("Codigo");
+       // _textField.get(4).setText("");
+        _label.get(0).setText("");
         _label.get(0).setForeground(new Color(102, 102, 102));
-        _label.get(1).setText("Nombre");
+        _label.get(1).setText("");
         _label.get(1).setForeground(new Color(102, 102, 102));
-        _label.get(2).setText("Stock");
+        _label.get(2).setText("");
         _label.get(2).setForeground(new Color(102, 102, 102));
-        _label.get(3).setText("Precio");
+        _label.get(3).setText("");
         _label.get(3).setForeground(new Color(102, 102, 102));
-        _label.get(4).setText("Categoria");
-        _label.get(4).setForeground(new Color(102, 102, 102));
+//        _label.get(4).setText("Categoria");
+//        _label.get(4).setForeground(new Color(102, 102, 102));
         listSuministros = suministros();
         if (!listSuministros.isEmpty()) {
             _paginadorSuministro = new Paginador<>(listSuministros,
@@ -272,6 +281,8 @@ public class SuministroVM extends Consult {
         );
         _spinnerPaginas.setModel(model);
         SearchClientes("");
+        extraerIDSuministro();
+        
     }
 
     private List<TSuministro> listSuministros;
@@ -296,8 +307,8 @@ public class SuministroVM extends Consult {
             suministroFilter.forEach(item -> {
                 Object[] registros = {
                     item.getIdSuministro(),
-                    item.getNombre(),
                     item.getCodigo(),
+                    item.getNombre(),
                     item.getStock(),
                     item.getPrecio(),
                     item.getCategoria(),
@@ -318,6 +329,43 @@ public class SuministroVM extends Consult {
         _tableBodega.getColumnModel().getColumn(0).setMinWidth(0);
         _tableBodega.getColumnModel().getColumn(0).setPreferredWidth(0);
 
+    }
+    
+    public void extraerIDSuministro() {
+        int j;
+        int cont = 1;
+        String num = "";
+        String c = "";
+        String SQL = "SELECT MAX(Codigo) FROM suministros";
+
+        try {
+            Statement st = conexion.getConnection().createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            while (rs.next()) {
+                c = rs.getString(1);
+            }
+
+            if (c == null) {
+                _textField.get(0).setText("SM0001");
+               // alimentos.Alimentos.codigo.setText("AL0001");
+            } else {
+                char r1 = c.charAt(2);
+                char r2 = c.charAt(3);
+                char r3 = c.charAt(4);
+                char r4 = c.charAt(5);
+                String r = "";
+                r = "" + r1 + r2 + r3 + r4;
+                j = Integer.parseInt(r);
+                GenerarCodigos gen = new GenerarCodigos();
+                gen.generar(j);
+                _textField.get(0).setText("SM" + gen.serie());
+              //  alimentos.Alimentos.codigo.setText("AL" + gen.serie());
+
+            }
+
+        } catch (SQLException ex) {
+          //  Logger.getLogger(OpcionesAl.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void Paginador(String metodo) {
