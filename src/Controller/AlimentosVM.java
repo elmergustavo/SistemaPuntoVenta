@@ -11,29 +11,24 @@ import Conexion.Consult;
 import Library.GenerarCodigos;
 import Library.Paginador;
 import Models.TAlimentos;
-import Models.TSuministro;
-import static Views.Sistema.codigo;
 import app.bolivia.swing.JCTextField;
 import java.awt.Color;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.table.DefaultTableModel;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.ColumnListHandler;
+import org.bolivia.combo.SComboBoxBlue;
 
 /**
  *
@@ -46,19 +41,17 @@ public class AlimentosVM extends Consult{
     private final ArrayList<JCTextField> _textField;
     private final JTable _tableSuministro;
     private DefaultTableModel modelo1;
-    private JSpinner _spinnerPaginas;
+    private final JSpinner _spinnerPaginas;
     private int _idCliente = 0;
     private int _reg_por_pagina = 10;
     private int _num_pagina = 1;
     public int seccion;
     private Paginador<TAlimentos> _paginadorAlimentos;
+    private final SComboBoxBlue TipoAl;
     private boolean Insert;
     private boolean Update;
 
-    private  Conexion conexion;
-   // private Connection conn = null;
-
-    
+    private final  Conexion conexion; 
     static PreparedStatement ps;
   
     
@@ -68,9 +61,9 @@ public class AlimentosVM extends Consult{
         _textField = textField;
         _tableSuministro = (JTable) objects[0];
         _spinnerPaginas = (JSpinner) objects[1];
+        TipoAl = (SComboBoxBlue) objects[2];
         restablecer();
         extraerID();
-        //  RestablecerReport();
         this.Insert = false;
         this.Update = false;
     }
@@ -196,12 +189,14 @@ public class AlimentosVM extends Consult{
             conexion.getConnection().setAutoCommit(false);
             switch (_accion) {
                 case "insert":
-                    String sqlInventario1 = "INSERT INTO alimentos(Codigo_al, Nombre_al, Precio_al)"
-                            + " VALUES(?,?,?)";
+                    String sqlInventario1 = "INSERT INTO alimentos(Codigo_al, Nombre_al, Precio_al, Tipo_al)"
+                            + " VALUES(?,?,?,?)";
                     Object[] dataInventarioSuministro = {
                         _textField.get(0).getText(),
                         _textField.get(1).getText(),
-                        _textField.get(2).getText(),};
+                        _textField.get(2).getText(),
+                        TipoAl.getSelectedItem().toString()
+                    };
                     qr.insert(conexion.getConnection(), sqlInventario1, new ColumnListHandler(), dataInventarioSuministro);
                     
                     Insert = true;
@@ -210,8 +205,10 @@ public class AlimentosVM extends Consult{
                     Object[] dataCliente2 = {
                         _textField.get(0).getText(),
                         _textField.get(1).getText(),
-                        _textField.get(2).getText()};
-                    String sqlInventario2 = "UPDATE alimentos SET Codigo_al = ?,Nombre_al = ?,Precio_al = ?"
+                        _textField.get(2).getText(),
+                        TipoAl.getSelectedItem().toString()
+                    };
+                    String sqlInventario2 = "UPDATE alimentos SET Codigo_al = ?,Nombre_al = ?,Precio_al = ?, Tipo_al = ?"
                             + " WHERE IdAl =" + _idCliente;
                     qr.update(conexion.getConnection(), sqlInventario2, dataCliente2);
                     Update = true;
@@ -234,11 +231,13 @@ public class AlimentosVM extends Consult{
         _textField.get(0).setText((String) modelo1.getValueAt(filas, 1));
         _textField.get(1).setText((String) modelo1.getValueAt(filas, 2));
         _textField.get(2).setText((String) modelo1.getValueAt(filas, 3));
+        TipoAl.setSelectedItem((String) modelo1.getValueAt(filas, 4));
     }
 
     public final void restablecer() {
         seccion = 1;
         _accion = "insert";
+        TipoAl.setSelectedItem("TIPO ALIMENTO");
         _textField.get(0).setText("");
         _textField.get(1).setText("");
         _textField.get(2).setText("");
@@ -267,7 +266,7 @@ public class AlimentosVM extends Consult{
 
     public void SearchClientes(String campo) {
         List<TAlimentos> AlimentosFilter;
-        String[] titulos = {"IdAl", "Codigo", "Nombre", "Precio $"};
+        String[] titulos = {"IdAl", "Codigo", "Nombre", "Precio $", "Tipo Alimento"};
         modelo1 = new DefaultTableModel(null, titulos);
         int inicio = (_num_pagina - 1) * _reg_por_pagina;
         if (campo.equals("")) {
@@ -276,7 +275,8 @@ public class AlimentosVM extends Consult{
                     .collect(Collectors.toList());
         } else {
             AlimentosFilter = alimentos().stream()
-                    .filter(C -> C.getCodigo_al().startsWith(campo) || C.getNombre_al().startsWith(campo))
+                    .filter(C -> C.getCodigo_al().startsWith(campo) || C.getNombre_al().startsWith(campo)
+                    || C.getTipo_al().startsWith(campo))
                     .skip(inicio).limit(_reg_por_pagina)
                     .collect(Collectors.toList());
         }
@@ -286,7 +286,8 @@ public class AlimentosVM extends Consult{
                     item.getIdAl(),
                     item.getCodigo_al(),
                     item.getNombre_al(),
-                    item.getPrecio_al()
+                    item.getPrecio_al(),
+                    item.getTipo_al()
                    };
                 modelo1.addRow(registros);
             });
@@ -330,8 +331,6 @@ public class AlimentosVM extends Consult{
                 GenerarCodigos gen = new GenerarCodigos();
                 gen.generar(j);
                 _textField.get(0).setText("AL" + gen.serie());
-              //  alimentos.Alimentos.codigo.setText("AL" + gen.serie());
-
             }
 
         } catch (SQLException ex) {
