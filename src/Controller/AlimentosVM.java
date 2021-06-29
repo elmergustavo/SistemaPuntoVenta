@@ -34,7 +34,7 @@ import org.bolivia.combo.SComboBoxBlue;
  *
  * @author elmer
  */
-public class AlimentosVM extends Consult{
+public final class AlimentosVM extends Consult{
 
     private String _accion = "insert";
     private final ArrayList<JLabel> _label;
@@ -54,6 +54,8 @@ public class AlimentosVM extends Consult{
     private final  Conexion conexion; 
     static PreparedStatement ps;
   
+    private String Id;
+    private String sql;
     
     public AlimentosVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JCTextField> textField) {
         this.conexion = Conexion.createInstance();
@@ -63,7 +65,7 @@ public class AlimentosVM extends Consult{
         _spinnerPaginas = (JSpinner) objects[1];
         TipoAl = (SComboBoxBlue) objects[2];
         restablecer();
-        extraerID();
+        
         this.Insert = false;
         this.Update = false;
     }
@@ -260,6 +262,7 @@ public class AlimentosVM extends Consult{
         );
         _spinnerPaginas.setModel(model);
         SearchClientes("");
+        extraerID();
     }
 
     private List<TAlimentos> listAlimentos;
@@ -302,6 +305,14 @@ public class AlimentosVM extends Consult{
        
 
     }
+    
+    public void deleteCliente() {
+        
+        sql = "DELETE FROM alimentos WHERE IdAl LIKE ?";
+        delete(sql, _idCliente);
+    }
+    
+    
     
     public void extraerID() {
         int j;

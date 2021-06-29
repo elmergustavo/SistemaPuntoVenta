@@ -88,5 +88,19 @@ public class Consult /*extends Conexion*/ {
         }
         return alimento;
     }
+    
+    public void delete(String sql, int id) {
+        try {
+            final QueryRunner qr = new QueryRunner(true);
+            if (0 < id) {
+                qr.update(conexion.getConnection(), sql, "%" + id + "%");
+            } else {
+                qr.update(conexion.getConnection(), sql);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error : " + ex);
+        }
+
+    }
 
 }

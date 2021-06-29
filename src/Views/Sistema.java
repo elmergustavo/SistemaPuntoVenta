@@ -21,6 +21,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -32,18 +33,18 @@ public class Sistema extends javax.swing.JFrame {
     /**
      * Creates new form Sistema
      */
-    
+    private int idCliente = 0;
+
     public Sistema() {
 
         initComponents();
         JTextField categoria = new JTextField();
         categoria.setText("");
         TabbedPanePrincipal.setSelectedIndex(4);
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabel2, "src/Resources/logo.png");
+        //rsscalelabel.RSScaleLabel.setScaleLabel(jLabel2, "src/Resources/logo.png");
         //rsscalelabel.RSScaleLabel.setScaleLabel(jLabel6, "src/Resources/logo.png");
         //   TextField_BuscarVentas.setEditable(false);
-        
-        
+
         tipoAl.addItemListener(new ItemListener() {
 
             @Override
@@ -56,7 +57,7 @@ public class Sistema extends javax.swing.JFrame {
                     System.out.println("entro");
                     tipoL.setIcon(new ImageIcon(getClass().getResource("/Resources/bebida.png")));
                     nombreL.setIcon(new ImageIcon(getClass().getResource("/Resources/bebida1.png")));
-                    
+
                     categoria.setText("1");
                 }
                 if (tipoAl.getSelectedIndex() == 2) {
@@ -116,7 +117,6 @@ public class Sistema extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         TabbedPanePrincipal = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -161,6 +161,7 @@ public class Sistema extends javax.swing.JFrame {
         TextFieldClientes_Pagos = new javax.swing.JTextField();
         ButtonCliente_Agregar = new rojerusan.RSMaterialButtonRectangle();
         ButtonCliente_Cancelar = new rojerusan.RSMaterialButtonRectangle();
+        ButtonCliente_Agregar1 = new rojerusan.RSMaterialButtonRectangle();
         jPanel9 = new javax.swing.JPanel();
         TabbedPaneCliente2 = new javax.swing.JTabbedPane();
         jPanel10 = new javax.swing.JPanel();
@@ -367,8 +368,6 @@ public class Sistema extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -376,9 +375,7 @@ public class Sistema extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -560,7 +557,7 @@ public class Sistema extends javax.swing.JFrame {
                                                     .addComponent(TextFieldCliente_Email, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(2, 2, 2))))))
                             .addComponent(CheckBoxCliente_Credito))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 1, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(72, 72, 72)
@@ -808,20 +805,29 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        ButtonCliente_Agregar1.setBackground(new java.awt.Color(34, 102, 145));
+        ButtonCliente_Agregar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
+        ButtonCliente_Agregar1.setText("Eliminar");
+        ButtonCliente_Agregar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCliente_Agregar1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TabbedPaneCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(TabbedPaneCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(ButtonCliente_Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ButtonCliente_Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ButtonCliente_Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ButtonCliente_Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ButtonCliente_Agregar1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -830,9 +836,10 @@ public class Sistema extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(TabbedPaneCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ButtonCliente_Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-                    .addComponent(ButtonCliente_Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ButtonCliente_Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(ButtonCliente_Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(ButtonCliente_Agregar1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1059,7 +1066,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
 
         TabbedPanePrincipal.addTab("Clientes", jPanel2);
@@ -2548,7 +2555,6 @@ public class Sistema extends javax.swing.JFrame {
 
         jPanel40.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 870, 280));
 
-        total.setEditable(false);
         total.setBackground(new java.awt.Color(34, 102, 145));
         total.setBorder(null);
         total.setForeground(new java.awt.Color(255, 255, 255));
@@ -2556,6 +2562,11 @@ public class Sistema extends javax.swing.JFrame {
         total.setOpaque(false);
         total.setPhColor(new java.awt.Color(255, 255, 255));
         total.setPlaceholder("TOTAL");
+        total.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                totalActionPerformed(evt);
+            }
+        });
         jPanel40.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 310, 80, 30));
 
         codigoL3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/total.png"))); // NOI18N
@@ -2900,7 +2911,7 @@ public class Sistema extends javax.swing.JFrame {
     private AlimentosVM alimento;
 
     private void ButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInventarioActionPerformed
-        
+
         TabbedPanePrincipal.setSelectedIndex(1);
         BtnVentas.setEnabled(true);
         ButtonCliente.setEnabled(true);
@@ -2942,13 +2953,12 @@ public class Sistema extends javax.swing.JFrame {
             SpinnerPaginasInventario_suministro2
         };
         categoria = new CategoriaVM(objects2, label2, textField2);
-        
-        
+
         // datos de platillos
         ArrayList<JLabel> label3 = new ArrayList();
         label3.add(jLabelInventario_platillosCodigo);
         label3.add(jLabelInventario_platillosNombre);
-       // label.add(jLabelInventario_platillosTipo);
+        // label.add(jLabelInventario_platillosTipo);
         label3.add(jLabelInventario_platillosPrecio);
         label3.add(LabelInventarioSuministro_Paginas2);
         ArrayList<JCTextField> JCtextField = new ArrayList();
@@ -2960,7 +2970,7 @@ public class Sistema extends javax.swing.JFrame {
             SpinnerPaginasInventario_suministro2,
             tipoAl
         };
-        alimento = new AlimentosVM(objects3,label3, JCtextField);
+        alimento = new AlimentosVM(objects3, label3, JCtextField);
     }//GEN-LAST:event_ButtonInventarioActionPerformed
 
     private void ButtonCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCotizacionActionPerformed
@@ -3193,7 +3203,7 @@ public class Sistema extends javax.swing.JFrame {
         alertas.AlertWarning alerta = new alertas.AlertWarning(this, true);
         alerta.AgregarTexto("Seguro quieres cancelar", "Si", "No");
         alerta.setVisible(true);
-        
+
         if (alerta.bandera) {
             suministro.restablecer();
         }    }//GEN-LAST:event_rSMaterialButtonRectangle9ActionPerformed
@@ -3392,17 +3402,31 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_actualizarActionPerformed
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
-
+        if (idCliente == 0) {
+            alertas.AlertError alerta = new alertas.AlertError(this, true);
+            alerta.Texto("Seleccione un alimento para eliminar");
+            alerta.setVisible(true);
+        } else {
+            alertas.AlertWarning alerta = new alertas.AlertWarning(this, true);
+            alerta.AgregarTexto("Seguro quieres eliminar este alimento", "Si", "No");
+            alerta.setVisible(true);
+            if (alerta.bandera) {
+                alimento.deleteCliente();
+                alimento.restablecer();
+                idCliente = 0;
+            }
+        }
     }//GEN-LAST:event_eliminarActionPerformed
 
     private void limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarActionPerformed
         alimento.restablecer();
         alimento.extraerID();
+        idCliente = 0;
         buscar.setText("");
     }//GEN-LAST:event_limpiarActionPerformed
 
     private void buscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscarMouseClicked
-       // alimento.restablecer();
+        // alimento.restablecer();
     }//GEN-LAST:event_buscarMouseClicked
 
     private void buscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscarKeyReleased
@@ -3412,18 +3436,20 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_buscarKeyReleased
 
     private void tipoAlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAlActionPerformed
-     
+
     }//GEN-LAST:event_tipoAlActionPerformed
 
     private void TableInventario_platillosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableInventario_platillosMouseClicked
         if (TableInventario_platillos.getSelectedRows().length > 0) {
             alimento.GetCliente();
+            idCliente = 1;
         }
     }//GEN-LAST:event_TableInventario_platillosMouseClicked
 
     private void TableInventario_platillosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TableInventario_platillosKeyReleased
         if (TableInventario_platillos.getSelectedRows().length > 0) {
             alimento.GetCliente();
+            idCliente = 1;
         }
     }//GEN-LAST:event_TableInventario_platillosKeyReleased
 
@@ -3469,8 +3495,6 @@ public class Sistema extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
 
-
-
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
@@ -3482,7 +3506,7 @@ public class Sistema extends javax.swing.JFrame {
         char letras = evt.getKeyChar();
         if ((letras < 'a' || letras > 'z') && (letras < 'A' | letras > 'Z')) {
             if ((letras != 'ñ') && (letras != 'Ñ') && (letras != 'á') && (letras != 'Á') && (letras != 'é') && (letras != 'É') && (letras != 'í')
-                && (letras != 'Í') && (letras != 'ó') && (letras != 'Ó') && (letras != 'ú') && (letras != 'Ú') && (letras != ' ')) {
+                    && (letras != 'Í') && (letras != 'ó') && (letras != 'Ó') && (letras != 'ú') && (letras != 'Ú') && (letras != ' ')) {
                 evt.consume();
             }
         }
@@ -3521,7 +3545,18 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_venderActionPerformed
 
     private void calculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculoActionPerformed
-        // TODO add your handling code here:
+     if (recibi.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Ingrese un valor.", "Caja de cobro", 0);
+        } else {
+            double recibe = Double.parseDouble(recibi.getText());
+            double tota = Double.parseDouble(total.getText());
+
+            if (recibe < tota) {
+                JOptionPane.showMessageDialog(this, "Ingrese un valor valido.", "Caja de cobro",0);
+            } else {
+                this.cambio.setText(String.valueOf(recibe - tota));
+            }
+        }
     }//GEN-LAST:event_calculoActionPerformed
 
     private void buscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscaActionPerformed
@@ -3532,8 +3567,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_buscaActionPerformed
 
     private void rSMaterialButtonRectangle12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle12ActionPerformed
-        
-        
+
         TabbedPanePrincipal.setSelectedIndex(5);
     }//GEN-LAST:event_rSMaterialButtonRectangle12ActionPerformed
 
@@ -3542,18 +3576,18 @@ public class Sistema extends javax.swing.JFrame {
         String TituloReporte = "Reporte de Alimentos";
         String ConsultaSql = "SELECT Codigo_al, Nombre_al, Precio_al, Tipo_al FROM alimentos";
         String FileName = "alimentos";
-        Excel.reporte(cabecera,TituloReporte,ConsultaSql,FileName);
+        Excel.reporte(cabecera, TituloReporte, ConsultaSql, FileName);
         alertas.AlertSuccess alerta = new alertas.AlertSuccess(this, true);
         alerta.Texto("Reporte Generado Correctamente");
         alerta.setVisible(true);
     }//GEN-LAST:event_btnGenerarReportePlatillosActionPerformed
 
     private void btnGenerarReporteSuministrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteSuministrosActionPerformed
-        String[] cabecera = new String[]{"Código", "Nombre", "Precio", "Stock", "Categoria"};
+        String[] cabecera = new String[]{"Código", "Nombre", "Stock", "Precio", "Categoria"};
         String TituloReporte = "Reporte de Suministros";
         String ConsultaSql = "SELECT Codigo, Nombre, Stock, Precio, Categoria FROM suministros";
         String FileName = "suministros";
-        Excel.reporte(cabecera,TituloReporte,ConsultaSql,FileName);
+        Excel.reporte(cabecera, TituloReporte, ConsultaSql, FileName);
         alertas.AlertSuccess alerta = new alertas.AlertSuccess(this, true);
         alerta.Texto("Reporte Generado Correctamente");
         alerta.setVisible(true);
@@ -3562,6 +3596,14 @@ public class Sistema extends javax.swing.JFrame {
     private void btnGenerarReporteSuministrosPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteSuministrosPDFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGenerarReporteSuministrosPDFActionPerformed
+
+    private void ButtonCliente_Agregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Agregar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonCliente_Agregar1ActionPerformed
+
+    private void totalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_totalActionPerformed
 
     // </editor-fold>
     /**
@@ -3604,6 +3646,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JButton ButtonClienteConfig;
     private javax.swing.JButton ButtonClienteConfig1;
     private rojerusan.RSMaterialButtonRectangle ButtonCliente_Agregar;
+    private rojerusan.RSMaterialButtonRectangle ButtonCliente_Agregar1;
     private rojerusan.RSMaterialButtonRectangle ButtonCliente_Cancelar;
     private javax.swing.JButton ButtonCliente_Paginas1;
     private javax.swing.JButton ButtonCliente_Paginas2;
@@ -3687,7 +3730,7 @@ public class Sistema extends javax.swing.JFrame {
     private app.bolivia.swing.JCTextField buscar;
     private app.bolivia.swing.JCTextField buscar1;
     private javax.swing.JButton calculo;
-    private app.bolivia.swing.JCTextField cambio;
+    public static app.bolivia.swing.JCTextField cambio;
     private javax.swing.JButton cancelar;
     public static app.bolivia.swing.JCTextField codigo;
     private javax.swing.JLabel codigoL;
@@ -3707,7 +3750,6 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
@@ -3792,7 +3834,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel nombreL1;
     private javax.swing.JLabel nombreL2;
     private javax.swing.JLabel nombreL3;
-    private app.bolivia.swing.JCTextField numFac;
+    public static app.bolivia.swing.JCTextField numFac;
     private app.bolivia.swing.JCTextField precio;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelHora rSLabelHora1;
@@ -3805,11 +3847,11 @@ public class Sistema extends javax.swing.JFrame {
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle9;
     private rojerusan.RSTableMetro rSTableMetro1;
     private rojerusan.RSTableMetro rSTableMetro3;
-    private app.bolivia.swing.JCTextField recibi;
+    public static app.bolivia.swing.JCTextField recibi;
     private javax.swing.JButton registrar;
     private org.bolivia.combo.SComboBoxBlue tipoAl;
     private javax.swing.JLabel tipoL;
-    private app.bolivia.swing.JCTextField total;
+    public static app.bolivia.swing.JCTextField total;
     private javax.swing.JButton vender;
     private rojerusan.RSTableMetro xd;
     // End of variables declaration//GEN-END:variables

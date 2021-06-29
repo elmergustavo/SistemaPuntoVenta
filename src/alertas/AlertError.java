@@ -170,6 +170,10 @@ public class AlertError extends javax.swing.JDialog {
         timer.schedule(task, 0, 2);
     }//GEN-LAST:event_formWindowOpened
 
+    public void Texto(String texto){
+        jLabel2.setText(texto);
+        
+    }
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         setVisible(false);
         dispose();

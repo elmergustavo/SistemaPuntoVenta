@@ -113,16 +113,16 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jPanel1" alignment="0" pref="488" max="32767" attributes="0"/>
                                   <Component id="jSeparator1" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel4" max="32767" attributes="0"/>
-                                  <Component id="jButton1" min="-2" pref="57" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel4" min="-2" pref="57" max="-2" attributes="0"/>
+                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -197,7 +197,7 @@
             <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/about/fa.png"/>
+                  <Image iconType="3" name="/about/github.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt; &lt;head&gt; &lt;style&gt; #contenedor{background:#00688B;color:white; padding-left:10px;padding-right:10px;margin:0; padding-top:5px;padding-bottom:5px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;h4 id=&quot;contenedor&quot;&gt;Ir a mi facebook&lt;/h4&gt; &lt;/body&gt; &lt;/html&gt;"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -208,7 +208,7 @@
                   <Color id="Default Cursor"/>
                 </Property>
                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/about/fa1.png"/>
+                  <Image iconType="3" name="/about/github1.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -218,7 +218,7 @@
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/about/you.png"/>
+                  <Image iconType="3" name="/about/youtube1.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt; &lt;head&gt; &lt;style&gt; #contenedor{background:#8B0000;color:white; padding-left:10px;padding-right:10px;margin:0; padding-top:5px;padding-bottom:5px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;h4 id=&quot;contenedor&quot;&gt;Ir a mi canal de Youtube&lt;/h4&gt; &lt;/body&gt; &lt;/html&gt;"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -229,7 +229,7 @@
                   <Color id="Default Cursor"/>
                 </Property>
                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/about/you1.png"/>
+                  <Image iconType="3" name="/about/youtube.png"/>
                 </Property>
               </Properties>
               <Events>

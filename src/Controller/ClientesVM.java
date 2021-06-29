@@ -43,7 +43,8 @@ public class ClientesVM extends Consult {
     private boolean Update;
 
     private final Conexion conexion;
-    
+    private String Id;
+    private String sql;
     public ClientesVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
         this.conexion = Conexion.createInstance();
         _label = label;
@@ -414,6 +415,12 @@ public class ClientesVM extends Consult {
         SearchReportes("");
     }
     // </editor-fold>
+    
+    
+    public void deleteCliente() {
+        sql = "DELETE FROM clientes WHERE IdCliente LIKE ?";
+        delete(sql, _idCliente);
+    }
 
     private List<TClientes> listClientes;
     private List<TReportes_clientes> listReportes;
