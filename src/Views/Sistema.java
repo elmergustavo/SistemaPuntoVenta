@@ -23,6 +23,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import rojerusan.RSNotifyFade;
 
 /**
  *
@@ -103,6 +104,7 @@ public class Sistema extends javax.swing.JFrame {
                 }
             }
         });
+        new rojerusan.RSNotifyFade("Sistema", "Bienvenido al sistema punto de venta", 6, RSNotifyFade.PositionNotify.BottomRight, RSNotifyFade.TypeNotify.SUCCESS).setVisible(true);
 
     }
 

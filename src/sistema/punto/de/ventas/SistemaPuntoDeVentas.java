@@ -6,7 +6,9 @@
 package sistema.punto.de.ventas;
 
 
+import Views.Sistema;
 import Views.Splash;
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -28,11 +30,11 @@ public class SistemaPuntoDeVentas {
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
             
         }
-//        Sistema sistema = new Sistema();
-//        sistema.setExtendedState(MAXIMIZED_BOTH);
-//        sistema.setVisible(true);
-        Splash splash = new Splash();
-        splash.setVisible(true);
+        Sistema sistema = new Sistema();
+        sistema.setExtendedState(MAXIMIZED_BOTH);
+        sistema.setVisible(true);
+//        Splash splash = new Splash();
+//        splash.setVisible(true);
         
     }
     
