@@ -6,15 +6,9 @@
 package Controller;
 
 import Conexion.Conexion;
-import Conexion.Consult;
-import Library.Calendario;
 import Library.GenerarCodigos;
-import Library.Objectos;
 import Library.Paginador;
-import Library.Render_CheckBox;
-import Library.Uploadimage;
-import Models.TClientes;
-import Models.TReportes_clientes;
+import Models.SuministroSQL;
 import Models.TSuministro;
 import java.awt.Color;
 import java.sql.ResultSet;
@@ -23,8 +17,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import javax.swing.ImageIcon;
-import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
@@ -33,14 +25,13 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.table.DefaultTableModel;
 import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.handlers.ColumnListHandler;
 import org.bolivia.combo.SComboBoxBlue;
 
 /**
  *
  * @author elmer
  */
-public class SuministroVM extends Consult {
+public class SuministroVM extends SuministroSQL {
 
     private String _accion = "insert";
     private final ArrayList<JLabel> _label;
@@ -197,13 +188,9 @@ public class SuministroVM extends Consult {
     // Guardar los suministros en la base de datos
     private void SaveData() throws SQLException {
         try {
-
-            final QueryRunner qr = new QueryRunner(true);
             conexion.getConnection().setAutoCommit(false);
             switch (_accion) {
                 case "insert":
-                    String sqlInventario1 = "INSERT INTO suministros(Codigo, Nombre, Stock,Precio,Categoria)"
-                            + " VALUES(?,?,?,?,?)";
                     Object[] dataInventarioSuministro = {
                         _textField.get(0).getText(),
                         _textField.get(1).getText(),
@@ -211,8 +198,7 @@ public class SuministroVM extends Consult {
                         _textField.get(3).getText(),
                         categoria.getSelectedItem().toString()
                             };
-                    qr.insert(conexion.getConnection(), sqlInventario1, new ColumnListHandler(), dataInventarioSuministro);
-                    
+                    InsertSuministro(dataInventarioSuministro); 
                     Insert = true;
                     break;
                 case "update":
@@ -222,13 +208,10 @@ public class SuministroVM extends Consult {
                         _textField.get(2).getText(),
                         _textField.get(3).getText(),
                         categoria.getSelectedItem().toString()};
-                    String sqlInventario2 = "UPDATE suministros SET Codigo = ?,Nombre = ?,Stock = ?,Precio = ?,"
-                            + "Categoria = ? WHERE IdSuministro =" + _idCliente;
-                    qr.update(conexion.getConnection(), sqlInventario2, dataCliente2);
+                    UpdateSuministro(dataCliente2, _idCliente);
                     Update = true;
                     break;
             }
-
             conexion.getConnection().commit();
             restablecer();
         } catch (SQLException ex) {
@@ -257,7 +240,6 @@ public class SuministroVM extends Consult {
         _textField.get(1).setText("");
         _textField.get(2).setText("");
         _textField.get(3).setText("");
-       // _textField.get(4).setText("");
         _label.get(0).setText("");
         _label.get(0).setForeground(new Color(102, 102, 102));
         _label.get(1).setText("");
@@ -266,8 +248,6 @@ public class SuministroVM extends Consult {
         _label.get(2).setForeground(new Color(102, 102, 102));
         _label.get(3).setText("");
         _label.get(3).setForeground(new Color(102, 102, 102));
-//        _label.get(4).setText("Categoria");
-//        _label.get(4).setForeground(new Color(102, 102, 102));
         listSuministros = suministros();
         if (!listSuministros.isEmpty()) {
             _paginadorSuministro = new Paginador<>(listSuministros,
@@ -346,7 +326,6 @@ public class SuministroVM extends Consult {
 
             if (c == null) {
                 _textField.get(0).setText("SM0001");
-               // alimentos.Alimentos.codigo.setText("AL0001");
             } else {
                 char r1 = c.charAt(2);
                 char r2 = c.charAt(3);
@@ -357,9 +336,7 @@ public class SuministroVM extends Consult {
                 j = Integer.parseInt(r);
                 GenerarCodigos gen = new GenerarCodigos();
                 gen.generar(j);
-                _textField.get(0).setText("SM" + gen.serie());
-              //  alimentos.Alimentos.codigo.setText("AL" + gen.serie());
-
+                _textField.get(0).setText("SM" + gen.serie());            
             }
 
         } catch (SQLException ex) {
@@ -376,11 +353,6 @@ public class SuministroVM extends Consult {
                             _num_pagina = _paginadorSuministro.primero();
                         }
                         break;
-//                    case 2:
-//                        if (!listReportes.isEmpty()) {
-//                            _num_pagina = _paginadorReportes.primero();
-//                        }
-//                        break;
                 }
                 break;
             case "Anterior":
@@ -390,11 +362,6 @@ public class SuministroVM extends Consult {
                             _num_pagina = _paginadorSuministro.anterior();
                         }
                         break;
-//                    case 2:
-//                        if (!listReportes.isEmpty()) {
-//                            _num_pagina = _paginadorReportes.anterior();
-//                        }
-//                        break;
                 }
                 break;
             case "Siguiente":
@@ -404,11 +371,6 @@ public class SuministroVM extends Consult {
                             _num_pagina = _paginadorSuministro.siguiente();
                         }
                         break;
-//                    case 2:
-//                        if (!listReportes.isEmpty()) {
-//                            _num_pagina = _paginadorReportes.siguiente();
-//                        }
-//                        break;
                 }
                 break;
             case "Ultimo":
@@ -418,21 +380,13 @@ public class SuministroVM extends Consult {
                             _num_pagina = _paginadorSuministro.ultimo();
                         }
                         break;
-//                    case 2:
-//                        if (!listReportes.isEmpty()) {
-//                            _num_pagina = _paginadorReportes.ultimo();
-//                        }
-//                        break;
                 }
-                break;
         }
         switch (seccion) {
             case 1:
                 SearchClientes("");
                 break;
-//            case 2:
-//                SearchReportes("");
-//                break;
+
         }
     }
 
@@ -448,13 +402,6 @@ public class SuministroVM extends Consult {
                 }
                 SearchClientes("");
                 break;
-//            case 2:
-//                if (!listReportes.isEmpty()) {
-//                    _paginadorReportes = new Paginador<>(listReportes,
-//                            _label.get(7), _reg_por_pagina);
-//                }
-//                SearchReportes("");
-//                break;
         }
 
     }

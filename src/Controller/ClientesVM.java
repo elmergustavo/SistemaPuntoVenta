@@ -6,8 +6,8 @@
 package Controller;
 
 import Conexion.Conexion;
-import Conexion.Consult;
 import Library.*;
+import Models.ClienteSQL;
 import Models.TClientes;
 import Models.TReportes_clientes;
 import java.awt.Color;
@@ -24,7 +24,7 @@ import org.apache.commons.dbutils.handlers.ColumnListHandler;
  *
  * @author Gustavo
  */
-public class ClientesVM extends Consult {
+public class ClientesVM extends ClienteSQL {
 
     private String _accion = "insert";
     private final ArrayList<JLabel> _label;

@@ -6,7 +6,6 @@
 package Models;
 
 import Conexion.Conexion;
-import Models.Mesa;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +19,7 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
  */
 public class MesaSQL {
     private Conexion conexion = Conexion.createInstance();
-    
+    private QueryRunner QR = new QueryRunner();
     private Mesa mesa;
 
     public Mesa getMesa() {

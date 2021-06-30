@@ -3,13 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Conexion;
+package Models;
 
-import Models.TAlimentos;
-import Models.TCategoria;
-import Models.TClientes;
-import Models.TReportes_clientes;
-import Models.TSuministro;
+import Conexion.Conexion;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +15,9 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 /**
  *
- * @author Gustavo
+ * @author elmer
  */
-public class Consult /*extends Conexion*/ {
+public class ClienteSQL {
     private Conexion conexion = Conexion.createInstance();
     private QueryRunner QR = new QueryRunner();
 
@@ -55,40 +51,6 @@ public class Consult /*extends Conexion*/ {
         return reportes;
     }
     
-    
-    public List<TSuministro> suministros() {
-        List<TSuministro> suministro = new ArrayList();
-        try {
-            suministro = (List<TSuministro>) QR.query(conexion.getConnection(), "SELECT * FROM suministros",
-                    new BeanListHandler(TSuministro.class));
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error : " + ex);
-        }
-        return suministro;
-    }
-    
-    public List<TCategoria> categorias() {
-        List<TCategoria> categoria = new ArrayList();
-        try {
-            categoria = (List<TCategoria>) QR.query(conexion.getConnection(), "SELECT * FROM categorias",
-                    new BeanListHandler(TCategoria.class));
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error : " + ex);
-        }
-        return categoria;
-    }
-    
-    public List<TAlimentos> alimentos() {
-        List<TAlimentos> alimento = new ArrayList();
-        try {
-            alimento = (List<TAlimentos>) QR.query(conexion.getConnection(), "SELECT * FROM alimentos",
-                    new BeanListHandler(TAlimentos.class));
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error : " + ex);
-        }
-        return alimento;
-    }
-    
     public void delete(String sql, int id) {
         try {
             final QueryRunner qr = new QueryRunner(true);
@@ -102,5 +64,4 @@ public class Consult /*extends Conexion*/ {
         }
 
     }
-
 }

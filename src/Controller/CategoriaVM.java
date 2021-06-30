@@ -6,10 +6,9 @@
 package Controller;
 
 import Conexion.Conexion;
-import Conexion.Consult;
 import Library.Paginador;
+import Models.CategoriaSQL;
 import Models.TCategoria;
-import Models.TSuministro;
 import java.awt.Color;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -29,14 +28,14 @@ import org.apache.commons.dbutils.handlers.ColumnListHandler;
  *
  * @author elmer
  */
-public class CategoriaVM extends Consult {
+public class CategoriaVM extends CategoriaSQL {
 
     private String _accion = "insert";
     private final ArrayList<JLabel> _label;
     private final ArrayList<JTextField> _textField;
     private final JTable _tableCategoria;
     private DefaultTableModel modelo1;
-    private JSpinner _spinnerPaginas;
+    private final JSpinner _spinnerPaginas;
     private int _idCliente = 0;
     private int _reg_por_pagina = 10;
     private int _num_pagina = 1;
@@ -206,7 +205,6 @@ public class CategoriaVM extends Consult {
 
     public void GetCategoria() {
         _accion = "update";
-        System.out.println("entro a getCliente");
         int filas = _tableCategoria.getSelectedRow();
         _idCliente = (Integer) modelo1.getValueAt(filas, 0);
         _textField.get(0).setText((String) modelo1.getValueAt(filas, 1));

@@ -6,10 +6,9 @@
 package Controller;
 
 import Conexion.Conexion;
-import Conexion.Consult;
-
 import Library.GenerarCodigos;
 import Library.Paginador;
+import Models.AlimentoSQL;
 import Models.TAlimentos;
 import app.bolivia.swing.JCTextField;
 import java.awt.Color;
@@ -34,7 +33,7 @@ import org.bolivia.combo.SComboBoxBlue;
  *
  * @author elmer
  */
-public final class AlimentosVM extends Consult{
+public final class AlimentosVM extends AlimentoSQL{
 
     private String _accion = "insert";
     private final ArrayList<JLabel> _label;
@@ -48,14 +47,12 @@ public final class AlimentosVM extends Consult{
     public int seccion;
     private Paginador<TAlimentos> _paginadorAlimentos;
     private final SComboBoxBlue TipoAl;
+    private List<TAlimentos> listAlimentos;
     private boolean Insert;
     private boolean Update;
 
     private final  Conexion conexion; 
     static PreparedStatement ps;
-  
-    private String Id;
-    private String sql;
     
     public AlimentosVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JCTextField> textField) {
         this.conexion = Conexion.createInstance();
@@ -65,7 +62,6 @@ public final class AlimentosVM extends Consult{
         _spinnerPaginas = (JSpinner) objects[1];
         TipoAl = (SComboBoxBlue) objects[2];
         restablecer();
-        
         this.Insert = false;
         this.Update = false;
     }
@@ -130,7 +126,6 @@ public final class AlimentosVM extends Consult{
                                         _textField.get(1).requestFocus();
                                     }
                                 }
-
                                 break;
                             case "update":
                                 if (count == 2) {
@@ -186,21 +181,16 @@ public final class AlimentosVM extends Consult{
     // Guardar los suministros en la base de datos
     private void SaveData() throws SQLException {
         try {
-
-            final QueryRunner qr = new QueryRunner(true);
             conexion.getConnection().setAutoCommit(false);
             switch (_accion) {
                 case "insert":
-                    String sqlInventario1 = "INSERT INTO alimentos(Codigo_al, Nombre_al, Precio_al, Tipo_al)"
-                            + " VALUES(?,?,?,?)";
                     Object[] dataInventarioSuministro = {
                         _textField.get(0).getText(),
                         _textField.get(1).getText(),
                         _textField.get(2).getText(),
                         TipoAl.getSelectedItem().toString()
                     };
-                    qr.insert(conexion.getConnection(), sqlInventario1, new ColumnListHandler(), dataInventarioSuministro);
-                    
+                    insertAlimento(dataInventarioSuministro);
                     Insert = true;
                     break;
                 case "update":
@@ -210,13 +200,10 @@ public final class AlimentosVM extends Consult{
                         _textField.get(2).getText(),
                         TipoAl.getSelectedItem().toString()
                     };
-                    String sqlInventario2 = "UPDATE alimentos SET Codigo_al = ?,Nombre_al = ?,Precio_al = ?, Tipo_al = ?"
-                            + " WHERE IdAl =" + _idCliente;
-                    qr.update(conexion.getConnection(), sqlInventario2, dataCliente2);
+                    updateAlimento(dataCliente2, _idCliente);
                     Update = true;
                     break;
             }
-
             conexion.getConnection().commit();
             restablecer();
         } catch (SQLException ex) {
@@ -227,7 +214,6 @@ public final class AlimentosVM extends Consult{
 
     public void GetCliente() {
         _accion = "update";
-        System.out.println("entro a getCliente");
         int filas = _tableSuministro.getSelectedRow();
         _idCliente = (Integer) modelo1.getValueAt(filas, 0);
         _textField.get(0).setText((String) modelo1.getValueAt(filas, 1));
@@ -265,8 +251,6 @@ public final class AlimentosVM extends Consult{
         extraerID();
     }
 
-    private List<TAlimentos> listAlimentos;
-
     public void SearchClientes(String campo) {
         List<TAlimentos> AlimentosFilter;
         String[] titulos = {"IdAl", "Codigo", "Nombre", "Precio $", "Tipo Alimento"};
@@ -295,24 +279,16 @@ public final class AlimentosVM extends Consult{
                 modelo1.addRow(registros);
             });
         }
-        
         _tableSuministro.setModel(modelo1);
         _tableSuministro.setRowHeight(30);
         _tableSuministro.getColumnModel().getColumn(0).setMaxWidth(0);
         _tableSuministro.getColumnModel().getColumn(0).setMinWidth(0);
         _tableSuministro.getColumnModel().getColumn(0).setPreferredWidth(0);
-
-       
-
     }
     
     public void deleteCliente() {
-        
-        sql = "DELETE FROM alimentos WHERE IdAl LIKE ?";
-        delete(sql, _idCliente);
+        delete( _idCliente);
     }
-    
-    
     
     public void extraerID() {
         int j;
@@ -330,7 +306,6 @@ public final class AlimentosVM extends Consult{
 
             if (c == null) {
                 _textField.get(0).setText("AL0001");
-               // alimentos.Alimentos.codigo.setText("AL0001");
             } else {
                 char r1 = c.charAt(2);
                 char r2 = c.charAt(3);
