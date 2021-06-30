@@ -45,6 +45,7 @@ public class ClientesVM extends Consult {
     private final Conexion conexion;
     private String Id;
     private String sql;
+    
     public ClientesVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
         this.conexion = Conexion.createInstance();
         _label = label;

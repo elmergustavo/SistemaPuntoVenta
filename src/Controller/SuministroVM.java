@@ -337,7 +337,6 @@ public class SuministroVM extends Consult {
         String num = "";
         String c = "";
         String SQL = "SELECT MAX(Codigo) FROM suministros";
-
         try {
             Statement st = conexion.getConnection().createStatement();
             ResultSet rs = st.executeQuery(SQL);
