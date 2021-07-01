@@ -10,6 +10,7 @@ import Controller.CategoriaVM;
 import Library.Objectos;
 import Controller.ClientesVM;
 import Controller.SuministroVM;
+import Models.MesaSQL;
 import Reportes.Excel;
 import app.bolivia.swing.JCTextField;
 import java.awt.Color;
@@ -2938,6 +2939,16 @@ public class Sistema extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jTabbedPane3.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jTabbedPane3AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
         jPanel32Layout.setHorizontalGroup(
@@ -3276,6 +3287,8 @@ public class Sistema extends javax.swing.JFrame {
         ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(false);
         TabbedPanePrincipal.setSelectedIndex(5);
+        MesaSQL mesas = new MesaSQL();
+        
     }//GEN-LAST:event_ButtonClienteConfigActionPerformed
 
     private void ButtonCliente_Paginas4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas4ActionPerformed
@@ -3916,6 +3929,10 @@ public class Sistema extends javax.swing.JFrame {
     private void ventasH1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasH1ActionPerformed
         
     }//GEN-LAST:event_ventasH1ActionPerformed
+
+    private void jTabbedPane3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTabbedPane3AncestorAdded
+
+    }//GEN-LAST:event_jTabbedPane3AncestorAdded
 
     // </editor-fold>
     /**
