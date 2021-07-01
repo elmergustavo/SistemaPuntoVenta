@@ -37,33 +37,45 @@ public class MesaSQL {
     }
 
     public Mesa obtenerMesa(int id) {
-        sql = "SELECT * FROM mesa WHERE idMesa=" + id;
+        sql = "SELECT * FROM mesa WHERE id=" + id;
         System.out.println(sql);
-        String datos[] = new String[3];
         try {
             st = conexion.getConnection().createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
                 mesa = new Mesa();
                 mesa.setNumero(Integer.parseInt(rs.getString(1)));
-                if (rs.getString(2) == "1") {
-                    mesa.setDisponible(true);
-                }
-                else{
-                    mesa.setDisponible(false);
-                }
-                if (rs.getString(3) == "1") {
-                    mesa.setCobrado(true);
-                }
-                else{
-                    mesa.setCobrado(false);
-                }  
+                mesa.setEstado(rs.getString(2));
             }
         } catch (SQLException ex) {
             Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
         }
         return mesa;
-
     }
+    public void marcarOcupado(int id) {
+        sql = "UPDATE mesa SET estado='O' WHERE id=" + id;
+        System.out.println(sql); 
+        int rs = 0;
+        try {
+            st = conexion.getConnection().prepareStatement(sql);
+            rs = st.executeUpdate(sql);
+            System.out.println("CORRECTO");
+        } catch (SQLException ex) {
+            Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void marcarDisponible(int id) {
+        sql = "UPDATE mesa SET estado='D' WHERE id=" + id;
+        System.out.println(sql); 
+        int rs = 0;
+        try {
+            st = conexion.getConnection().prepareStatement(sql);
+            rs = st.executeUpdate(sql);
+            System.out.println("CORRECTO");
+        } catch (SQLException ex) {
+            Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 
 }

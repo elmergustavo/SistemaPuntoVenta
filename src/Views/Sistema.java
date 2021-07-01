@@ -11,6 +11,7 @@ import Library.Objectos;
 import Controller.ClientesVM;
 import Controller.SuministroVM;
 import Models.MesaSQL;
+import Models.controlMesa;
 import Reportes.Excel;
 import app.bolivia.swing.JCTextField;
 import java.awt.Color;
@@ -360,8 +361,32 @@ public class Sistema extends javax.swing.JFrame {
         PanelNombre1 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
-        jPanel32 = new javax.swing.JPanel();
         jPanel46 = new javax.swing.JPanel();
+        jPanel32 = new javax.swing.JPanel();
+        mesa1 = new javax.swing.JLabel();
+        mesa2 = new javax.swing.JLabel();
+        mesa3 = new javax.swing.JLabel();
+        mesa4 = new javax.swing.JLabel();
+        mesa5 = new javax.swing.JLabel();
+        mesa6 = new javax.swing.JLabel();
+        mesa7 = new javax.swing.JLabel();
+        mesa8 = new javax.swing.JLabel();
+        mesa9 = new javax.swing.JLabel();
+        mesa10 = new javax.swing.JLabel();
+        mesa11 = new javax.swing.JLabel();
+        mesa12 = new javax.swing.JLabel();
+        BotonMesa1 = new javax.swing.JButton();
+        BotonMesa2 = new javax.swing.JButton();
+        BotonMesa3 = new javax.swing.JButton();
+        BotonMesa4 = new javax.swing.JButton();
+        BotonMesa5 = new javax.swing.JButton();
+        BotonMesa6 = new javax.swing.JButton();
+        BotonMesa7 = new javax.swing.JButton();
+        BotonMesa8 = new javax.swing.JButton();
+        BotonMesa9 = new javax.swing.JButton();
+        BotonMesa10 = new javax.swing.JButton();
+        BotonMesa11 = new javax.swing.JButton();
+        BotonMesa12 = new javax.swing.JButton();
         jPanel22 = new javax.swing.JPanel();
         BtnVentas = new javax.swing.JButton();
         ButtonCliente = new javax.swing.JButton();
@@ -903,7 +928,7 @@ public class Sistema extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1700, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1726, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -944,7 +969,7 @@ public class Sistema extends javax.swing.JFrame {
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1680, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1706, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
@@ -1747,7 +1772,7 @@ public class Sistema extends javax.swing.JFrame {
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel24Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1662, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1708, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel24Layout.setVerticalGroup(
@@ -1791,7 +1816,7 @@ public class Sistema extends javax.swing.JFrame {
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel33Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1662, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1708, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel33Layout.setVerticalGroup(
@@ -1835,7 +1860,7 @@ public class Sistema extends javax.swing.JFrame {
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel34Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 1662, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 1708, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel34Layout.setVerticalGroup(
@@ -1928,7 +1953,7 @@ public class Sistema extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnGenerarReportePlatillos)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 1662, Short.MAX_VALUE))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 1708, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel36Layout.setVerticalGroup(
@@ -2268,7 +2293,7 @@ public class Sistema extends javax.swing.JFrame {
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1681, Short.MAX_VALUE)
+            .addGap(0, 1735, Short.MAX_VALUE)
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2281,7 +2306,7 @@ public class Sistema extends javax.swing.JFrame {
         jPanel19.setLayout(jPanel19Layout);
         jPanel19Layout.setHorizontalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1681, Short.MAX_VALUE)
+            .addGap(0, 1735, Short.MAX_VALUE)
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2294,7 +2319,7 @@ public class Sistema extends javax.swing.JFrame {
         jPanel44.setLayout(jPanel44Layout);
         jPanel44Layout.setHorizontalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1681, Short.MAX_VALUE)
+            .addGap(0, 1735, Short.MAX_VALUE)
         );
         jPanel44Layout.setVerticalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2375,7 +2400,7 @@ public class Sistema extends javax.swing.JFrame {
         jPanel49.setLayout(jPanel49Layout);
         jPanel49Layout.setHorizontalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2119, Short.MAX_VALUE)
+            .addGap(0, 2145, Short.MAX_VALUE)
         );
         jPanel49Layout.setVerticalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2388,7 +2413,7 @@ public class Sistema extends javax.swing.JFrame {
         jPanel50.setLayout(jPanel50Layout);
         jPanel50Layout.setHorizontalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2119, Short.MAX_VALUE)
+            .addGap(0, 2145, Short.MAX_VALUE)
         );
         jPanel50Layout.setVerticalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2886,7 +2911,7 @@ public class Sistema extends javax.swing.JFrame {
                     .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel39, javax.swing.GroupLayout.DEFAULT_SIZE, 1198, Short.MAX_VALUE)
+                    .addComponent(jPanel39, javax.swing.GroupLayout.DEFAULT_SIZE, 1255, Short.MAX_VALUE)
                     .addComponent(jPanel38, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -2949,31 +2974,195 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
-        jPanel32.setLayout(jPanel32Layout);
-        jPanel32Layout.setHorizontalGroup(
-            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2093, Short.MAX_VALUE)
-        );
-        jPanel32Layout.setVerticalGroup(
-            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
-        );
-
-        jTabbedPane3.addTab("Mesas", jPanel32);
-
         javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
         jPanel46.setLayout(jPanel46Layout);
         jPanel46Layout.setHorizontalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2121, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel46Layout.setVerticalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 437, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jTabbedPane3.addTab("Pedidos", jPanel46);
+
+        mesa1.setText("mesa1");
+
+        mesa2.setText("mesa2");
+
+        mesa3.setText("mesa3");
+
+        mesa4.setText("mesa4");
+
+        mesa5.setText("mesa5");
+
+        mesa6.setText("mesa6");
+
+        mesa7.setText("mesa7");
+
+        mesa8.setText("mesa8");
+
+        mesa9.setText("mesa9");
+
+        mesa10.setText("mesa10");
+
+        mesa11.setText("mesa11");
+
+        mesa12.setText("mesa12");
+
+        BotonMesa1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        BotonMesa1.setText("Mesa 1");
+        BotonMesa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonMesa1ActionPerformed(evt);
+            }
+        });
+
+        BotonMesa2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        BotonMesa2.setText("Mesa 2");
+
+        BotonMesa3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        BotonMesa3.setText("Mesa 3");
+
+        BotonMesa4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        BotonMesa4.setText("Mesa 4");
+
+        BotonMesa5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        BotonMesa5.setText("Mesa 5");
+
+        BotonMesa6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        BotonMesa6.setText("Mesa 6");
+
+        BotonMesa7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        BotonMesa7.setText("Mesa 1");
+
+        BotonMesa8.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        BotonMesa8.setText("Mesa 2");
+
+        BotonMesa9.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        BotonMesa9.setText("Mesa 3");
+
+        BotonMesa10.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        BotonMesa10.setText("Mesa 4");
+
+        BotonMesa11.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        BotonMesa11.setText("Mesa 5");
+
+        BotonMesa12.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        BotonMesa12.setText("Mesa 6");
+
+        javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
+        jPanel32.setLayout(jPanel32Layout);
+        jPanel32Layout.setHorizontalGroup(
+            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel32Layout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel32Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(BotonMesa1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(149, 149, 149)
+                        .addComponent(BotonMesa2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(166, 166, 166)
+                        .addComponent(BotonMesa3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(141, 141, 141)
+                        .addComponent(BotonMesa4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(156, 156, 156)
+                        .addComponent(BotonMesa5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(149, 149, 149)
+                        .addComponent(BotonMesa6, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel32Layout.createSequentialGroup()
+                        .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel32Layout.createSequentialGroup()
+                                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel32Layout.createSequentialGroup()
+                                        .addComponent(mesa1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(90, 90, 90)
+                                        .addComponent(mesa2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel32Layout.createSequentialGroup()
+                                        .addComponent(mesa7, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(mesa8, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(113, 113, 113)
+                                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel32Layout.createSequentialGroup()
+                                        .addComponent(mesa3, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(90, 90, 90)
+                                        .addComponent(mesa4, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel32Layout.createSequentialGroup()
+                                        .addComponent(mesa9, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(90, 90, 90)
+                                        .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel32Layout.createSequentialGroup()
+                                                .addGap(10, 10, 10)
+                                                .addComponent(BotonMesa10, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(mesa10, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(jPanel32Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(BotonMesa7, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(165, 165, 165)
+                                .addComponent(BotonMesa8, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(160, 160, 160)
+                                .addComponent(BotonMesa9, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel32Layout.createSequentialGroup()
+                                .addGap(91, 91, 91)
+                                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(mesa5, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(mesa11, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(90, 90, 90)
+                                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(mesa6, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(mesa12, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel32Layout.createSequentialGroup()
+                                .addGap(115, 115, 115)
+                                .addComponent(BotonMesa11, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(153, 153, 153)
+                                .addComponent(BotonMesa12, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(806, Short.MAX_VALUE))
+        );
+        jPanel32Layout.setVerticalGroup(
+            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel32Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(mesa1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(mesa2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(mesa3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(mesa4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(mesa5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(mesa6, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotonMesa2)
+                    .addComponent(BotonMesa3)
+                    .addComponent(BotonMesa4)
+                    .addComponent(BotonMesa5)
+                    .addComponent(BotonMesa6)
+                    .addComponent(BotonMesa1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(mesa7, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mesa8, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mesa9, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mesa10, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mesa11, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mesa12, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotonMesa7)
+                    .addComponent(BotonMesa8)
+                    .addComponent(BotonMesa9)
+                    .addComponent(BotonMesa10)
+                    .addComponent(BotonMesa11)
+                    .addComponent(BotonMesa12))
+                .addGap(58, 58, 58))
+        );
+
+        jTabbedPane3.addTab("Mesas", jPanel32);
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -3287,8 +3476,20 @@ public class Sistema extends javax.swing.JFrame {
         ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(false);
         TabbedPanePrincipal.setSelectedIndex(5);
-        MesaSQL mesas = new MesaSQL();
-        
+        controlMesa mesas = new controlMesa();
+        mesa1.setIcon(mesas.obtenerEstado(1));
+        mesa2.setIcon(mesas.obtenerEstado(2));
+        mesa3.setIcon(mesas.obtenerEstado(3));
+        mesa4.setIcon(mesas.obtenerEstado(4));
+        mesa5.setIcon(mesas.obtenerEstado(5));
+        mesa6.setIcon(mesas.obtenerEstado(6));
+        mesa7.setIcon(mesas.obtenerEstado(7));
+        mesa8.setIcon(mesas.obtenerEstado(8));
+        mesa9.setIcon(mesas.obtenerEstado(9));
+        mesa10.setIcon(mesas.obtenerEstado(10));
+        mesa11.setIcon(mesas.obtenerEstado(11));
+        mesa12.setIcon(mesas.obtenerEstado(12));
+        this.repaint();
     }//GEN-LAST:event_ButtonClienteConfigActionPerformed
 
     private void ButtonCliente_Paginas4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas4ActionPerformed
@@ -3934,6 +4135,12 @@ public class Sistema extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTabbedPane3AncestorAdded
 
+    private void BotonMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMesa1ActionPerformed
+        controlMesa nuevo = new controlMesa();
+        mesa1.setIcon(nuevo.cambiarEstado(1));
+        this.repaint();
+    }//GEN-LAST:event_BotonMesa1ActionPerformed
+
     // </editor-fold>
     /**
      * @param args the command line arguments
@@ -3969,6 +4176,18 @@ public class Sistema extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AnticipoCotizacion;
+    private javax.swing.JButton BotonMesa1;
+    private javax.swing.JButton BotonMesa10;
+    private javax.swing.JButton BotonMesa11;
+    private javax.swing.JButton BotonMesa12;
+    private javax.swing.JButton BotonMesa2;
+    private javax.swing.JButton BotonMesa3;
+    private javax.swing.JButton BotonMesa4;
+    private javax.swing.JButton BotonMesa5;
+    private javax.swing.JButton BotonMesa6;
+    private javax.swing.JButton BotonMesa7;
+    private javax.swing.JButton BotonMesa8;
+    private javax.swing.JButton BotonMesa9;
     private javax.swing.JButton BtnVentas;
     private javax.swing.JButton ButtonAdministracion;
     private javax.swing.JButton ButtonCliente;
@@ -4175,6 +4394,18 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel labelReport_Pagos;
     private javax.swing.JButton limpiar;
     private javax.swing.JButton limpiar1;
+    private javax.swing.JLabel mesa1;
+    private javax.swing.JLabel mesa10;
+    private javax.swing.JLabel mesa11;
+    private javax.swing.JLabel mesa12;
+    private javax.swing.JLabel mesa2;
+    private javax.swing.JLabel mesa3;
+    private javax.swing.JLabel mesa4;
+    private javax.swing.JLabel mesa5;
+    private javax.swing.JLabel mesa6;
+    private javax.swing.JLabel mesa7;
+    private javax.swing.JLabel mesa8;
+    private javax.swing.JLabel mesa9;
     private app.bolivia.swing.JCTextField nombre;
     private javax.swing.JLabel nombreL;
     private javax.swing.JLabel nombreL1;

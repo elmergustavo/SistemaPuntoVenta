@@ -11,8 +11,7 @@ package Models;
  */
 public class Mesa {
     private int numero;
-    private boolean disponible;
-    private boolean cobrado;
+    private String estado;
 
     public int getNumero() {
         return numero;
@@ -20,23 +19,14 @@ public class Mesa {
 
     public void setNumero(int numero) {
         this.numero = numero;
+    }    
+
+    public String getEstado() {
+        return estado;
     }
 
-    public boolean isDisponible() {
-        return disponible;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
-
-    public void setDisponible(boolean disponible) {
-        this.disponible = disponible;
-    }
-
-    public boolean isCobrado() {
-        return cobrado;
-    }
-
-    public void setCobrado(boolean cobrado) {
-        this.cobrado = cobrado;
-    }
-    
     
 }
