@@ -53,7 +53,6 @@ public class CategoriaVM extends CategoriaSQL {
         _tableCategoria = (JTable) objects[0];
         _spinnerPaginas = (JSpinner) objects[1];
         restablecer();
-        //  RestablecerReport();
         this.Insert = false;
         this.Update = false;
     }
@@ -113,7 +112,6 @@ public class CategoriaVM extends CategoriaSQL {
                                     _textField.get(1).requestFocus();
                                 }
                             }
-
                             break;
                         case "update":
                             if (count == 2) {

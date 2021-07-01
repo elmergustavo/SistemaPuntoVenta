@@ -3694,7 +3694,6 @@ public class Sistema extends javax.swing.JFrame {
 
     private void limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarActionPerformed
         alimento.restablecer();
-        alimento.extraerID();
         idCliente = 0;
         buscar.setText("");
     }//GEN-LAST:event_limpiarActionPerformed
