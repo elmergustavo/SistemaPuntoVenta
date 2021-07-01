@@ -95,7 +95,6 @@ public class AlimentoSQL {
                 c = rs.getString(1);
             }
             if (c == null) {
-                //_textField.get(0).setText("AL0001");
                 resultado = "AL0001";
                 return resultado;
             } else {
