@@ -7,6 +7,9 @@ package Views;
 
 import Controller.ClientesVM;
 import Controller.ListarAlimentosVM;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,10 +20,38 @@ public class ListaAlimentos extends javax.swing.JFrame {
     /**
      * Creates new form ListaAlimentosAd
      */
+    
+    
     public ListaAlimentos() {
         initComponents();
         mostrar();
     }
+    
+  
+    public void calcular() {
+        String pre;
+        String can;
+        double total = 0;
+        double precio;
+        int cantidad;
+        double imp = 0.0;
+
+        for (int i = 0; i < Views.Sistema.tablePedidos.getRowCount(); i++) {
+            pre = Views.Sistema.tablePedidos.getValueAt(i, 3).toString();
+            can = Views.Sistema.tablePedidos.getValueAt(i, 4).toString();
+            precio = Double.parseDouble(pre);
+            cantidad = Integer.parseInt(can);
+            imp = precio * cantidad;
+            total = total + imp;
+            Views.Sistema.tablePedidos.setValueAt(Math.rint(imp * 100) / 100, i, 5);
+
+        }
+        Views.Sistema.TotalPedidos.setText("" + Math.rint(total * 100) / 100);
+
+    }
+    
+    
+    
 
     private ListarAlimentosVM alimentos;
     public void mostrar(){
@@ -158,7 +189,72 @@ public class ListaAlimentos extends javax.swing.JFrame {
     }//GEN-LAST:event_tipoAlActionPerformed
 
     private void enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarActionPerformed
-        
+
+    
+        if (TablePedidos_RegistroPedido.getRowCount() > 0) {
+            try {
+                String cant = null;
+                DefaultTableModel tabladet = (DefaultTableModel) Views.Sistema.tablePedidos.getModel();
+
+                String[] dato = new String[6];
+
+                int fila = TablePedidos_RegistroPedido.getSelectedRow();
+
+                if (fila == -1) {
+                    JOptionPane.showMessageDialog(this, "Seleccione un registro.", "Alimentos", 0,
+                            new ImageIcon(getClass().getResource("/imagenes/usuarios/info.png")));
+                } else {
+                    String cod = TablePedidos_RegistroPedido.getValueAt(fila, 0).toString();
+                    String tipo = TablePedidos_RegistroPedido.getValueAt(fila, 1).toString();
+                    String nom = TablePedidos_RegistroPedido.getValueAt(fila, 2).toString();
+                    String precio = TablePedidos_RegistroPedido.getValueAt(fila, 3).toString();
+                    int c = 0;
+                    int j = 0;
+                    cant = JOptionPane.showInputDialog(this, "Cantidad:", "Alimentos", JOptionPane.INFORMATION_MESSAGE);
+//                    while (!OpcionesAl.isNumber(cant) && cant != null) {
+//                        cant = JOptionPane.showInputDialog(this, "Debe ingresar valores numéricos\ny que sean mayor a 0:",
+//                                "Error", JOptionPane.ERROR_MESSAGE);
+//                    }
+                    if ((cant.equals("")) || (cant.equals("0"))) {
+//                        JOptionPane.showMessageDialog(this, "Debe ingresar algun valor mayor que 0");
+                    } else {
+                        for (int i = 0; i < Views.Sistema.tablePedidos.getRowCount(); i++) {
+                            Object com = Views.Sistema.tablePedidos.getValueAt(i, 0);
+                            Object cant1 = Views.Sistema.tablePedidos.getValueAt(i, 4);
+                            if (cod.equals(com)) {
+                                j = i;
+                                int cantT = Integer.parseInt(cant) + Integer.parseInt((String) cant1);
+                                Views.Sistema.tablePedidos.setValueAt(String.valueOf(cantT), i, 4);
+                                c++;
+                                calcular();
+//                                CajaAd.recibi.setText("");
+//                                CajaAd.cambio.setText("");
+                            }
+                        }
+                        if (c == 0) {
+
+                            dato[0] = cod;
+                            dato[1] = tipo;
+                            dato[2] = nom;
+                            dato[3] = precio;
+                            dato[4] = cant;
+
+                            tabladet.addRow(dato);
+
+                            Views.Sistema.tablePedidos.setModel(tabladet);
+                            calcular();
+
+//                            CajaAd.recibi.setText("");
+//                            CajaAd.cambio.setText("");
+                        }
+                    }
+                }
+            } catch (Exception e) {
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay registros.", "Alimentos", 0,
+                    new ImageIcon(getClass().getResource("/imagenes/usuarios/info.png")));
+        }
     }//GEN-LAST:event_enviarActionPerformed
 
     /**

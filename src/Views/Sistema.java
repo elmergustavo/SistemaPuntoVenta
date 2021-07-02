@@ -44,6 +44,8 @@ public class Sistema extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelImgVentas, "src/Resources/ventas.png");
         //rsscalelabel.RSScaleLabel.setScaleLabel(jLabel6, "src/Resources/logo.png");
         //   TextField_BuscarVentas.setEditable(false);
+        
+
 
         tipoAl.addItemListener(new ItemListener() {
 
@@ -374,8 +376,11 @@ public class Sistema extends javax.swing.JFrame {
         jLabelInventario_platillosPrecio1 = new javax.swing.JLabel();
         jLabelInventario_platillosTipo1 = new javax.swing.JLabel();
         rSMaterialButtonRectangle13 = new rojerusan.RSMaterialButtonRectangle();
+        TotalPedidos = new app.bolivia.swing.JCTextField();
+        codigoL11 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        table = new rojerusan.RSTableMetro();
+        tablePedidos = new rojerusan.RSTableMetro();
+        busca1 = new javax.swing.JButton();
         jPanel56 = new javax.swing.JPanel();
         jPanel32 = new javax.swing.JPanel();
         jPanel57 = new javax.swing.JPanel();
@@ -3019,7 +3024,7 @@ public class Sistema extends javax.swing.JFrame {
                 tipoAl1ActionPerformed(evt);
             }
         });
-        jPanel55.add(tipoAl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 210, 60));
+        jPanel55.add(tipoAl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 180, 40));
 
         tipoL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/tipoAlL.png"))); // NOI18N
         jPanel55.add(tipoL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 60, 52));
@@ -3039,10 +3044,10 @@ public class Sistema extends javax.swing.JFrame {
                 precio1KeyTyped(evt);
             }
         });
-        jPanel55.add(precio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 180, -1));
+        jPanel55.add(precio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 180, -1));
 
         nombreL5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/precioL.png"))); // NOI18N
-        jPanel55.add(nombreL5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 243, 52));
+        jPanel55.add(nombreL5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 243, 52));
         jPanel55.add(jLabelInventario_platillosCodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 80, 40));
         jPanel55.add(jLabelInventario_platillosNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 90, 40));
         jPanel55.add(jLabelInventario_platillosPrecio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 90, 50));
@@ -3056,20 +3061,55 @@ public class Sistema extends javax.swing.JFrame {
                 rSMaterialButtonRectangle13ActionPerformed(evt);
             }
         });
-        jPanel55.add(rSMaterialButtonRectangle13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 160, -1));
+        jPanel55.add(rSMaterialButtonRectangle13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 180, 60));
 
-        table.setModel(new javax.swing.table.DefaultTableModel(
+        TotalPedidos.setBackground(new java.awt.Color(34, 102, 145));
+        TotalPedidos.setBorder(null);
+        TotalPedidos.setForeground(new java.awt.Color(255, 255, 255));
+        TotalPedidos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        TotalPedidos.setOpaque(false);
+        TotalPedidos.setPhColor(new java.awt.Color(255, 255, 255));
+        TotalPedidos.setPlaceholder("TOTAL");
+        TotalPedidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TotalPedidosActionPerformed(evt);
+            }
+        });
+        jPanel55.add(TotalPedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 80, 30));
+
+        codigoL11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/total.png"))); // NOI18N
+        jPanel55.add(codigoL11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, 50));
+
+        tablePedidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "CODIGO", "TIPO ALIMENTO", "DESCRIPCION", "PRECIO $", "CANTIDAD", "IMPORTE $"
             }
-        ));
-        jScrollPane9.setViewportView(table);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane9.setViewportView(tablePedidos);
+
+        busca1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        busca1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/alimento2.png"))); // NOI18N
+        busca1.setBorder(null);
+        busca1.setContentAreaFilled(false);
+        busca1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        busca1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        busca1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        busca1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busca1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
         jPanel46.setLayout(jPanel46Layout);
@@ -3077,19 +3117,24 @@ public class Sistema extends javax.swing.JFrame {
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel46Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(busca1))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 1205, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel46Layout.setVerticalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel46Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel46Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel55, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel46Layout.createSequentialGroup()
+                        .addComponent(busca1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel55, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)))
+                .addGap(23, 23, 23))
         );
 
         jTabbedPane3.addTab("Registra Pedido", jPanel46);
@@ -4408,10 +4453,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_calculoActionPerformed
 
     private void buscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscaActionPerformed
-        la = new ListaAlimentos();
-
-        la.toFront();
-        la.setVisible(true);
+        
     }//GEN-LAST:event_buscaActionPerformed
 
     private void rSMaterialButtonRectangle12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle12ActionPerformed
@@ -4548,6 +4590,17 @@ public class Sistema extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rSMaterialButtonRectangle23ActionPerformed
 
+    private void busca1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busca1ActionPerformed
+        la = new ListaAlimentos();
+
+        la.toFront();
+        la.setVisible(true);
+    }//GEN-LAST:event_busca1ActionPerformed
+
+    private void TotalPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalPedidosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TotalPedidosActionPerformed
+
     // </editor-fold>
     /**
      * @param args the command line arguments
@@ -4664,6 +4717,7 @@ public class Sistema extends javax.swing.JFrame {
     private app.bolivia.swing.JCTextField TextFieldInventario_stock;
     private javax.swing.JTextField TextField_BuscarCliente4;
     private javax.swing.JTextField TextField_BuscarInventario;
+    public static app.bolivia.swing.JCTextField TotalPedidos;
     private javax.swing.JButton actualizar;
     private javax.swing.JButton borrar;
     private javax.swing.JButton btnGenerarReportePlatillos;
@@ -4671,6 +4725,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JButton btnGenerarReporteSuministrosPDF;
     private javax.swing.JButton buscF;
     private javax.swing.JButton busca;
+    private javax.swing.JButton busca1;
     private app.bolivia.swing.JCTextField buscar;
     private app.bolivia.swing.JCTextField buscar1;
     private app.bolivia.swing.JCTextField buscar2;
@@ -4681,6 +4736,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel codigoL;
     private javax.swing.JLabel codigoL1;
     private javax.swing.JLabel codigoL10;
+    private javax.swing.JLabel codigoL11;
     private javax.swing.JLabel codigoL2;
     private javax.swing.JLabel codigoL3;
     private javax.swing.JLabel codigoL4;
@@ -4853,8 +4909,8 @@ public class Sistema extends javax.swing.JFrame {
     private rojerusan.RSTableMetro rSTableMetro3;
     public static app.bolivia.swing.JCTextField recibi;
     private javax.swing.JButton registrar;
-    private rojerusan.RSTableMetro table;
     private rojeru_san.complementos.TableMetro tableMetro1;
+    public static rojerusan.RSTableMetro tablePedidos;
     private org.bolivia.combo.SComboBoxBlue tipoAl;
     private org.bolivia.combo.SComboBoxBlue tipoAl1;
     private javax.swing.JLabel tipoL;
