@@ -76,6 +76,17 @@ public class MesaSQL {
             Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    public void marcarCobrado(int id) {
+        sql = "UPDATE mesa SET estado='C' WHERE id=" + id;
+        System.out.println(sql); 
+        int rs = 0;
+        try {
+            st = conexion.getConnection().prepareStatement(sql);
+            rs = st.executeUpdate(sql);
+            System.out.println("CORRECTO");
+        } catch (SQLException ex) {
+            Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
 }

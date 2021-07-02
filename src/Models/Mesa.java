@@ -12,7 +12,7 @@ package Models;
 public class Mesa {
     private int numero;
     private String estado;
-
+    
     public int getNumero() {
         return numero;
     }

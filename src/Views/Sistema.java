@@ -362,6 +362,21 @@ public class Sistema extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel46 = new javax.swing.JPanel();
+        jPanel55 = new javax.swing.JPanel();
+        codigoPedido = new app.bolivia.swing.JCTextField();
+        tipoAl1 = new org.bolivia.combo.SComboBoxBlue();
+        tipoL1 = new javax.swing.JLabel();
+        codigoL10 = new javax.swing.JLabel();
+        precio1 = new app.bolivia.swing.JCTextField();
+        nombreL5 = new javax.swing.JLabel();
+        jLabelInventario_platillosCodigo1 = new javax.swing.JLabel();
+        jLabelInventario_platillosNombre1 = new javax.swing.JLabel();
+        jLabelInventario_platillosPrecio1 = new javax.swing.JLabel();
+        jLabelInventario_platillosTipo1 = new javax.swing.JLabel();
+        rSMaterialButtonRectangle13 = new rojerusan.RSMaterialButtonRectangle();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        rSTableMetro4 = new rojerusan.RSTableMetro();
+        jPanel56 = new javax.swing.JPanel();
         jPanel32 = new javax.swing.JPanel();
         mesa1 = new javax.swing.JLabel();
         mesa2 = new javax.swing.JLabel();
@@ -928,7 +943,7 @@ public class Sistema extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1726, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1751, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -969,7 +984,7 @@ public class Sistema extends javax.swing.JFrame {
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1706, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1731, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
@@ -1427,7 +1442,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rSMaterialButtonRectangle9, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rSMaterialButtonRectangle8, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
@@ -1739,7 +1754,7 @@ public class Sistema extends javax.swing.JFrame {
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel35Layout.createSequentialGroup()
-                .addContainerGap(311, Short.MAX_VALUE)
+                .addContainerGap(291, Short.MAX_VALUE)
                 .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1772,7 +1787,7 @@ public class Sistema extends javax.swing.JFrame {
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel24Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1708, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1733, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel24Layout.setVerticalGroup(
@@ -1816,7 +1831,7 @@ public class Sistema extends javax.swing.JFrame {
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel33Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1708, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1733, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel33Layout.setVerticalGroup(
@@ -1860,7 +1875,7 @@ public class Sistema extends javax.swing.JFrame {
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel34Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 1708, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 1733, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel34Layout.setVerticalGroup(
@@ -1953,7 +1968,7 @@ public class Sistema extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnGenerarReportePlatillos)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 1708, Short.MAX_VALUE))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 1733, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel36Layout.setVerticalGroup(
@@ -2258,7 +2273,7 @@ public class Sistema extends javax.swing.JFrame {
             PanelNuevaCotizacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelNuevaCotizacionLayout.createSequentialGroup()
                 .addComponent(jPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 41, Short.MAX_VALUE))
+                .addGap(0, 42, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Nueva cotizacion ", PanelNuevaCotizacion);
@@ -2271,7 +2286,7 @@ public class Sistema extends javax.swing.JFrame {
         );
         PanelModificarCotizacionLayout.setVerticalGroup(
             PanelModificarCotizacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGap(0, 430, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Modificar Cotizacion ", PanelModificarCotizacion);
@@ -2284,7 +2299,7 @@ public class Sistema extends javax.swing.JFrame {
         );
         PanelBuscarCotizacionLayout.setVerticalGroup(
             PanelBuscarCotizacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGap(0, 430, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Buscar Cotizacion ", PanelBuscarCotizacion);
@@ -2293,11 +2308,11 @@ public class Sistema extends javax.swing.JFrame {
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1735, Short.MAX_VALUE)
+            .addGap(0, 1760, Short.MAX_VALUE)
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGap(0, 430, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Nueva cotizacion ", jPanel18);
@@ -2306,11 +2321,11 @@ public class Sistema extends javax.swing.JFrame {
         jPanel19.setLayout(jPanel19Layout);
         jPanel19Layout.setHorizontalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1735, Short.MAX_VALUE)
+            .addGap(0, 1760, Short.MAX_VALUE)
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGap(0, 430, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Modificar Cotizacion ", jPanel19);
@@ -2319,11 +2334,11 @@ public class Sistema extends javax.swing.JFrame {
         jPanel44.setLayout(jPanel44Layout);
         jPanel44Layout.setHorizontalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1735, Short.MAX_VALUE)
+            .addGap(0, 1760, Short.MAX_VALUE)
         );
         jPanel44Layout.setVerticalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGap(0, 430, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Buscar Cotizacion ", jPanel44);
@@ -2400,7 +2415,7 @@ public class Sistema extends javax.swing.JFrame {
         jPanel49.setLayout(jPanel49Layout);
         jPanel49Layout.setHorizontalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2145, Short.MAX_VALUE)
+            .addGap(0, 2170, Short.MAX_VALUE)
         );
         jPanel49Layout.setVerticalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2413,7 +2428,7 @@ public class Sistema extends javax.swing.JFrame {
         jPanel50.setLayout(jPanel50Layout);
         jPanel50Layout.setHorizontalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2145, Short.MAX_VALUE)
+            .addGap(0, 2170, Short.MAX_VALUE)
         );
         jPanel50Layout.setVerticalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2606,7 +2621,7 @@ public class Sistema extends javax.swing.JFrame {
             jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel53Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelImgVentas, javax.swing.GroupLayout.DEFAULT_SIZE, 1337, Short.MAX_VALUE)
+                .addComponent(jLabelImgVentas, javax.swing.GroupLayout.DEFAULT_SIZE, 1362, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel53Layout.setVerticalGroup(
@@ -2911,7 +2926,7 @@ public class Sistema extends javax.swing.JFrame {
                     .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel39, javax.swing.GroupLayout.DEFAULT_SIZE, 1255, Short.MAX_VALUE)
+                    .addComponent(jPanel39, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
                     .addComponent(jPanel38, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -2974,18 +2989,120 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        jPanel55.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel55.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "REGISTRO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanel55.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        codigoPedido.setEditable(false);
+        codigoPedido.setBackground(new java.awt.Color(34, 102, 145));
+        codigoPedido.setBorder(null);
+        codigoPedido.setForeground(new java.awt.Color(255, 255, 255));
+        codigoPedido.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        codigoPedido.setOpaque(false);
+        codigoPedido.setPhColor(new java.awt.Color(255, 255, 255));
+        codigoPedido.setPlaceholder("CÓDIGO");
+        jPanel55.add(codigoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 180, -1));
+
+        tipoAl1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TIPO ALIMENTO", "BEBIDAS", "BOTANAS", "CALDOS", "CAMARONES", "COCTELES", "DESAYUNOS", "FILETE", "LANGOSTA", "LANGOSTINO", "PESCADO", "PULPO" }));
+        tipoAl1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tipoAl1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipoAl1ActionPerformed(evt);
+            }
+        });
+        jPanel55.add(tipoAl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 210, 60));
+
+        tipoL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/tipoAlL.png"))); // NOI18N
+        jPanel55.add(tipoL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 60, 52));
+
+        codigoL10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/codigoL.png"))); // NOI18N
+        jPanel55.add(codigoL10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 250, 60));
+
+        precio1.setBackground(new java.awt.Color(34, 102, 145));
+        precio1.setBorder(null);
+        precio1.setForeground(new java.awt.Color(255, 255, 255));
+        precio1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        precio1.setOpaque(false);
+        precio1.setPhColor(new java.awt.Color(255, 255, 255));
+        precio1.setPlaceholder("PRECIO");
+        precio1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                precio1KeyTyped(evt);
+            }
+        });
+        jPanel55.add(precio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 180, -1));
+
+        nombreL5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/precioL.png"))); // NOI18N
+        jPanel55.add(nombreL5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 243, 52));
+        jPanel55.add(jLabelInventario_platillosCodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 80, 40));
+        jPanel55.add(jLabelInventario_platillosNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 90, 40));
+        jPanel55.add(jLabelInventario_platillosPrecio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 90, 50));
+        jPanel55.add(jLabelInventario_platillosTipo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 80, 50));
+
+        rSMaterialButtonRectangle13.setBackground(new java.awt.Color(34, 102, 145));
+        rSMaterialButtonRectangle13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
+        rSMaterialButtonRectangle13.setText("Nuevo Pedido");
+        rSMaterialButtonRectangle13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSMaterialButtonRectangle13ActionPerformed(evt);
+            }
+        });
+        jPanel55.add(rSMaterialButtonRectangle13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 160, -1));
+
+        rSTableMetro4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane10.setViewportView(rSTableMetro4);
+
         javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
         jPanel46.setLayout(jPanel46Layout);
         jPanel46Layout.setHorizontalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel46Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel55, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
+                .addGap(1755, 1755, 1755))
+            .addGroup(jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel46Layout.createSequentialGroup()
+                    .addContainerGap(434, Short.MAX_VALUE)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 972, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(766, Short.MAX_VALUE)))
         );
         jPanel46Layout.setVerticalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel46Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jPanel55, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
+            .addGroup(jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel46Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        jTabbedPane3.addTab("Pedidos", jPanel46);
+        jTabbedPane3.addTab("Registra Pedido", jPanel46);
+
+        javax.swing.GroupLayout jPanel56Layout = new javax.swing.GroupLayout(jPanel56);
+        jPanel56.setLayout(jPanel56Layout);
+        jPanel56Layout.setHorizontalGroup(
+            jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2172, Short.MAX_VALUE)
+        );
+        jPanel56Layout.setVerticalGroup(
+            jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 437, Short.MAX_VALUE)
+        );
+
+        jTabbedPane3.addTab("Pedidos", jPanel56);
 
         mesa1.setText("mesa1");
 
@@ -3120,7 +3237,7 @@ public class Sistema extends javax.swing.JFrame {
                                 .addComponent(BotonMesa11, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(153, 153, 153)
                                 .addComponent(BotonMesa12, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(806, Short.MAX_VALUE))
+                .addContainerGap(831, Short.MAX_VALUE))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3181,7 +3298,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(PanelNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane3)
+                .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 465, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -4141,6 +4258,18 @@ public class Sistema extends javax.swing.JFrame {
         this.repaint();
     }//GEN-LAST:event_BotonMesa1ActionPerformed
 
+    private void tipoAl1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAl1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tipoAl1ActionPerformed
+
+    private void precio1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_precio1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_precio1KeyTyped
+
+    private void rSMaterialButtonRectangle13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSMaterialButtonRectangle13ActionPerformed
+
     // </editor-fold>
     /**
      * @param args the command line arguments
@@ -4285,6 +4414,7 @@ public class Sistema extends javax.swing.JFrame {
     public static app.bolivia.swing.JCTextField codigo;
     private javax.swing.JLabel codigoL;
     private javax.swing.JLabel codigoL1;
+    private javax.swing.JLabel codigoL10;
     private javax.swing.JLabel codigoL2;
     private javax.swing.JLabel codigoL3;
     private javax.swing.JLabel codigoL4;
@@ -4293,6 +4423,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel codigoL7;
     private javax.swing.JLabel codigoL8;
     private javax.swing.JLabel codigoL9;
+    public static app.bolivia.swing.JCTextField codigoPedido;
     private javax.swing.JButton eliminar;
     private javax.swing.JButton eliminar1;
     private javax.swing.JButton eliminarT;
@@ -4311,9 +4442,13 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelImgVentas;
     private javax.swing.JLabel jLabelInventario_platillosCodigo;
+    private javax.swing.JLabel jLabelInventario_platillosCodigo1;
     private javax.swing.JLabel jLabelInventario_platillosNombre;
+    private javax.swing.JLabel jLabelInventario_platillosNombre1;
     private javax.swing.JLabel jLabelInventario_platillosPrecio;
+    private javax.swing.JLabel jLabelInventario_platillosPrecio1;
     private javax.swing.JLabel jLabelInventario_platillosTipo;
+    private javax.swing.JLabel jLabelInventario_platillosTipo1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -4364,11 +4499,14 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel52;
     private javax.swing.JPanel jPanel53;
     private javax.swing.JPanel jPanel54;
+    private javax.swing.JPanel jPanel55;
+    private javax.swing.JPanel jPanel56;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -4411,25 +4549,31 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel nombreL1;
     private javax.swing.JLabel nombreL2;
     private javax.swing.JLabel nombreL3;
+    private javax.swing.JLabel nombreL5;
     public static app.bolivia.swing.JCTextField numFac;
     private app.bolivia.swing.JCTextField precio;
+    private app.bolivia.swing.JCTextField precio1;
     private rojeru_san.componentes.RSDateChooser rSDateChooser1;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelHora rSLabelHora1;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle10;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle11;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle12;
+    private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle13;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle6;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle7;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle8;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle9;
     private rojerusan.RSTableMetro rSTableMetro1;
     private rojerusan.RSTableMetro rSTableMetro3;
+    private rojerusan.RSTableMetro rSTableMetro4;
     public static app.bolivia.swing.JCTextField recibi;
     private javax.swing.JButton registrar;
     private rojeru_san.complementos.TableMetro tableMetro1;
     private org.bolivia.combo.SComboBoxBlue tipoAl;
+    private org.bolivia.combo.SComboBoxBlue tipoAl1;
     private javax.swing.JLabel tipoL;
+    private javax.swing.JLabel tipoL1;
     public static app.bolivia.swing.JCTextField total;
     private javax.swing.JButton vender;
     private javax.swing.JButton ventasH;
