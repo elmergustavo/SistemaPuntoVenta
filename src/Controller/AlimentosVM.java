@@ -46,11 +46,11 @@ public final class AlimentosVM extends AlimentoSQL {
     private boolean Insert;
     private boolean Update;
 
-    private final Conexion conexion;
+   // private final Conexion conexion;
     static PreparedStatement ps;
 
     public AlimentosVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JCTextField> textField) {
-        this.conexion = Conexion.createInstance();
+   //     this.conexion = Conexion.createInstance();
         _label = label;
         _textField = textField;
         _tableAlimentos = (JTable) objects[0];

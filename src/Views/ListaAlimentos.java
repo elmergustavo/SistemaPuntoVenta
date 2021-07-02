@@ -5,19 +5,27 @@
  */
 package Views;
 
+import Controller.ClientesVM;
+import Controller.ListarAlimentosVM;
+
 /**
  *
  * @author elmer
  */
-public class ListaAlimentosAd extends javax.swing.JFrame {
+public class ListaAlimentos extends javax.swing.JFrame {
 
     /**
      * Creates new form ListaAlimentosAd
      */
-    public ListaAlimentosAd() {
+    public ListaAlimentos() {
         initComponents();
+        mostrar();
     }
 
+    private ListarAlimentosVM alimentos;
+    public void mostrar(){
+        alimentos = new ListarAlimentosVM(TablePedidos_RegistroPedido);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,15 +37,15 @@ public class ListaAlimentosAd extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        buscar = new app.bolivia.swing.JCTextField();
+        JtextBuscar = new app.bolivia.swing.JCTextField();
         codigoL1 = new javax.swing.JLabel();
         tipoAl = new org.bolivia.combo.SComboBoxBlue();
         tipoL = new javax.swing.JLabel();
         enviar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        rSTableMetro1 = new rojerusan.RSTableMetro();
+        TablePedidos_RegistroPedido = new rojerusan.RSTableMetro();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -46,19 +54,19 @@ public class ListaAlimentosAd extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "OPCIONES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buscar.setBackground(new java.awt.Color(34, 102, 145));
-        buscar.setBorder(null);
-        buscar.setForeground(new java.awt.Color(255, 255, 255));
-        buscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        buscar.setOpaque(false);
-        buscar.setPhColor(new java.awt.Color(255, 255, 255));
-        buscar.setPlaceholder("CÓDIGO/NOMBRE");
-        buscar.addKeyListener(new java.awt.event.KeyAdapter() {
+        JtextBuscar.setBackground(new java.awt.Color(34, 102, 145));
+        JtextBuscar.setBorder(null);
+        JtextBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        JtextBuscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        JtextBuscar.setOpaque(false);
+        JtextBuscar.setPhColor(new java.awt.Color(255, 255, 255));
+        JtextBuscar.setPlaceholder("CÓDIGO/NOMBRE");
+        JtextBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                buscarKeyReleased(evt);
+                JtextBuscarKeyReleased(evt);
             }
         });
-        jPanel4.add(buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 180, -1));
+        jPanel4.add(JtextBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 180, -1));
 
         codigoL1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         codigoL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/buscarL.png"))); // NOI18N
@@ -93,7 +101,7 @@ public class ListaAlimentosAd extends javax.swing.JFrame {
         });
         jPanel4.add(enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 90, 100));
 
-        rSTableMetro1.setModel(new javax.swing.table.DefaultTableModel(
+        TablePedidos_RegistroPedido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -104,7 +112,7 @@ public class ListaAlimentosAd extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(rSTableMetro1);
+        jScrollPane1.setViewportView(TablePedidos_RegistroPedido);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -141,9 +149,9 @@ public class ListaAlimentosAd extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscarKeyReleased
-        
-    }//GEN-LAST:event_buscarKeyReleased
+    private void JtextBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JtextBuscarKeyReleased
+        alimentos.SearchClientes(JtextBuscar.getText());
+    }//GEN-LAST:event_JtextBuscarKeyReleased
 
     private void tipoAlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAlActionPerformed
         // TODO add your handling code here:
@@ -170,32 +178,33 @@ public class ListaAlimentosAd extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListaAlimentosAd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListaAlimentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListaAlimentosAd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListaAlimentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListaAlimentosAd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListaAlimentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ListaAlimentosAd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListaAlimentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ListaAlimentosAd().setVisible(true);
+                new ListaAlimentos().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private app.bolivia.swing.JCTextField buscar;
+    private app.bolivia.swing.JCTextField JtextBuscar;
+    public rojerusan.RSTableMetro TablePedidos_RegistroPedido;
     private javax.swing.JLabel codigoL1;
     private javax.swing.JButton enviar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private rojerusan.RSTableMetro rSTableMetro1;
     private org.bolivia.combo.SComboBoxBlue tipoAl;
     private javax.swing.JLabel tipoL;
     // End of variables declaration//GEN-END:variables
