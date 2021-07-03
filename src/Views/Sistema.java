@@ -45,7 +45,7 @@ public class Sistema extends javax.swing.JFrame {
         //rsscalelabel.RSScaleLabel.setScaleLabel(jLabel6, "src/Resources/logo.png");
         //   TextField_BuscarVentas.setEditable(false);
         
-
+        tablePedidos.setRowHeight(30);
 
         tipoAl.addItemListener(new ItemListener() {
 
@@ -250,7 +250,11 @@ public class Sistema extends javax.swing.JFrame {
         jTabbedPaneInventario2 = new javax.swing.JTabbedPane();
         jPanel24 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        rSTableMetro3 = new rojerusan.RSTableMetro();
+        rSTableMetro3 = rSTableMetro3 = new rojerusan.RSTableMetro(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
         jPanel33 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         xd = xd= new rojerusan.RSTableMetro(){
@@ -1399,12 +1403,18 @@ public class Sistema extends javax.swing.JFrame {
 
         nombreL2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/nombreL.png"))); // NOI18N
         jPanel30.add(nombreL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 250, 60));
+
+        TextFieldInventario_stock.setBackground(new java.awt.Color(34, 102, 145));
+        TextFieldInventario_stock.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TextFieldInventario_stockKeyTyped(evt);
+            }
+        });
         jPanel30.add(TextFieldInventario_stock, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 162, 240, 40));
 
         nombreL3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/precioL.png"))); // NOI18N
         jPanel30.add(nombreL3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 243, 52));
 
-        ComboBoxSuministro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "CATEGORIA", "PERECEDEROS", "NO PERECEDEROS" }));
         ComboBoxSuministro.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ComboBoxSuministro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3817,7 +3827,8 @@ public class Sistema extends javax.swing.JFrame {
         textField2.add(TextFieldInventario_categoriaDescrip);
         Object[] objects2 = {
             TableInventario_categoria,
-            SpinnerPaginasInventario_suministro2
+            SpinnerPaginasInventario_suministro2,
+            ComboBoxSuministro
         };
         categoria = new CategoriaVM(objects2, label2, textField2);
 
@@ -4099,7 +4110,7 @@ public class Sistema extends javax.swing.JFrame {
         alerta.setVisible(true);
 
         if (alerta.bandera) {
-            suministro.restablecer();
+            suministro.restablecerSuministro();
         }    }//GEN-LAST:event_rSMaterialButtonRectangle9ActionPerformed
 
     private void jTabbedPaneInventario1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTabbedPaneInventario1KeyPressed
@@ -4116,6 +4127,7 @@ public class Sistema extends javax.swing.JFrame {
                     jTabbedPaneInventario2.setSelectedIndex(0);
                     suministro.seccion = 1;
                     suministro.Registro_PaginasInventario();
+                    ComboBoxSuministro.setSelectedIndex(0);
                 }
                 break;
             case 1:
@@ -4392,7 +4404,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void TextFieldInventario_nombreg1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_nombreg1KeyReleased
-        nombre.setText(nombre.getText().toUpperCase());
+        TextFieldInventario_nombreg1.setText(TextFieldInventario_nombreg1.getText().toUpperCase());
     }//GEN-LAST:event_TextFieldInventario_nombreg1KeyReleased
 
     private void TextFieldInventario_nombreg1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_nombreg1KeyTyped
@@ -4600,6 +4612,13 @@ public class Sistema extends javax.swing.JFrame {
     private void TotalPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalPedidosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TotalPedidosActionPerformed
+
+    private void TextFieldInventario_stockKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_stockKeyTyped
+        char num = evt.getKeyChar();
+        if ((num < '0' || num > '9')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_TextFieldInventario_stockKeyTyped
 
     // </editor-fold>
     /**

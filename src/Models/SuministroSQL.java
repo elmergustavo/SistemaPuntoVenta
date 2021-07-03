@@ -6,6 +6,9 @@
 package Models;
 
 import Conexion.Conexion;
+import com.mysql.jdbc.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +18,7 @@ import javax.swing.JOptionPane;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ColumnListHandler;
+import org.bolivia.combo.SComboBoxBlue;
 
 /**
  *
@@ -74,4 +78,7 @@ public class SuministroSQL {
         }
         
     }
+    
+    
+    
 }

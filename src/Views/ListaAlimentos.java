@@ -34,7 +34,7 @@ public class ListaAlimentos extends javax.swing.JFrame {
         double total = 0;
         double precio;
         int cantidad;
-        double imp = 0.0;
+        double imp = 0.00;
 
         for (int i = 0; i < Views.Sistema.tablePedidos.getRowCount(); i++) {
             pre = Views.Sistema.tablePedidos.getValueAt(i, 3).toString();
@@ -201,11 +201,10 @@ public class ListaAlimentos extends javax.swing.JFrame {
                 int fila = TablePedidos_RegistroPedido.getSelectedRow();
 
                 if (fila == -1) {
-                    JOptionPane.showMessageDialog(this, "Seleccione un registro.", "Alimentos", 0,
-                            new ImageIcon(getClass().getResource("/imagenes/usuarios/info.png")));
+                    JOptionPane.showMessageDialog(null, "Seleccione un registro.");
                 } else {
-                    String cod = TablePedidos_RegistroPedido.getValueAt(fila, 0).toString();
-                    String tipo = TablePedidos_RegistroPedido.getValueAt(fila, 1).toString();
+                    String cod = TablePedidos_RegistroPedido.getValueAt(fila, 1).toString();
+                    String tipo = TablePedidos_RegistroPedido.getValueAt(fila, 4).toString();
                     String nom = TablePedidos_RegistroPedido.getValueAt(fila, 2).toString();
                     String precio = TablePedidos_RegistroPedido.getValueAt(fila, 3).toString();
                     int c = 0;
@@ -216,7 +215,7 @@ public class ListaAlimentos extends javax.swing.JFrame {
 //                                "Error", JOptionPane.ERROR_MESSAGE);
 //                    }
                     if ((cant.equals("")) || (cant.equals("0"))) {
-//                        JOptionPane.showMessageDialog(this, "Debe ingresar algun valor mayor que 0");
+                        JOptionPane.showMessageDialog(this, "Debe ingresar algun valor mayor que 0");
                     } else {
                         for (int i = 0; i < Views.Sistema.tablePedidos.getRowCount(); i++) {
                             Object com = Views.Sistema.tablePedidos.getValueAt(i, 0);

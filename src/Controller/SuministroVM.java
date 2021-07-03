@@ -10,7 +10,9 @@ import Library.GenerarCodigos;
 import Library.Paginador;
 import Models.SuministroSQL;
 import Models.TSuministro;
+import com.mysql.jdbc.Connection;
 import java.awt.Color;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -49,6 +51,8 @@ public class SuministroVM extends SuministroSQL {
     private SComboBoxBlue categoria;
 
     private final Conexion conexion;
+    
+    
 
     public SuministroVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
         this.conexion = Conexion.createInstance();
@@ -58,12 +62,15 @@ public class SuministroVM extends SuministroSQL {
         _tableBodega = (JTable) objects[1];
         _spinnerPaginas = (JSpinner) objects[2];
         categoria = (SComboBoxBlue) objects[3];
-        restablecer();
+        restablecerSuministro();
+        
         
         //  RestablecerReport();
         this.Insert = false;
         this.Update = false;
     }
+    
+   
 
     // <editor-fold defaultstate="collapsed" desc="SET AND GET Alertas">  
     public boolean getInsert() {
@@ -213,7 +220,7 @@ public class SuministroVM extends SuministroSQL {
                     break;
             }
             conexion.getConnection().commit();
-            restablecer();
+            restablecerSuministro();
         } catch (SQLException ex) {
             conexion.getConnection().rollback();
             JOptionPane.showMessageDialog(null, ex);
@@ -231,8 +238,10 @@ public class SuministroVM extends SuministroSQL {
         _textField.get(3).setText((String) modelo1.getValueAt(filas, 4));
         categoria.setSelectedItem((String) modelo1.getValueAt(filas, 5));
     }
+    
+    
 
-    public final void restablecer() {
+    public final void restablecerSuministro() {
         seccion = 1;
         _accion = "insert";
         categoria.setSelectedItem("CATEGORIA");

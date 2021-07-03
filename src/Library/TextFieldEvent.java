@@ -25,7 +25,7 @@ public class TextFieldEvent {
     public void numberKeyPres(KeyEvent evt){
          //Declaramos una variable y le asignamos un evento
         char car = evt.getKeyChar();
-        if ((car < '0' || car > '9') && (car != (char) KeyEvent.VK_BACK_SPACE)) {
+        if ((car < '0' || car > '9' || car == '.') && (car != (char) KeyEvent.VK_BACK_SPACE)) {
             evt.consume();
         }
     }

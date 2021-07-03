@@ -23,6 +23,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.table.DefaultTableModel;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.ColumnListHandler;
+import org.bolivia.combo.SComboBoxBlue;
 
 /**
  *
@@ -43,6 +44,7 @@ public class CategoriaVM extends CategoriaSQL {
     private Paginador<TCategoria> _paginadorSuministro;
     private boolean Insert;
     private boolean Update;
+    private SComboBoxBlue categoria;
 
     private final Conexion conexion;
 
@@ -52,6 +54,7 @@ public class CategoriaVM extends CategoriaSQL {
         _textField = textField;
         _tableCategoria = (JTable) objects[0];
         _spinnerPaginas = (JSpinner) objects[1];
+        categoria = (SComboBoxBlue) objects[2];
         restablecer();
         this.Insert = false;
         this.Update = false;
@@ -230,6 +233,7 @@ private List<TCategoria> listCategorias;
                 new Integer(1) // incremento-decremento 
         );
         _spinnerPaginas.setModel(model);
+        categoria.removeAllItems();
         SearchClientes("");
     }
 
@@ -251,13 +255,14 @@ private List<TCategoria> listCategorias;
                     .collect(Collectors.toList());
         }
         if (!categoriaFilter.isEmpty()) {
-            System.out.println("aqui");
             categoriaFilter.forEach(item -> {
-                System.out.println("error");
                 Object[] registros2 = {
                     item.getIdCat(),
                     item.getCategoria(),
-                    item.getDescripcion(),};
+                    item.getDescripcion(),
+                    
+                };
+                categoria.addItem(item.getCategoria());
                 modelo1.addRow(registros2);
             });
 
