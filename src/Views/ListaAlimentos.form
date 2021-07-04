@@ -226,6 +226,7 @@
                 </Property>
               </Properties>
               <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="TablePedidos_RegistroPedido = new rojerusan.RSTableMetro(){&#xd;&#xa;    public boolean isCellEditable(int rowIndex, int colIndex) {&#xd;&#xa;        return false; //Disallow the editing of any cell&#xd;&#xa;    }&#xd;&#xa;};"/>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>

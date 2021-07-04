@@ -385,6 +385,7 @@ public class Sistema extends javax.swing.JFrame {
         jScrollPane9 = new javax.swing.JScrollPane();
         tablePedidos = new rojerusan.RSTableMetro();
         busca1 = new javax.swing.JButton();
+        registrar1 = new javax.swing.JButton();
         jPanel56 = new javax.swing.JPanel();
         jPanel32 = new javax.swing.JPanel();
         jPanel57 = new javax.swing.JPanel();
@@ -1415,6 +1416,7 @@ public class Sistema extends javax.swing.JFrame {
         nombreL3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/precioL.png"))); // NOI18N
         jPanel30.add(nombreL3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 243, 52));
 
+        ComboBoxSuministro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SELECCIONAR CATEGORIA" }));
         ComboBoxSuministro.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ComboBoxSuministro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2611,6 +2613,7 @@ public class Sistema extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tableMetro1.setColorBackgoundHead(new java.awt.Color(102, 102, 255));
         jScrollPane8.setViewportView(tableMetro1);
 
         javax.swing.GroupLayout jPanel52Layout = new javax.swing.GroupLayout(jPanel52);
@@ -3025,22 +3028,22 @@ public class Sistema extends javax.swing.JFrame {
         codigoPedido.setOpaque(false);
         codigoPedido.setPhColor(new java.awt.Color(255, 255, 255));
         codigoPedido.setPlaceholder("CÓDIGO");
-        jPanel55.add(codigoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 180, -1));
+        jPanel55.add(codigoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 180, -1));
 
-        tipoAl1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TIPO ALIMENTO", "BEBIDAS", "BOTANAS", "CALDOS", "CAMARONES", "COCTELES", "DESAYUNOS", "FILETE", "LANGOSTA", "LANGOSTINO", "PESCADO", "PULPO" }));
+        tipoAl1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "MESA 1", "MESA 2", "MESA 3", "MESA 4", "MESA 5", "MESA 6", "MESA 7", "MESA 8", "MESA 9", "MESA 10" }));
         tipoAl1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         tipoAl1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipoAl1ActionPerformed(evt);
             }
         });
-        jPanel55.add(tipoAl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 180, 40));
+        jPanel55.add(tipoAl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 110, 40));
 
         tipoL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/tipoAlL.png"))); // NOI18N
         jPanel55.add(tipoL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 60, 52));
 
         codigoL10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/codigoL.png"))); // NOI18N
-        jPanel55.add(codigoL10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 250, 60));
+        jPanel55.add(codigoL10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 250, 60));
 
         precio1.setBackground(new java.awt.Color(34, 102, 145));
         precio1.setBorder(null);
@@ -3054,10 +3057,10 @@ public class Sistema extends javax.swing.JFrame {
                 precio1KeyTyped(evt);
             }
         });
-        jPanel55.add(precio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 180, -1));
+        jPanel55.add(precio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 180, -1));
 
         nombreL5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/precioL.png"))); // NOI18N
-        jPanel55.add(nombreL5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 243, 52));
+        jPanel55.add(nombreL5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 243, 52));
         jPanel55.add(jLabelInventario_platillosCodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 80, 40));
         jPanel55.add(jLabelInventario_platillosNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 90, 40));
         jPanel55.add(jLabelInventario_platillosPrecio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 90, 50));
@@ -3071,7 +3074,7 @@ public class Sistema extends javax.swing.JFrame {
                 rSMaterialButtonRectangle13ActionPerformed(evt);
             }
         });
-        jPanel55.add(rSMaterialButtonRectangle13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 180, 60));
+        jPanel55.add(rSMaterialButtonRectangle13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 180, 60));
 
         TotalPedidos.setBackground(new java.awt.Color(34, 102, 145));
         TotalPedidos.setBorder(null);
@@ -3085,10 +3088,10 @@ public class Sistema extends javax.swing.JFrame {
                 TotalPedidosActionPerformed(evt);
             }
         });
-        jPanel55.add(TotalPedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 80, 30));
+        jPanel55.add(TotalPedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 80, 30));
 
         codigoL11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/total.png"))); // NOI18N
-        jPanel55.add(codigoL11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, 50));
+        jPanel55.add(codigoL11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, 50));
 
         tablePedidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -3121,6 +3124,21 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        registrar1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        registrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/restaurante.png"))); // NOI18N
+        registrar1.setBorder(null);
+        registrar1.setBorderPainted(false);
+        registrar1.setContentAreaFilled(false);
+        registrar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        registrar1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        registrar1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/restaurante1.png"))); // NOI18N
+        registrar1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        registrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrar1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
         jPanel46.setLayout(jPanel46Layout);
         jPanel46Layout.setHorizontalGroup(
@@ -3129,7 +3147,10 @@ public class Sistema extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(busca1))
+                    .addGroup(jPanel46Layout.createSequentialGroup()
+                        .addComponent(busca1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(registrar1)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 1205, Short.MAX_VALUE)
                 .addContainerGap())
@@ -3139,11 +3160,16 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel46Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
                     .addGroup(jPanel46Layout.createSequentialGroup()
-                        .addComponent(busca1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel55, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)))
+                        .addGroup(jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(registrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel46Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(busca1)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel55, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
+                        .addGap(24, 24, 24)))
                 .addGap(23, 23, 23))
         );
 
@@ -3167,6 +3193,11 @@ public class Sistema extends javax.swing.JFrame {
 
         jPanel57.setBackground(new java.awt.Color(255, 255, 255));
 
+        jPanel58.setBackground(new java.awt.Color(255, 255, 255));
+
+        mesa1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/mesaDisponible.png"))); // NOI18N
+
         rSMaterialButtonRectangle14.setBackground(new java.awt.Color(34, 102, 145));
         rSMaterialButtonRectangle14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
         rSMaterialButtonRectangle14.setText("Mesa 1");
@@ -3182,12 +3213,12 @@ public class Sistema extends javax.swing.JFrame {
             jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel58Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mesa1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(mesa1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(jPanel58Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel58Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(rSMaterialButtonRectangle14, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(42, 42, 42))
         );
         jPanel58Layout.setVerticalGroup(
             jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3198,6 +3229,11 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(rSMaterialButtonRectangle14, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(26, Short.MAX_VALUE))
         );
+
+        jPanel59.setBackground(new java.awt.Color(255, 255, 255));
+
+        mesa6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mesa6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/mesaDisponible.png"))); // NOI18N
 
         rSMaterialButtonRectangle19.setBackground(new java.awt.Color(34, 102, 145));
         rSMaterialButtonRectangle19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
@@ -3212,12 +3248,12 @@ public class Sistema extends javax.swing.JFrame {
         jPanel59.setLayout(jPanel59Layout);
         jPanel59Layout.setHorizontalGroup(
             jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel59Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel59Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mesa6, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(mesa6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel59Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(43, 43, 43)
                 .addComponent(rSMaterialButtonRectangle19, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -3230,6 +3266,11 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(rSMaterialButtonRectangle19, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
+
+        jPanel60.setBackground(new java.awt.Color(255, 255, 255));
+
+        mesa2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/mesaCobrada.png"))); // NOI18N
 
         rSMaterialButtonRectangle15.setBackground(new java.awt.Color(34, 102, 145));
         rSMaterialButtonRectangle15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
@@ -3246,12 +3287,12 @@ public class Sistema extends javax.swing.JFrame {
             jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel60Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mesa2, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(mesa2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel60Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(50, Short.MAX_VALUE)
                 .addComponent(rSMaterialButtonRectangle15, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+                .addGap(42, 42, 42))
         );
         jPanel60Layout.setVerticalGroup(
             jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3262,6 +3303,11 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(rSMaterialButtonRectangle15, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel62.setBackground(new java.awt.Color(255, 255, 255));
+
+        mesa7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mesa7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/mesaDisponible.png"))); // NOI18N
 
         rSMaterialButtonRectangle20.setBackground(new java.awt.Color(34, 102, 145));
         rSMaterialButtonRectangle20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
@@ -3278,12 +3324,12 @@ public class Sistema extends javax.swing.JFrame {
             jPanel62Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel62Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mesa7, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(mesa7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel62Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addComponent(rSMaterialButtonRectangle20, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41))
+                .addGap(44, 44, 44))
         );
         jPanel62Layout.setVerticalGroup(
             jPanel62Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3292,8 +3338,13 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(mesa7, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(rSMaterialButtonRectangle20, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
+
+        jPanel64.setBackground(new java.awt.Color(255, 255, 255));
+
+        mesa3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/cena.png"))); // NOI18N
 
         rSMaterialButtonRectangle16.setBackground(new java.awt.Color(34, 102, 145));
         rSMaterialButtonRectangle16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
@@ -3313,19 +3364,24 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(mesa3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel64Layout.createSequentialGroup()
-                .addContainerGap(63, Short.MAX_VALUE)
+                .addContainerGap(52, Short.MAX_VALUE)
                 .addComponent(rSMaterialButtonRectangle16, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addGap(40, 40, 40))
         );
         jPanel64Layout.setVerticalGroup(
             jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel64Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(mesa3, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(rSMaterialButtonRectangle16, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel66.setBackground(new java.awt.Color(255, 255, 255));
+
+        mesa8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mesa8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/mesaCobrada.png"))); // NOI18N
 
         rSMaterialButtonRectangle21.setBackground(new java.awt.Color(34, 102, 145));
         rSMaterialButtonRectangle21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
@@ -3342,22 +3398,27 @@ public class Sistema extends javax.swing.JFrame {
             jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel66Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mesa8, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(mesa8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel66Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(rSMaterialButtonRectangle21, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addGap(39, 39, 39))
         );
         jPanel66Layout.setVerticalGroup(
             jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel66Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(mesa8, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(rSMaterialButtonRectangle21, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel65.setBackground(new java.awt.Color(255, 255, 255));
+
+        mesa4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mesa4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/mesaDisponible.png"))); // NOI18N
 
         rSMaterialButtonRectangle17.setBackground(new java.awt.Color(34, 102, 145));
         rSMaterialButtonRectangle17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
@@ -3379,17 +3440,22 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel65Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(rSMaterialButtonRectangle17, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
+                .addGap(42, 42, 42))
         );
         jPanel65Layout.setVerticalGroup(
             jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel65Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(mesa4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(rSMaterialButtonRectangle17, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel67.setBackground(new java.awt.Color(255, 255, 255));
+
+        mesa9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mesa9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/mesaOcupado.png"))); // NOI18N
 
         rSMaterialButtonRectangle22.setBackground(new java.awt.Color(34, 102, 145));
         rSMaterialButtonRectangle22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
@@ -3406,22 +3472,27 @@ public class Sistema extends javax.swing.JFrame {
             jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel67Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mesa9, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(mesa9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel67Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(rSMaterialButtonRectangle22, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+                .addGap(44, 44, 44))
         );
         jPanel67Layout.setVerticalGroup(
             jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel67Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(mesa9, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(rSMaterialButtonRectangle22, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel68.setBackground(new java.awt.Color(255, 255, 255));
+
+        mesa5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mesa5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/mesaDisponible.png"))); // NOI18N
 
         rSMaterialButtonRectangle18.setBackground(new java.awt.Color(34, 102, 145));
         rSMaterialButtonRectangle18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
@@ -3438,22 +3509,27 @@ public class Sistema extends javax.swing.JFrame {
             jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel68Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mesa5, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(mesa5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel68Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(rSMaterialButtonRectangle18, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addGap(119, 119, 119))
         );
         jPanel68Layout.setVerticalGroup(
             jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel68Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(mesa5, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(rSMaterialButtonRectangle18, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel69.setBackground(new java.awt.Color(255, 255, 255));
+
+        mesa10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mesa10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/mesaOcupado.png"))); // NOI18N
 
         rSMaterialButtonRectangle23.setBackground(new java.awt.Color(34, 102, 145));
         rSMaterialButtonRectangle23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
@@ -3470,19 +3546,19 @@ public class Sistema extends javax.swing.JFrame {
             jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel69Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mesa10, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(mesa10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel69Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(432, Short.MAX_VALUE)
                 .addComponent(rSMaterialButtonRectangle23, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addGap(121, 121, 121))
         );
         jPanel69Layout.setVerticalGroup(
             jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel69Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(mesa10, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(rSMaterialButtonRectangle23, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -3503,20 +3579,21 @@ public class Sistema extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addComponent(jPanel60, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
+                .addGroup(jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel66, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel64, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel67, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel65, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel57Layout.createSequentialGroup()
-                        .addComponent(jPanel64, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel68, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel57Layout.createSequentialGroup()
-                        .addComponent(jPanel66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel67, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel69, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(467, Short.MAX_VALUE))
+                        .addComponent(jPanel69, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel57Layout.setVerticalGroup(
             jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3640,7 +3717,7 @@ public class Sistema extends javax.swing.JFrame {
 
         ButtonClienteConfig.setBackground(new java.awt.Color(51, 51, 51));
         ButtonClienteConfig.setForeground(new java.awt.Color(255, 255, 255));
-        ButtonClienteConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Settings.png"))); // NOI18N
+        ButtonClienteConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/pedidos.png"))); // NOI18N
         ButtonClienteConfig.setText("Pedido");
         ButtonClienteConfig.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         ButtonClienteConfig.addActionListener(new java.awt.event.ActionListener() {
@@ -3681,8 +3758,8 @@ public class Sistema extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ButtonAdministracion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ButtonClienteConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonClienteConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(ButtonClienteConfig1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -3690,7 +3767,9 @@ public class Sistema extends javax.swing.JFrame {
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ButtonClienteConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ButtonClienteConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonClienteConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -3698,7 +3777,6 @@ public class Sistema extends javax.swing.JFrame {
                     .addComponent(rSLabelHora1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel22Layout.createSequentialGroup()
                         .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ButtonClienteConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(ButtonAdministracion, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(ButtonCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(ButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -3881,16 +3959,6 @@ public class Sistema extends javax.swing.JFrame {
         TabbedPanePrincipal.setSelectedIndex(5);
         
    
-        rsscalelabel.RSScaleLabel.setScaleLabel(mesa1, "src/Resources/MesaDisponible.jpg");
-        rsscalelabel.RSScaleLabel.setScaleLabel(mesa2, "src/Resources/MesaDisponible.jpg");
-        rsscalelabel.RSScaleLabel.setScaleLabel(mesa3, "src/Resources/MesaDisponible.jpg");
-        rsscalelabel.RSScaleLabel.setScaleLabel(mesa4, "src/Resources/MesaDisponible.jpg");
-        rsscalelabel.RSScaleLabel.setScaleLabel(mesa5, "src/Resources/MesaDisponible.jpg");
-        rsscalelabel.RSScaleLabel.setScaleLabel(mesa6, "src/Resources/MesaDisponible.jpg");
-        rsscalelabel.RSScaleLabel.setScaleLabel(mesa7, "src/Resources/MesaDisponible.jpg");
-        rsscalelabel.RSScaleLabel.setScaleLabel(mesa8, "src/Resources/MesaDisponible.jpg");
-        rsscalelabel.RSScaleLabel.setScaleLabel(mesa9, "src/Resources/MesaDisponible.jpg");
-        rsscalelabel.RSScaleLabel.setScaleLabel(mesa10, "src/Resources/MesaDisponible.jpg");
         
         
 //        controlMesa mesas = new controlMesa();
@@ -4561,9 +4629,10 @@ public class Sistema extends javax.swing.JFrame {
     private void rSMaterialButtonRectangle13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rSMaterialButtonRectangle13ActionPerformed
-
+    private ImageIcon icono;
     private void rSMaterialButtonRectangle14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle14ActionPerformed
-        // TODO add your handling code here:
+         icono = new ImageIcon(getClass().getResource("/Resources/mesaOcupado.png"));
+        mesa1.setIcon(icono);
     }//GEN-LAST:event_rSMaterialButtonRectangle14ActionPerformed
 
     private void rSMaterialButtonRectangle15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle15ActionPerformed
@@ -4619,6 +4688,10 @@ public class Sistema extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_TextFieldInventario_stockKeyTyped
+
+    private void registrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_registrar1ActionPerformed
 
     // </editor-fold>
     /**
@@ -4928,6 +5001,7 @@ public class Sistema extends javax.swing.JFrame {
     private rojerusan.RSTableMetro rSTableMetro3;
     public static app.bolivia.swing.JCTextField recibi;
     private javax.swing.JButton registrar;
+    private javax.swing.JButton registrar1;
     private rojeru_san.complementos.TableMetro tableMetro1;
     public static rojerusan.RSTableMetro tablePedidos;
     private org.bolivia.combo.SComboBoxBlue tipoAl;

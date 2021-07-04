@@ -5,7 +5,6 @@
  */
 package Views;
 
-import Controller.ClientesVM;
 import Controller.ListarAlimentosVM;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -74,7 +73,11 @@ public class ListaAlimentos extends javax.swing.JFrame {
         tipoL = new javax.swing.JLabel();
         enviar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TablePedidos_RegistroPedido = new rojerusan.RSTableMetro();
+        TablePedidos_RegistroPedido = TablePedidos_RegistroPedido = new rojerusan.RSTableMetro(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -210,10 +213,10 @@ public class ListaAlimentos extends javax.swing.JFrame {
                     int c = 0;
                     int j = 0;
                     cant = JOptionPane.showInputDialog(this, "Cantidad:", "Alimentos", JOptionPane.INFORMATION_MESSAGE);
-//                    while (!OpcionesAl.isNumber(cant) && cant != null) {
-//                        cant = JOptionPane.showInputDialog(this, "Debe ingresar valores numéricos\ny que sean mayor a 0:",
-//                                "Error", JOptionPane.ERROR_MESSAGE);
-//                    }
+                    while (!isNumber(cant) && cant != null) {
+                        cant = JOptionPane.showInputDialog(this, "Debe ingresar valores numéricos\ny que sean mayor a 0:",
+                                "Error", JOptionPane.ERROR_MESSAGE);
+                    }
                     if ((cant.equals("")) || (cant.equals("0"))) {
                         JOptionPane.showMessageDialog(this, "Debe ingresar algun valor mayor que 0");
                     } else {
@@ -256,6 +259,18 @@ public class ListaAlimentos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_enviarActionPerformed
 
+    
+    public static boolean isNumber(String n) {
+        try {
+            if (Integer.parseInt(n) > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+    }
     /**
      * @param args the command line arguments
      */
