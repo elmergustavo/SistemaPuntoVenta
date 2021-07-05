@@ -5,19 +5,27 @@
  */
 package Views;
 
+import Conexion.Conexion;
 import Controller.AlimentosVM;
 import Controller.CategoriaVM;
 import Library.Objectos;
 import Controller.ClientesVM;
 import Controller.SuministroVM;
+import Models.Mesa;
 import Models.MesaSQL;
+import java.sql.Statement;
+
 import Models.controlMesa;
 import Reportes.Excel;
 import app.bolivia.swing.JCTextField;
 import java.awt.Color;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -34,6 +42,10 @@ public class Sistema extends javax.swing.JFrame {
      * Creates new form Sistema
      */
     private int idCliente = 0;
+    private Conexion conexion = Conexion.createInstance();
+    private String sql = "";
+    private Statement st;
+
 
     public Sistema() {
 
@@ -46,7 +58,8 @@ public class Sistema extends javax.swing.JFrame {
         //   TextField_BuscarVentas.setEditable(false);
         
         tablePedidos.setRowHeight(30);
-
+        
+        
         tipoAl.addItemListener(new ItemListener() {
 
             @Override
@@ -303,7 +316,6 @@ public class Sistema extends javax.swing.JFrame {
         FechaEntregaCotizacion = new javax.swing.JTextField();
         Lable_Telefono = new javax.swing.JLabel();
         TelefonoClienteCotizaciones = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
         PanelModificarCotizacion = new javax.swing.JPanel();
         PanelBuscarCotizacion = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
@@ -1570,7 +1582,7 @@ public class Sistema extends javax.swing.JFrame {
                             .addComponent(TextFieldInventario_categoriaDescrip, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(rSMaterialButtonRectangle11, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1608,6 +1620,11 @@ public class Sistema extends javax.swing.JFrame {
         codigo.setOpaque(false);
         codigo.setPhColor(new java.awt.Color(255, 255, 255));
         codigo.setPlaceholder("CÓDIGO");
+        codigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codigoActionPerformed(evt);
+            }
+        });
         jPanel41.add(codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 180, -1));
 
         tipoAl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TIPO ALIMENTO", "BEBIDAS", "BOTANAS", "CALDOS", "CAMARONES", "COCTELES", "DESAYUNOS", "FILETE", "LANGOSTA", "LANGOSTINO", "PESCADO", "PULPO" }));
@@ -2150,6 +2167,12 @@ public class Sistema extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane1StateChanged(evt);
+            }
+        });
+
         jPanel47.setBackground(new java.awt.Color(255, 255, 255));
         jPanel47.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -2217,13 +2240,6 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
         jPanel47.setLayout(jPanel47Layout);
         jPanel47Layout.setHorizontalGroup(
@@ -2245,7 +2261,7 @@ public class Sistema extends javax.swing.JFrame {
                                 .addComponent(Label_Cliente_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(Lable_Telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 32, Short.MAX_VALUE))
+                                .addGap(0, 6, Short.MAX_VALUE))
                             .addGroup(jPanel47Layout.createSequentialGroup()
                                 .addComponent(Label_fechaEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2256,10 +2272,6 @@ public class Sistema extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(AnticipoCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addGroup(jPanel47Layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel47Layout.setVerticalGroup(
             jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2282,9 +2294,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FechaEntregaCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AnticipoCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PanelNuevaCotizacionLayout = new javax.swing.GroupLayout(PanelNuevaCotizacion);
@@ -2306,7 +2316,7 @@ public class Sistema extends javax.swing.JFrame {
         PanelModificarCotizacion.setLayout(PanelModificarCotizacionLayout);
         PanelModificarCotizacionLayout.setHorizontalGroup(
             PanelModificarCotizacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+            .addGap(0, 372, Short.MAX_VALUE)
         );
         PanelModificarCotizacionLayout.setVerticalGroup(
             PanelModificarCotizacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2319,7 +2329,7 @@ public class Sistema extends javax.swing.JFrame {
         PanelBuscarCotizacion.setLayout(PanelBuscarCotizacionLayout);
         PanelBuscarCotizacionLayout.setHorizontalGroup(
             PanelBuscarCotizacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+            .addGap(0, 372, Short.MAX_VALUE)
         );
         PanelBuscarCotizacionLayout.setVerticalGroup(
             PanelBuscarCotizacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2327,6 +2337,12 @@ public class Sistema extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Buscar Cotizacion ", PanelBuscarCotizacion);
+
+        jTabbedPane2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane2StateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -2376,9 +2392,9 @@ public class Sistema extends javax.swing.JFrame {
                 .addGroup(PanelCotizacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PanelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelCotizacionesLayout.createSequentialGroup()
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTabbedPane2)))
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1220, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         PanelCotizacionesLayout.setVerticalGroup(
@@ -2388,7 +2404,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(PanelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelCotizacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedPane2)
+                    .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
                     .addComponent(jTabbedPane1))
                 .addContainerGap())
         );
@@ -3604,7 +3620,7 @@ public class Sistema extends javax.swing.JFrame {
                     .addComponent(jPanel60, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel65, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel62, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -3782,7 +3798,7 @@ public class Sistema extends javax.swing.JFrame {
                             .addComponent(ButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(jPanel22Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addComponent(BtnVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 35, Short.MAX_VALUE))
+                                .addComponent(BtnVentas, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
                             .addComponent(ButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addContainerGap())))
         );
@@ -4466,11 +4482,6 @@ public class Sistema extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TelefonoClienteCotizacionesKeyTyped
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     private void TextFieldInventario_nombreg1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldInventario_nombreg1KeyReleased
         TextFieldInventario_nombreg1.setText(TextFieldInventario_nombreg1.getText().toUpperCase());
     }//GEN-LAST:event_TextFieldInventario_nombreg1KeyReleased
@@ -4693,6 +4704,36 @@ public class Sistema extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_registrar1ActionPerformed
 
+    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
+        switch (jTabbedPane1.getSelectedIndex()) {
+            case 0:
+                if (jTabbedPane2.getSelectedIndex() > 0) {
+                    jTabbedPane2.setSelectedIndex(0);
+//                    cliente.seccion = 1;
+//                    cliente.Registro_Paginas();
+                }
+                break;
+            case 1:
+//                cliente.seccion = 2;
+                jTabbedPane2.setSelectedIndex(1);
+//                cliente.Registro_Paginas();
+                break;   
+            case 2:
+                jTabbedPane2.setSelectedIndex(2);
+                break;
+                
+                    
+                }
+    }//GEN-LAST:event_jTabbedPane1StateChanged
+
+    private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTabbedPane2StateChanged
+
+    private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codigoActionPerformed
+
     // </editor-fold>
     /**
      * @param args the command line arguments
@@ -4841,7 +4882,6 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JButton eliminar;
     private javax.swing.JButton eliminar1;
     private javax.swing.JButton eliminarT;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
