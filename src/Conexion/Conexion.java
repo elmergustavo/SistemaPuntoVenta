@@ -17,8 +17,8 @@ public class Conexion {
     // datos para la conexion a un servidor de BD
     private String db = "punto_de_ventas";
     private String user = "root";
-    private String password = "master502";
-    private String urlMysql = "jdbc:mysql://localhost:3306/";
+    private String password = "hacker.net";
+    private String urlMysql = "jdbc:mysql://localhost:3310/";
     private String urlSql = "jdbc:sqlserver://localhost:1433;databaseName=" + db
             + ";integratedSecurity=true;";
     private Connection conn = null;

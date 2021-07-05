@@ -6,6 +6,8 @@
 package Views;
 
 import Controller.ListarAlimentosVM;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -24,6 +26,62 @@ public class ListaAlimentos extends javax.swing.JFrame {
     public ListaAlimentos() {
         initComponents();
         mostrar();
+        
+        tipoAl2.addItemListener(new ItemListener() {
+
+            @Override
+            public void itemStateChanged(ItemEvent ie) {
+                if (tipoAl2.getSelectedIndex() == 0) {
+                    tipoL2.setIcon(new ImageIcon(getClass().getResource("/Resources/tipoAlL.png")));
+                    alimentos.SearchClientes("");
+                }
+                if (tipoAl2.getSelectedIndex() == 1) {
+                    System.out.println("entro");
+                    tipoL2.setIcon(new ImageIcon(getClass().getResource("/Resources/bebida.png")));
+                    alimentos.SearchClientes((String) tipoAl2.getSelectedItem());
+                }
+                if (tipoAl2.getSelectedIndex() == 2) {
+                    tipoL2.setIcon(new ImageIcon(getClass().getResource("/Resources/botana.png")));
+                    alimentos.SearchClientes((String) tipoAl2.getSelectedItem());
+                }
+                if (tipoAl2.getSelectedIndex() == 3) {
+                    tipoL2.setIcon(new ImageIcon(getClass().getResource("/Resources/caldo.png")));
+                   alimentos.SearchClientes((String) tipoAl2.getSelectedItem());
+                }
+                if (tipoAl2.getSelectedIndex() == 4) {
+                    tipoL2.setIcon(new ImageIcon(getClass().getResource("/Resources/camaron.png")));
+                    alimentos.SearchClientes((String) tipoAl2.getSelectedItem());
+                }
+                if (tipoAl2.getSelectedIndex() == 5) {
+                    tipoL2.setIcon(new ImageIcon(getClass().getResource("/Resources/coctel.png")));
+                    alimentos.SearchClientes((String) tipoAl2.getSelectedItem());
+                }
+                if (tipoAl2.getSelectedIndex() == 6) {
+                    tipoL2.setIcon(new ImageIcon(getClass().getResource("/Resources/desayuno.png")));
+                    alimentos.SearchClientes((String) tipoAl2.getSelectedItem());
+                }
+                if (tipoAl2.getSelectedIndex() == 7) {
+                    tipoL2.setIcon(new ImageIcon(getClass().getResource("/Resources/filete.png")));
+                    alimentos.SearchClientes((String) tipoAl2.getSelectedItem());
+                }
+                if (tipoAl2.getSelectedIndex() == 8) {
+                    tipoL2.setIcon(new ImageIcon(getClass().getResource("/Resources/langosta.png")));
+                    alimentos.SearchClientes((String) tipoAl2.getSelectedItem());
+                }
+                if (tipoAl2.getSelectedIndex() == 9) {
+                    tipoL2.setIcon(new ImageIcon(getClass().getResource("/Resources/langostino.png")));
+                    alimentos.SearchClientes((String) tipoAl2.getSelectedItem());
+                }
+                if (tipoAl2.getSelectedIndex() == 10) {
+                    tipoL2.setIcon(new ImageIcon(getClass().getResource("/Resources/pescado.png")));
+                    alimentos.SearchClientes((String) tipoAl2.getSelectedItem());
+                }
+                if (tipoAl2.getSelectedIndex() == 11) {
+                    tipoL2.setIcon(new ImageIcon(getClass().getResource("/Resources/pulpo.png")));
+                    alimentos.SearchClientes((String) tipoAl2.getSelectedItem());
+                }
+            }
+        });
     }
     
   
@@ -69,8 +127,8 @@ public class ListaAlimentos extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         JtextBuscar = new app.bolivia.swing.JCTextField();
         codigoL1 = new javax.swing.JLabel();
-        tipoAl = new org.bolivia.combo.SComboBoxBlue();
-        tipoL = new javax.swing.JLabel();
+        tipoAl2 = new org.bolivia.combo.SComboBoxBlue();
+        tipoL2 = new javax.swing.JLabel();
         enviar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablePedidos_RegistroPedido = TablePedidos_RegistroPedido = new rojerusan.RSTableMetro(){
@@ -95,6 +153,11 @@ public class ListaAlimentos extends javax.swing.JFrame {
         JtextBuscar.setOpaque(false);
         JtextBuscar.setPhColor(new java.awt.Color(255, 255, 255));
         JtextBuscar.setPlaceholder("CÓDIGO/NOMBRE");
+        JtextBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JtextBuscarMouseClicked(evt);
+            }
+        });
         JtextBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 JtextBuscarKeyReleased(evt);
@@ -106,21 +169,21 @@ public class ListaAlimentos extends javax.swing.JFrame {
         codigoL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/buscarL.png"))); // NOI18N
         jPanel4.add(codigoL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 250, 52));
 
-        tipoAl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TIPO ALIMENTO", "BEBIDAS", "BOTANAS", "CALDOS", "CAMARONES", "COCTELES", "DESAYUNOS", "FILETE", "LANGOSTA", "LANGOSTINO", "PESCADO", "PULPO" }));
-        tipoAl.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tipoAl.addActionListener(new java.awt.event.ActionListener() {
+        tipoAl2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TIPO ALIMENTO", "BEBIDAS", "BOTANAS", "CALDOS", "CAMARONES", "COCTELES", "DESAYUNOS", "FILETE", "LANGOSTA", "LANGOSTINO", "PESCADO", "PULPO" }));
+        tipoAl2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tipoAl2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tipoAlActionPerformed(evt);
+                tipoAl2ActionPerformed(evt);
             }
         });
-        jPanel4.add(tipoAl, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 183, -1));
+        jPanel4.add(tipoAl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 183, -1));
 
-        tipoL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/tipoAlL.png"))); // NOI18N
-        jPanel4.add(tipoL, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 32, 50, 50));
+        tipoL2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/tipoAlL.png"))); // NOI18N
+        jPanel4.add(tipoL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 32, 50, 50));
 
         enviar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         enviar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/regis1.png"))); // NOI18N
-        enviar.setText("Enviar a Caja");
+        enviar.setText("Enviar a Pedidos");
         enviar.setToolTipText("");
         enviar.setBorder(null);
         enviar.setBorderPainted(false);
@@ -133,7 +196,7 @@ public class ListaAlimentos extends javax.swing.JFrame {
                 enviarActionPerformed(evt);
             }
         });
-        jPanel4.add(enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 90, 100));
+        jPanel4.add(enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 120, 100));
 
         TablePedidos_RegistroPedido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -184,12 +247,13 @@ public class ListaAlimentos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JtextBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JtextBuscarKeyReleased
+        JtextBuscar.setText(JtextBuscar.getText().toUpperCase());
         alimentos.SearchClientes(JtextBuscar.getText());
     }//GEN-LAST:event_JtextBuscarKeyReleased
 
-    private void tipoAlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAlActionPerformed
+    private void tipoAl2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAl2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tipoAlActionPerformed
+    }//GEN-LAST:event_tipoAl2ActionPerformed
 
     private void enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarActionPerformed
 
@@ -259,6 +323,10 @@ public class ListaAlimentos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_enviarActionPerformed
 
+    private void JtextBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JtextBuscarMouseClicked
+       alimentos.SearchClientes("");
+    }//GEN-LAST:event_JtextBuscarMouseClicked
+
     
     public static boolean isNumber(String n) {
         try {
@@ -315,7 +383,7 @@ public class ListaAlimentos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private org.bolivia.combo.SComboBoxBlue tipoAl;
-    private javax.swing.JLabel tipoL;
+    private org.bolivia.combo.SComboBoxBlue tipoAl2;
+    private javax.swing.JLabel tipoL2;
     // End of variables declaration//GEN-END:variables
 }
