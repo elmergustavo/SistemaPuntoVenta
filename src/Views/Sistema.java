@@ -17,6 +17,7 @@ import java.sql.Statement;
 
 import Models.controlMesa;
 import Reportes.Excel;
+import Reportes.Pdf;
 import app.bolivia.swing.JCTextField;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chunk;
@@ -35,8 +36,11 @@ import java.awt.Desktop;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -64,7 +68,6 @@ public class Sistema extends javax.swing.JFrame {
     private String sql = "";
     private Statement st;
 
-
     public Sistema() {
 
         initComponents();
@@ -74,10 +77,9 @@ public class Sistema extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(jLabelImgVentas, "src/Resources/ventas.png");
         //rsscalelabel.RSScaleLabel.setScaleLabel(jLabel6, "src/Resources/logo.png");
         //   TextField_BuscarVentas.setEditable(false);
-        
+
         tablePedidos.setRowHeight(30);
-        
-        
+
         tipoAl.addItemListener(new ItemListener() {
 
             @Override
@@ -137,8 +139,7 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
         new rojerusan.RSNotifyFade("Sistema", "Bienvenido al sistema punto de venta", 6, RSNotifyFade.PositionNotify.BottomRight, RSNotifyFade.TypeNotify.SUCCESS).setVisible(true);
-
-       
+   
     }
 
     /**
@@ -312,6 +313,7 @@ public class Sistema extends javax.swing.JFrame {
             }
         };
         btnGenerarReportePlatillos = new javax.swing.JButton();
+        btnGenerarReporteSuministrosPDF1 = new javax.swing.JButton();
         LabelCliente_Nombre2 = new javax.swing.JLabel();
         SpinnerPaginasInventario_suministro2 = new javax.swing.JSpinner();
         LabelInventarioSuministro_Paginas2 = new javax.swing.JLabel();
@@ -2016,6 +2018,22 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
+        btnGenerarReporteSuministrosPDF1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnGenerarReporteSuministrosPDF1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/pdf1.png"))); // NOI18N
+        btnGenerarReporteSuministrosPDF1.setText("PDF");
+        btnGenerarReporteSuministrosPDF1.setBorder(null);
+        btnGenerarReporteSuministrosPDF1.setBorderPainted(false);
+        btnGenerarReporteSuministrosPDF1.setContentAreaFilled(false);
+        btnGenerarReporteSuministrosPDF1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnGenerarReporteSuministrosPDF1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnGenerarReporteSuministrosPDF1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/pdf.png"))); // NOI18N
+        btnGenerarReporteSuministrosPDF1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnGenerarReporteSuministrosPDF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReporteSuministrosPDF1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
         jPanel36.setLayout(jPanel36Layout);
         jPanel36Layout.setHorizontalGroup(
@@ -2027,7 +2045,9 @@ public class Sistema extends javax.swing.JFrame {
                         .addComponent(jPanel43, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnGenerarReportePlatillos)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(37, 37, 37)
+                        .addComponent(btnGenerarReporteSuministrosPDF1)
+                        .addGap(0, 740, Short.MAX_VALUE))
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 1168, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -2039,8 +2059,10 @@ public class Sistema extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jPanel43, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel36Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(btnGenerarReportePlatillos, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(9, 9, 9)
+                        .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnGenerarReporteSuministrosPDF1)
+                            .addComponent(btnGenerarReportePlatillos, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
                 .addContainerGap())
@@ -2423,7 +2445,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(PanelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelCotizacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+                    .addComponent(jTabbedPane2)
                     .addComponent(jTabbedPane1))
                 .addContainerGap())
         );
@@ -3817,7 +3839,7 @@ public class Sistema extends javax.swing.JFrame {
                             .addComponent(ButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(jPanel22Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addComponent(BtnVentas, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                                .addComponent(BtnVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 35, Short.MAX_VALUE))
                             .addComponent(ButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addContainerGap())))
         );
@@ -3892,8 +3914,7 @@ public class Sistema extends javax.swing.JFrame {
         ButtonCotizacion.setEnabled(true);
         ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(true);
-        
-        
+
 
     }//GEN-LAST:event_BtnVentasActionPerformed
     private SuministroVM suministro;
@@ -3959,8 +3980,7 @@ public class Sistema extends javax.swing.JFrame {
         Object[] objects3 = {
             TableInventario_platillos,
             SpinnerPaginasInventario_suministro2,
-            tipoAl,
-        };
+            tipoAl,};
         alimento = new AlimentosVM(objects3, label3, JCtextField);
     }//GEN-LAST:event_ButtonInventarioActionPerformed
 
@@ -3992,10 +4012,7 @@ public class Sistema extends javax.swing.JFrame {
         ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(false);
         TabbedPanePrincipal.setSelectedIndex(5);
-        
-   
-        
-        
+
 //        controlMesa mesas = new controlMesa();
 //        mesa1.setIcon(mesas.obtenerEstado(1));
 //        mesa2.setIcon(mesas.obtenerEstado(2));
@@ -4254,29 +4271,6 @@ public class Sistema extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTabbedPaneInventario1StateChanged
 
-    private void SpinnerPaginasInventario_suministro2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SpinnerPaginasInventario_suministro2StateChanged
-        suministro.Registro_PaginasInventario();
-
-
-    }//GEN-LAST:event_SpinnerPaginasInventario_suministro2StateChanged
-
-    private void ButtonCliente_Paginas5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas5ActionPerformed
-        suministro.Paginador("Primero");
-
-    }//GEN-LAST:event_ButtonCliente_Paginas5ActionPerformed
-
-    private void ButtonCliente_Paginas6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas6ActionPerformed
-        suministro.Paginador("Anterior");
-    }//GEN-LAST:event_ButtonCliente_Paginas6ActionPerformed
-
-    private void ButtonCliente_Paginas7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas7ActionPerformed
-        suministro.Paginador("Siguiente");
-    }//GEN-LAST:event_ButtonCliente_Paginas7ActionPerformed
-
-    private void ButtonCliente_Paginas8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas8ActionPerformed
-        suministro.Paginador("Ultimo");
-    }//GEN-LAST:event_ButtonCliente_Paginas8ActionPerformed
-
     private void rSMaterialButtonRectangle7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rSMaterialButtonRectangle7ActionPerformed
@@ -4440,7 +4434,7 @@ public class Sistema extends javax.swing.JFrame {
     private void buscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscarKeyReleased
         buscar.setText(buscar.getText().toUpperCase());
         alimento.SearchClientes(buscar.getText());
-        
+
     }//GEN-LAST:event_buscarKeyReleased
 
     private void tipoAlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAlActionPerformed
@@ -4548,14 +4542,14 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_venderActionPerformed
 
     private void calculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculoActionPerformed
-     if (recibi.getText().equals("")) {
+        if (recibi.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Ingrese un valor.", "Caja de cobro", 0);
         } else {
             double recibe = Double.parseDouble(recibi.getText());
             double tota = Double.parseDouble(total.getText());
 
             if (recibe < tota) {
-                JOptionPane.showMessageDialog(this, "Ingrese un valor valido.", "Caja de cobro",0);
+                JOptionPane.showMessageDialog(this, "Ingrese un valor valido.", "Caja de cobro", 0);
             } else {
                 this.cambio.setText(String.valueOf(recibe - tota));
             }
@@ -4563,7 +4557,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_calculoActionPerformed
 
     private void buscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscaActionPerformed
-        
+
     }//GEN-LAST:event_buscaActionPerformed
 
     private void rSMaterialButtonRectangle12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle12ActionPerformed
@@ -4594,7 +4588,8 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGenerarReporteSuministrosActionPerformed
 
     private void btnGenerarReporteSuministrosPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteSuministrosPDFActionPerformed
-        // TODO add your handling code here:
+        Pdf reporte = new Pdf();
+        reporte.pdf();
     }//GEN-LAST:event_btnGenerarReporteSuministrosPDFActionPerformed
 
     private void ButtonCliente_Agregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Agregar1ActionPerformed
@@ -4606,23 +4601,23 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_totalActionPerformed
 
     private void ventasHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasHActionPerformed
-       
+
     }//GEN-LAST:event_ventasHActionPerformed
 
     private void buscFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscFActionPerformed
-       
+
     }//GEN-LAST:event_buscFActionPerformed
 
     private void limpiar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiar1ActionPerformed
-        
+
     }//GEN-LAST:event_limpiar1ActionPerformed
 
     private void eliminarTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarTActionPerformed
-        
+
     }//GEN-LAST:event_eliminarTActionPerformed
 
     private void eliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminar1ActionPerformed
-        
+
     }//GEN-LAST:event_eliminar1ActionPerformed
 
     private void buscar2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscar2KeyTyped
@@ -4633,15 +4628,15 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_buscar2KeyTyped
 
     private void buscar2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscar2KeyReleased
-        
+
     }//GEN-LAST:event_buscar2KeyReleased
 
     private void buscar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscar2MouseClicked
-       
+
     }//GEN-LAST:event_buscar2MouseClicked
 
     private void ventasH1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasH1ActionPerformed
-        
+
     }//GEN-LAST:event_ventasH1ActionPerformed
 
     private void jTabbedPane3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTabbedPane3AncestorAdded
@@ -4661,7 +4656,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_rSMaterialButtonRectangle13ActionPerformed
     private ImageIcon icono;
     private void rSMaterialButtonRectangle14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle14ActionPerformed
-         icono = new ImageIcon(getClass().getResource("/Resources/mesaOcupado.png"));
+        icono = new ImageIcon(getClass().getResource("/Resources/mesaOcupado.png"));
         mesa1.setIcon(icono);
     }//GEN-LAST:event_rSMaterialButtonRectangle14ActionPerformed
 
@@ -4736,13 +4731,12 @@ public class Sistema extends javax.swing.JFrame {
 //                cliente.seccion = 2;
                 jTabbedPane2.setSelectedIndex(1);
 //                cliente.Registro_Paginas();
-                break;   
+                break;
             case 2:
                 jTabbedPane2.setSelectedIndex(2);
                 break;
-                
-                    
-                }
+
+        }
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
     private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
@@ -4752,6 +4746,33 @@ public class Sistema extends javax.swing.JFrame {
     private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_codigoActionPerformed
+
+    private void btnGenerarReporteSuministrosPDF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteSuministrosPDF1ActionPerformed
+        
+        Pdf reporte = new Pdf();
+        reporte.pdfAlimentos();
+    }//GEN-LAST:event_btnGenerarReporteSuministrosPDF1ActionPerformed
+
+    private void ButtonCliente_Paginas8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas8ActionPerformed
+        suministro.Paginador("Ultimo");
+    }//GEN-LAST:event_ButtonCliente_Paginas8ActionPerformed
+
+    private void ButtonCliente_Paginas7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas7ActionPerformed
+        suministro.Paginador("Siguiente");
+    }//GEN-LAST:event_ButtonCliente_Paginas7ActionPerformed
+
+    private void ButtonCliente_Paginas6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas6ActionPerformed
+        suministro.Paginador("Anterior");
+    }//GEN-LAST:event_ButtonCliente_Paginas6ActionPerformed
+
+    private void ButtonCliente_Paginas5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_Paginas5ActionPerformed
+        suministro.Paginador("Primero");
+    }//GEN-LAST:event_ButtonCliente_Paginas5ActionPerformed
+
+    private void SpinnerPaginasInventario_suministro2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SpinnerPaginasInventario_suministro2StateChanged
+        suministro.Registro_PaginasInventario();
+
+    }//GEN-LAST:event_SpinnerPaginasInventario_suministro2StateChanged
 
     // </editor-fold>
     /**
@@ -4875,6 +4896,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JButton btnGenerarReportePlatillos;
     private javax.swing.JButton btnGenerarReporteSuministros;
     private javax.swing.JButton btnGenerarReporteSuministrosPDF;
+    private javax.swing.JButton btnGenerarReporteSuministrosPDF1;
     private javax.swing.JButton buscF;
     private javax.swing.JButton busca;
     private javax.swing.JButton busca1;
@@ -5073,38 +5095,4 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JButton ventasH1;
     private rojerusan.RSTableMetro xd;
     // End of variables declaration//GEN-END:variables
-    
-    private void pdf() {
-        try {
-          //  int id = Vdao.IdVenta();
-            FileOutputStream archivo;
-            File file = new File("src/pdf/venta" + "1" + ".pdf");
-            archivo = new FileOutputStream(file);
-            Document doc = new Document();
-            PdfWriter.getInstance(doc, archivo);
-            doc.open();
-            Image img = Image.getInstance("src/Resources/logo.png");
-
-            Paragraph fecha = new Paragraph();
-            Font negrita = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLUE);
-            fecha.add(Chunk.NEWLINE);
-            Date date = new Date();
-            fecha.add("Factura:" + "\n" + "Fecha: " + new SimpleDateFormat("dd-MM-yyyy").format(date) + "\n\n");
-
-            PdfPTable Encabezado = new PdfPTable(4);
-            Encabezado.setWidthPercentage(100);
-            Encabezado.getDefaultCell().setBorder(0);
-            float[] ColumnaEncabezado = new float[]{20f, 30f, 70f, 40f};
-            Encabezado.setWidths(ColumnaEncabezado);
-            Encabezado.setHorizontalAlignment(Element.ALIGN_LEFT);
-
-//            doc.close();
-            archivo.close();
-           // Desktop.getDesktop().open(file);
-        } catch (DocumentException | IOException e) {
-            System.out.println(e.toString());
-        }
-    }
-
 }
-
