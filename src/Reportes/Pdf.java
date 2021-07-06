@@ -6,6 +6,7 @@
 package Reportes;
 
 import Conexion.Conexion;
+import static Views.Sistema.tablePedidos;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
@@ -27,6 +28,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.Date;
 import rojerusan.RSNotifyFade;
 
@@ -56,7 +58,7 @@ public class Pdf {
             PdfPTable Encabezado = new PdfPTable(4);
             Encabezado.setWidthPercentage(100);
             Encabezado.getDefaultCell().setBorder(0);
-            float[] ColumnaEncabezado = new float[]{60f,10f, 70f, 40f};
+            float[] ColumnaEncabezado = new float[]{60f, 10f, 70f, 40f};
             Encabezado.setWidths(ColumnaEncabezado);
             Encabezado.setHorizontalAlignment(Element.ALIGN_LEFT);
             Encabezado.addCell(img);
@@ -76,17 +78,15 @@ public class Pdf {
             //  String ruta = System.getProperty("user.home");
             //  PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Reporte_Alumnos.pdf"));
             //   documento.open();
-            
+
             Paragraph cli = new Paragraph();
             cli.add(Chunk.NEWLINE);
             cli.add("REPORTE SUMINISTROS" + "\n\n");
             doc.add(cli);
-            
-            
-            
+
             PdfPTable tabla = new PdfPTable(5);
             tabla.setWidthPercentage(100);
-            float[] ColumnaTabla = new float[]{15f, 30f, 10f, 10f,30f};
+            float[] ColumnaTabla = new float[]{15f, 30f, 10f, 10f, 30f};
             tabla.setWidths(ColumnaTabla);
             tabla.setHorizontalAlignment(Element.ALIGN_LEFT);
             PdfPCell cl1 = new PdfPCell(new Phrase("Código", negrita));
@@ -99,21 +99,21 @@ public class Pdf {
             cl3.setBackgroundColor(BaseColor.ORANGE);
             cl4.setBackgroundColor(BaseColor.ORANGE);
             cl5.setBackgroundColor(BaseColor.ORANGE);
-            
+
             tabla.addCell(cl1);
             tabla.addCell(cl2);
             tabla.addCell(cl3);
             tabla.addCell(cl4);
             tabla.addCell(cl5);
-            
+
             try {
                 Connection cn = conexion.getConnection();
                 PreparedStatement pst = cn.prepareStatement("select * from suministros");
-                
+
                 ResultSet rs = pst.executeQuery();
-                
+
                 if (rs.next()) {
-                    
+
                     do {
                         tabla.addCell(rs.getString(2));
                         tabla.addCell(rs.getString(3));
@@ -123,7 +123,7 @@ public class Pdf {
                     } while (rs.next());
                     doc.add(tabla);
                 }
-                
+
                 //Desktop.getDesktop().open();
             } catch (DocumentException | SQLException e) {
             }
@@ -138,7 +138,7 @@ public class Pdf {
 
         }
     }
-    
+
     public void pdfAlimentos() {
         try {
             //  int id = Vdao.IdVenta();
@@ -159,7 +159,7 @@ public class Pdf {
             PdfPTable Encabezado = new PdfPTable(4);
             Encabezado.setWidthPercentage(100);
             Encabezado.getDefaultCell().setBorder(0);
-            float[] ColumnaEncabezado = new float[]{60f,10f, 70f, 40f};
+            float[] ColumnaEncabezado = new float[]{60f, 10f, 70f, 40f};
             Encabezado.setWidths(ColumnaEncabezado);
             Encabezado.setHorizontalAlignment(Element.ALIGN_LEFT);
             Encabezado.addCell(img);
@@ -179,14 +179,12 @@ public class Pdf {
             //  String ruta = System.getProperty("user.home");
             //  PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Reporte_Alumnos.pdf"));
             //   documento.open();
-            
+
             Paragraph cli = new Paragraph();
             cli.add(Chunk.NEWLINE);
             cli.add("REPORTE PLATILLOS" + "\n\n");
             doc.add(cli);
-            
-            
-            
+
             PdfPTable tabla = new PdfPTable(4);
             tabla.setWidthPercentage(100);
             float[] ColumnaTabla = new float[]{12f, 30f, 10f, 20f};
@@ -200,21 +198,20 @@ public class Pdf {
             cl2.setBackgroundColor(BaseColor.ORANGE);
             cl3.setBackgroundColor(BaseColor.ORANGE);
             cl4.setBackgroundColor(BaseColor.ORANGE);
-            
+
             tabla.addCell(cl1);
             tabla.addCell(cl2);
             tabla.addCell(cl3);
             tabla.addCell(cl4);
-            
-            
+
             try {
                 Connection cn = conexion.getConnection();
                 PreparedStatement pst = cn.prepareStatement("select * from alimentos");
-                
+
                 ResultSet rs = pst.executeQuery();
-                
+
                 if (rs.next()) {
-                    
+
                     do {
                         tabla.addCell(rs.getString(2));
                         tabla.addCell(rs.getString(3));
@@ -223,10 +220,115 @@ public class Pdf {
                     } while (rs.next());
                     doc.add(tabla);
                 }
-                
+
                 //Desktop.getDesktop().open();
             } catch (DocumentException | SQLException e) {
             }
+            // documento.close();
+            new rojerusan.RSNotifyFade("Reportes", "Reporte Generado Correctamente", 6, RSNotifyFade.PositionNotify.BottomRight, RSNotifyFade.TypeNotify.SUCCESS).setVisible(true);
+
+            doc.close();
+            archivo.close();
+
+            Desktop.getDesktop().open(file);
+        } catch (DocumentException | IOException e) {
+
+        }
+    }
+
+    public void GenerarPedidos() {
+        try {
+            //  int id = Vdao.IdVenta();
+            FileOutputStream archivo;
+            File file = new File("src/pdf/Pedido1" + "" + ".pdf");
+            archivo = new FileOutputStream(file);
+            Document doc = new Document();
+            PdfWriter.getInstance(doc, archivo);
+            doc.open();
+
+            Paragraph fecha = new Paragraph();
+            Font negrita = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLACK);
+            fecha.add(Chunk.NEWLINE);
+            Date date = new Date();
+            LocalTime horaActual = LocalTime.now();
+            fecha.add("No. PEDIDO: " + "0001" + "\n" + "Fecha: " + new SimpleDateFormat("dd-MM-yyyy").format(date) + "\n" + "Hora: "+horaActual);
+
+            PdfPTable Encabezado = new PdfPTable(3);
+            Encabezado.setWidthPercentage(100);
+            Encabezado.getDefaultCell().setBorder(0);
+            float[] ColumnaEncabezado = new float[]{10f, 70f, 40f};
+            Encabezado.setWidths(ColumnaEncabezado);
+            Encabezado.setHorizontalAlignment(Element.ALIGN_LEFT);
+
+            String ruc = "234234234";
+            String nom = "Restaurante calle real";
+            String tel = "234234324";
+            String dir = "Guatemala";
+            String ra = "Tavcode";
+
+            Encabezado.addCell("");
+            Encabezado.addCell("Ruc: " + ruc + "\nNombre: " + nom + "\nTelefono: " + tel + "\nDireccion: " + dir + "\nRazon: " + ra);
+            Encabezado.addCell(fecha);
+            doc.add(Encabezado);
+
+            Conexion conexion = Conexion.createInstance();
+            //  String ruta = System.getProperty("user.home");
+            //  PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Reporte_Alumnos.pdf"));
+            //   documento.open();
+
+            Paragraph cli = new Paragraph();
+            cli.add(Chunk.NEWLINE);
+            cli.add("                                                             DATOS DEL PEDIDO" + "\n");
+            doc.add(cli);
+            
+            Paragraph mesa = new Paragraph();
+            mesa.add(Chunk.NEWLINE);
+            mesa.add("No. MESA: "+ "1" + "\n");
+            doc.add(mesa);
+
+            PdfPTable tabla = new PdfPTable(5);
+            tabla.getDefaultCell().setBorder(0);
+            tabla.setWidthPercentage(100);
+            
+            float[] ColumnaTabla = new float[]{12f, 30f, 15f, 15f, 16f};
+            tabla.setWidths(ColumnaTabla);
+            
+            PdfPCell cl1 = new PdfPCell(new Phrase("Código", negrita));
+            PdfPCell cl2 = new PdfPCell(new Phrase("Nombre del Platillo", negrita));
+            PdfPCell cl3 = new PdfPCell(new Phrase("Precio", negrita));
+            PdfPCell cl4 = new PdfPCell(new Phrase("Cantidad", negrita));
+            PdfPCell cl5 = new PdfPCell(new Phrase("Importe", negrita));
+            tabla.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cl1.setBackgroundColor(BaseColor.ORANGE);
+            cl2.setBackgroundColor(BaseColor.ORANGE);
+            cl3.setBackgroundColor(BaseColor.ORANGE);
+            cl4.setBackgroundColor(BaseColor.ORANGE);
+            cl5.setBackgroundColor(BaseColor.ORANGE);
+            cl1.setBorder(0);
+            cl2.setBorder(0);
+            cl3.setBorder(0);
+            cl4.setBorder(0);
+            cl5.setBorder(0);
+            tabla.addCell(cl1);
+            tabla.addCell(cl2);
+            tabla.addCell(cl3);
+            tabla.addCell(cl4);
+            tabla.addCell(cl5);
+
+            for (int i = 0; i < tablePedidos.getRowCount(); i++) {
+                String codigo = tablePedidos.getValueAt(i, 0).toString();
+                String nombre = tablePedidos.getValueAt(i, 2).toString();
+                String precio = tablePedidos.getValueAt(i, 3).toString();
+                String tipo = tablePedidos.getValueAt(i, 4).toString();
+                String importe = tablePedidos.getValueAt(i, 5).toString();
+                tabla.addCell(codigo);
+                tabla.addCell(nombre);
+                tabla.addCell(precio);
+                tabla.addCell(tipo);
+                tabla.addCell(importe);
+            }
+            doc.add(tabla);
+
             // documento.close();
             new rojerusan.RSNotifyFade("Reportes", "Reporte Generado Correctamente", 6, RSNotifyFade.PositionNotify.BottomRight, RSNotifyFade.TypeNotify.SUCCESS).setVisible(true);
 
