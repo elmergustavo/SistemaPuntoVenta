@@ -17,6 +17,11 @@ import javax.swing.table.DefaultTableModel;
  */
 public class PedidoVM {
 
+    public PedidoVM() {
+    }
+
+    
+    
     public void limpiaCampos() {
         DefaultTableModel modelo = (DefaultTableModel) tablePedidos.getModel();
 

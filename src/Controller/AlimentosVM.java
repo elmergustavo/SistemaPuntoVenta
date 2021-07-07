@@ -31,25 +31,29 @@ import org.bolivia.combo.SComboBoxBlue;
 public final class AlimentosVM extends AlimentoSQL {
 
     private String _accion = "insert";
-    private final ArrayList<JLabel> _label;
-    private final ArrayList<JCTextField> _textField;
-    private final JTable _tableAlimentos;
+    private  ArrayList<JLabel> _label;
+    private  ArrayList<JCTextField> _textField;
+    private  JTable _tableAlimentos;
     private DefaultTableModel modelo1;
-    private final JSpinner _spinnerPaginas;
+    private  JSpinner _spinnerPaginas;
     private int _idAlimento = 0;
     private int _reg_por_pagina = 10;
     private int _num_pagina = 1;
     public int seccion;
     private Paginador<TAlimentos> _paginadorAlimentos;
-    private final SComboBoxBlue TipoAl;
+    private  SComboBoxBlue TipoAl;
     private List<TAlimentos> listAlimentos;
     private boolean Insert;
     private boolean Update;
 
    // private final Conexion conexion;
     static PreparedStatement ps;
+    
+    public AlimentosVM (){
+        
+    }
 
-    public AlimentosVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JCTextField> textField) {
+    public void Componentes(Object[] objects, ArrayList<JLabel> label, ArrayList<JCTextField> textField) {
    //     this.conexion = Conexion.createInstance();
         _label = label;
         _textField = textField;

@@ -36,9 +36,9 @@ import org.bolivia.combo.SComboBoxBlue;
 public class SuministroVM extends SuministroSQL {
 
     private String _accion = "insert";
-    private final ArrayList<JLabel> _label;
-    private final ArrayList<JTextField> _textField;
-    private final JTable _tableSuministro, _tableBodega;
+    private  ArrayList<JLabel> _label;
+    private  ArrayList<JTextField> _textField;
+    private  JTable _tableSuministro, _tableBodega;
     private DefaultTableModel modelo1;
     private JSpinner _spinnerPaginas;
     private int _idCliente = 0;
@@ -50,11 +50,12 @@ public class SuministroVM extends SuministroSQL {
     private boolean Update;
     private SComboBoxBlue categoria;
 
-    private final Conexion conexion;
+    private  Conexion conexion;
     
-    
+    public SuministroVM (){
+    }
 
-    public SuministroVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
+    public void Componentes(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
         this.conexion = Conexion.createInstance();
         _label = label;
         _textField = textField;

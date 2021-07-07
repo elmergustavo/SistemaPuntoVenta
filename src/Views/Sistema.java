@@ -12,6 +12,7 @@ import Library.Objectos;
 import Controller.ClientesVM;
 import Controller.PedidoVM;
 import Controller.SuministroVM;
+import Interfeces.IClassModels;
 import Models.Mesa;
 import Models.MesaSQL;
 import java.sql.Statement;
@@ -60,7 +61,7 @@ import rojerusan.RSNotifyFade;
  *
  * @author Gustavo
  */
-public class Sistema extends javax.swing.JFrame {
+public class Sistema extends javax.swing.JFrame implements IClassModels{
 
     /**
      * Creates new form Sistema
@@ -4019,7 +4020,7 @@ public class Sistema extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // <editor-fold defaultstate="collapsed" desc="CODIGO DE CLIENTE">
-    private ClientesVM cliente;
+   // private ClientesVM cliente;
     private void ButtonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonClienteActionPerformed
         TabbedPanePrincipal.setSelectedIndex(0);
         BtnVentas.setEnabled(true);
@@ -4050,7 +4051,7 @@ public class Sistema extends javax.swing.JFrame {
             SpinnerPaginas_Clientes,
             TableCliente_Report
         };
-        cliente = new ClientesVM(objects, label, textField);
+        cliente.componente(objects, label, textField);
 
     }//GEN-LAST:event_ButtonClienteActionPerformed
 
@@ -4065,9 +4066,6 @@ public class Sistema extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_BtnVentasActionPerformed
-    private SuministroVM suministro;
-    private CategoriaVM categoria;
-    private AlimentosVM alimento;
 
     private void ButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInventarioActionPerformed
 
@@ -4097,7 +4095,7 @@ public class Sistema extends javax.swing.JFrame {
             SpinnerPaginasInventario_suministro2,
             ComboBoxSuministro
         };
-        suministro = new SuministroVM(objects1, label, textField);
+        suministro.Componentes(objects1, label, textField);
 
         // datos de la categoria
         ArrayList<JLabel> label2 = new ArrayList();
@@ -4112,7 +4110,7 @@ public class Sistema extends javax.swing.JFrame {
             SpinnerPaginasInventario_suministro2,
             ComboBoxSuministro
         };
-        categoria = new CategoriaVM(objects2, label2, textField2);
+        categoria.Componentes(objects2, label2, textField2);
 
         // datos de platillos
         ArrayList<JLabel> label3 = new ArrayList();
@@ -4129,7 +4127,7 @@ public class Sistema extends javax.swing.JFrame {
             TableInventario_platillos,
             SpinnerPaginasInventario_suministro2,
             tipoAl,};
-        alimento = new AlimentosVM(objects3, label3, JCtextField);
+        alimento.Componentes(objects3, label3, JCtextField);
     }//GEN-LAST:event_ButtonInventarioActionPerformed
 
     private void ButtonCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCotizacionActionPerformed
@@ -4321,10 +4319,11 @@ public class Sistema extends javax.swing.JFrame {
         cliente.RegistrarCliente();
 
         if (cliente.getInsert()) {
-            alertas.AlertSuccess alerta = new alertas.AlertSuccess(this, true);
-            alerta.Texto("Se ha registrado Correctamente");
-            alerta.setVisible(true);
+//            alertas.AlertSuccess alerta = new alertas.AlertSuccess(this, true);
+//            alerta.Texto("Se ha registrado Correctamente");
+//            alerta.setVisible(true);
             cliente.setInsert(false);
+            new rojerusan.RSNotifyFade("Registro", "Registrado Correctamente", 6, RSNotifyFade.PositionNotify.BottomRight, RSNotifyFade.TypeNotify.SUCCESS).setVisible(true);
         }
         if (cliente.getUpdate()) {
             alertas.AlertSuccess alerta = new alertas.AlertSuccess(this, true);
@@ -4496,7 +4495,7 @@ public class Sistema extends javax.swing.JFrame {
             categoria.GetCategoria();
         }
     }//GEN-LAST:event_TableInventario_categoriaKeyReleased
-    ListaAlimentos la;
+    
     private void nombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreKeyReleased
         nombre.setText(nombre.getText().toUpperCase());
     }//GEN-LAST:event_nombreKeyReleased
@@ -4796,8 +4795,7 @@ public class Sistema extends javax.swing.JFrame {
         if (tablePedidos.getRowCount() == 0) {
             JOptionPane.showMessageDialog(null, "No Existen Datos", "Advertencia", JOptionPane.WARNING_MESSAGE);
         } else {
-            Pdf reporte = new Pdf();
-            reporte.GenerarPedidos();
+            reportePdf.GenerarPedidos();
         }
 
     }//GEN-LAST:event_rSMaterialButtonRectangle13ActionPerformed
@@ -4844,7 +4842,6 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_rSMaterialButtonRectangle23ActionPerformed
 
     private void busca1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busca1ActionPerformed
-        la = new ListaAlimentos();
 
         la.toFront();
         la.setVisible(true);

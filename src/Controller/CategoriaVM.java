@@ -32,11 +32,11 @@ import org.bolivia.combo.SComboBoxBlue;
 public class CategoriaVM extends CategoriaSQL {
 
     private String _accion = "insert";
-    private final ArrayList<JLabel> _label;
-    private final ArrayList<JTextField> _textField;
-    private final JTable _tableCategoria;
+    private  ArrayList<JLabel> _label;
+    private  ArrayList<JTextField> _textField;
+    private  JTable _tableCategoria;
     private DefaultTableModel modelo1;
-    private final JSpinner _spinnerPaginas;
+    private  JSpinner _spinnerPaginas;
     private int _idCliente = 0;
     private int _reg_por_pagina = 10;
     private int _num_pagina = 1;
@@ -46,9 +46,13 @@ public class CategoriaVM extends CategoriaSQL {
     private boolean Update;
     private SComboBoxBlue categoria;
 
-    private final Conexion conexion;
+    private  Conexion conexion;
+    
+    public CategoriaVM (){
+        
+    }
 
-    public CategoriaVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
+    public void Componentes(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
         this.conexion = Conexion.createInstance();
         _label = label;
         _textField = textField;

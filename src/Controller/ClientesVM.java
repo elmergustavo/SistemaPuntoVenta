@@ -27,12 +27,12 @@ import org.apache.commons.dbutils.handlers.ColumnListHandler;
 public class ClientesVM extends ClienteSQL {
 
     private String _accion = "insert";
-    private final ArrayList<JLabel> _label;
-    private final ArrayList<JTextField> _textField;
-    private final JCheckBox _checkBoxCredito;
-    private final JTable _tableCliente, _tableReporte;
+    private  ArrayList<JLabel> _label;
+    private  ArrayList<JTextField> _textField;
+    private  JCheckBox _checkBoxCredito;
+    private  JTable _tableCliente, _tableReporte;
     private DefaultTableModel modelo1, modelo2;
-    private final JSpinner _spinnerPaginas;
+    private  JSpinner _spinnerPaginas;
     private int _idCliente = 0;
     private int _reg_por_pagina = 10;
     private int _num_pagina = 1;
@@ -42,11 +42,17 @@ public class ClientesVM extends ClienteSQL {
     private boolean Insert;
     private boolean Update;
 
-    private final Conexion conexion;
+    private  Conexion conexion;
     private String Id;
     private String sql;
+
     
-    public ClientesVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
+    public  ClientesVM() {
+        
+    }
+    
+
+    public void componente(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
         this.conexion = Conexion.createInstance();
         _label = label;
         _textField = textField;
@@ -60,7 +66,7 @@ public class ClientesVM extends ClienteSQL {
         this.Update = false;
 
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="SET AND GET Alertas">  
     public boolean getInsert() {
         return Insert;
@@ -416,8 +422,7 @@ public class ClientesVM extends ClienteSQL {
         SearchReportes("");
     }
     // </editor-fold>
-    
-    
+
     public void deleteCliente() {
         sql = "DELETE FROM clientes WHERE IdCliente LIKE ?";
         delete(sql, _idCliente);

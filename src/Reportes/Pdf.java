@@ -42,7 +42,7 @@ public class Pdf {
         try {
             //  int id = Vdao.IdVenta();
             FileOutputStream archivo;
-            File file = new File("src/pdf/venta" + "2" + ".pdf");
+            File file = new File("src/pdf/venta" + "1" + ".pdf");
             archivo = new FileOutputStream(file);
             Document doc = new Document();
             PdfWriter.getInstance(doc, archivo);
@@ -113,7 +113,6 @@ public class Pdf {
                 ResultSet rs = pst.executeQuery();
 
                 if (rs.next()) {
-
                     do {
                         tabla.addCell(rs.getString(2));
                         tabla.addCell(rs.getString(3));
@@ -249,13 +248,15 @@ public class Pdf {
             Paragraph fecha = new Paragraph();
             Font negrita = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLACK);
             fecha.add(Chunk.NEWLINE);
+            
             Date date = new Date();
+            
             LocalTime horaActual = LocalTime.now();
             fecha.add("No. PEDIDO: " + "0001" + "\n" + "Fecha: " + new SimpleDateFormat("dd-MM-yyyy").format(date) + "\n" + "Hora: "+horaActual);
 
             PdfPTable Encabezado = new PdfPTable(3);
             Encabezado.setWidthPercentage(100);
-            Encabezado.getDefaultCell().setBorder(0);
+            Encabezado.getDefaultCell().setBorder(4);
             float[] ColumnaEncabezado = new float[]{10f, 70f, 40f};
             Encabezado.setWidths(ColumnaEncabezado);
             Encabezado.setHorizontalAlignment(Element.ALIGN_LEFT);
@@ -271,7 +272,7 @@ public class Pdf {
             Encabezado.addCell(fecha);
             doc.add(Encabezado);
 
-            Conexion conexion = Conexion.createInstance();
+          //  Conexion conexion = Conexion.createInstance();
             //  String ruta = System.getProperty("user.home");
             //  PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Reporte_Alumnos.pdf"));
             //   documento.open();
@@ -283,7 +284,7 @@ public class Pdf {
             
             Paragraph mesa = new Paragraph();
             mesa.add(Chunk.NEWLINE);
-            mesa.add("No. MESA: "+ "1" + "\n");
+            mesa.add("No. MESA: "+ "1" + "\n\n");
             doc.add(mesa);
 
             PdfPTable tabla = new PdfPTable(5);
