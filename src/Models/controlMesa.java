@@ -21,14 +21,14 @@ public class controlMesa {
 
     public controlMesa() {
         MesaSQL mesaSQL = new MesaSQL();
-        for (int id = 1; id <= 12; id++) {
+        for (int id = 1; id <= 10; id++) {
             mesas.add(mesaSQL.obtenerMesa(id));
         }
-        for (int id = 0; id < 12; id++) {
+        for (int id = 0; id < 10; id++) {
             System.out.println("ID " + mesas.get(id).getNumero() + " ESTADO " + mesas.get(id).getEstado());
         }
     }
-
+    
     public ImageIcon cambiarEstado(int id) {
         MesaSQL consulta = new MesaSQL();
         id = id - 1;
@@ -57,21 +57,21 @@ public class controlMesa {
     }
 
     private ImageIcon disponible() {
-        icono = new ImageIcon(getClass().getResource("/Resources/MesaDisponible.jpg"));
+        icono = new ImageIcon(getClass().getResource("/Resources/mesaDisponible.png"));
         Image imgEscalada = icono.getImage().getScaledInstance(129, 115, Image.SCALE_SMOOTH);
         icono = new ImageIcon(imgEscalada);
         return icono;
     }
 
     private ImageIcon ocupado() {
-        icono = new ImageIcon(getClass().getResource("/Resources/MesaOcupada.jpg"));
+        icono = new ImageIcon(getClass().getResource("/Resources/mesaOcupado.png"));
         Image imgEscalada = icono.getImage().getScaledInstance(129, 115, Image.SCALE_SMOOTH);
         icono = new ImageIcon(imgEscalada);
         return icono;
     }
 
     private ImageIcon cobrado() {
-        icono = new ImageIcon(getClass().getResource("/Resources/MesaCobrada.jpg"));
+        icono = new ImageIcon(getClass().getResource("/Resources/mesaCobrada.png"));
         Image imgEscalada = icono.getImage().getScaledInstance(129, 115, Image.SCALE_SMOOTH);
         icono = new ImageIcon(imgEscalada);
         return icono;
