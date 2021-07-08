@@ -316,19 +316,19 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jScrollPane10 = new javax.swing.JScrollPane();
         tablaCotizaciones = new rojerusan.RSTableMetro();
         jPanel47 = new javax.swing.JPanel();
-        TotalPedidos1 = new app.bolivia.swing.JCTextField();
+        TotalCotizacion = new app.bolivia.swing.JCTextField();
         codigoL14 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        datosCliente_cotizacion = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        SubtotalCotizaciones = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        DescuentoContizacion = new javax.swing.JTextField();
         jPanel19 = new javax.swing.JPanel();
         jPanel44 = new javax.swing.JPanel();
         jPanel20 = new javax.swing.JPanel();
@@ -2389,15 +2389,12 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
             },
             new String [] {
-                "CODIGO", "DESCRIPCION", "PRECIO $", "CANTIDAD", "IMPORTE $"
+                "CODIGO", "NOMBRE", "PRECIO $", "CANTIDAD", "IMPORTE $"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                true, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+        ));
+        tablaCotizaciones.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tablaCotizacionesKeyReleased(evt);
             }
         });
         jScrollPane10.setViewportView(tablaCotizaciones);
@@ -2405,16 +2402,16 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel47.setBackground(new java.awt.Color(255, 255, 255));
         jPanel47.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, java.awt.Color.lightGray));
 
-        TotalPedidos1.setBackground(new java.awt.Color(34, 102, 145));
-        TotalPedidos1.setBorder(null);
-        TotalPedidos1.setForeground(new java.awt.Color(255, 255, 255));
-        TotalPedidos1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        TotalPedidos1.setOpaque(false);
-        TotalPedidos1.setPhColor(new java.awt.Color(255, 255, 255));
-        TotalPedidos1.setPlaceholder("TOTAL");
-        TotalPedidos1.addActionListener(new java.awt.event.ActionListener() {
+        TotalCotizacion.setBackground(new java.awt.Color(34, 102, 145));
+        TotalCotizacion.setBorder(null);
+        TotalCotizacion.setForeground(new java.awt.Color(255, 255, 255));
+        TotalCotizacion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        TotalCotizacion.setOpaque(false);
+        TotalCotizacion.setPhColor(new java.awt.Color(255, 255, 255));
+        TotalCotizacion.setPlaceholder("TOTAL");
+        TotalCotizacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TotalPedidos1ActionPerformed(evt);
+                TotalCotizacionActionPerformed(evt);
             }
         });
 
@@ -2427,7 +2424,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Nombre:");
 
-        jTextField1.setEditable(false);
+        datosCliente_cotizacion.setEditable(false);
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Apellido:");
@@ -2442,10 +2439,16 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel14.setText("SUBTOTAL:");
 
-        jTextField4.setEditable(false);
+        SubtotalCotizaciones.setEditable(false);
 
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel19.setText("DESCUENTO (%) :");
+
+        DescuentoContizacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                DescuentoContizacionKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
         jPanel47.setLayout(jPanel47Layout);
@@ -2460,7 +2463,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                         .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel47Layout.createSequentialGroup()
                                 .addGap(60, 60, 60)
-                                .addComponent(TotalPedidos1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(TotalCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(codigoL14)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel47Layout.createSequentialGroup()
                         .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -2470,7 +2473,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(datosCliente_cotizacion, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTextField3)))
                     .addGroup(jPanel47Layout.createSequentialGroup()
                         .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -2478,8 +2481,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                             .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField5)
-                            .addComponent(jTextField4))))
+                            .addComponent(DescuentoContizacion)
+                            .addComponent(SubtotalCotizaciones))))
                 .addContainerGap())
         );
         jPanel47Layout.setVerticalGroup(
@@ -2490,7 +2493,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(datosCliente_cotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -2502,16 +2505,16 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SubtotalCotizaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DescuentoContizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel47Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(TotalPedidos1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(TotalCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(codigoL14, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -4275,7 +4278,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonCotizacion.setEnabled(false);
         ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(true);
-        jTextField1.setText("Gustavo xd");
+        datosCliente_cotizacion.setText("Gustavo xd");
+        
+       
     }//GEN-LAST:event_ButtonCotizacionActionPerformed
 
     private void ButtonAdministracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAdministracionActionPerformed
@@ -5052,9 +5057,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         la.setVisible(true);
     }//GEN-LAST:event_busca2ActionPerformed
 
-    private void TotalPedidos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalPedidos1ActionPerformed
+    private void TotalCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalCotizacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TotalPedidos1ActionPerformed
+    }//GEN-LAST:event_TotalCotizacionActionPerformed
 
     private void rSMaterialButtonRectangle27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle27ActionPerformed
         ListarClientes listarCliente = new ListarClientes();
@@ -5088,6 +5093,21 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         cliente.componente(objects, label, textField);
 
     }//GEN-LAST:event_rSMaterialButtonRectangle28ActionPerformed
+
+    private void tablaCotizacionesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tablaCotizacionesKeyReleased
+
+    }//GEN-LAST:event_tablaCotizacionesKeyReleased
+
+    private void DescuentoContizacionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DescuentoContizacionKeyReleased
+
+         ArrayList<JTextField> textField = new ArrayList();
+        textField.add(SubtotalCotizaciones);
+        textField.add(DescuentoContizacion);
+        textField.add(TotalCotizacion);
+        
+        cotizacion.Componentes(textField);
+        cotizacion.GenerarDescuento();
+    }//GEN-LAST:event_DescuentoContizacionKeyReleased
 
     // </editor-fold>
     /**
@@ -5144,6 +5164,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JCheckBox CheckBoxCliente_Credito;
     private org.bolivia.combo.SComboBoxBlue ComboBoxSuministro;
     private org.bolivia.combo.SComboBoxBlue ComboBoxSuministro1;
+    private javax.swing.JTextField DescuentoContizacion;
     private javax.swing.JLabel LabelCliente_Apellido;
     private javax.swing.JLabel LabelCliente_Direccion;
     private javax.swing.JLabel LabelCliente_Email;
@@ -5171,6 +5192,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JPanel PanelNombre1;
     private javax.swing.JSpinner SpinnerPaginasInventario_suministro2;
     private javax.swing.JSpinner SpinnerPaginas_Clientes;
+    public static javax.swing.JTextField SubtotalCotizaciones;
     private javax.swing.JTabbedPane TabbedPaneCliente1;
     private javax.swing.JTabbedPane TabbedPaneCliente2;
     private javax.swing.JTabbedPane TabbedPanePrincipal;
@@ -5195,8 +5217,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private app.bolivia.swing.JCTextField TextFieldInventario_stock;
     private javax.swing.JTextField TextField_BuscarCliente4;
     private javax.swing.JTextField TextField_BuscarInventario;
+    public static app.bolivia.swing.JCTextField TotalCotizacion;
     public static app.bolivia.swing.JCTextField TotalPedidos;
-    public static app.bolivia.swing.JCTextField TotalPedidos1;
     private javax.swing.JButton actualizar;
     private javax.swing.JButton borrar;
     private javax.swing.JButton borrar1;
@@ -5233,6 +5255,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel codigoL7;
     private javax.swing.JLabel codigoL8;
     private javax.swing.JLabel codigoL9;
+    private javax.swing.JTextField datosCliente_cotizacion;
     private javax.swing.JButton eliminar;
     private javax.swing.JButton eliminar1;
     private javax.swing.JButton eliminarT;
@@ -5355,11 +5378,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTabbedPane jTabbedPaneInventario1;
     private javax.swing.JTabbedPane jTabbedPaneInventario2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel labelCliente_Deuda;
     private javax.swing.JLabel labelCliente_Deuda1;
     private javax.swing.JLabel labelCliente_FechaPago;

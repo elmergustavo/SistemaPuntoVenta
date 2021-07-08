@@ -3610,13 +3610,16 @@
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="5" rowCount="0">
                                 <Column editable="true" title="CODIGO" type="java.lang.Object"/>
-                                <Column editable="false" title="DESCRIPCION" type="java.lang.Object"/>
-                                <Column editable="false" title="PRECIO $" type="java.lang.Object"/>
-                                <Column editable="false" title="CANTIDAD" type="java.lang.Object"/>
-                                <Column editable="false" title="IMPORTE $" type="java.lang.Object"/>
+                                <Column editable="true" title="NOMBRE" type="java.lang.Object"/>
+                                <Column editable="true" title="PRECIO $" type="java.lang.Object"/>
+                                <Column editable="true" title="CANTIDAD" type="java.lang.Object"/>
+                                <Column editable="true" title="IMPORTE $" type="java.lang.Object"/>
                               </Table>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tablaCotizacionesKeyReleased"/>
+                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                           </AuxValues>
@@ -3650,7 +3653,7 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
-                                                  <Component id="TotalPedidos1" min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <Component id="TotalCotizacion" min="-2" pref="80" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="codigoL14" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
@@ -3664,7 +3667,7 @@
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="jTextField2" alignment="1" pref="209" max="32767" attributes="0"/>
-                                              <Component id="jTextField1" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="datosCliente_cotizacion" alignment="1" max="32767" attributes="0"/>
                                               <Component id="jTextField3" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -3675,8 +3678,8 @@
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField5" max="32767" attributes="0"/>
-                                              <Component id="jTextField4" max="32767" attributes="0"/>
+                                              <Component id="DescuentoContizacion" max="32767" attributes="0"/>
+                                              <Component id="SubtotalCotizaciones" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -3692,7 +3695,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel2" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="datosCliente_cotizacion" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -3707,18 +3710,18 @@
                                   <EmptySpace pref="86" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="SubtotalCotizaciones" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="DescuentoContizacion" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                          <Component id="TotalPedidos1" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Component id="TotalCotizacion" min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="codigoL14" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
                                   </Group>
@@ -3728,7 +3731,7 @@
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="app.bolivia.swing.JCTextField" name="TotalPedidos1">
+                        <Component class="app.bolivia.swing.JCTextField" name="TotalCotizacion">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="91" green="66" red="22" type="rgb"/>
@@ -3749,7 +3752,7 @@
                             <Property name="placeholder" type="java.lang.String" value="TOTAL"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TotalPedidos1ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TotalCotizacionActionPerformed"/>
                           </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -3777,7 +3780,7 @@
                             <Property name="text" type="java.lang.String" value="Nombre:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField1">
+                        <Component class="javax.swing.JTextField" name="datosCliente_cotizacion">
                           <Properties>
                             <Property name="editable" type="boolean" value="false"/>
                           </Properties>
@@ -3810,10 +3813,13 @@
                             <Property name="text" type="java.lang.String" value="SUBTOTAL:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField4">
+                        <Component class="javax.swing.JTextField" name="SubtotalCotizaciones">
                           <Properties>
                             <Property name="editable" type="boolean" value="false"/>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel19">
                           <Properties>
@@ -3821,7 +3827,10 @@
                             <Property name="text" type="java.lang.String" value="DESCUENTO (%) :"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField5">
+                        <Component class="javax.swing.JTextField" name="DescuentoContizacion">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="DescuentoContizacionKeyReleased"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>

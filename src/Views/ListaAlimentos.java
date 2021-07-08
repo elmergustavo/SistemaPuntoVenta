@@ -6,6 +6,7 @@
 package Views;
 
 import Controller.ListarAlimentosVM;
+import static Views.Sistema.tablaCotizaciones;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import javax.swing.ImageIcon;
@@ -113,7 +114,7 @@ public class ListaAlimentos extends javax.swing.JFrame {
         Views.Sistema.TotalPedidos.setText("" + Math.rint(total * 100) / 100);
 
     }
-    
+
     public void calcular2() {
         String pre;
         String can;
@@ -132,7 +133,7 @@ public class ListaAlimentos extends javax.swing.JFrame {
             Views.Sistema.tablaCotizaciones.setValueAt(Math.rint(imp * 100) / 100, i, 4);
 
         }
-        Views.Sistema.TotalPedidos.setText("" + Math.rint(total * 100) / 100);
+        Views.Sistema.SubtotalCotizaciones.setText("" + Math.rint(total * 100) / 100);
 
     }
 
@@ -285,13 +286,13 @@ public class ListaAlimentos extends javax.swing.JFrame {
 
     private void enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarActionPerformed
 
-        if (identificador == true){
-             IngresarPedidos();
-        }else {
+        if (identificador == true) {
+            IngresarPedidos();
+        } else {
             IngresarCotizaciones();
         }
-        
-       
+
+
     }//GEN-LAST:event_enviarActionPerformed
 
     private void IngresarPedidos() {
@@ -359,13 +360,8 @@ public class ListaAlimentos extends javax.swing.JFrame {
                     new ImageIcon(getClass().getResource("/Resources/info.png")));
         }
     }
-    
-    
-    
-    
-    
-    
-    public void IngresarCotizaciones() {
+
+    private void IngresarCotizaciones() {
         if (TablePedidos_RegistroPedido.getRowCount() > 0) {
             try {
                 String cant = null;
@@ -379,7 +375,7 @@ public class ListaAlimentos extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Seleccione un registro.");
                 } else {
                     String cod = TablePedidos_RegistroPedido.getValueAt(fila, 1).toString();
-                    String tipo = TablePedidos_RegistroPedido.getValueAt(fila, 4).toString();
+                    // String tipo = TablePedidos_RegistroPedido.getValueAt(fila, 4).toString();
                     String nom = TablePedidos_RegistroPedido.getValueAt(fila, 2).toString();
                     String precio = TablePedidos_RegistroPedido.getValueAt(fila, 3).toString();
                     int c = 0;
@@ -394,13 +390,13 @@ public class ListaAlimentos extends javax.swing.JFrame {
                     } else {
                         for (int i = 0; i < Views.Sistema.tablaCotizaciones.getRowCount(); i++) {
                             Object com = Views.Sistema.tablaCotizaciones.getValueAt(i, 0);
-                            Object cant1 = Views.Sistema.tablaCotizaciones.getValueAt(i, 4);
+                            Object cant1 = Views.Sistema.tablaCotizaciones.getValueAt(i, 3);
                             if (cod.equals(com)) {
                                 j = i;
                                 int cantT = Integer.parseInt(cant) + Integer.parseInt((String) cant1);
-                                Views.Sistema.tablaCotizaciones.setValueAt(String.valueOf(cantT), i, 4);
+                                Views.Sistema.tablaCotizaciones.setValueAt(String.valueOf(cantT), i, 3);
                                 c++;
-                                calcular();
+                                calcular2();
 //                                CajaAd.recibi.setText("");
 //                                CajaAd.cambio.setText("");
                             }
@@ -408,7 +404,7 @@ public class ListaAlimentos extends javax.swing.JFrame {
                         if (c == 0) {
 
                             dato[0] = cod;
-                          //  dato[1] = tipo;
+                            // dato[1] = tipo;
                             dato[1] = nom;
                             dato[2] = precio;
                             dato[3] = cant;
@@ -430,8 +426,6 @@ public class ListaAlimentos extends javax.swing.JFrame {
                     new ImageIcon(getClass().getResource("/Resources/info.png")));
         }
     }
-
-
     private void JtextBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JtextBuscarMouseClicked
         alimentos.SearchClientes("");
     }//GEN-LAST:event_JtextBuscarMouseClicked
