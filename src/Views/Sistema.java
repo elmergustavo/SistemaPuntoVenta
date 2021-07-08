@@ -6,6 +6,7 @@
 package Views;
 
 import Conexion.Conexion;
+import Controller.CotizacionesMV;
 import Library.Objectos;
 import Controller.PedidoVM;
 import Interfeces.IClassModels;
@@ -322,15 +323,18 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         codigoL14 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        datosCliente_cotizacion = new javax.swing.JTextField();
+        nidCotizacion = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        nombreCotizacion = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        apellidoCotizacion = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        SubtotalCotizaciones = new javax.swing.JTextField();
+        Subtotal = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        DescuentoContizacion = new javax.swing.JTextField();
+        porcentaje = new javax.swing.JTextField();
+        descuento = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        dirCotizacion = new javax.swing.JTextField();
         jPanel19 = new javax.swing.JPanel();
         jPanel44 = new javax.swing.JPanel();
         jPanel20 = new javax.swing.JPanel();
@@ -2391,12 +2395,15 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
             },
             new String [] {
-                "CODIGO", "NOMBRE", "PRECIO $", "CANTIDAD", "IMPORTE $"
+                "CODIGO", "DESCRIPCION", "PRECIO $", "CANTIDAD", "IMPORTE $"
             }
-        ));
-        tablaCotizaciones.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                tablaCotizacionesKeyReleased(evt);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane10.setViewportView(tablaCotizaciones);
@@ -2424,33 +2431,40 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jLabel18.setText("Datos del Cliente");
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Nombre:");
+        jLabel2.setText("NID");
 
-        datosCliente_cotizacion.setEditable(false);
+        nidCotizacion.setEditable(false);
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Apellido:");
+        jLabel6.setText("NOMBRE:");
 
-        jTextField2.setEditable(false);
+        nombreCotizacion.setEditable(false);
 
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Telefono:");
+        jLabel13.setText("APELLIDO:");
 
-        jTextField3.setEditable(false);
+        apellidoCotizacion.setEditable(false);
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel14.setText("SUBTOTAL:");
 
-        SubtotalCotizaciones.setEditable(false);
+        Subtotal.setEditable(false);
 
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel19.setText("DESCUENTO (%) :");
 
-        DescuentoContizacion.addKeyListener(new java.awt.event.KeyAdapter() {
+        porcentaje.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                DescuentoContizacionKeyReleased(evt);
+                porcentajeKeyReleased(evt);
             }
         });
+
+        descuento.setEditable(false);
+
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("DIRECCIÓN:");
+
+        dirCotizacion.setEditable(false);
 
         javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
         jPanel47.setLayout(jPanel47Layout);
@@ -2461,30 +2475,45 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel47Layout.createSequentialGroup()
-                        .addGap(0, 129, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel47Layout.createSequentialGroup()
                                 .addGap(60, 60, 60)
                                 .addComponent(TotalCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(codigoL14)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel47Layout.createSequentialGroup()
-                        .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                            .addComponent(datosCliente_cotizacion, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField3)))
                     .addGroup(jPanel47Layout.createSequentialGroup()
+                        .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel47Layout.createSequentialGroup()
+                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(porcentaje))
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
+                            .addComponent(Subtotal, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                            .addComponent(descuento))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel47Layout.createSequentialGroup()
                         .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DescuentoContizacion)
-                            .addComponent(SubtotalCotizaciones))))
+                            .addGroup(jPanel47Layout.createSequentialGroup()
+                                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(dirCotizacion, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                                    .addComponent(apellidoCotizacion)))
+                            .addGroup(jPanel47Layout.createSequentialGroup()
+                                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel47Layout.createSequentialGroup()
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(nombreCotizacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                                            .addComponent(nidCotizacion, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(22, 22, 22)))
                 .addContainerGap())
         );
         jPanel47Layout.setVerticalGroup(
@@ -2495,23 +2524,28 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(datosCliente_cotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nidCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nombreCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(apellidoCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(dirCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(SubtotalCotizaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Subtotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(DescuentoContizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(porcentaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(descuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel47Layout.createSequentialGroup()
@@ -2531,9 +2565,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addComponent(jPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane10))
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 1053, Short.MAX_VALUE))
                     .addComponent(jPanel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -3694,7 +3728,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel64.setBackground(new java.awt.Color(255, 255, 255));
 
         mesa3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/mesaCobrada.png"))); // NOI18N
+        mesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/mesaDisponible.png"))); // NOI18N
 
         rSMaterialButtonRectangle16.setBackground(new java.awt.Color(34, 102, 145));
         rSMaterialButtonRectangle16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
@@ -4283,9 +4317,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonCotizacion.setEnabled(false);
         ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(true);
-        datosCliente_cotizacion.setText("Gustavo xd");
         
-       
     }//GEN-LAST:event_ButtonCotizacionActionPerformed
 
     private void ButtonAdministracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAdministracionActionPerformed
@@ -4905,7 +4937,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_ventasH1ActionPerformed
 
     private void jTabbedPane3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTabbedPane3AncestorAdded
-      
+
     }//GEN-LAST:event_jTabbedPane3AncestorAdded
 
     private void registrarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarPedidoActionPerformed
@@ -5029,7 +5061,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private void borrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrar1ActionPerformed
         pedido.Eliminar();
     }//GEN-LAST:event_borrar1ActionPerformed
-        PedidoVM pedido = new PedidoVM();
+    PedidoVM pedido = new PedidoVM();
     private void cancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelar1ActionPerformed
         pedido.limpiaCampos();
     }//GEN-LAST:event_cancelar1ActionPerformed
@@ -5043,15 +5075,28 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_ComboBoxSuministro1ActionPerformed
 
     private void rSMaterialButtonRectangle25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle25ActionPerformed
-        // TODO add your handling code here:
+        
+        if (tablaCotizaciones.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "No Existen Datos", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else {
+            reportePdf.pdfCotizacion();
+        }
     }//GEN-LAST:event_rSMaterialButtonRectangle25ActionPerformed
 
+    private CotizacionesMV cotizacion = new CotizacionesMV();
     private void borrar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrar2ActionPerformed
-        // TODO add your handling code here:
+        cotizacion.Eliminar();
     }//GEN-LAST:event_borrar2ActionPerformed
 
     private void cancelar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelar2ActionPerformed
-        // TODO add your handling code here:
+        cotizacion.limpiaCampos();
+        porcentaje.setText("");
+        descuento.setText("");
+        TotalCotizacion.setText("");
+        nidCotizacion.setText("");
+        nombreCotizacion.setText("");
+        apellidoCotizacion.setText("");
+        dirCotizacion.setText("");
     }//GEN-LAST:event_cancelar2ActionPerformed
 
     private void rSMaterialButtonRectangle26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle26ActionPerformed
@@ -5059,9 +5104,10 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_rSMaterialButtonRectangle26ActionPerformed
 
     private void busca2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busca2ActionPerformed
-        la.setIdentificador(false);
-        la.toFront();
-        la.setVisible(true);
+        ListaAlimentos laa = new ListaAlimentos();
+        laa.setIdentificador(false);
+        laa.toFront();
+        laa.setVisible(true);
     }//GEN-LAST:event_busca2ActionPerformed
 
     private void TotalCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalCotizacionActionPerformed
@@ -5101,25 +5147,22 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
     }//GEN-LAST:event_rSMaterialButtonRectangle28ActionPerformed
 
-    private void tablaCotizacionesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tablaCotizacionesKeyReleased
-
-    }//GEN-LAST:event_tablaCotizacionesKeyReleased
-
-    private void DescuentoContizacionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DescuentoContizacionKeyReleased
-
-         ArrayList<JTextField> textField = new ArrayList();
-        textField.add(SubtotalCotizaciones);
-        textField.add(DescuentoContizacion);
-        textField.add(TotalCotizacion);
-        
-        cotizacion.Componentes(textField);
-        cotizacion.GenerarDescuento();
-    }//GEN-LAST:event_DescuentoContizacionKeyReleased
-
     private void jTabbedPane3AncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTabbedPane3AncestorMoved
         System.out.println("HOLAAAA");
     }//GEN-LAST:event_jTabbedPane3AncestorMoved
 
+    private void porcentajeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_porcentajeKeyReleased
+        ArrayList<JTextField> textField = new ArrayList();
+        textField.add(Subtotal);
+        textField.add(porcentaje);
+        textField.add(descuento);
+        textField.add(TotalCotizacion);
+        
+        cotizacion.Componentes(textField);
+        
+        
+
+    }//GEN-LAST:event_porcentajeKeyReleased
 
     // </editor-fold>
     /**
@@ -5176,7 +5219,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JCheckBox CheckBoxCliente_Credito;
     private org.bolivia.combo.SComboBoxBlue ComboBoxSuministro;
     private org.bolivia.combo.SComboBoxBlue ComboBoxSuministro1;
-    private javax.swing.JTextField DescuentoContizacion;
     private javax.swing.JLabel LabelCliente_Apellido;
     private javax.swing.JLabel LabelCliente_Direccion;
     private javax.swing.JLabel LabelCliente_Email;
@@ -5204,7 +5246,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JPanel PanelNombre1;
     private javax.swing.JSpinner SpinnerPaginasInventario_suministro2;
     private javax.swing.JSpinner SpinnerPaginas_Clientes;
-    public static javax.swing.JTextField SubtotalCotizaciones;
+    public static javax.swing.JTextField Subtotal;
     private javax.swing.JTabbedPane TabbedPaneCliente1;
     private javax.swing.JTabbedPane TabbedPaneCliente2;
     private javax.swing.JTabbedPane TabbedPanePrincipal;
@@ -5232,6 +5274,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     public static app.bolivia.swing.JCTextField TotalCotizacion;
     public static app.bolivia.swing.JCTextField TotalPedidos;
     private javax.swing.JButton actualizar;
+    public static javax.swing.JTextField apellidoCotizacion;
     private javax.swing.JButton borrar;
     private javax.swing.JButton borrar1;
     private javax.swing.JButton borrar2;
@@ -5267,7 +5310,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel codigoL7;
     private javax.swing.JLabel codigoL8;
     private javax.swing.JLabel codigoL9;
-    private javax.swing.JTextField datosCliente_cotizacion;
+    private javax.swing.JTextField descuento;
+    public static javax.swing.JTextField dirCotizacion;
     private javax.swing.JButton eliminar;
     private javax.swing.JButton eliminar1;
     private javax.swing.JButton eliminarT;
@@ -5283,6 +5327,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -5390,8 +5435,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTabbedPane jTabbedPaneInventario1;
     private javax.swing.JTabbedPane jTabbedPaneInventario2;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel labelCliente_Deuda;
     private javax.swing.JLabel labelCliente_Deuda1;
     private javax.swing.JLabel labelCliente_FechaPago;
@@ -5414,7 +5457,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel mesa7;
     private javax.swing.JLabel mesa8;
     private javax.swing.JLabel mesa9;
+    public static javax.swing.JTextField nidCotizacion;
     private app.bolivia.swing.JCTextField nombre;
+    public static javax.swing.JTextField nombreCotizacion;
     private javax.swing.JLabel nombreL;
     private javax.swing.JLabel nombreL1;
     private javax.swing.JLabel nombreL2;
@@ -5422,6 +5467,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private rojerusan.RSMaterialButtonRectangle nuevoPedido;
     public static app.bolivia.swing.JCTextField numFac;
     public static app.bolivia.swing.JCTextField numFac1;
+    private javax.swing.JTextField porcentaje;
     private app.bolivia.swing.JCTextField precio;
     private rojeru_san.componentes.RSDateChooser rSDateChooser1;
     private rojeru_san.RSLabelFecha rSLabelFecha1;

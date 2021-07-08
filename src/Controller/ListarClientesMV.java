@@ -85,9 +85,7 @@ public class ListarClientesMV extends ClienteSQL{
         _tableListarClientes.getColumnModel().getColumn(5).setMinWidth(0);
         _tableListarClientes.getColumnModel().getColumn(5).setPreferredWidth(0);
         
-         _tableListarClientes.getColumnModel().getColumn(6).setMaxWidth(0);
-        _tableListarClientes.getColumnModel().getColumn(6).setMinWidth(0);
-        _tableListarClientes.getColumnModel().getColumn(6).setPreferredWidth(0);
+        
         
          _tableListarClientes.getColumnModel().getColumn(7).setMaxWidth(0);
         _tableListarClientes.getColumnModel().getColumn(7).setMinWidth(0);

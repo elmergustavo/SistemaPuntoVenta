@@ -6,6 +6,10 @@
 package Views;
 
 import Controller.ListarClientesMV;
+import static Views.ListaAlimentos.isNumber;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -22,9 +26,44 @@ public class ListarClientes extends javax.swing.JFrame {
     }
 
     private ListarClientesMV clientes;
-    public void mostrar(){
+
+    public void mostrar() {
         clientes = new ListarClientesMV(TablaListadoClientes);
     }
+
+    private void IngresarCliente() {
+        if (TablaListadoClientes.getRowCount() > 0) {
+            try {
+              
+                DefaultTableModel tabladet = (DefaultTableModel) Views.Sistema.tablePedidos.getModel();
+
+                String[] dato = new String[6];
+
+                int fila = TablaListadoClientes.getSelectedRow();
+
+                if (fila == -1) {
+                    JOptionPane.showMessageDialog(null, "Seleccione un registro.");
+                } else {
+                    String nid = TablaListadoClientes.getValueAt(fila, 1).toString();
+                    String nombre = TablaListadoClientes.getValueAt(fila, 2).toString();
+                    String apellido = TablaListadoClientes.getValueAt(fila, 3).toString();
+                    String email = TablaListadoClientes.getValueAt(fila, 4).toString();
+                    String direccion = TablaListadoClientes.getValueAt(fila, 5).toString();
+                    String telefono = TablaListadoClientes.getValueAt(fila, 6).toString();
+                    
+                    Views.Sistema.nidCotizacion.setText(nid);
+                    Views.Sistema.nombreCotizacion.setText(nombre);
+                    Views.Sistema.apellidoCotizacion.setText(apellido);
+                    Views.Sistema.dirCotizacion.setText(direccion);
+                }
+            } catch (Exception e) {
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay registros.", "Alimentos", 0,
+                    new ImageIcon(getClass().getResource("/Resources/info.png")));
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -149,16 +188,17 @@ public class ListarClientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JtextBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JtextBuscarMouseClicked
-        
+
     }//GEN-LAST:event_JtextBuscarMouseClicked
 
     private void JtextBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JtextBuscarKeyReleased
-        
+
     }//GEN-LAST:event_JtextBuscarKeyReleased
 
     private void enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarActionPerformed
 
-        
+        IngresarCliente();
+
     }//GEN-LAST:event_enviarActionPerformed
 
     /**

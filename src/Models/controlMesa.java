@@ -25,7 +25,7 @@ public class controlMesa {
             mesas.add(mesaSQL.obtenerMesa(id));
         }
         for (int id = 0; id < 10; id++) {
-            System.out.println("ID " + mesas.get(id).getNumero() + " ESTADO " + mesas.get(id).getEstado());
+           System.out.println("ID " + mesas.get(id).getNumero() + " ESTADO " + mesas.get(id).getEstado());
         }
     }
     

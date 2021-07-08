@@ -6,6 +6,7 @@
 package Controller;
 
 import Views.ListaAlimentos;
+import static Views.Sistema.TotalPedidos;
 import static Views.Sistema.tablePedidos;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -29,6 +30,7 @@ public class PedidoVM {
             modelo.removeRow(0);
         }
 
+        TotalPedidos.setText("");
     }
 
     public void Eliminar() {
