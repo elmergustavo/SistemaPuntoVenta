@@ -3694,7 +3694,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel64.setBackground(new java.awt.Color(255, 255, 255));
 
         mesa3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/cena.png"))); // NOI18N
+        mesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/mesaCobrada.png"))); // NOI18N
 
         rSMaterialButtonRectangle16.setBackground(new java.awt.Color(34, 102, 145));
         rSMaterialButtonRectangle16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
@@ -4134,7 +4134,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                             .addComponent(ButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(jPanel22Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addComponent(BtnVentas, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                                .addComponent(BtnVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 35, Short.MAX_VALUE))
                             .addComponent(ButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addContainerGap())))
         );
@@ -5101,7 +5101,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
     }//GEN-LAST:event_rSMaterialButtonRectangle28ActionPerformed
 
-<<<<<<< HEAD
     private void tablaCotizacionesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tablaCotizacionesKeyReleased
 
     }//GEN-LAST:event_tablaCotizacionesKeyReleased
@@ -5116,11 +5115,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         cotizacion.Componentes(textField);
         cotizacion.GenerarDescuento();
     }//GEN-LAST:event_DescuentoContizacionKeyReleased
-=======
+
     private void jTabbedPane3AncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTabbedPane3AncestorMoved
         System.out.println("HOLAAAA");
     }//GEN-LAST:event_jTabbedPane3AncestorMoved
->>>>>>> b5f6c0df15f4727580e38e22c0c1c2c828131011
+
 
     // </editor-fold>
     /**
