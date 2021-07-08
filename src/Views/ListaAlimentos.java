@@ -6,7 +6,6 @@
 package Views;
 
 import Controller.ListarAlimentosVM;
-import static Views.Sistema.tablaCotizaciones;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import javax.swing.ImageIcon;
