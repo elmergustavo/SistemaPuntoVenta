@@ -21,12 +21,20 @@ public class ListaAlimentos extends javax.swing.JFrame {
     /**
      * Creates new form ListaAlimentosAd
      */
-    
-    
+    private boolean identificador;
+
+    public boolean getIdentificador() {
+        return identificador;
+    }
+
+    public void setIdentificador(boolean identificador) {
+        this.identificador = identificador;
+    }
+
     public ListaAlimentos() {
         initComponents();
         mostrar();
-        
+
         tipoAl2.addItemListener(new ItemListener() {
 
             @Override
@@ -46,7 +54,7 @@ public class ListaAlimentos extends javax.swing.JFrame {
                 }
                 if (tipoAl2.getSelectedIndex() == 3) {
                     tipoL2.setIcon(new ImageIcon(getClass().getResource("/Resources/caldo.png")));
-                   alimentos.SearchClientes((String) tipoAl2.getSelectedItem());
+                    alimentos.SearchClientes((String) tipoAl2.getSelectedItem());
                 }
                 if (tipoAl2.getSelectedIndex() == 4) {
                     tipoL2.setIcon(new ImageIcon(getClass().getResource("/Resources/camaron.png")));
@@ -83,8 +91,7 @@ public class ListaAlimentos extends javax.swing.JFrame {
             }
         });
     }
-    
-  
+
     public void calcular() {
         String pre;
         String can;
@@ -107,13 +114,34 @@ public class ListaAlimentos extends javax.swing.JFrame {
 
     }
     
-    
-    
+    public void calcular2() {
+        String pre;
+        String can;
+        double total = 0;
+        double precio;
+        int cantidad;
+        double imp = 0.00;
+
+        for (int i = 0; i < Views.Sistema.tablaCotizaciones.getRowCount(); i++) {
+            pre = Views.Sistema.tablaCotizaciones.getValueAt(i, 2).toString();
+            can = Views.Sistema.tablaCotizaciones.getValueAt(i, 3).toString();
+            precio = Double.parseDouble(pre);
+            cantidad = Integer.parseInt(can);
+            imp = precio * cantidad;
+            total = total + imp;
+            Views.Sistema.tablaCotizaciones.setValueAt(Math.rint(imp * 100) / 100, i, 4);
+
+        }
+        Views.Sistema.TotalPedidos.setText("" + Math.rint(total * 100) / 100);
+
+    }
 
     private ListarAlimentosVM alimentos;
-    public void mostrar(){
+
+    public void mostrar() {
         alimentos = new ListarAlimentosVM(TablePedidos_RegistroPedido);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -257,7 +285,16 @@ public class ListaAlimentos extends javax.swing.JFrame {
 
     private void enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarActionPerformed
 
-    
+        if (identificador == true){
+             IngresarPedidos();
+        }else {
+            IngresarCotizaciones();
+        }
+        
+       
+    }//GEN-LAST:event_enviarActionPerformed
+
+    private void IngresarPedidos() {
         if (TablePedidos_RegistroPedido.getRowCount() > 0) {
             try {
                 String cant = null;
@@ -319,15 +356,86 @@ public class ListaAlimentos extends javax.swing.JFrame {
             }
         } else {
             JOptionPane.showMessageDialog(this, "No hay registros.", "Alimentos", 0,
-                    new ImageIcon(getClass().getResource("/imagenes/usuarios/info.png")));
+                    new ImageIcon(getClass().getResource("/Resources/info.png")));
         }
-    }//GEN-LAST:event_enviarActionPerformed
+    }
+    
+    
+    
+    
+    
+    
+    public void IngresarCotizaciones() {
+        if (TablePedidos_RegistroPedido.getRowCount() > 0) {
+            try {
+                String cant = null;
+                DefaultTableModel tabladet = (DefaultTableModel) Views.Sistema.tablaCotizaciones.getModel();
+
+                String[] dato = new String[6];
+
+                int fila = TablePedidos_RegistroPedido.getSelectedRow();
+
+                if (fila == -1) {
+                    JOptionPane.showMessageDialog(null, "Seleccione un registro.");
+                } else {
+                    String cod = TablePedidos_RegistroPedido.getValueAt(fila, 1).toString();
+                    String tipo = TablePedidos_RegistroPedido.getValueAt(fila, 4).toString();
+                    String nom = TablePedidos_RegistroPedido.getValueAt(fila, 2).toString();
+                    String precio = TablePedidos_RegistroPedido.getValueAt(fila, 3).toString();
+                    int c = 0;
+                    int j = 0;
+                    cant = JOptionPane.showInputDialog(this, "Cantidad:", "Alimentos", JOptionPane.INFORMATION_MESSAGE);
+                    while (!isNumber(cant) && cant != null) {
+                        cant = JOptionPane.showInputDialog(this, "Debe ingresar valores numéricos\ny que sean mayor a 0:",
+                                "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                    if ((cant.equals("")) || (cant.equals("0"))) {
+                        JOptionPane.showMessageDialog(this, "Debe ingresar algun valor mayor que 0");
+                    } else {
+                        for (int i = 0; i < Views.Sistema.tablaCotizaciones.getRowCount(); i++) {
+                            Object com = Views.Sistema.tablaCotizaciones.getValueAt(i, 0);
+                            Object cant1 = Views.Sistema.tablaCotizaciones.getValueAt(i, 4);
+                            if (cod.equals(com)) {
+                                j = i;
+                                int cantT = Integer.parseInt(cant) + Integer.parseInt((String) cant1);
+                                Views.Sistema.tablaCotizaciones.setValueAt(String.valueOf(cantT), i, 4);
+                                c++;
+                                calcular();
+//                                CajaAd.recibi.setText("");
+//                                CajaAd.cambio.setText("");
+                            }
+                        }
+                        if (c == 0) {
+
+                            dato[0] = cod;
+                          //  dato[1] = tipo;
+                            dato[1] = nom;
+                            dato[2] = precio;
+                            dato[3] = cant;
+
+                            tabladet.addRow(dato);
+
+                            Views.Sistema.tablaCotizaciones.setModel(tabladet);
+                            calcular2();
+
+//                            CajaAd.recibi.setText("");
+//                            CajaAd.cambio.setText("");
+                        }
+                    }
+                }
+            } catch (Exception e) {
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay registros.", "Alimentos", 0,
+                    new ImageIcon(getClass().getResource("/Resources/info.png")));
+        }
+    }
+
 
     private void JtextBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JtextBuscarMouseClicked
-       alimentos.SearchClientes("");
+        alimentos.SearchClientes("");
     }//GEN-LAST:event_JtextBuscarMouseClicked
 
-    
     public static boolean isNumber(String n) {
         try {
             if (Integer.parseInt(n) > 0) {
@@ -339,6 +447,7 @@ public class ListaAlimentos extends javax.swing.JFrame {
             return false;
         }
     }
+
     /**
      * @param args the command line arguments
      */

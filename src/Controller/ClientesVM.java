@@ -10,6 +10,7 @@ import Library.*;
 import Models.ClienteSQL;
 import Models.TClientes;
 import Models.TReportes_clientes;
+import Views.ListarClientes;
 import java.awt.Color;
 import java.sql.SQLException;
 import java.util.ArrayList;

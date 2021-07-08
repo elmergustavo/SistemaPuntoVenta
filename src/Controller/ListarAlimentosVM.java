@@ -33,8 +33,16 @@ public class ListarAlimentosVM extends AlimentoSQL{
     private Paginador<TAlimentos> _paginadorAlimentos;
    // private final SComboBoxBlue TipoAl;
     private List<TAlimentos> listAlimentos;
-    private boolean Insert;
-    private boolean Update;
+    private boolean identificador;
+
+    public boolean getIdentificador() {
+        return identificador;
+    }
+
+    public void setIdentificador(boolean identificador) {
+        this.identificador = identificador;
+    }
+    
     
     
     public ListarAlimentosVM(JTable tabla) {
