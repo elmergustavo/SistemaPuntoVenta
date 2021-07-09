@@ -59,7 +59,4 @@ public class TAlimentos {
     public void setPrecio_al(String Precio_al) {
         this.Precio_al = Precio_al;
     }
-    
-    
-    
 }
