@@ -46,7 +46,6 @@ public class PlatillosPedido {
     
     public void CalcularTotal()
     {
-       // System.out.println(Integer.parseInt(nuevo.getPrecio_al()));
-        //total = Integer.parseInt(nuevo.getPrecio_al())*cantidad;
+        total = Float.parseFloat(nuevo.getPrecio_al())*cantidad;
     }
 }

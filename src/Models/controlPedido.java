@@ -5,6 +5,7 @@
  */
 package Models;
 
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import rojerusan.RSNotifyFade;
 import rojerusan.RSTableMetro;
@@ -37,12 +38,6 @@ public class controlPedido {
         }
         pedido.setIdMesa(mesa);
         pedido.setEstado("noCobrado");
-        
-        
-        
-        
-        
-        
         pedidoSQL.guardarPedido(String.valueOf(mesa));
         for(int i=0; i < pedido.getDetallePedido().size();i++)
         {
@@ -50,19 +45,14 @@ public class controlPedido {
         }
         new rojerusan.RSNotifyFade("Pedido", "Registrado Correctamente", 6, RSNotifyFade.PositionNotify.BottomRight, RSNotifyFade.TypeNotify.SUCCESS).setVisible(true);
     }
-    
-    public void obtenerPedidos(RSTableMetro platillos)
+    public void ObtenerPedidosMesa(int idMesa)
     {
-        if(pedidoSQL.ObtenerPedidosDisponibles().size()==0)
+        ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
+        pedidos = pedidoSQL.ObtenerPedidoMesa(idMesa);
+        for(int a=0; a<pedidos.size(); a++)
         {
-            System.out.println("NO HAY PEDIDOS");
-        }
-        else
-        {
-            DefaultTableModel tabla = new DefaultTableModel();
-            
-            platillos.setModel(tabla);
+            System.out.println("ID " + pedidos.get(a).getId() + " Estado " + pedidos.get(a).getEstado() + " Mesa ID " + pedidos.get(a).getIdMesa());
+            pedidos.get(a).setDetallePedido(pedidoSQL.ObtenerDetallePedido(pedidos.get(a).getId()));
         }
     }
-
 }
