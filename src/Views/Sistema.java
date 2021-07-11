@@ -388,6 +388,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         vender = new javax.swing.JButton();
         borrar = new javax.swing.JButton();
         cancelar = new javax.swing.JButton();
+        ComboBoxMesas = new org.bolivia.combo.SComboBoxBlue();
         jPanel40 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         rSTableMetro1 = new rojerusan.RSTableMetro();
@@ -396,7 +397,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel45 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         rSMaterialButtonRectangle12 = new rojerusan.RSMaterialButtonRectangle();
-        ComboBoxMesas = new org.bolivia.combo.SComboBoxBlue();
         rSMaterialButtonRectangle13 = new rojerusan.RSMaterialButtonRectangle();
         jPanel31 = new javax.swing.JPanel();
         PanelNombre1 = new javax.swing.JPanel();
@@ -1506,7 +1506,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rSMaterialButtonRectangle9, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rSMaterialButtonRectangle8, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
@@ -1625,7 +1625,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addComponent(LabelInventario_CategoriaDescrip)
                 .addGap(18, 18, 18)
                 .addComponent(TextFieldInventario_categoriaDescrip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rSMaterialButtonRectangle10, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rSMaterialButtonRectangle11, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1823,14 +1823,14 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel35Layout.createSequentialGroup()
-                .addContainerGap(303, Short.MAX_VALUE)
+                .addContainerGap(315, Short.MAX_VALUE)
                 .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel35Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(138, Short.MAX_VALUE)))
+                    .addContainerGap(156, Short.MAX_VALUE)))
         );
 
         jTabbedPaneInventario1.addTab("Platillos", jPanel35);
@@ -2611,7 +2611,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 452, Short.MAX_VALUE)
+            .addGap(0, 482, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Modificar Cotizacion ", jPanel19);
@@ -2624,7 +2624,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         );
         jPanel44Layout.setVerticalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 452, Short.MAX_VALUE)
+            .addGap(0, 482, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Buscar Cotizacion ", jPanel44);
@@ -3012,7 +3012,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -3093,7 +3093,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 calculoActionPerformed(evt);
             }
         });
-        jPanel39.add(calculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, 50));
+        jPanel39.add(calculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, 50));
 
         vender.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         vender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/venta2.png"))); // NOI18N
@@ -3107,7 +3107,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 venderActionPerformed(evt);
             }
         });
-        jPanel39.add(vender, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 200, 50));
+        jPanel39.add(vender, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 200, 50));
 
         borrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         borrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/elimina2.png"))); // NOI18N
@@ -3121,7 +3121,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 borrarActionPerformed(evt);
             }
         });
-        jPanel39.add(borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 190, 60));
+        jPanel39.add(borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 190, 60));
 
         cancelar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/cancela2.png"))); // NOI18N
@@ -3135,7 +3135,16 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 cancelarActionPerformed(evt);
             }
         });
-        jPanel39.add(cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 190, 50));
+        jPanel39.add(cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 190, 50));
+
+        ComboBoxMesas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SELECCIONAR MESA", "MESA 1", "MESA 2", "MESA 3", "MESA 4", "MESA 5", "MESA 6", "MESA 7", "MESA 8", "MESA 9", "MESA 10" }));
+        ComboBoxMesas.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ComboBoxMesas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboBoxMesasActionPerformed(evt);
+            }
+        });
+        jPanel39.add(ComboBoxMesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 177, 43));
 
         jPanel40.setBackground(new java.awt.Color(255, 255, 255));
         jPanel40.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -3177,6 +3186,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel45.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("GENERAR PEDIDO");
 
         rSMaterialButtonRectangle12.setBackground(new java.awt.Color(34, 102, 145));
@@ -3185,14 +3195,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         rSMaterialButtonRectangle12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSMaterialButtonRectangle12ActionPerformed(evt);
-            }
-        });
-
-        ComboBoxMesas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SELECCIONAR MESA", "MESA 1", "MESA 2", "MESA 3", "MESA 4", "MESA 5", "MESA 6", "MESA 7", "MESA 8", "MESA 9", "MESA 10" }));
-        ComboBoxMesas.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        ComboBoxMesas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboBoxMesasActionPerformed(evt);
             }
         });
 
@@ -3209,19 +3211,15 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel45.setLayout(jPanel45Layout);
         jPanel45Layout.setHorizontalGroup(
             jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel45Layout.createSequentialGroup()
-                .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel45Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel45Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(rSMaterialButtonRectangle12, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(ComboBoxMesas, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(rSMaterialButtonRectangle13, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel45Layout.createSequentialGroup()
-                        .addGap(214, 214, 214)
-                        .addComponent(jLabel16)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rSMaterialButtonRectangle13, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel45Layout.setVerticalGroup(
             jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3231,8 +3229,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rSMaterialButtonRectangle12, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(ComboBoxMesas, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSMaterialButtonRectangle13, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
+                    .addComponent(rSMaterialButtonRectangle13, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(16, 16, 16))
         );
 
@@ -4247,7 +4244,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                             .addComponent(ButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(jPanel22Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addComponent(BtnVentas, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                                .addComponent(BtnVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 35, Short.MAX_VALUE))
                             .addComponent(ButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addContainerGap())))
         );
