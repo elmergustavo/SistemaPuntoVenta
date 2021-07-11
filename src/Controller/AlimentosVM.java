@@ -37,7 +37,7 @@ public final class AlimentosVM extends AlimentoSQL {
     private DefaultTableModel modelo1;
     private  JSpinner _spinnerPaginas;
     private int _idAlimento = 0;
-    private int _reg_por_pagina = 10;
+    private int _reg_por_pagina = 100;
     private int _num_pagina = 1;
     public int seccion;
     private Paginador<TAlimentos> _paginadorAlimentos;

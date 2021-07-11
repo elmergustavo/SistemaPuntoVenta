@@ -6,8 +6,13 @@
 package Reportes;
 
 import Conexion.Conexion;
+import static Views.ListarClientes.telefono;
 import Views.Sistema;
+import static Views.Sistema.Subtotal;
+import static Views.Sistema.TotalCotizacion;
+import static Views.Sistema.descuento;
 import static Views.Sistema.nidCotizacion;
+import static Views.Sistema.porcentaje;
 import static Views.Sistema.tablaCotizaciones;
 import static Views.Sistema.tablePedidos;
 import com.itextpdf.text.BaseColor;
@@ -285,40 +290,24 @@ public class Pdf {
             cliente.add("DATOS DEL CLIENTE" + "\n\n");
             doc.add(cliente);
             
-            PdfPTable tablaCliente = new PdfPTable(4);
+            PdfPTable tablaCliente = new PdfPTable(1);
             tablaCliente.setWidthPercentage(100);
-            float[] ColumnaTablaCliente = new float[]{12f, 30f, 20f, 20f};
+            float[] ColumnaTablaCliente = new float[]{50f};
             tablaCliente.setWidths(ColumnaTablaCliente);
             tablaCliente.getDefaultCell().setBorder(0);
             tablaCliente.setHorizontalAlignment(Element.ALIGN_LEFT);
-            PdfPCell cliente1 = new PdfPCell(new Phrase("NID", negrita));
-            PdfPCell cliente2 = new PdfPCell(new Phrase("Nombre", negrita));
-            PdfPCell cliente3 = new PdfPCell(new Phrase("Apellido", negrita));
-            PdfPCell cliente4 = new PdfPCell(new Phrase("Dirección", negrita));
-           
-            cliente1.setBackgroundColor(BaseColor.ORANGE);
-            cliente2.setBackgroundColor(BaseColor.ORANGE);
-            cliente3.setBackgroundColor(BaseColor.ORANGE);
-            cliente4.setBackgroundColor(BaseColor.ORANGE);
             
-            
-            
+
             String nid = nidCotizacion.getText();
             String nombreCliente = Sistema.nombreCotizacion.getText();
             String apellido = Sistema.apellidoCotizacion.getText();
             String direccion = Sistema.dirCotizacion.getText();
             
-            
-            tablaCliente.addCell(cliente1);
-            tablaCliente.addCell(cliente2);
-            tablaCliente.addCell(cliente3);
-            tablaCliente.addCell(cliente4);
+    
             
             
-            tablaCliente.addCell(nid);
-            tablaCliente.addCell(nombreCliente);
-            tablaCliente.addCell(apellido);
-            tablaCliente.addCell(direccion);
+            tablaCliente.addCell("Nid: " + nid + "\nNombre: " + nombreCliente + "\nApellido: " + apellido + "\nDireccion: " + direccion + "\nTelefono: " + telefono);
+            
 
             
             
@@ -368,6 +357,16 @@ public class Pdf {
             }
             doc.add(tabla);
 
+            Paragraph info = new Paragraph();
+            info.add(Chunk.NEWLINE);
+            info.add("\nSubtotal:          " + Subtotal.getText() + "\nDescuento " + porcentaje.getText() +"% :          " +descuento.getText() + 
+                    "\nTotal a Pagar:          " + TotalCotizacion.getText());
+  
+            
+            info.setAlignment(Element.ALIGN_RIGHT);
+            doc.add(info);
+            
+            
             // documento.close();
             new rojerusan.RSNotifyFade("Reportes", "Reporte Generado Correctamente", 6, RSNotifyFade.PositionNotify.BottomRight, RSNotifyFade.TypeNotify.SUCCESS).setVisible(true);
 

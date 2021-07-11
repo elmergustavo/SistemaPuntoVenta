@@ -113,7 +113,7 @@ public class ListaAlimentos extends javax.swing.JFrame {
         Views.Sistema.TotalPedidos.setText("" + Math.rint(total * 100) / 100);
 
     }
-    
+
     public void calcular2() {
         String pre;
         String can;
@@ -286,13 +286,14 @@ public class ListaAlimentos extends javax.swing.JFrame {
 
     private void enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarActionPerformed
 
-        if (identificador == true){
-             IngresarPedidos();
-        }else {
+        
+        if (identificador == true) {
+            IngresarPedidos();
+        } else {
             IngresarCotizaciones();
         }
-        
-       
+
+
     }//GEN-LAST:event_enviarActionPerformed
 
     private void IngresarPedidos() {
@@ -360,12 +361,7 @@ public class ListaAlimentos extends javax.swing.JFrame {
                     new ImageIcon(getClass().getResource("/Resources/info.png")));
         }
     }
-    
-    
-    
-    
-    
-    
+
     public void IngresarCotizaciones() {
         if (TablePedidos_RegistroPedido.getRowCount() > 0) {
             try {
@@ -409,7 +405,7 @@ public class ListaAlimentos extends javax.swing.JFrame {
                         if (c == 0) {
 
                             dato[0] = cod;
-                          //  dato[1] = tipo;
+                            //  dato[1] = tipo;
                             dato[1] = nom;
                             dato[2] = precio;
                             dato[3] = cant;

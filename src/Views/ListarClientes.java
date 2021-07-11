@@ -20,6 +20,8 @@ public class ListarClientes extends javax.swing.JFrame {
     /**
      * Creates new form ListarClientes
      */
+    
+    public static String telefono;
     public ListarClientes() {
         initComponents();
         mostrar();
@@ -49,7 +51,7 @@ public class ListarClientes extends javax.swing.JFrame {
                     String apellido = TablaListadoClientes.getValueAt(fila, 3).toString();
                     String email = TablaListadoClientes.getValueAt(fila, 4).toString();
                     String direccion = TablaListadoClientes.getValueAt(fila, 5).toString();
-                    String telefono = TablaListadoClientes.getValueAt(fila, 6).toString();
+                    telefono = TablaListadoClientes.getValueAt(fila, 6).toString();
                     
                     Views.Sistema.nidCotizacion.setText(nid);
                     Views.Sistema.nombreCotizacion.setText(nombre);

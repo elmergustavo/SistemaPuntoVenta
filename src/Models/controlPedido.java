@@ -6,6 +6,7 @@
 package Models;
 
 import javax.swing.table.DefaultTableModel;
+import rojerusan.RSNotifyFade;
 import rojerusan.RSTableMetro;
 
 /**
@@ -36,11 +37,18 @@ public class controlPedido {
         }
         pedido.setIdMesa(mesa);
         pedido.setEstado("noCobrado");
+        
+        
+        
+        
+        
+        
         pedidoSQL.guardarPedido(String.valueOf(mesa));
         for(int i=0; i < pedido.getDetallePedido().size();i++)
         {
             pedidoSQL.guardarDetallePedido(pedido.getDetallePedido().get(i), pedido.getId());
         }
+        new rojerusan.RSNotifyFade("Pedido", "Registrado Correctamente", 6, RSNotifyFade.PositionNotify.BottomRight, RSNotifyFade.TypeNotify.SUCCESS).setVisible(true);
     }
     
     public void obtenerPedidos(RSTableMetro platillos)

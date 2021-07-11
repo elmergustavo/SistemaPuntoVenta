@@ -117,6 +117,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         new rojerusan.RSNotifyFade("Sistema", "Bienvenido al sistema punto de venta", 6, RSNotifyFade.PositionNotify.BottomRight, RSNotifyFade.TypeNotify.SUCCESS).setVisible(true);
         registrarPedido.setEnabled(false);
         busca1.setEnabled(false);
+        ComboBoxSuministro1.setEnabled(false);
     }
 
     /**
@@ -349,6 +350,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jTabbedPane4 = new javax.swing.JTabbedPane();
         jPanel49 = new javax.swing.JPanel();
         jPanel50 = new javax.swing.JPanel();
+        jPanel74 = new javax.swing.JPanel();
+        LabelGrafica_Producto = new javax.swing.JLabel();
         jPanel51 = new javax.swing.JPanel();
         jPanel52 = new javax.swing.JPanel();
         jPanel54 = new javax.swing.JPanel();
@@ -2455,6 +2458,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jLabel14.setText("SUBTOTAL:");
 
         Subtotal.setEditable(false);
+        Subtotal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                SubtotalKeyReleased(evt);
+            }
+        });
 
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel19.setText("DESCUENTO (%) :");
@@ -2696,15 +2704,45 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         jTabbedPane4.addTab("Administrar Impuestos", jPanel49);
 
+        jPanel74.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel74.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanel74Layout = new javax.swing.GroupLayout(jPanel74);
+        jPanel74.setLayout(jPanel74Layout);
+        jPanel74Layout.setHorizontalGroup(
+            jPanel74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel74Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelGrafica_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel74Layout.setVerticalGroup(
+            jPanel74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel74Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelGrafica_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout jPanel50Layout = new javax.swing.GroupLayout(jPanel50);
         jPanel50.setLayout(jPanel50Layout);
         jPanel50Layout.setHorizontalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1597, Short.MAX_VALUE)
+            .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel50Layout.createSequentialGroup()
+                    .addGap(566, 566, 566)
+                    .addComponent(jPanel74, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(567, Short.MAX_VALUE)))
         );
         jPanel50Layout.setVerticalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 461, Short.MAX_VALUE)
+            .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel50Layout.createSequentialGroup()
+                    .addGap(88, 88, 88)
+                    .addComponent(jPanel74, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(89, 89, 89)))
         );
 
         jTabbedPane4.addTab("Historial de pago de Impuestos", jPanel50);
@@ -4198,7 +4236,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                             .addComponent(ButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(jPanel22Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addComponent(BtnVentas, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                                .addComponent(BtnVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 35, Short.MAX_VALUE))
                             .addComponent(ButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addContainerGap())))
         );
@@ -4730,8 +4768,14 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_precioKeyTyped
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
-        alimento.RegistrarSuministro();
+
         alimento.extraerID();
+
+        if (tipoAl.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "Seleccione Tipo Alimento", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else {
+            alimento.RegistrarSuministro();
+        }
 
         if (alimento.getInsert()) {
             alertas.AlertSuccess alerta = new alertas.AlertSuccess(this, true);
@@ -4745,6 +4789,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             alerta.setVisible(true);
             alimento.setUpdate(false);
         }
+
     }//GEN-LAST:event_registrarActionPerformed
 
     private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
@@ -4971,6 +5016,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_jTabbedPane3AncestorAdded
 
     private void registrarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarPedidoActionPerformed
+        ComboBoxSuministro1.setEnabled(true);
         if (tablePedidos.getRowCount() == 0) {
             JOptionPane.showMessageDialog(null, "No Existen Datos", "Advertencia", JOptionPane.WARNING_MESSAGE);
         } else {
@@ -4978,7 +5024,52 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 JOptionPane.showMessageDialog(null, "No ha Seleccionado la Mesa", "Advertencia", JOptionPane.WARNING_MESSAGE);
             } else {
                 int mesa = ComboBoxSuministro1.getSelectedIndex();
+                System.out.println(mesa);
+
+                if (mesa == 1) {
+                    System.out.println("entro");
+                    mesa1.setIcon(new ImageIcon(getClass().getResource("/Resources/mesaOcupado.png")));
+
+                }
+                if (mesa == 2) {
+                    mesa2.setIcon(new ImageIcon(getClass().getResource("/Resources/mesaOcupado.png")));
+
+                }
+                if (mesa == 3) {
+                    mesa3.setIcon(new ImageIcon(getClass().getResource("/Resources/mesaOcupado.png")));
+
+                }
+                if (mesa == 4) {
+                    mesa4.setIcon(new ImageIcon(getClass().getResource("/Resources/mesaOcupado.png")));
+
+                }
+                if (mesa == 5) {
+                    mesa5.setIcon(new ImageIcon(getClass().getResource("/Resources/mesaOcupado.png")));
+
+                }
+                if (mesa == 6) {
+                    mesa6.setIcon(new ImageIcon(getClass().getResource("/Resources/mesaOcupado.png")));
+
+                }
+                if (mesa == 7) {
+                    mesa7.setIcon(new ImageIcon(getClass().getResource("/Resources/mesaOcupado.png")));
+
+                }
+                if (mesa == 8) {
+                    mesa8.setIcon(new ImageIcon(getClass().getResource("/Resources/mesaOcupado.png")));
+
+                }
+                if (mesa == 9) {
+                    mesa9.setIcon(new ImageIcon(getClass().getResource("/Resources/mesaOcupado.png")));
+
+                }
+                if (mesa == 10) {
+                    mesa10.setIcon(new ImageIcon(getClass().getResource("/Resources/mesaOcupado.png")));
+
+                }
+
                 pedidos.GuardarPedido(mesa, tablePedidos);
+
                 nuevoPedido.setEnabled(true);
                 numFac1.setText("PEDIDO");
                 registrarPedido.setEnabled(false);
@@ -5113,6 +5204,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         nuevoPedido.setEnabled(false);
         registrarPedido.setEnabled(true);
         busca1.setEnabled(true);
+        ComboBoxSuministro1.setEnabled(true);
         pedidos = new controlPedido();
         numFac1.setText(String.valueOf(pedidos.ObtenerIDPedido()));
     }//GEN-LAST:event_nuevoPedidoActionPerformed
@@ -5125,6 +5217,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         if (tablaCotizaciones.getRowCount() == 0) {
             JOptionPane.showMessageDialog(null, "No Existen Datos", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else if ("".equals(nidCotizacion.getText())){
+            JOptionPane.showMessageDialog(null, "No existe Cliente", "Advertencia", JOptionPane.WARNING_MESSAGE);
         } else {
             reportePdf.pdfCotizacion();
         }
@@ -5200,15 +5294,28 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
     private void porcentajeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_porcentajeKeyReleased
         ArrayList<JTextField> textField = new ArrayList();
-        textField.add(Subtotal);
-        textField.add(porcentaje);
-        textField.add(descuento);
-        textField.add(TotalCotizacion);
+        if ("".equals(Subtotal.getText())) {
+            alertas.AlertError alerta = new alertas.AlertError(this, true);
+            alerta.Texto("Error");
+            alerta.setVisible(true);
+            porcentaje.setText("");
+        } else {
+            textField.add(Subtotal);
+            textField.add(porcentaje);
+            textField.add(descuento);
+            textField.add(TotalCotizacion);
 
-        cotizacion.Componentes(textField);
+            cotizacion.Componentes(textField);
+
+        }
 
 
     }//GEN-LAST:event_porcentajeKeyReleased
+
+    private void SubtotalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SubtotalKeyReleased
+
+
+    }//GEN-LAST:event_SubtotalKeyReleased
 
     // </editor-fold>
     /**
@@ -5279,6 +5386,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel LabelCliente_Nombre7;
     private javax.swing.JLabel LabelCliente_Paginas;
     private javax.swing.JLabel LabelCliente_Telefono;
+    private javax.swing.JLabel LabelGrafica_Producto;
     private javax.swing.JLabel LabelImage_Cliente;
     private javax.swing.JLabel LabelInventarioSuministro_Paginas2;
     private javax.swing.JLabel LabelInventario_CategoriaDescrip;
@@ -5356,7 +5464,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel codigoL7;
     private javax.swing.JLabel codigoL8;
     private javax.swing.JLabel codigoL9;
-    private javax.swing.JTextField descuento;
+    public static javax.swing.JTextField descuento;
     public static javax.swing.JTextField dirCotizacion;
     private javax.swing.JButton eliminar;
     private javax.swing.JButton eliminar1;
@@ -5464,6 +5572,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JPanel jPanel71;
     private javax.swing.JPanel jPanel72;
     private javax.swing.JPanel jPanel73;
+    private javax.swing.JPanel jPanel74;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
@@ -5514,7 +5623,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private rojerusan.RSMaterialButtonRectangle nuevoPedido;
     public static app.bolivia.swing.JCTextField numFac;
     public static app.bolivia.swing.JCTextField numFac1;
-    private javax.swing.JTextField porcentaje;
+    public static javax.swing.JTextField porcentaje;
     private app.bolivia.swing.JCTextField precio;
     private rojeru_san.componentes.RSDateChooser rSDateChooser1;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
