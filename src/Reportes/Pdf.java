@@ -15,6 +15,9 @@ import static Views.Sistema.nidCotizacion;
 import static Views.Sistema.porcentaje;
 import static Views.Sistema.tablaCotizaciones;
 import static Views.Sistema.tablePedidos;
+import static Views.Sistema.rSLabelHora1;
+import static Views.ListaVenta.pedidos;
+import static Views.ListaVenta.total;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
@@ -381,7 +384,134 @@ public class Pdf {
     }
     
     
+    public void pdfVenta(){
+        try {
+            //  int id = Vdao.IdVenta();
+            FileOutputStream archivo;
+            File file = new File("src/pdf/Venta" + "" + ".pdf");
+            archivo = new FileOutputStream(file);
+            Document doc = new Document();
+            PdfWriter.getInstance(doc, archivo);
+            doc.open();
+            Image img = Image.getInstance("src/Resources/logo.png");
+
+            Paragraph fecha = new Paragraph();
+            Font negrita = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLACK);
+            fecha.add(Chunk.NEWLINE);
+            Date date = new Date();
+            String hora = rSLabelHora1.getHora();
+            fecha.add("No. Factura: "+ "\nFecha: " + new SimpleDateFormat("dd-MM-yyyy").format(date) + "\nHora: " + hora + "\n" );
+
+            PdfPTable Encabezado = new PdfPTable(4);
+            Encabezado.setWidthPercentage(100);
+            Encabezado.getDefaultCell().setBorder(0);
+            float[] ColumnaEncabezado = new float[]{60f, 10f, 70f, 40f};
+            Encabezado.setWidths(ColumnaEncabezado);
+            Encabezado.setHorizontalAlignment(Element.ALIGN_LEFT);
+            Encabezado.addCell(img);
+
+            String ruc = "234234234";
+            String nom = "Restaurante calle real";
+            String tel = "234234324";
+            String dir = "Guatemala";
+            String ra = "Comida Tipica";
+
+            Encabezado.addCell("");
+            Encabezado.addCell("Ruc: " + ruc + "\nNombre: " + nom + "\nTelefono: " + tel + "\nDireccion: " + dir + "\nRazon: " + ra);
+            Encabezado.addCell(fecha);
+            doc.add(Encabezado);
+
+         
+            Paragraph cliente = new Paragraph();
+            cliente.add(Chunk.NEWLINE);
+            cliente.add("DATOS DEL CLIENTE" + "\n\n");
+            doc.add(cliente);
+            
+            PdfPTable tablaCliente = new PdfPTable(1);
+            tablaCliente.setWidthPercentage(100);
+            float[] ColumnaTablaCliente = new float[]{50f};
+            tablaCliente.setWidths(ColumnaTablaCliente);
+            tablaCliente.getDefaultCell().setBorder(0);
+            tablaCliente.setHorizontalAlignment(Element.ALIGN_LEFT);
+            
+
+            String nid = nidCotizacion.getText();
+            String nombreCliente = Sistema.nombreCotizacion.getText();
+            String apellido = Sistema.apellidoCotizacion.getText();
+            String direccion = Sistema.dirCotizacion.getText();
+            
     
+            
+            
+            tablaCliente.addCell("Nid: " + nid + "\nNombre: " + nombreCliente + "\nApellido: " + apellido + "\nDireccion: " + direccion + "\nTelefono: " + telefono);
+            
+
+            
+            
+            doc.add(tablaCliente);
+            
+            
+            
+            Paragraph cli = new Paragraph();
+            cli.add(Chunk.NEWLINE);
+            cli.add("Factura: " + "\n\n");
+            doc.add(cli);
+
+            PdfPTable tabla = new PdfPTable(4);
+            tabla.setWidthPercentage(100);
+            float[] ColumnaTabla = new float[]{12f, 30f, 10f, 20f};
+            tabla.setWidths(ColumnaTabla);
+            tabla.getDefaultCell().setBorder(0);
+            tabla.setHorizontalAlignment(Element.ALIGN_LEFT);
+            PdfPCell cl1 = new PdfPCell(new Phrase("Cantidad", negrita));
+            PdfPCell cl2 = new PdfPCell(new Phrase("Nombre", negrita));
+            PdfPCell cl3 = new PdfPCell(new Phrase("Precio", negrita));
+            PdfPCell cl4 = new PdfPCell(new Phrase("Monto", negrita));
+            
+            cl1.setBackgroundColor(BaseColor.ORANGE);
+            cl2.setBackgroundColor(BaseColor.ORANGE);
+            cl3.setBackgroundColor(BaseColor.ORANGE);
+            cl4.setBackgroundColor(BaseColor.ORANGE);
+            
+
+            tabla.addCell(cl1);
+            tabla.addCell(cl2);
+            tabla.addCell(cl3);
+            tabla.addCell(cl4);
+            
+            
+            for (int i = 0; i < pedidos.getRowCount(); i++) {
+                String cantidad = pedidos.getValueAt(i, 0).toString();
+                String nombre = pedidos.getValueAt(i, 1).toString();
+                String precio = pedidos.getValueAt(i, 2).toString();
+                String monto = pedidos.getValueAt(i, 3).toString();
+                
+                tabla.addCell(cantidad);
+                tabla.addCell(nombre);
+                tabla.addCell(precio);
+                tabla.addCell(monto);
+            }
+            doc.add(tabla);
+
+            Paragraph info = new Paragraph();
+            info.add(Chunk.NEWLINE);
+            info.add("Total: " + total.getText());
+            info.setAlignment(Element.ALIGN_RIGHT);
+            doc.add(info);
+            
+            
+            // documento.close();
+            new rojerusan.RSNotifyFade("Factura", "factura Generado Correctamente", 6, RSNotifyFade.PositionNotify.BottomRight, RSNotifyFade.TypeNotify.SUCCESS).setVisible(true);
+
+
+            doc.close();
+            archivo.close();
+
+            Desktop.getDesktop().open(file);
+        } catch (DocumentException | IOException e) {
+
+        }
+    }
     
     
     
@@ -422,12 +552,6 @@ public class Pdf {
             Encabezado.addCell("Ruc: " + ruc + "\nNombre: " + nom + "\nTelefono: " + tel + "\nDireccion: " + dir + "\nRazon: " + ra);
             Encabezado.addCell(fecha);
             doc.add(Encabezado);
-
-          //  Conexion conexion = Conexion.createInstance();
-            //  String ruta = System.getProperty("user.home");
-            //  PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Reporte_Alumnos.pdf"));
-            //   documento.open();
-
             Paragraph cli = new Paragraph();
             cli.add(Chunk.NEWLINE);
             cli.add("                                                             DATOS DEL PEDIDO" + "\n");

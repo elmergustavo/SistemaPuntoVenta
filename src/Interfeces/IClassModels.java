@@ -30,4 +30,5 @@ public interface IClassModels {
     public CotizacionesMV cotizacion = new CotizacionesMV();
     public PedidoVM pedido = new PedidoVM();
     public Pdf reportePdf = new Pdf();
+    
 }

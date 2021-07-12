@@ -124,7 +124,7 @@ public class ListaVenta extends javax.swing.JFrame {
     private javax.swing.JLabel codigoL3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    public rojerusan.RSTableMetro pedidos;
+    public static rojerusan.RSTableMetro pedidos;
     public static app.bolivia.swing.JCTextField total;
     // End of variables declaration//GEN-END:variables
 }

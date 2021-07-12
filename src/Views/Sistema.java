@@ -390,6 +390,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         borrar = new javax.swing.JButton();
         cancelar = new javax.swing.JButton();
         ComboBoxMesas = new org.bolivia.combo.SComboBoxBlue();
+        rSMaterialButtonRectangle30 = new rojerusan.RSMaterialButtonRectangle();
         jPanel40 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         tablaPedidosVenta = new rojerusan.RSTableMetro();
@@ -3124,7 +3125,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 borrarActionPerformed(evt);
             }
         });
-        jPanel39.add(borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 190, 60));
+        jPanel39.add(borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 190, 60));
 
         cancelar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/cancela2.png"))); // NOI18N
@@ -3138,7 +3139,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 cancelarActionPerformed(evt);
             }
         });
-        jPanel39.add(cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 190, 50));
+        jPanel39.add(cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 190, 50));
 
         ComboBoxMesas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SELECCIONAR MESA", "MESA 1", "MESA 2", "MESA 3", "MESA 4", "MESA 5", "MESA 6", "MESA 7", "MESA 8", "MESA 9", "MESA 10" }));
         ComboBoxMesas.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -3148,6 +3149,16 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             }
         });
         jPanel39.add(ComboBoxMesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 177, 43));
+
+        rSMaterialButtonRectangle30.setBackground(new java.awt.Color(34, 102, 145));
+        rSMaterialButtonRectangle30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
+        rSMaterialButtonRectangle30.setText("Visualizar Orden Mesa");
+        rSMaterialButtonRectangle30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSMaterialButtonRectangle30ActionPerformed(evt);
+            }
+        });
+        jPanel39.add(rSMaterialButtonRectangle30, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 180, 50));
 
         jPanel40.setBackground(new java.awt.Color(255, 255, 255));
         jPanel40.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -4952,7 +4963,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_borrarActionPerformed
 
     private void venderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_venderActionPerformed
-            ListaVenta ventana = new ListaVenta(pedidos.ObtenerDetallePedidoVenta());
+        reportePdf.pdfVenta();
     }//GEN-LAST:event_venderActionPerformed
 
     private void calculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculoActionPerformed
@@ -4972,8 +4983,12 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
     private void rSMaterialButtonRectangle12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle12ActionPerformed
         int fila = tablaPedidosVenta.getSelectedRow();
+        if (fila == -1){
+            JOptionPane.showMessageDialog(null, "Seleccione un registro.");
+        } else {
         int id = Integer.parseInt(tablaPedidosVenta.getValueAt(fila, 0).toString());
         Pedidos ventana = new Pedidos(pedidos.ObtenerDetallePedido(id));
+        }
     }//GEN-LAST:event_rSMaterialButtonRectangle12ActionPerformed
 
     private void btnGenerarReportePlatillosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReportePlatillosActionPerformed
@@ -5387,6 +5402,10 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
            TabbedPanePrincipal.setSelectedIndex(5);
     }//GEN-LAST:event_rSMaterialButtonRectangle29ActionPerformed
 
+    private void rSMaterialButtonRectangle30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle30ActionPerformed
+        ListaVenta ventana = new ListaVenta(pedidos.ObtenerDetallePedidoVenta());
+    }//GEN-LAST:event_rSMaterialButtonRectangle30ActionPerformed
+
     // </editor-fold>
     /**
      * @param args the command line arguments
@@ -5699,7 +5718,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelFecha rSLabelFecha2;
     private rojeru_san.RSLabelFecha rSLabelFecha3;
-    private rojeru_san.RSLabelHora rSLabelHora1;
+    public static rojeru_san.RSLabelHora rSLabelHora1;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle10;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle11;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle12;
@@ -5720,6 +5739,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle27;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle28;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle29;
+    private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle30;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle6;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle7;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle8;
