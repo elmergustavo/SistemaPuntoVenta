@@ -117,5 +117,13 @@ public class controlPedido {
         }
         pedidosMesa.remove(index-1);
     }
+    public void CambiarEstadoPedido (int id)
+    {
+        pedidoSQL.CambiarEstado(id);
+    }
+    public int ObtenerNumeroFactura ()
+    {
+        return pedidoSQL.obtenerFact() + 1;
+    }
 
 }

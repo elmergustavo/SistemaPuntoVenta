@@ -38,6 +38,23 @@ public class PedidoSQL {
         }
         return id;
     }
+    public void GuardarVenta(){
+        
+    }
+    public int obtenerFact(){
+        int id = 0;
+        sql = "SELECT MAX(id) FROM venta";
+        try {
+            st = conexion.getConnection().createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                id = Integer.parseInt(rs.getString(1));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return id;
+    }
 
     public void guardarPedido(String mesa) {
         sql = "INSERT INTO pedido (estado,Mesa_id) VALUES ('NoCobrado'," + mesa + ")";
@@ -141,6 +158,20 @@ public class PedidoSQL {
             Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
         }
         return platillo;
+    }
+    
+    public void CambiarEstado(int id)
+    {
+        sql = "UPDATE pedido SET estado='Cobrado' WHERE id=" + id;
+        System.out.println(sql); 
+        int rs = 0;
+        try {
+            st = conexion.getConnection().prepareStatement(sql);
+            rs = st.executeUpdate(sql);
+            System.out.println("CORRECTO");
+        } catch (SQLException ex) {
+            Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

@@ -2877,7 +2877,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             }
         });
         jPanel54.add(ventasH, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, -1, -1));
-        jPanel54.add(rSDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+        jPanel54.add(rSDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         ventasH1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ventasH1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/ventasH2.png"))); // NOI18N
@@ -3574,7 +3574,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                                 .addGap(50, 50, 50)
                                 .addComponent(numFac1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(codigoL10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 581, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 593, Short.MAX_VALUE)
                         .addComponent(busca1)
                         .addGap(18, 18, 18))
                     .addGroup(jPanel63Layout.createSequentialGroup()
@@ -4448,10 +4448,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonCotizacion.setEnabled(true);
         ButtonAdministracion.setEnabled(false);
         ButtonClienteConfig.setEnabled(true);
-
-        alertas.AlertError alerta = new alertas.AlertError(this, true);
-        alerta.Texto("Error de acceso");
-        alerta.setVisible(true);
     }//GEN-LAST:event_ButtonAdministracionActionPerformed
 
     private void ButtonClienteConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonClienteConfigActionPerformed
@@ -4463,16 +4459,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonClienteConfig.setEnabled(false);
         TabbedPanePrincipal.setSelectedIndex(5);
 
-        mesa1.setIcon(mesas.obtenerEstado(1));
-        mesa2.setIcon(mesas.obtenerEstado(2));
-        mesa3.setIcon(mesas.obtenerEstado(3));
-        mesa4.setIcon(mesas.obtenerEstado(4));
-        mesa5.setIcon(mesas.obtenerEstado(5));
-        mesa6.setIcon(mesas.obtenerEstado(6));
-        mesa7.setIcon(mesas.obtenerEstado(7));
-        mesa8.setIcon(mesas.obtenerEstado(8));
-        mesa9.setIcon(mesas.obtenerEstado(9));
-        mesa10.setIcon(mesas.obtenerEstado(10));
+        
         this.repaint();
 
     }//GEN-LAST:event_ButtonClienteConfigActionPerformed
@@ -4978,8 +4965,71 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             JOptionPane.showMessageDialog(null, "Seleccion Un Cliente.", "Registro Venta", 0,
                     new ImageIcon(getClass().getResource("/Resources/info.png")));
         } else {
+            int fac  = pedidos.ObtenerNumeroFactura();
+            numFac.setText(String.valueOf(fac));
+            this.repaint();
             reportePdf.pdfVenta();
+            int id = 0;
+            int idMesa = ComboBoxMesas.getSelectedIndex();
+            for (int a = 0; a < tablaPedidosVenta.getRowCount(); a++) {
+                id = Integer.parseInt(tablaPedidosVenta.getValueAt(a, 0).toString());
+                pedidos.CambiarEstadoPedido(id);
+            }
+            ImageIcon imagen = mesas.cambiarEstadoCobrado(idMesa);
+            switch (idMesa) {
+                case 1:
+                    mesa1.setIcon(imagen);
+                    System.out.println("ENTRO MESA 1");
+                    mesa1.show();
+                    break;
+                case 2:
+                    mesa2.setIcon(imagen);
+                    System.out.println("ENTRO MESA 2");
+                    mesa2.show();
+                    break;
+                case 3:
+                    mesa3.setIcon(imagen);
+                    System.out.println("ENTRO MESA 3");
+                    mesa3.show();
+                    break;
+                case 4:
+                    mesa4.setIcon(imagen);
+                    System.out.println("ENTRO MESA 4");
+                    mesa4.show();
+                    break;
+                case 5:
+                    mesa5.setIcon(imagen);
+                    System.out.println("ENTRO MESA 5");
+                    mesa5.show();
+                    break;
+                case 6:
+                    mesa6.setIcon(imagen);
+                    System.out.println("ENTRO MESA 6");
+                    mesa6.show();
+                    break;
+                case 7:
+                    mesa7.setIcon(imagen);
+                    System.out.println("ENTRO MESA 7");
+                    mesa7.show();
+                    break;
+                case 8:
+                    mesa8.setIcon(imagen);
+                    System.out.println("ENTRO MESA 8");
+                    mesa8.show();
+                    break;
+                case 9:
+                    mesa9.setIcon(imagen);
+                    System.out.println("ENTRO MESA 9");
+                    mesa9.show();
+                    break;
+                case 10:
+                    mesa10.setIcon(imagen);
+                    System.out.println("ENTRO MESA 10");
+                    break;
+            }
+            this.repaint();
         }
+
     }//GEN-LAST:event_venderActionPerformed
 
     private void calculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculoActionPerformed
@@ -5361,7 +5411,18 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_rSMaterialButtonRectangle28ActionPerformed
 
     private void jTabbedPane3AncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTabbedPane3AncestorMoved
-        System.out.println("HL");
+        mesas = new controlMesa();
+        mesa1.setIcon(mesas.obtenerEstado(1));
+        mesa2.setIcon(mesas.obtenerEstado(2));
+        mesa3.setIcon(mesas.obtenerEstado(3));
+        mesa4.setIcon(mesas.obtenerEstado(4));
+        mesa5.setIcon(mesas.obtenerEstado(5));
+        mesa6.setIcon(mesas.obtenerEstado(6));
+        mesa7.setIcon(mesas.obtenerEstado(7));
+        mesa8.setIcon(mesas.obtenerEstado(8));
+        mesa9.setIcon(mesas.obtenerEstado(9));
+        mesa10.setIcon(mesas.obtenerEstado(10));
+        this.repaint();
     }//GEN-LAST:event_jTabbedPane3AncestorMoved
 
     private void porcentajeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_porcentajeKeyReleased

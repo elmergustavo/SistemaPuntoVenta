@@ -42,6 +42,12 @@ public class controlMesa {
             return disponible();
         }
     }
+    public ImageIcon cambiarEstadoCobrado(int id) {
+        MesaSQL consulta = new MesaSQL();
+        consulta.marcarCobrado(id);
+        return cobrado();
+    }
+    
 
     public ImageIcon obtenerEstado(int id) {
         id = id - 1;
