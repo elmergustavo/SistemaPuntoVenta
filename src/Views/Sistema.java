@@ -11,6 +11,7 @@ import Library.Objectos;
 import Controller.PedidoVM;
 import Interfeces.IClassModels;
 import Models.PedidoSQL;
+import Models.Venta;
 import Models.controlMesa;
 import Models.controlPedido;
 import java.sql.Statement;
@@ -4933,11 +4934,25 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_cancelarActionPerformed
 
     private void borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarActionPerformed
-
+            
+            int index = tablaPedidosVenta.getSelectedRow();
+            System.out.println("INDEX " + index);
+            int id = Integer.parseInt(tablaPedidosVenta.getValueAt(index, 0).toString());
+            System.out.println(id);
+            pedidos.EliminarPedido(id);
+            float calculoTotal = 0;
+            Venta venta = new Venta();
+            venta.eliminar();
+            for(int a =0; a<tablaPedidosVenta.getRowCount();a++)
+            {
+                calculoTotal = calculoTotal + Float.parseFloat(tablaPedidosVenta.getValueAt(a, 1).toString());
+            }
+            total.setText(String.valueOf(calculoTotal));
+            this.repaint();
     }//GEN-LAST:event_borrarActionPerformed
 
     private void venderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_venderActionPerformed
-
+            ListaVenta ventana = new ListaVenta(pedidos.ObtenerDetallePedidoVenta());
     }//GEN-LAST:event_venderActionPerformed
 
     private void calculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculoActionPerformed
@@ -5215,6 +5230,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
     private void borrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrar1ActionPerformed
         pedido.Eliminar();
+        
     }//GEN-LAST:event_borrar1ActionPerformed
     PedidoVM pedido = new PedidoVM();
     private void cancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelar1ActionPerformed
@@ -5714,7 +5730,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JButton registrar1;
     private rojerusan.RSMaterialButtonRectangle registrarPedido;
     public static rojerusan.RSTableMetro tablaCotizaciones;
-    private rojerusan.RSTableMetro tablaPedidosVenta;
+    public static rojerusan.RSTableMetro tablaPedidosVenta;
     private rojeru_san.complementos.TableMetro tableMetro1;
     public static rojerusan.RSTableMetro tablePedidos;
     public static rojerusan.RSTableMetro tablePedidos1;

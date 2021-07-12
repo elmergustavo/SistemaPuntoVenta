@@ -69,8 +69,7 @@ public class controlPedido {
         Boolean verificar = true;
         int index = 0;
         while (verificar) {
-            if(pedidosMesa.get(index).getId()==idPedido)
-            {
+            if (pedidosMesa.get(index).getId() == idPedido) {
                 pedido = pedidosMesa.get(index);
                 verificar = false;
             }
@@ -86,6 +85,37 @@ public class controlPedido {
             modelo.addRow(registro);
         }
         return modelo;
+    }
+
+    public DefaultTableModel ObtenerDetallePedidoVenta() {
+        String titulos[] = {"Cantidad", "Nombre", "Precio", "Monto"};
+        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
+        Boolean verificar = true;
+        int index = 0;
+        for (int i = 0; i < pedidosMesa.size(); i++) {
+            for (int a = 0; a < pedidosMesa.get(i).getDetallePedido().size(); a++) {
+                Object[] registro = {
+                    pedidosMesa.get(i).getDetallePedido().get(a).getCantidad(),
+                    pedidosMesa.get(i).getDetallePedido().get(a).getNuevo().getNombre_al(),
+                    pedidosMesa.get(i).getDetallePedido().get(a).getNuevo().getPrecio_al(),
+                    pedidosMesa.get(i).getDetallePedido().get(a).getTotal()
+                };
+                modelo.addRow(registro);
+            }
+        }
+        return modelo;
+    }
+    public void EliminarPedido(int id)
+    {
+        Boolean verificar = true;
+        int index = 0;
+        while (verificar) {
+            if (pedidosMesa.get(index).getId() == id) {
+                verificar = false;
+            }
+            index++;
+        }
+        pedidosMesa.remove(index-1);
     }
 
 }

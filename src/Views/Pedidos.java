@@ -5,6 +5,8 @@
  */
 package Views;
 
+import static Views.Sistema.tablaPedidosVenta;
+import static Views.Sistema.total;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -21,6 +23,13 @@ public class Pedidos extends javax.swing.JFrame {
         pedidos.setModel(nuevoModelo);
         this.repaint();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        float calculoTotal = 0;
+        for (int a = 0; a < pedidos.getRowCount(); a++) {
+            calculoTotal = calculoTotal + Float.parseFloat(pedidos.getValueAt(a, 3).toString());
+        }
+        total.setText(String.valueOf(calculoTotal));
+        this.repaint();
     }
 
     /**
@@ -38,6 +47,9 @@ public class Pedidos extends javax.swing.JFrame {
                 return false; //Disallow the editing of any cell
             }
         };
+        jPanel1 = new javax.swing.JPanel();
+        total = new app.bolivia.swing.JCTextField();
+        codigoL3 = new javax.swing.JLabel();
 
         pedidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -50,31 +62,63 @@ public class Pedidos extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        pedidos.setRowHeight(30);
         jScrollPane1.setViewportView(pedidos);
+
+        jPanel1.setLayout(null);
+
+        total.setBackground(new java.awt.Color(34, 102, 145));
+        total.setBorder(null);
+        total.setForeground(new java.awt.Color(255, 255, 255));
+        total.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        total.setOpaque(false);
+        total.setPhColor(new java.awt.Color(255, 255, 255));
+        total.setPlaceholder("TOTAL");
+        total.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                totalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(total);
+        total.setBounds(90, 20, 80, 30);
+
+        codigoL3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/total.png"))); // NOI18N
+        jPanel1.add(codigoL3);
+        codigoL3.setBounds(20, 10, 150, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(494, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
                     .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 389, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(352, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(21, 21, 21)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(20, Short.MAX_VALUE)))
+                    .addContainerGap(76, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void totalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_totalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -82,7 +126,10 @@ public class Pedidos extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel codigoL3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public rojerusan.RSTableMetro pedidos;
+    public static app.bolivia.swing.JCTextField total;
     // End of variables declaration//GEN-END:variables
 }
