@@ -78,25 +78,6 @@ public class PedidoSQL {
         }
     }
 
-    public ArrayList<Pedido> ObtenerPedidosDisponibles() {
-        ArrayList<Pedido> Disponibles = new ArrayList<Pedido>();
-        sql = "SELECT * FROM pedido WHERE estado='NoCobrado'";
-        try {
-            st = conexion.getConnection().createStatement();
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                Pedido nuevo = new Pedido();
-                nuevo.setId(Integer.parseInt(rs.getString(1)));
-                nuevo.setEstado(rs.getString(2));
-                nuevo.setIdMesa(Integer.parseInt(rs.getString(3)));
-                Disponibles.add(nuevo);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return Disponibles;
-    }
-
     public ArrayList<Pedido> ObtenerPedidoMesa(int idMesa) {
         ArrayList<Pedido> Disponibles = new ArrayList<Pedido>();
         sql = "SELECT * FROM pedido WHERE estado='NoCobrado' AND Mesa_id =" + idMesa;
@@ -141,7 +122,7 @@ public class PedidoSQL {
         return Disponibles;
     }
 
-    public TAlimentos obtenerAlimento(String id) {
+    private TAlimentos obtenerAlimento(String id) {
         TAlimentos platillo = new TAlimentos();
         String sql = "";
         Statement st;

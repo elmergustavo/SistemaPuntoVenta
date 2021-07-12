@@ -16,7 +16,7 @@ public class Pedido {
     private int id;
     private String estado;
     private int idMesa;
-    ArrayList<PlatillosPedido> detallePedido = new ArrayList<PlatillosPedido>();
+    private ArrayList<PlatillosPedido> detallePedido = new ArrayList<PlatillosPedido>();
 
     public ArrayList<PlatillosPedido> getDetallePedido() {
         return detallePedido;
@@ -60,5 +60,14 @@ public class Pedido {
         PlatillosPedido nuevo = new PlatillosPedido(temporal, cantidad, 0);
         nuevo.CalcularTotal();
         detallePedido.add(nuevo);
+    }
+    public float ObtenerTotalPedido()
+    {
+        float total =  0;
+        for(int a =0 ; a<detallePedido.size();a++)
+        {
+            total = total + detallePedido.get(a).getTotal();
+        }
+        return total;
     }
 }
