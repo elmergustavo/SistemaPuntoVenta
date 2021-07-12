@@ -20,8 +20,17 @@ public class ListarClientes extends javax.swing.JFrame {
     /**
      * Creates new form ListarClientes
      */
-    
+    private boolean identificador;
+
+    public boolean getIdentificador() {
+        return identificador;
+    }
+
+    public void setIdentificador(boolean identificador) {
+        this.identificador = identificador;
+    }
     public static String telefono;
+
     public ListarClientes() {
         initComponents();
         mostrar();
@@ -33,10 +42,10 @@ public class ListarClientes extends javax.swing.JFrame {
         clientes = new ListarClientesMV(TablaListadoClientes);
     }
 
-    private void IngresarCliente() {
+    private void IngresarClienteCotizaciones() {
         if (TablaListadoClientes.getRowCount() > 0) {
             try {
-              
+
                 DefaultTableModel tabladet = (DefaultTableModel) Views.Sistema.tablePedidos.getModel();
 
                 String[] dato = new String[6];
@@ -52,11 +61,46 @@ public class ListarClientes extends javax.swing.JFrame {
                     String email = TablaListadoClientes.getValueAt(fila, 4).toString();
                     String direccion = TablaListadoClientes.getValueAt(fila, 5).toString();
                     telefono = TablaListadoClientes.getValueAt(fila, 6).toString();
-                    
+
                     Views.Sistema.nidCotizacion.setText(nid);
                     Views.Sistema.nombreCotizacion.setText(nombre);
                     Views.Sistema.apellidoCotizacion.setText(apellido);
                     Views.Sistema.dirCotizacion.setText(direccion);
+                }
+            } catch (Exception e) {
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay registros.", "Alimentos", 0,
+                    new ImageIcon(getClass().getResource("/Resources/info.png")));
+        }
+    }
+
+    public static String nidCliente = "";
+    public static String nombreClienteVenta;
+    public static String apellidoCliente;
+    public static String emailCliente;
+    public static String direccionCliente;
+    public static String telefonoCliente;
+
+    private void IngresarClienteVenta() {
+        if (TablaListadoClientes.getRowCount() > 0) {
+            try {
+
+                DefaultTableModel tabladet = (DefaultTableModel) Views.Sistema.tablePedidos.getModel();
+
+                String[] dato = new String[6];
+
+                int fila = TablaListadoClientes.getSelectedRow();
+
+                if (fila == -1) {
+                    JOptionPane.showMessageDialog(null, "Seleccione un registro.");
+                } else {
+                    nidCliente = TablaListadoClientes.getValueAt(fila, 1).toString();
+                    nombreClienteVenta = TablaListadoClientes.getValueAt(fila, 2).toString();
+                    apellidoCliente = TablaListadoClientes.getValueAt(fila, 3).toString();
+                    emailCliente = TablaListadoClientes.getValueAt(fila, 4).toString();
+                    direccionCliente = TablaListadoClientes.getValueAt(fila, 5).toString();
+                    telefonoCliente = TablaListadoClientes.getValueAt(fila, 6).toString();
                 }
             } catch (Exception e) {
             }
@@ -198,15 +242,18 @@ public class ListarClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_JtextBuscarKeyReleased
 
     private void enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarActionPerformed
+        if (identificador == true) {
+            IngresarClienteCotizaciones();
+        } else {
+            IngresarClienteVenta();
+        }
 
-        IngresarCliente();
 
     }//GEN-LAST:event_enviarActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private app.bolivia.swing.JCTextField JtextBuscar;

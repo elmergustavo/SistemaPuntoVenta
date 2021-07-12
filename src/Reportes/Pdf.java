@@ -18,6 +18,11 @@ import static Views.Sistema.tablePedidos;
 import static Views.Sistema.rSLabelHora1;
 import static Views.ListaVenta.pedidos;
 import static Views.ListaVenta.total;
+import static Views.ListarClientes.apellidoCliente;
+import static Views.ListarClientes.direccionCliente;
+import static Views.ListarClientes.nidCliente;
+import static Views.ListarClientes.nombreClienteVenta;
+import static Views.ListarClientes.telefonoCliente;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
@@ -435,15 +440,15 @@ public class Pdf {
             tablaCliente.setHorizontalAlignment(Element.ALIGN_LEFT);
             
 
-            String nid = nidCotizacion.getText();
-            String nombreCliente = Sistema.nombreCotizacion.getText();
-            String apellido = Sistema.apellidoCotizacion.getText();
-            String direccion = Sistema.dirCotizacion.getText();
+            String nid = nidCliente;
+            String nombreCliente = nombreClienteVenta;
+            String apellido = apellidoCliente;
+            String direccion = direccionCliente;
             
     
             
             
-            tablaCliente.addCell("Nid: " + nid + "\nNombre: " + nombreCliente + "\nApellido: " + apellido + "\nDireccion: " + direccion + "\nTelefono: " + telefono);
+            tablaCliente.addCell("Nid: " + nid + "\nNombre: " + nombreCliente + "\nApellido: " + apellido + "\nDireccion: " + direccion + "\nTelefono: " + telefonoCliente);
             
 
             

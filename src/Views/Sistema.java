@@ -17,6 +17,7 @@ import Models.controlPedido;
 import java.sql.Statement;
 import Reportes.Excel;
 import Reportes.Pdf;
+import static Views.ListarClientes.nidCliente;
 import app.bolivia.swing.JCTextField;
 import java.awt.Color;
 import java.awt.event.ItemEvent;
@@ -380,6 +381,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         codigoL6 = new javax.swing.JLabel();
         cambio = new app.bolivia.swing.JCTextField();
         codigoL7 = new javax.swing.JLabel();
+        rSMaterialButtonRectangle12 = new rojerusan.RSMaterialButtonRectangle();
         jPanel38 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         numFac = new app.bolivia.swing.JCTextField();
@@ -396,8 +398,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         tablaPedidosVenta = new rojerusan.RSTableMetro();
         total = new app.bolivia.swing.JCTextField();
         codigoL3 = new javax.swing.JLabel();
-        rSMaterialButtonRectangle12 = new rojerusan.RSMaterialButtonRectangle();
         rSMaterialButtonRectangle24 = new rojerusan.RSMaterialButtonRectangle();
+        rSMaterialButtonRectangle31 = new rojerusan.RSMaterialButtonRectangle();
         jPanel45 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         rSMaterialButtonRectangle13 = new rojerusan.RSMaterialButtonRectangle();
@@ -3027,10 +3029,10 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         rSLabelFecha1.setForeground(new java.awt.Color(255, 255, 255));
         rSLabelFecha1.setToolTipText("");
         rSLabelFecha1.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 24)); // NOI18N
-        jPanel37.add(rSLabelFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 180, 33));
+        jPanel37.add(rSLabelFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 180, 33));
 
         codigoL5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/fecha.png"))); // NOI18N
-        jPanel37.add(codigoL5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 250, 50));
+        jPanel37.add(codigoL5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 250, 50));
 
         recibi.setBackground(new java.awt.Color(34, 102, 145));
         recibi.setBorder(null);
@@ -3039,11 +3041,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         recibi.setOpaque(false);
         recibi.setPhColor(new java.awt.Color(255, 255, 255));
         recibi.setPlaceholder("RECIBI");
-        jPanel37.add(recibi, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 130, -1));
+        jPanel37.add(recibi, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 130, -1));
 
         codigoL6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/recibi.png"))); // NOI18N
         codigoL6.setToolTipText("RECIBI");
-        jPanel37.add(codigoL6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 195, 52));
+        jPanel37.add(codigoL6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 195, 52));
 
         cambio.setEditable(false);
         cambio.setBackground(new java.awt.Color(34, 102, 145));
@@ -3053,11 +3055,21 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         cambio.setOpaque(false);
         cambio.setPhColor(new java.awt.Color(255, 255, 255));
         cambio.setPlaceholder("CAMBIO");
-        jPanel37.add(cambio, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 20, 130, -1));
+        jPanel37.add(cambio, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, 130, -1));
 
         codigoL7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/cambio.png"))); // NOI18N
         codigoL7.setToolTipText("CAMBIO");
-        jPanel37.add(codigoL7, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 195, 52));
+        jPanel37.add(codigoL7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 195, 52));
+
+        rSMaterialButtonRectangle12.setBackground(new java.awt.Color(34, 102, 145));
+        rSMaterialButtonRectangle12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
+        rSMaterialButtonRectangle12.setText("Buscar Cliente");
+        rSMaterialButtonRectangle12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSMaterialButtonRectangle12ActionPerformed(evt);
+            }
+        });
+        jPanel37.add(rSMaterialButtonRectangle12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 169, 50));
 
         jPanel38.setBackground(new java.awt.Color(255, 255, 255));
         jPanel38.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -3197,16 +3209,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         codigoL3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/total.png"))); // NOI18N
         jPanel40.add(codigoL3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 290, -1, 50));
 
-        rSMaterialButtonRectangle12.setBackground(new java.awt.Color(34, 102, 145));
-        rSMaterialButtonRectangle12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
-        rSMaterialButtonRectangle12.setText("VER PEDIDO");
-        rSMaterialButtonRectangle12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMaterialButtonRectangle12ActionPerformed(evt);
-            }
-        });
-        jPanel40.add(rSMaterialButtonRectangle12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 169, 43));
-
         rSMaterialButtonRectangle24.setBackground(new java.awt.Color(34, 102, 145));
         rSMaterialButtonRectangle24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
         rSMaterialButtonRectangle24.setText("NUEVO PEDIDO");
@@ -3216,6 +3218,16 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             }
         });
         jPanel40.add(rSMaterialButtonRectangle24, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 169, 43));
+
+        rSMaterialButtonRectangle31.setBackground(new java.awt.Color(34, 102, 145));
+        rSMaterialButtonRectangle31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
+        rSMaterialButtonRectangle31.setText("VER PEDIDO");
+        rSMaterialButtonRectangle31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSMaterialButtonRectangle31ActionPerformed(evt);
+            }
+        });
+        jPanel40.add(rSMaterialButtonRectangle31, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 169, 43));
 
         jPanel45.setBackground(new java.awt.Color(255, 255, 255));
         jPanel45.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -4606,7 +4618,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_ButtonClienteConfig1ActionPerformed
 
     private void ButtonCliente_AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCliente_AgregarActionPerformed
-        cliente.RegistrarCliente(); 
+        cliente.RegistrarCliente();
         if (cliente.getInsert()) {
 //            alertas.AlertSuccess alerta = new alertas.AlertSuccess(this, true);
 //            alerta.Texto("Se ha registrado Correctamente");
@@ -4945,25 +4957,29 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_cancelarActionPerformed
 
     private void borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarActionPerformed
-            
-            int index = tablaPedidosVenta.getSelectedRow();
-            System.out.println("INDEX " + index);
-            int id = Integer.parseInt(tablaPedidosVenta.getValueAt(index, 0).toString());
-            System.out.println(id);
-            pedidos.EliminarPedido(id);
-            float calculoTotal = 0;
-            Venta venta = new Venta();
-            venta.eliminar();
-            for(int a =0; a<tablaPedidosVenta.getRowCount();a++)
-            {
-                calculoTotal = calculoTotal + Float.parseFloat(tablaPedidosVenta.getValueAt(a, 1).toString());
-            }
-            total.setText(String.valueOf(calculoTotal));
-            this.repaint();
+
+        int index = tablaPedidosVenta.getSelectedRow();
+        System.out.println("INDEX " + index);
+        int id = Integer.parseInt(tablaPedidosVenta.getValueAt(index, 0).toString());
+        System.out.println(id);
+        pedidos.EliminarPedido(id);
+        float calculoTotal = 0;
+        Venta venta = new Venta();
+        venta.eliminar();
+        for (int a = 0; a < tablaPedidosVenta.getRowCount(); a++) {
+            calculoTotal = calculoTotal + Float.parseFloat(tablaPedidosVenta.getValueAt(a, 1).toString());
+        }
+        total.setText(String.valueOf(calculoTotal));
+        this.repaint();
     }//GEN-LAST:event_borrarActionPerformed
 
     private void venderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_venderActionPerformed
-        reportePdf.pdfVenta();
+        if (nidCliente == "") {
+            JOptionPane.showMessageDialog(null, "Seleccion Un Cliente.", "Registro Venta", 0,
+                    new ImageIcon(getClass().getResource("/Resources/info.png")));
+        } else {
+            reportePdf.pdfVenta();
+        }
     }//GEN-LAST:event_venderActionPerformed
 
     private void calculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculoActionPerformed
@@ -4972,7 +4988,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         } else {
             double recibe = Double.parseDouble(recibi.getText());
             double tota = Double.parseDouble(total.getText());
-            
+
             if (recibe < tota) {
                 JOptionPane.showMessageDialog(this, "Ingrese un valor valido.", "Caja de cobro", 0);
             } else {
@@ -4982,13 +4998,13 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_calculoActionPerformed
 
     private void rSMaterialButtonRectangle12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle12ActionPerformed
-        int fila = tablaPedidosVenta.getSelectedRow();
-        if (fila == -1){
-            JOptionPane.showMessageDialog(null, "Seleccione un registro.");
-        } else {
-        int id = Integer.parseInt(tablaPedidosVenta.getValueAt(fila, 0).toString());
-        Pedidos ventana = new Pedidos(pedidos.ObtenerDetallePedido(id));
-        }
+
+        ListarClientes listarCliente = new ListarClientes();
+        listarCliente.toFront();
+        listarCliente.setIdentificador(false);
+        listarCliente.setVisible(true);
+
+
     }//GEN-LAST:event_rSMaterialButtonRectangle12ActionPerformed
 
     private void btnGenerarReportePlatillosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReportePlatillosActionPerformed
@@ -5245,7 +5261,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
     private void borrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrar1ActionPerformed
         pedido.Eliminar();
-        
+
     }//GEN-LAST:event_borrar1ActionPerformed
     PedidoVM pedido = new PedidoVM();
     private void cancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelar1ActionPerformed
@@ -5272,7 +5288,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         if (tablaCotizaciones.getRowCount() == 0) {
             JOptionPane.showMessageDialog(null, "No Existen Datos", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        } else if ("".equals(nidCotizacion.getText())){
+        } else if ("".equals(nidCotizacion.getText())) {
             JOptionPane.showMessageDialog(null, "No existe Cliente", "Advertencia", JOptionPane.WARNING_MESSAGE);
         } else {
             reportePdf.pdfCotizacion();
@@ -5313,6 +5329,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private void rSMaterialButtonRectangle27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle27ActionPerformed
         ListarClientes listarCliente = new ListarClientes();
         listarCliente.toFront();
+        listarCliente.setIdentificador(true);
         listarCliente.setVisible(true);
     }//GEN-LAST:event_rSMaterialButtonRectangle27ActionPerformed
 
@@ -5377,16 +5394,12 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_ComboBoxMesasActionPerformed
 
     private void rSMaterialButtonRectangle13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle13ActionPerformed
-        if(ComboBoxMesas.getSelectedIndex()==0)
-        {
+        if (ComboBoxMesas.getSelectedIndex() == 0) {
             System.out.println("SELECCIONE UNA MESA");
-        }
-        else
-        {
+        } else {
             tablaPedidosVenta.setModel(pedidos.ObtenerPedidosMesa(ComboBoxMesas.getSelectedIndex()));
-            float calculoTotal= 0;
-            for(int a =0; a<tablaPedidosVenta.getRowCount();a++)
-            {
+            float calculoTotal = 0;
+            for (int a = 0; a < tablaPedidosVenta.getRowCount(); a++) {
                 calculoTotal = calculoTotal + Float.parseFloat(tablaPedidosVenta.getValueAt(a, 1).toString());
             }
             total.setText(String.valueOf(calculoTotal));
@@ -5395,16 +5408,26 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_rSMaterialButtonRectangle13ActionPerformed
 
     private void rSMaterialButtonRectangle24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle24ActionPerformed
-        // TODO add your handling code here:
+        int fila = tablaPedidosVenta.getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Seleccione un registro.");
+        } else {
+            int id = Integer.parseInt(tablaPedidosVenta.getValueAt(fila, 0).toString());
+            Pedidos ventana = new Pedidos(pedidos.ObtenerDetallePedido(id));
+        }
     }//GEN-LAST:event_rSMaterialButtonRectangle24ActionPerformed
 
     private void rSMaterialButtonRectangle29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle29ActionPerformed
-           TabbedPanePrincipal.setSelectedIndex(5);
+        TabbedPanePrincipal.setSelectedIndex(5);
     }//GEN-LAST:event_rSMaterialButtonRectangle29ActionPerformed
 
     private void rSMaterialButtonRectangle30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle30ActionPerformed
         ListaVenta ventana = new ListaVenta(pedidos.ObtenerDetallePedidoVenta());
     }//GEN-LAST:event_rSMaterialButtonRectangle30ActionPerformed
+
+    private void rSMaterialButtonRectangle31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle31ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSMaterialButtonRectangle31ActionPerformed
 
     // </editor-fold>
     /**
@@ -5740,6 +5763,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle28;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle29;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle30;
+    private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle31;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle6;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle7;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle8;
