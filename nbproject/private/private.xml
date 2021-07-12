@@ -3,10 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/sinis/Desktop/proyecto/SistemaPuntoVenta/src/Views/Sistema.java</file>
-            <file>file:/C:/Users/sinis/Desktop/proyecto/SistemaPuntoVenta/src/Models/controlPedido.java</file>
-            <file>file:/C:/Users/sinis/Desktop/proyecto/SistemaPuntoVenta/src/Models/PedidoSQL.java</file>
-            <file>file:/C:/Users/sinis/Desktop/proyecto/SistemaPuntoVenta/src/Views/ListaVenta.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/sistema/punto/de/ventas/SistemaPuntoDeVentas.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Controller/PedidoVM.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Controller/SuministroVM.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Views/ListarClientes.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Views/ListaAlimentos.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Controller/CategoriaVM.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Models/Pedido.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Interfeces/IClassModels.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Models/SuministroSQL.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Reportes/Pdf.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Views/Sistema.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Conexion/Conexion.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Models/AlimentoSQL.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Views/Pedidos.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Models/ClienteSQL.java</file>
+            <file>file:/C:/Users/elmer/Desktop/SistemaPuntoVenta/src/Views/ListaVenta.java</file>
         </group>
     </open-files>
 </project-private>

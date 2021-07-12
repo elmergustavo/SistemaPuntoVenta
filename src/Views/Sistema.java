@@ -473,7 +473,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonCliente = new javax.swing.JButton();
         ButtonInventario = new javax.swing.JButton();
         ButtonCotizacion = new javax.swing.JButton();
-        ButtonAdministracion = new javax.swing.JButton();
         ButtonClienteConfig = new javax.swing.JButton();
         ButtonClienteConfig1 = new javax.swing.JButton();
         rSLabelHora1 = new rojeru_san.RSLabelHora();
@@ -644,7 +643,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             }
         });
 
-        CheckBoxCliente_Credito.setText("Credito");
+        CheckBoxCliente_Credito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckBoxCliente_CreditoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -2666,7 +2669,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Administración Financiera");
 
         jLabel12.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -3178,15 +3180,20 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         tablaPedidosVenta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "IdPedido", "Total"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tablaPedidosVenta.setRowHeight(30);
         jScrollPane6.setViewportView(tablaPedidosVenta);
 
@@ -3211,23 +3218,23 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         rSMaterialButtonRectangle24.setBackground(new java.awt.Color(34, 102, 145));
         rSMaterialButtonRectangle24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
-        rSMaterialButtonRectangle24.setText("NUEVO PEDIDO");
+        rSMaterialButtonRectangle24.setText("ver pedido");
         rSMaterialButtonRectangle24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSMaterialButtonRectangle24ActionPerformed(evt);
             }
         });
-        jPanel40.add(rSMaterialButtonRectangle24, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 169, 43));
+        jPanel40.add(rSMaterialButtonRectangle24, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 169, 43));
 
         rSMaterialButtonRectangle31.setBackground(new java.awt.Color(34, 102, 145));
         rSMaterialButtonRectangle31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
-        rSMaterialButtonRectangle31.setText("VER PEDIDO");
+        rSMaterialButtonRectangle31.setText("historial");
         rSMaterialButtonRectangle31.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSMaterialButtonRectangle31ActionPerformed(evt);
             }
         });
-        jPanel40.add(rSMaterialButtonRectangle31, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 169, 43));
+        jPanel40.add(rSMaterialButtonRectangle31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 169, 43));
 
         jPanel45.setBackground(new java.awt.Color(255, 255, 255));
         jPanel45.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -3352,10 +3359,10 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jTabbedPane3AncestorAdded(evt);
             }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
                 jTabbedPane3AncestorMoved(evt);
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -4216,17 +4223,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             }
         });
 
-        ButtonAdministracion.setBackground(new java.awt.Color(51, 51, 51));
-        ButtonAdministracion.setForeground(new java.awt.Color(255, 255, 255));
-        ButtonAdministracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Reporte.png"))); // NOI18N
-        ButtonAdministracion.setText("Administracion Financiera");
-        ButtonAdministracion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        ButtonAdministracion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonAdministracionActionPerformed(evt);
-            }
-        });
-
         ButtonClienteConfig.setBackground(new java.awt.Color(51, 51, 51));
         ButtonClienteConfig.setForeground(new java.awt.Color(255, 255, 255));
         ButtonClienteConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/pedidos.png"))); // NOI18N
@@ -4265,36 +4261,31 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addComponent(ButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(38, 38, 38)
                 .addComponent(ButtonCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ButtonAdministracion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(47, 47, 47)
                 .addComponent(ButtonClienteConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(ButtonClienteConfig1)
+                .addGap(52, 52, 52)
+                .addComponent(ButtonClienteConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonClienteConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonClienteConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 6, Short.MAX_VALUE)
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(rSLabelHora1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel22Layout.createSequentialGroup()
                         .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ButtonAdministracion, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(ButtonCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(ButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(ButtonClienteConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ButtonClienteConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(ButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(ButtonCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                             .addGroup(jPanel22Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addComponent(BtnVentas, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                                .addComponent(BtnVentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(ButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addContainerGap())))
         );
@@ -4333,7 +4324,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonCliente.setEnabled(false);
         ButtonInventario.setEnabled(true);
         ButtonCotizacion.setEnabled(true);
-        ButtonAdministracion.setEnabled(true);
+        //ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(true);
         ArrayList<JLabel> label = new ArrayList();
         label.add(LabelCliente_Nid);
@@ -4364,7 +4355,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonCliente.setEnabled(true);
         ButtonInventario.setEnabled(true);
         ButtonCotizacion.setEnabled(true);
-        ButtonAdministracion.setEnabled(true);
+        //ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(true);
     }//GEN-LAST:event_BtnVentasActionPerformed
 
@@ -4374,7 +4365,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonCliente.setEnabled(true);
         ButtonInventario.setEnabled(false);
         ButtonCotizacion.setEnabled(true);
-        ButtonAdministracion.setEnabled(true);
+       // ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(true);
         //  aqui van a ir todos los datos del inventario registro de suministro
         ArrayList<JLabel> label = new ArrayList();
@@ -4435,31 +4426,20 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonCliente.setEnabled(true);
         ButtonInventario.setEnabled(true);
         ButtonCotizacion.setEnabled(false);
-        ButtonAdministracion.setEnabled(true);
+     //   ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(true);
 
     }//GEN-LAST:event_ButtonCotizacionActionPerformed
-
-    private void ButtonAdministracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAdministracionActionPerformed
-        TabbedPanePrincipal.setSelectedIndex(3);
-        BtnVentas.setEnabled(true);
-        ButtonCliente.setEnabled(true);
-        ButtonInventario.setEnabled(true);
-        ButtonCotizacion.setEnabled(true);
-        ButtonAdministracion.setEnabled(false);
-        ButtonClienteConfig.setEnabled(true);
-    }//GEN-LAST:event_ButtonAdministracionActionPerformed
 
     private void ButtonClienteConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonClienteConfigActionPerformed
         BtnVentas.setEnabled(true);
         ButtonCliente.setEnabled(true);
         ButtonInventario.setEnabled(true);
         ButtonCotizacion.setEnabled(true);
-        ButtonAdministracion.setEnabled(true);
+     //   ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(false);
         TabbedPanePrincipal.setSelectedIndex(5);
 
-        
         this.repaint();
 
     }//GEN-LAST:event_ButtonClienteConfigActionPerformed
@@ -4965,10 +4945,10 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             JOptionPane.showMessageDialog(null, "Seleccion Un Cliente.", "Registro Venta", 0,
                     new ImageIcon(getClass().getResource("/Resources/info.png")));
         } else {
-            int fac  = pedidos.ObtenerNumeroFactura();
+            int fac = pedidos.ObtenerNumeroFactura();
             numFac.setText(String.valueOf(fac));
             this.repaint();
-            reportePdf.pdfVenta();
+
             int id = 0;
             int idMesa = ComboBoxMesas.getSelectedIndex();
             for (int a = 0; a < tablaPedidosVenta.getRowCount(); a++) {
@@ -5028,6 +5008,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                     break;
             }
             this.repaint();
+            reportePdf.pdfVenta();
         }
 
     }//GEN-LAST:event_venderActionPerformed
@@ -5091,45 +5072,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private void totalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_totalActionPerformed
-
-    private void ventasHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasHActionPerformed
-
-    }//GEN-LAST:event_ventasHActionPerformed
-
-    private void buscFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscFActionPerformed
-
-    }//GEN-LAST:event_buscFActionPerformed
-
-    private void limpiar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiar1ActionPerformed
-
-    }//GEN-LAST:event_limpiar1ActionPerformed
-
-    private void eliminarTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarTActionPerformed
-
-    }//GEN-LAST:event_eliminarTActionPerformed
-
-    private void eliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminar1ActionPerformed
-
-    }//GEN-LAST:event_eliminar1ActionPerformed
-
-    private void buscar2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscar2KeyTyped
-        char num = evt.getKeyChar();
-        if ((num < '0' || num > '9')) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_buscar2KeyTyped
-
-    private void buscar2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscar2KeyReleased
-
-    }//GEN-LAST:event_buscar2KeyReleased
-
-    private void buscar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscar2MouseClicked
-
-    }//GEN-LAST:event_buscar2MouseClicked
-
-    private void ventasH1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasH1ActionPerformed
-
-    }//GEN-LAST:event_ventasH1ActionPerformed
 
     private void jTabbedPane3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTabbedPane3AncestorAdded
 
@@ -5254,9 +5196,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     ListaAlimentos la = new ListaAlimentos();
     private void busca1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busca1ActionPerformed
 
-        la.setIdentificador(true);
-        la.toFront();
-        la.setVisible(true);
+        ListaAlimentos listaAlimentosPedidos = new ListaAlimentos();
+        listaAlimentosPedidos.setIdentificador(true);
+        listaAlimentosPedidos.toFront();
+        listaAlimentosPedidos.setVisible(true);
+
     }//GEN-LAST:event_busca1ActionPerformed
 
     private void TotalPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalPedidosActionPerformed
@@ -5486,9 +5430,54 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ListaVenta ventana = new ListaVenta(pedidos.ObtenerDetallePedidoVenta());
     }//GEN-LAST:event_rSMaterialButtonRectangle30ActionPerformed
 
-    private void rSMaterialButtonRectangle31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle31ActionPerformed
+    private void CheckBoxCliente_CreditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxCliente_CreditoActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_CheckBoxCliente_CreditoActionPerformed
+
+    private void rSMaterialButtonRectangle31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle31ActionPerformed
+
+        TabbedPanePrincipal.setSelectedIndex(3);
+        jTabbedPane4.setSelectedIndex(2);
     }//GEN-LAST:event_rSMaterialButtonRectangle31ActionPerformed
+
+    private void ventasH1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasH1ActionPerformed
+
+    }//GEN-LAST:event_ventasH1ActionPerformed
+
+    private void ventasHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasHActionPerformed
+
+    }//GEN-LAST:event_ventasHActionPerformed
+
+    private void buscFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscFActionPerformed
+
+    }//GEN-LAST:event_buscFActionPerformed
+
+    private void limpiar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiar1ActionPerformed
+
+    }//GEN-LAST:event_limpiar1ActionPerformed
+
+    private void eliminarTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarTActionPerformed
+
+    }//GEN-LAST:event_eliminarTActionPerformed
+
+    private void eliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminar1ActionPerformed
+
+    }//GEN-LAST:event_eliminar1ActionPerformed
+
+    private void buscar2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscar2KeyTyped
+        char num = evt.getKeyChar();
+        if ((num < '0' || num > '9')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_buscar2KeyTyped
+
+    private void buscar2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscar2KeyReleased
+
+    }//GEN-LAST:event_buscar2KeyReleased
+
+    private void buscar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscar2MouseClicked
+
+    }//GEN-LAST:event_buscar2MouseClicked
 
     // </editor-fold>
     /**
@@ -5525,7 +5514,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnVentas;
-    private javax.swing.JButton ButtonAdministracion;
     private javax.swing.JButton ButtonCliente;
     private javax.swing.JButton ButtonClienteConfig;
     private javax.swing.JButton ButtonClienteConfig1;

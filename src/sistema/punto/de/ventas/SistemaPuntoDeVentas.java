@@ -30,11 +30,11 @@ public class SistemaPuntoDeVentas {
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
             
         }
-        Sistema sistema = new Sistema();
-        sistema.setExtendedState(MAXIMIZED_BOTH);
-        sistema.setVisible(true);
-//        Splash splash = new Splash();
-//        splash.setVisible(true);
+//        Sistema sistema = new Sistema();
+//        sistema.setExtendedState(MAXIMIZED_BOTH);
+//        sistema.setVisible(true);
+        Splash splash = new Splash();
+        splash.setVisible(true);
         
     }
     

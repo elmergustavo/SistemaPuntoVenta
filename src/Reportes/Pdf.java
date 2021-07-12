@@ -23,6 +23,7 @@ import static Views.ListarClientes.direccionCliente;
 import static Views.ListarClientes.nidCliente;
 import static Views.ListarClientes.nombreClienteVenta;
 import static Views.ListarClientes.telefonoCliente;
+import static Views.Sistema.numFac;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
@@ -58,12 +59,12 @@ public class Pdf {
         try {
             //  int id = Vdao.IdVenta();
             FileOutputStream archivo;
-            File file = new File("src/pdf/venta" + "1" + ".pdf");
+            File file = new File("C:\\Users\\elmer\\Desktop\\SistemaPuntoVenta\\src\\/pdf/venta" + "1" + ".pdf");
             archivo = new FileOutputStream(file);
             Document doc = new Document();
             PdfWriter.getInstance(doc, archivo);
             doc.open();
-            Image img = Image.getInstance("src/Resources/logo.png");
+            Image img = Image.getInstance("C:\\Users\\elmer\\Desktop\\SistemaPuntoVenta\\src\\Resources/logo.png");
 
             Paragraph fecha = new Paragraph();
             Font negrita = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLACK);
@@ -158,12 +159,12 @@ public class Pdf {
         try {
             //  int id = Vdao.IdVenta();
             FileOutputStream archivo;
-            File file = new File("src/pdf/ReporteAlimentos" + "" + ".pdf");
+            File file = new File("C:\\Users\\elmer\\Desktop\\SistemaPuntoVenta\\src\\/pdf/ReporteAlimentos" + "" + ".pdf");
             archivo = new FileOutputStream(file);
             Document doc = new Document();
             PdfWriter.getInstance(doc, archivo);
             doc.open();
-            Image img = Image.getInstance("src/Resources/logo.png");
+            Image img = Image.getInstance("C:\\Users\\elmer\\Desktop\\SistemaPuntoVenta\\src\\Resources/logo.png");
 
             Paragraph fecha = new Paragraph();
             Font negrita = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLACK);
@@ -256,12 +257,12 @@ public class Pdf {
         try {
             //  int id = Vdao.IdVenta();
             FileOutputStream archivo;
-            File file = new File("src/pdf/Cotizacion" + "" + ".pdf");
+            File file = new File("C:\\Users\\elmer\\Desktop\\SistemaPuntoVenta\\src\\/pdf/Cotizacion" + "" + ".pdf");
             archivo = new FileOutputStream(file);
             Document doc = new Document();
             PdfWriter.getInstance(doc, archivo);
             doc.open();
-            Image img = Image.getInstance("src/Resources/logo.png");
+            Image img = Image.getInstance("C:\\Users\\elmer\\Desktop\\SistemaPuntoVenta\\src\\Resources/logo.png");
 
             Paragraph fecha = new Paragraph();
             Font negrita = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLACK);
@@ -393,19 +394,19 @@ public class Pdf {
         try {
             //  int id = Vdao.IdVenta();
             FileOutputStream archivo;
-            File file = new File("src/pdf/Venta" + "" + ".pdf");
+            File file = new File("C:\\Users\\elmer\\Desktop\\SistemaPuntoVenta\\src\\/pdf/Venta" + "" + ".pdf");
             archivo = new FileOutputStream(file);
             Document doc = new Document();
             PdfWriter.getInstance(doc, archivo);
             doc.open();
-            Image img = Image.getInstance("src/Resources/logo.png");
+            Image img = Image.getInstance("C:\\Users\\elmer\\Desktop\\SistemaPuntoVenta\\src\\Resources/logo.png");
 
             Paragraph fecha = new Paragraph();
             Font negrita = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLACK);
             fecha.add(Chunk.NEWLINE);
             Date date = new Date();
             String hora = rSLabelHora1.getHora();
-            fecha.add("No. Factura: "+ "\nFecha: " + new SimpleDateFormat("dd-MM-yyyy").format(date) + "\nHora: " + hora + "\n" );
+            fecha.add("No. Factura: 2"+ "\nFecha: "+ numFac.getText() + "2" + new SimpleDateFormat("dd-MM-yyyy").format(date) + "\nHora: " + hora + "\n" );
 
             PdfPTable Encabezado = new PdfPTable(4);
             Encabezado.setWidthPercentage(100);
@@ -459,7 +460,8 @@ public class Pdf {
             
             Paragraph cli = new Paragraph();
             cli.add(Chunk.NEWLINE);
-            cli.add("Factura: " + "\n\n");
+            cli.add("Detalle factura" + "\n\n");
+            cli.setAlignment(Element.ALIGN_CENTER);
             doc.add(cli);
 
             PdfPTable tabla = new PdfPTable(4);
@@ -519,13 +521,11 @@ public class Pdf {
     }
     
     
-    
-
     public void GenerarPedidos() {
         try {
             //  int id = Vdao.IdVenta();
             FileOutputStream archivo;
-            File file = new File("src/pdf/Pedido1" + "" + ".pdf");
+            File file = new File("C:\\Users\\elmer\\Desktop\\SistemaPuntoVenta\\src\\/pdf/Pedido1" + "" + ".pdf");
             archivo = new FileOutputStream(file);
             Document doc = new Document();
             PdfWriter.getInstance(doc, archivo);

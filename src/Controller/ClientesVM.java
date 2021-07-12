@@ -275,7 +275,7 @@ public class ClientesVM extends ClienteSQL {
     public void SearchClientes(String campo) {
         List<TClientes> clienteFilter;
         String[] titulos = {"Id", "Nid", "Nombre", "Apellido",
-            "Email", "Direccion", "Telefono", "Credito", "Image"};
+            "Email", "Direccion", "Telefono", " ", "Image"};
         modelo1 = new DefaultTableModel(null, titulos);
         int inicio = (_num_pagina - 1) * _reg_por_pagina;
         if (campo.equals("")) {
