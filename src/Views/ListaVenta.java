@@ -19,6 +19,7 @@ public class ListaVenta extends javax.swing.JFrame {
      */
     public ListaVenta(DefaultTableModel modelo) {
         initComponents();
+        this.setResizable(false);
         pedidos.setModel(modelo);
         this.repaint();
         this.setVisible(true);

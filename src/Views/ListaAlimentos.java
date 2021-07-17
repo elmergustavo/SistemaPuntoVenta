@@ -33,6 +33,7 @@ public class ListaAlimentos extends javax.swing.JFrame {
 
     public ListaAlimentos() {
         initComponents();
+        this.setResizable(false);
         mostrar();
 
         tipoAl2.addItemListener(new ItemListener() {

@@ -45,6 +45,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private Statement st;
     controlMesa mesas = new controlMesa();
     controlPedido pedidos = new controlPedido();
+    private int fac;
 
     public Sistema() {
 
@@ -121,6 +122,17 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         registrarPedido.setEnabled(false);
         busca1.setEnabled(false);
         ComboBoxSuministro1.setEnabled(false);
+        borrar1.setEnabled(false);
+        cancelar1.setEnabled(false);
+        
+        rSMaterialButtonRectangle13.setEnabled(false);
+        ComboBoxMesas.setEnabled(false);
+        rSMaterialButtonRectangle24.setEnabled(false);
+        calculo.setEnabled(false);
+        vender.setEnabled(false);
+        borrar.setEnabled(false);
+        cancelar.setEnabled(false);
+        rSMaterialButtonRectangle12.setEnabled(false);
     }
 
     /**
@@ -396,7 +408,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         rSMaterialButtonRectangle30 = new rojerusan.RSMaterialButtonRectangle();
         jPanel40 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        tablaPedidosVenta = new rojerusan.RSTableMetro();
+        tablaPedidosVenta = tablaPedidosVenta = new rojerusan.RSTableMetro(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
         total = new app.bolivia.swing.JCTextField();
         codigoL3 = new javax.swing.JLabel();
         rSMaterialButtonRectangle24 = new rojerusan.RSMaterialButtonRectangle();
@@ -3112,7 +3128,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 calculoActionPerformed(evt);
             }
         });
-        jPanel39.add(calculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, 50));
+        jPanel39.add(calculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, 50));
 
         vender.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         vender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/venta2.png"))); // NOI18N
@@ -3126,7 +3142,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 venderActionPerformed(evt);
             }
         });
-        jPanel39.add(vender, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 200, 50));
+        jPanel39.add(vender, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 200, 50));
 
         borrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         borrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/elimina2.png"))); // NOI18N
@@ -3163,17 +3179,17 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 ComboBoxMesasActionPerformed(evt);
             }
         });
-        jPanel39.add(ComboBoxMesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 177, 43));
+        jPanel39.add(ComboBoxMesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 177, 43));
 
         rSMaterialButtonRectangle30.setBackground(new java.awt.Color(34, 102, 145));
         rSMaterialButtonRectangle30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Agregar.png"))); // NOI18N
-        rSMaterialButtonRectangle30.setText("Visualizar Orden Mesa");
+        rSMaterialButtonRectangle30.setText("Nueva venta");
         rSMaterialButtonRectangle30.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSMaterialButtonRectangle30ActionPerformed(evt);
             }
         });
-        jPanel39.add(rSMaterialButtonRectangle30, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 180, 50));
+        jPanel39.add(rSMaterialButtonRectangle30, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 180, 50));
 
         jPanel40.setBackground(new java.awt.Color(255, 255, 255));
         jPanel40.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -3184,22 +3200,15 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
             },
             new String [] {
-                "IdPedido", "Total"
+                "Número de  Pedido", "Total"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         tablaPedidosVenta.setRowHeight(30);
         jScrollPane6.setViewportView(tablaPedidosVenta);
 
         jPanel40.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 870, 280));
 
+        total.setEditable(false);
         total.setBackground(new java.awt.Color(34, 102, 145));
         total.setBorder(null);
         total.setForeground(new java.awt.Color(255, 255, 255));
@@ -3360,10 +3369,10 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jTabbedPane3AncestorAdded(evt);
             }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
                 jTabbedPane3AncestorMoved(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -3692,16 +3701,16 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel56Layout.setHorizontalGroup(
             jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel56Layout.createSequentialGroup()
-                .addGap(361, 361, 361)
+                .addContainerGap()
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 947, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(366, Short.MAX_VALUE))
+                .addContainerGap(732, Short.MAX_VALUE))
         );
         jPanel56Layout.setVerticalGroup(
             jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel56Layout.createSequentialGroup()
-                .addGap(76, 76, 76)
+                .addContainerGap()
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("Pedidos", jPanel56);
@@ -4366,7 +4375,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonCliente.setEnabled(true);
         ButtonInventario.setEnabled(false);
         ButtonCotizacion.setEnabled(true);
-       // ButtonAdministracion.setEnabled(true);
+        // ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(true);
         //  aqui van a ir todos los datos del inventario registro de suministro
         ArrayList<JLabel> label = new ArrayList();
@@ -4427,7 +4436,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonCliente.setEnabled(true);
         ButtonInventario.setEnabled(true);
         ButtonCotizacion.setEnabled(false);
-     //   ButtonAdministracion.setEnabled(true);
+        //   ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(true);
 
     }//GEN-LAST:event_ButtonCotizacionActionPerformed
@@ -4437,7 +4446,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonCliente.setEnabled(true);
         ButtonInventario.setEnabled(true);
         ButtonCotizacion.setEnabled(true);
-     //   ButtonAdministracion.setEnabled(true);
+        //   ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(false);
         TabbedPanePrincipal.setSelectedIndex(5);
 
@@ -4921,7 +4930,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_ComboBoxSuministroActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        
+
         venta.limpiaCampos(tablaPedidosVenta);
     }//GEN-LAST:event_cancelarActionPerformed
 
@@ -4948,9 +4957,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                     new ImageIcon(getClass().getResource("/Resources/info.png")));
         } else {
             ListaVenta ventana = new ListaVenta(pedidos.ObtenerDetallePedidoVenta());
-            int fac = pedidos.ObtenerNumeroFactura();
-            System.out.println(fac);
-            numFac.setText(String.valueOf(fac));
+
             this.repaint();
             int id = 0;
             int idMesa = ComboBoxMesas.getSelectedIndex();
@@ -5272,6 +5279,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         nuevoPedido.setEnabled(false);
         registrarPedido.setEnabled(true);
         busca1.setEnabled(true);
+        borrar1.setEnabled(true);
+        cancelar1.setEnabled(true);
         ComboBoxSuministro1.setEnabled(true);
         pedidos = new controlPedido();
         numFac1.setText(String.valueOf(pedidos.ObtenerIDPedido()));
@@ -5406,6 +5415,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             JOptionPane.showMessageDialog(null, "Seleccione una Mesa.");
         } else {
             tablaPedidosVenta.setModel(pedidos.ObtenerPedidosMesa(ComboBoxMesas.getSelectedIndex()));
+            if (tablaPedidosVenta.getRowCount() == 0) {
+                JOptionPane.showMessageDialog(null, "No existen pedidos.");
+            }
             float calculoTotal = 0;
             for (int a = 0; a < tablaPedidosVenta.getRowCount(); a++) {
                 calculoTotal = calculoTotal + Float.parseFloat(tablaPedidosVenta.getValueAt(a, 1).toString());
@@ -5430,7 +5442,16 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_rSMaterialButtonRectangle29ActionPerformed
 
     private void rSMaterialButtonRectangle30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle30ActionPerformed
-        
+        fac = pedidos.ObtenerNumeroFactura();
+        numFac.setText(String.valueOf(fac));
+        rSMaterialButtonRectangle13.setEnabled(true);
+        ComboBoxMesas.setEnabled(true);
+        rSMaterialButtonRectangle24.setEnabled(true);
+        calculo.setEnabled(true);
+        vender.setEnabled(true);
+        borrar.setEnabled(true);
+        cancelar.setEnabled(true);
+        rSMaterialButtonRectangle12.setEnabled(true);
     }//GEN-LAST:event_rSMaterialButtonRectangle30ActionPerformed
 
     private void CheckBoxCliente_CreditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxCliente_CreditoActionPerformed

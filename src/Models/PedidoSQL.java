@@ -42,14 +42,20 @@ public class PedidoSQL {
         
     }
     public int obtenerFact(){
+        String idString= "";
         int id = 0;
         sql = "SELECT MAX(id) FROM venta";
         try {
             st = conexion.getConnection().createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                id = Integer.parseInt(rs.getString(1));
+                idString = rs.getString(1);
             }
+            if (idString == null){
+                id = 0;
+            } else {
+                id = Integer.parseInt(idString);
+            }    
         } catch (SQLException ex) {
             Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
         }
