@@ -390,7 +390,7 @@ public class Pdf {
     }
     
     
-    public void pdfVenta(){
+    public void pdfVenta(int numeroFactura){
         try {
             //  int id = Vdao.IdVenta();
             FileOutputStream archivo;
@@ -406,7 +406,7 @@ public class Pdf {
             fecha.add(Chunk.NEWLINE);
             Date date = new Date();
             String hora = rSLabelHora1.getHora();
-            fecha.add("No. Factura: 2"+ "\nFecha: "+ numFac.getText() + "2" + new SimpleDateFormat("dd-MM-yyyy").format(date) + "\nHora: " + hora + "\n" );
+            fecha.add("No. Factura: "+ numeroFactura +"\nFecha: "+ numFac.getText() + "2" + new SimpleDateFormat("dd-MM-yyyy").format(date) + "\nHora: " + hora + "\n" );
 
             PdfPTable Encabezado = new PdfPTable(4);
             Encabezado.setWidthPercentage(100);

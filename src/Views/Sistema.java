@@ -9,6 +9,7 @@ import Conexion.Conexion;
 import Controller.CotizacionesMV;
 import Library.Objectos;
 import Controller.PedidoVM;
+import Controller.VentasVM;
 import Interfeces.IClassModels;
 import Models.PedidoSQL;
 import Models.Venta;
@@ -4920,7 +4921,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_ComboBoxSuministroActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-
+        
+        venta.limpiaCampos(tablaPedidosVenta);
     }//GEN-LAST:event_cancelarActionPerformed
 
     private void borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarActionPerformed
@@ -4941,14 +4943,15 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_borrarActionPerformed
 
     private void venderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_venderActionPerformed
-        if (nidCliente == "") {
+        if ("".equals(nidCliente)) {
             JOptionPane.showMessageDialog(null, "Seleccion Un Cliente.", "Registro Venta", 0,
                     new ImageIcon(getClass().getResource("/Resources/info.png")));
         } else {
+            ListaVenta ventana = new ListaVenta(pedidos.ObtenerDetallePedidoVenta());
             int fac = pedidos.ObtenerNumeroFactura();
+            System.out.println(fac);
             numFac.setText(String.valueOf(fac));
             this.repaint();
-
             int id = 0;
             int idMesa = ComboBoxMesas.getSelectedIndex();
             for (int a = 0; a < tablaPedidosVenta.getRowCount(); a++) {
@@ -5008,7 +5011,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                     break;
             }
             this.repaint();
-            reportePdf.pdfVenta();
+            reportePdf.pdfVenta(fac);
         }
 
     }//GEN-LAST:event_venderActionPerformed
@@ -5400,7 +5403,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
     private void rSMaterialButtonRectangle13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle13ActionPerformed
         if (ComboBoxMesas.getSelectedIndex() == 0) {
-            System.out.println("SELECCIONE UNA MESA");
+            JOptionPane.showMessageDialog(null, "Seleccione una Mesa.");
         } else {
             tablaPedidosVenta.setModel(pedidos.ObtenerPedidosMesa(ComboBoxMesas.getSelectedIndex()));
             float calculoTotal = 0;
@@ -5418,7 +5421,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             JOptionPane.showMessageDialog(null, "Seleccione un registro.");
         } else {
             int id = Integer.parseInt(tablaPedidosVenta.getValueAt(fila, 0).toString());
-            Pedidos ventana = new Pedidos(pedidos.ObtenerDetallePedido(id));
+            Pedidos ventana = new Pedidos(pedidos.ObtenerDetallePedido(id), id);
         }
     }//GEN-LAST:event_rSMaterialButtonRectangle24ActionPerformed
 
@@ -5427,7 +5430,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_rSMaterialButtonRectangle29ActionPerformed
 
     private void rSMaterialButtonRectangle30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle30ActionPerformed
-        ListaVenta ventana = new ListaVenta(pedidos.ObtenerDetallePedidoVenta());
+        
     }//GEN-LAST:event_rSMaterialButtonRectangle30ActionPerformed
 
     private void CheckBoxCliente_CreditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxCliente_CreditoActionPerformed

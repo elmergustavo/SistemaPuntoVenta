@@ -12,9 +12,8 @@ import Controller.ClientesVM;
 import Controller.CotizacionesMV;
 import Controller.PedidoVM;
 import Controller.SuministroVM;
+import Controller.VentasVM;
 import Reportes.Pdf;
-import Views.ListaAlimentos;
-import Views.ListarClientes;
 
 /**
  * en esta clase interface se intancian todos los objetos de los diferentes modulos correpondientes
@@ -30,5 +29,6 @@ public interface IClassModels {
     public CotizacionesMV cotizacion = new CotizacionesMV();
     public PedidoVM pedido = new PedidoVM();
     public Pdf reportePdf = new Pdf();
+    public VentasVM venta = new VentasVM();
     
 }

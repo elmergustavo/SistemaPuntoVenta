@@ -127,7 +127,7 @@ public class ListarClientes extends javax.swing.JFrame {
             }
         };
         jPanel4 = new javax.swing.JPanel();
-        JtextBuscar = new app.bolivia.swing.JCTextField();
+        JtextBuscarClientes = new app.bolivia.swing.JCTextField();
         codigoL1 = new javax.swing.JLabel();
         enviar = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
@@ -153,24 +153,24 @@ public class ListarClientes extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "OPCIONES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JtextBuscar.setBackground(new java.awt.Color(34, 102, 145));
-        JtextBuscar.setBorder(null);
-        JtextBuscar.setForeground(new java.awt.Color(255, 255, 255));
-        JtextBuscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        JtextBuscar.setOpaque(false);
-        JtextBuscar.setPhColor(new java.awt.Color(255, 255, 255));
-        JtextBuscar.setPlaceholder("CÓDIGO/NOMBRE");
-        JtextBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+        JtextBuscarClientes.setBackground(new java.awt.Color(34, 102, 145));
+        JtextBuscarClientes.setBorder(null);
+        JtextBuscarClientes.setForeground(new java.awt.Color(255, 255, 255));
+        JtextBuscarClientes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        JtextBuscarClientes.setOpaque(false);
+        JtextBuscarClientes.setPhColor(new java.awt.Color(255, 255, 255));
+        JtextBuscarClientes.setPlaceholder("CÓDIGO/NOMBRE");
+        JtextBuscarClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JtextBuscarMouseClicked(evt);
+                JtextBuscarClientesMouseClicked(evt);
             }
         });
-        JtextBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+        JtextBuscarClientes.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                JtextBuscarKeyReleased(evt);
+                JtextBuscarClientesKeyReleased(evt);
             }
         });
-        jPanel4.add(JtextBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 180, -1));
+        jPanel4.add(JtextBuscarClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 180, -1));
 
         codigoL1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         codigoL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/buscarL.png"))); // NOI18N
@@ -233,13 +233,18 @@ public class ListarClientes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JtextBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JtextBuscarMouseClicked
+    private void JtextBuscarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JtextBuscarClientesMouseClicked
 
-    }//GEN-LAST:event_JtextBuscarMouseClicked
+    }//GEN-LAST:event_JtextBuscarClientesMouseClicked
 
-    private void JtextBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JtextBuscarKeyReleased
-
-    }//GEN-LAST:event_JtextBuscarKeyReleased
+    private void JtextBuscarClientesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JtextBuscarClientesKeyReleased
+        ListarClientesMV listarCliente = new ListarClientesMV(TablaListadoClientes);
+        if ("".equals(JtextBuscarClientes.getText())) {
+            listarCliente.SearchClientess("");
+        } else {
+            listarCliente.SearchClientess(JtextBuscarClientes.getText());
+        }
+    }//GEN-LAST:event_JtextBuscarClientesKeyReleased
 
     private void enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarActionPerformed
         if (identificador == true) {
@@ -248,6 +253,7 @@ public class ListarClientes extends javax.swing.JFrame {
             IngresarClienteVenta();
         }
 
+        dispose();
 
     }//GEN-LAST:event_enviarActionPerformed
 
@@ -256,7 +262,7 @@ public class ListarClientes extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private app.bolivia.swing.JCTextField JtextBuscar;
+    private app.bolivia.swing.JCTextField JtextBuscarClientes;
     public static rojerusan.RSTableMetro TablaListadoClientes;
     private javax.swing.JLabel codigoL1;
     private javax.swing.JButton enviar;

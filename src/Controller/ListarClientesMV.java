@@ -10,6 +10,7 @@ import Library.Render_CheckBox;
 import Models.ClienteSQL;
 import Models.TAlimentos;
 import Models.TClientes;
+import static Views.ListarClientes.TablaListadoClientes;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.swing.JTable;
@@ -19,21 +20,21 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author elmer
  */
-public class ListarClientesMV extends ClienteSQL{
-    
-    private final JTable _tableListarClientes;
+public class ListarClientesMV extends ClienteSQL {
+
+    private JTable _tableListarClientes;
     private DefaultTableModel modelo1;
     public int seccion;
     private Paginador<TAlimentos> _paginadorAlimentos;
     private List<TAlimentos> listAlimentos;
     private boolean Insert;
     private boolean Update;
-    
+
     public ListarClientesMV(JTable tabla) {
         this._tableListarClientes = tabla;
         SearchClientess("");
     }
-    
+
     public void SearchClientess(String campo) {
         List<TClientes> clienteFilter;
         String[] titulos = {"Id", "Nid", "Nombre", "Apellido",
@@ -67,7 +68,7 @@ public class ListarClientesMV extends ClienteSQL{
                 modelo1.addRow(registros);
             });
 
-        }
+        }     
         _tableListarClientes.setModel(modelo1);
         _tableListarClientes.setRowHeight(30);
         _tableListarClientes.getColumnModel().getColumn(0).setMaxWidth(0);
@@ -76,21 +77,19 @@ public class ListarClientesMV extends ClienteSQL{
         _tableListarClientes.getColumnModel().getColumn(8).setMaxWidth(0);
         _tableListarClientes.getColumnModel().getColumn(8).setMinWidth(0);
         _tableListarClientes.getColumnModel().getColumn(8).setPreferredWidth(0);
-        
-         _tableListarClientes.getColumnModel().getColumn(4).setMaxWidth(0);
+
+        _tableListarClientes.getColumnModel().getColumn(4).setMaxWidth(0);
         _tableListarClientes.getColumnModel().getColumn(4).setMinWidth(0);
         _tableListarClientes.getColumnModel().getColumn(4).setPreferredWidth(0);
-        
-         _tableListarClientes.getColumnModel().getColumn(5).setMaxWidth(0);
+
+        _tableListarClientes.getColumnModel().getColumn(5).setMaxWidth(0);
         _tableListarClientes.getColumnModel().getColumn(5).setMinWidth(0);
         _tableListarClientes.getColumnModel().getColumn(5).setPreferredWidth(0);
-        
-        
-        
-         _tableListarClientes.getColumnModel().getColumn(7).setMaxWidth(0);
+
+        _tableListarClientes.getColumnModel().getColumn(7).setMaxWidth(0);
         _tableListarClientes.getColumnModel().getColumn(7).setMinWidth(0);
         _tableListarClientes.getColumnModel().getColumn(7).setPreferredWidth(0);
-        
+
         _tableListarClientes.getColumnModel().getColumn(7).setCellRenderer(new Render_CheckBox());
     }
 }
