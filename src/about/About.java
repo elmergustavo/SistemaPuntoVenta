@@ -137,7 +137,7 @@ public class About extends javax.swing.JDialog {
         jLabel10.setText("Youtube");
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/about/github.png"))); // NOI18N
-        jButton1.setToolTipText("<html> <head> <style> #contenedor{background:#00688B;color:white; padding-left:10px;padding-right:10px;margin:0; padding-top:5px;padding-bottom:5px;} </style> </head> <body> <h4 id=\"contenedor\">Ir a mi facebook</h4> </body> </html>");
+        jButton1.setToolTipText("<html> <head> <style> #contenedor{background:#00688B;color:white; padding-left:10px;padding-right:10px;margin:0; padding-top:5px;padding-bottom:5px;} </style> </head> <body> <h4 id=\"contenedor\">Ir a GitHub</h4> </body> </html>");
         jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
