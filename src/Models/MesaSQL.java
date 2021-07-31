@@ -42,19 +42,26 @@ public class MesaSQL {
         try {
             st = conexion.getConnection().createStatement();
             ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                mesa = new Mesa();
-                mesa.setNumero(Integer.parseInt(rs.getString(1)));
-                mesa.setEstado(rs.getString(2));
+
+            if (rs == null) {
+                System.out.println("No existen mesa");
+            } else {
+                while (rs.next()) {
+                    mesa = new Mesa();
+                    mesa.setNumero(Integer.parseInt(rs.getString(1)));
+                    mesa.setEstado(rs.getString(2));
+                }
             }
+
         } catch (SQLException ex) {
             Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
         }
         return mesa;
     }
+
     public void marcarOcupado(int id) {
         sql = "UPDATE mesa SET estado='O' WHERE id=" + id;
-        System.out.println(sql); 
+        System.out.println(sql);
         int rs = 0;
         try {
             st = conexion.getConnection().prepareStatement(sql);
@@ -64,9 +71,10 @@ public class MesaSQL {
             Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     public void marcarDisponible(int id) {
         sql = "UPDATE mesa SET estado='D' WHERE id=" + id;
-        System.out.println(sql); 
+        System.out.println(sql);
         int rs = 0;
         try {
             st = conexion.getConnection().prepareStatement(sql);
@@ -76,9 +84,10 @@ public class MesaSQL {
             Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     public void marcarCobrado(int id) {
         sql = "UPDATE mesa SET estado='C' WHERE id=" + id;
-        System.out.println(sql); 
+        System.out.println(sql);
         int rs = 0;
         try {
             st = conexion.getConnection().prepareStatement(sql);

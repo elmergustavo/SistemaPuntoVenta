@@ -6,12 +6,15 @@
 package Models;
 
 import Conexion.Conexion;
+import static Views.Sistema.tablaVentas;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -43,6 +46,39 @@ public class ventaSQL {
         return rsu;
     }
 
+    
+    public  void listar(String busca) {
+        DefaultTableModel modelo = (DefaultTableModel) tablaVentas.getModel();
+
+        while (modelo.getRowCount() > 0) {
+            modelo.removeRow(0);
+        }
+        String sql = "";
+        if (busca.equals("")) {
+            sql = "SELECT * FROM venta ORDER BY fecha";
+        } else {
+            sql = "SELECT * FROM venta WHERE (id like'" + busca + "%' or fecha='" + busca + "')"
+                    + " ORDER BY fecha";
+        }
+        String datos[] = new String[5];
+        try {
+            Statement st = conexion.getConnection().createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                datos[0] = rs.getString("id");
+                datos[1] = rs.getString("nombre");
+                datos[2] = rs.getString("apellido");
+                datos[3] = rs.getString("total");
+                datos[4] = rs.getString("fecha");
+                modelo.addRow(datos);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ventaSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    
+    
 //    public void registrar(TVentas uc) {
 //        int rs = 0;
 //        sql = "INSERT INTO venta (id,nombre,apellido,total,fecha) VALUES ('001',"+ uc.getNombre() + "," + uc.getApellido() + "," + uc.getTotal() + "," + uc.getFecha() + ")";
