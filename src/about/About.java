@@ -166,7 +166,7 @@ public class About extends javax.swing.JDialog {
 
         uno.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         uno.setForeground(new java.awt.Color(255, 255, 255));
-        uno.setText("Grupo: Coders.");
+        uno.setText("TavCode");
         jPanel1.add(uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         dos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -181,7 +181,7 @@ public class About extends javax.swing.JDialog {
 
         uno1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         uno1.setForeground(new java.awt.Color(255, 255, 255));
-        uno1.setText("Grupo: Coders.");
+        uno1.setText("TavCode");
         jPanel1.add(uno1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));

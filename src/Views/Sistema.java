@@ -12,13 +12,17 @@ import Controller.PedidoVM;
 import Controller.VentasVM;
 import Interfeces.IClassModels;
 import Models.PedidoSQL;
+import Models.TVentas;
 import Models.Venta;
 import Models.controlMesa;
 import Models.controlPedido;
+import Models.ventaSQL;
 import java.sql.Statement;
 import Reportes.Excel;
 import Reportes.Pdf;
+import static Views.ListarClientes.apellidoCliente;
 import static Views.ListarClientes.nidCliente;
+import static Views.ListarClientes.nombreClienteVenta;
 import app.bolivia.swing.JCTextField;
 import java.awt.Color;
 import java.awt.event.ItemEvent;
@@ -378,8 +382,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         buscF = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         ventasH = new javax.swing.JButton();
-        rSDateChooser1 = new rojeru_san.componentes.RSDateChooser();
         ventasH1 = new javax.swing.JButton();
+        fecha = new com.toedter.calendar.JDateChooser();
         jScrollPane8 = new javax.swing.JScrollPane();
         tableMetro1 = new rojeru_san.complementos.TableMetro();
         jPanel53 = new javax.swing.JPanel();
@@ -2725,7 +2729,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         );
         jPanel49Layout.setVerticalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 461, Short.MAX_VALUE)
+            .addGap(0, 560, Short.MAX_VALUE)
         );
 
         jTabbedPane4.addTab("Administrar Impuestos", jPanel49);
@@ -2746,7 +2750,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             jPanel74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel74Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LabelGrafica_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                .addComponent(LabelGrafica_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -2763,7 +2767,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         );
         jPanel50Layout.setVerticalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 461, Short.MAX_VALUE)
+            .addGap(0, 560, Short.MAX_VALUE)
             .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel50Layout.createSequentialGroup()
                     .addGap(88, 88, 88)
@@ -2895,8 +2899,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 ventasHActionPerformed(evt);
             }
         });
-        jPanel54.add(ventasH, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, -1, -1));
-        jPanel54.add(rSDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        jPanel54.add(ventasH, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, -1, -1));
 
         ventasH1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ventasH1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/ventasH2.png"))); // NOI18N
@@ -2914,6 +2917,10 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         });
         jPanel54.add(ventasH1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
 
+        fecha.setDateFormatString("dd/MM/yyyy");
+        fecha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel54.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 150, 30));
+
         tableMetro1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -2925,7 +2932,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tableMetro1.setColorBackgoundHead(new java.awt.Color(102, 102, 255));
+        tableMetro1.setColorBackgoundHead(new java.awt.Color(0, 112, 192));
+        tableMetro1.setColorFilasForeground1(new java.awt.Color(0, 112, 192));
+        tableMetro1.setColorSelBackgound(new java.awt.Color(0, 112, 192));
         jScrollPane8.setViewportView(tableMetro1);
 
         javax.swing.GroupLayout jPanel52Layout = new javax.swing.GroupLayout(jPanel52);
@@ -2958,7 +2967,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel53Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelImgVentas, javax.swing.GroupLayout.DEFAULT_SIZE, 815, Short.MAX_VALUE)
+                .addComponent(jLabelImgVentas, javax.swing.GroupLayout.DEFAULT_SIZE, 895, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel53Layout.setVerticalGroup(
@@ -3009,8 +3018,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addContainerGap()
                 .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jTabbedPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         TabbedPanePrincipal.addTab("Administración financiera", jPanel20);
@@ -4319,7 +4328,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addGap(1, 1, 1)
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TabbedPanePrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE)
+                .addComponent(TabbedPanePrincipal)
                 .addContainerGap())
         );
 
@@ -5018,6 +5027,18 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                     break;
             }
             this.repaint();
+            
+            
+            TVentas venta = new TVentas();
+            venta.setId(numFac.getText());
+            venta.setNombre(nombreClienteVenta);
+            venta.setApellido(apellidoCliente);
+            venta.setTotal(total.getText());
+            venta.setFecha(rSLabelFecha1.getFecha());
+            
+            ventaSQL  registro = new ventaSQL();
+            registro.registrar(venta);
+            
             reportePdf.pdfVenta(fac);
         }
 
@@ -5654,6 +5675,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JButton eliminar;
     private javax.swing.JButton eliminar1;
     private javax.swing.JButton eliminarT;
+    private com.toedter.calendar.JDateChooser fecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -5810,7 +5832,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     public static app.bolivia.swing.JCTextField numFac1;
     public static javax.swing.JTextField porcentaje;
     private app.bolivia.swing.JCTextField precio;
-    private rojeru_san.componentes.RSDateChooser rSDateChooser1;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelFecha rSLabelFecha2;
     private rojeru_san.RSLabelFecha rSLabelFecha3;
