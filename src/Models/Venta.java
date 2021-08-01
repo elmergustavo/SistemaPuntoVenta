@@ -7,6 +7,7 @@ package Models;
 
 import Views.ListaAlimentos;
 import static Views.Sistema.tablaPedidosVenta;
+import static Views.Sistema.tablaVentas;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -33,6 +34,10 @@ public class Venta {
             JOptionPane.showMessageDialog(null, "No hay registros\npara eliminar.", "Caja de cobro", 0,
                     new ImageIcon(getClass().getResource("/Resources/info.png")));
         }
+    }
+    
+    void limpiaCampos() {
+        
     }
     
 }

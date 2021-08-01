@@ -68,7 +68,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         tablaCotizaciones.setRowHeight(30);
         tablaVentas.setRowHeight(30);
 
-        
         registro1.listar("");
         tipoAl.addItemListener(new ItemListener() {
 
@@ -2892,19 +2891,17 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             .addGroup(jPanel52Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel54, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 1310, Short.MAX_VALUE))
         );
         jPanel52Layout.setVerticalGroup(
             jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel52Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel54, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel54, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(125, Short.MAX_VALUE))
-            .addGroup(jPanel52Layout.createSequentialGroup()
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel51Layout = new javax.swing.GroupLayout(jPanel51);
@@ -2912,9 +2909,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel51Layout.setHorizontalGroup(
             jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel51Layout.createSequentialGroup()
-                .addGap(157, 157, 157)
-                .addComponent(jPanel52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(449, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel52, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel51Layout.setVerticalGroup(
             jPanel51Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3262,9 +3259,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                     .addComponent(jPanel37, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE))
                 .addGap(14, 14, 14)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel39, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jPanel40, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel40, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -4964,7 +4961,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             registro.registrar(venta);
 
             registro.listar("");
-            
 
             reportePdf.pdfVenta(fac);
         }
@@ -5438,15 +5434,61 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_buscFActionPerformed
 
     private void limpiar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiar1ActionPerformed
+        limpiarCamposRegistroVenta();
 
     }//GEN-LAST:event_limpiar1ActionPerformed
 
+    public void limpiarCamposRegistroVenta() {
+        if (tablaVentas.getSelectedRow() > -1) {
+            tablaVentas.removeRowSelectionInterval(tablaVentas.getSelectedRow(), tablaVentas.getSelectedRow());
+        }
+        fecha.setDate(null);
+        buscar2.setText("");
+        registro1.listar("");
+    }
     private void eliminarTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarTActionPerformed
+
+        if (tablaVentas.getRowCount() > 0) {
+            if (JOptionPane.showConfirmDialog(this, "Esta a punto de elimnar\ntodos los registros.\n¿Desea continuar?", "Registro Ventas", JOptionPane.YES_NO_OPTION, 0,
+                    new ImageIcon(getClass().getResource("/Resources/seguro.png"))) == JOptionPane.YES_OPTION) {
+                int eliminaT = registro1.eliminaTodos();
+                if (eliminaT != 0) {
+                    limpiarCamposRegistroVenta();
+                    JOptionPane.showMessageDialog(this, "Registros eliminados.", "Registro Ventas", 0,
+                            new ImageIcon(getClass().getResource("/Resources/borrado.png")));
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay registros\npara eliminar.", "Registro Ventas", 0,
+                    new ImageIcon(getClass().getResource("/Resources/info.png")));
+        }
 
     }//GEN-LAST:event_eliminarTActionPerformed
 
     private void eliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminar1ActionPerformed
 
+        if (tablaVentas.getRowCount() > 0) {
+            if (tablaVentas.getSelectedRowCount() > 0) {
+                if (JOptionPane.showConfirmDialog(this, "Esta a punto de eliminar\nun registro.\n¿Desea continuar?", "Registro Ventas", JOptionPane.YES_NO_OPTION, 0,
+                        new ImageIcon(getClass().getResource("/Resources/seguro.png"))) == JOptionPane.YES_OPTION) {
+                    int fila = tablaVentas.getSelectedRow();
+                    String id = tablaVentas.getValueAt(fila, 0).toString();
+                    int elimina = registro1.eliminar(id);
+                    if (elimina != 0) {
+                        limpiarCamposRegistroVenta();
+                        JOptionPane.showMessageDialog(this, "Registro eliminado.", "Registro Ventas", 0,
+                                new ImageIcon(getClass().getResource("/Resources/borrado1.png")));
+                    }
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Seleccione un registro.", "Registro Ventas", 0,
+                        new ImageIcon(getClass().getResource("/Resources/info.png")));
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay registros\npara eliminar.", "Registro Ventas", 0,
+                    new ImageIcon(getClass().getResource("/Resources/info.png")));
+        }
     }//GEN-LAST:event_eliminar1ActionPerformed
 
     private void buscar2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscar2KeyTyped
@@ -5459,7 +5501,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private void buscar2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buscar2KeyReleased
 
         registro1.listar(buscar2.getText());
-        
+
     }//GEN-LAST:event_buscar2KeyReleased
 
     private void buscar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscar2MouseClicked
@@ -5481,10 +5523,12 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Sistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sistema.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

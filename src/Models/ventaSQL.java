@@ -45,6 +45,35 @@ public class ventaSQL {
         System.out.println(sql);
         return rsu;
     }
+    
+    public int eliminar(String id) {
+        int rsu = 0;
+        String sql = "DELETE FROM venta WHERE id = ?";
+
+        try {
+            ps = conexion.getConnection().prepareStatement(sql);
+            ps.setString(1, id);
+            rsu = ps.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        System.out.println(sql);
+        return rsu;
+    }
+    
+    public int eliminaTodos() {
+        int rsu = 0;
+        String sql = "DELETE FROM venta";
+        try {
+            ps = conexion.getConnection().prepareStatement(sql);
+            rsu = ps.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        System.out.println(sql);
+        return rsu;
+    }
+
 
     
     public  void listar(String busca) {
@@ -76,20 +105,4 @@ public class ventaSQL {
             Logger.getLogger(ventaSQL.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    
-    
-//    public void registrar(TVentas uc) {
-//        int rs = 0;
-//        sql = "INSERT INTO venta (id,nombre,apellido,total,fecha) VALUES ('001',"+ uc.getNombre() + "," + uc.getApellido() + "," + uc.getTotal() + "," + uc.getFecha() + ")";
-//        try {
-//            st = conexion.getConnection().prepareStatement(sql);
-//            rs = st.executeUpdate(sql);
-//            System.out.println("venta registrado con exito");
-//        } catch (SQLException ex) {
-//            Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        System.out.println(sql);
-//    }
-
 }
