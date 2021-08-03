@@ -24,13 +24,15 @@ public class ListaVenta extends javax.swing.JFrame {
     /**
      * Creates new form ListaVenta
      */
+    
+
     public ListaVenta(DefaultTableModel modelo) {
         initComponents();
         ObtenerDatosCliente();
         this.setResizable(false);
         pedidos.setModel(modelo);
         this.repaint();
-        this.setVisible(true);
+//        this.setVisible(true);
         this.setLocationRelativeTo(null);
         float calculoTotal = 0;
         for (int a = 0; a < pedidos.getRowCount(); a++) {
@@ -47,7 +49,7 @@ public class ListaVenta extends javax.swing.JFrame {
         txtTelefono.setText(telefonoCliente);
         txtEmail.setText(emailCliente);
         txtDir.setText(direccionCliente);
-        
+
     }
 
     /**

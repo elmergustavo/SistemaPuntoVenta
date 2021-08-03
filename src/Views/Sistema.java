@@ -4861,7 +4861,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_ComboBoxSuministroActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-
+        TstVentNvoPres = false;
         venta.limpiaCampos(tablaPedidosVenta);
     }//GEN-LAST:event_cancelarActionPerformed
 
@@ -4882,89 +4882,99 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         this.repaint();
     }//GEN-LAST:event_borrarActionPerformed
 
+    public static boolean TstVentNvoPres = false;
     private void venderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_venderActionPerformed
-        if ("".equals(nidCliente)) {
-            JOptionPane.showMessageDialog(null, "Seleccion Un Cliente.", "Registro Venta", 0,
-                    new ImageIcon(getClass().getResource("/Resources/info.png")));
+        if (tablaPedidosVenta.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "No existen datos!!!");
         } else {
-            ListaVenta ventana = new ListaVenta(pedidos.ObtenerDetallePedidoVenta());
+            if (TstVentNvoPres == false) {
+                if ("".equals(nidCliente)) {
+                    JOptionPane.showMessageDialog(null, "Seleccion Un Cliente.", "Registro Venta", 0,
+                            new ImageIcon(getClass().getResource("/Resources/info.png")));
+                } else {
+                    ListaVenta ventana = new ListaVenta(pedidos.ObtenerDetallePedidoVenta());
 
-            this.repaint();
-            int id = 0;
-            int idMesa = ComboBoxMesas.getSelectedIndex();
-            for (int a = 0; a < tablaPedidosVenta.getRowCount(); a++) {
-                id = Integer.parseInt(tablaPedidosVenta.getValueAt(a, 0).toString());
-                pedidos.CambiarEstadoPedido(id);
+                    //this.repaint();
+                    ventana.setVisible(true);
+                    int id = 0;
+                    int idMesa = ComboBoxMesas.getSelectedIndex();
+                    for (int a = 0; a < tablaPedidosVenta.getRowCount(); a++) {
+                        id = Integer.parseInt(tablaPedidosVenta.getValueAt(a, 0).toString());
+                        pedidos.CambiarEstadoPedido(id);
+                    }
+                    ImageIcon imagen = mesas.cambiarEstadoCobrado(idMesa);
+                    switch (idMesa) {
+                        case 1:
+                            mesa1.setIcon(imagen);
+                            System.out.println("ENTRO MESA 1");
+                            mesa1.show();
+                            break;
+                        case 2:
+                            mesa2.setIcon(imagen);
+                            System.out.println("ENTRO MESA 2");
+                            mesa2.show();
+                            break;
+                        case 3:
+                            mesa3.setIcon(imagen);
+                            System.out.println("ENTRO MESA 3");
+                            mesa3.show();
+                            break;
+                        case 4:
+                            mesa4.setIcon(imagen);
+                            System.out.println("ENTRO MESA 4");
+                            mesa4.show();
+                            break;
+                        case 5:
+                            mesa5.setIcon(imagen);
+                            System.out.println("ENTRO MESA 5");
+                            mesa5.show();
+                            break;
+                        case 6:
+                            mesa6.setIcon(imagen);
+                            System.out.println("ENTRO MESA 6");
+                            mesa6.show();
+                            break;
+                        case 7:
+                            mesa7.setIcon(imagen);
+                            System.out.println("ENTRO MESA 7");
+                            mesa7.show();
+                            break;
+                        case 8:
+                            mesa8.setIcon(imagen);
+                            System.out.println("ENTRO MESA 8");
+                            mesa8.show();
+                            break;
+                        case 9:
+                            mesa9.setIcon(imagen);
+                            System.out.println("ENTRO MESA 9");
+                            mesa9.show();
+                            break;
+                        case 10:
+                            mesa10.setIcon(imagen);
+                            System.out.println("ENTRO MESA 10");
+                            break;
+                    }
+                    this.repaint();
+
+                    TVentas venta = new TVentas();
+                    venta.setId(numFac.getText());
+                    venta.setNombre(nombreClienteVenta);
+                    venta.setApellido(apellidoCliente);
+                    venta.setTotal(total.getText());
+                    venta.setFecha(rSLabelFecha1.getFecha());
+
+                    ventaSQL registro = new ventaSQL();
+                    registro.registrar(venta);
+
+                    registro.listar("");
+
+                }
+                TstVentNvoPres = true;
+            } else {
+                JOptionPane.showMessageDialog(null, "La ventana Detalle venta ya esta abierta!!!");
             }
-            ImageIcon imagen = mesas.cambiarEstadoCobrado(idMesa);
-            switch (idMesa) {
-                case 1:
-                    mesa1.setIcon(imagen);
-                    System.out.println("ENTRO MESA 1");
-                    mesa1.show();
-                    break;
-                case 2:
-                    mesa2.setIcon(imagen);
-                    System.out.println("ENTRO MESA 2");
-                    mesa2.show();
-                    break;
-                case 3:
-                    mesa3.setIcon(imagen);
-                    System.out.println("ENTRO MESA 3");
-                    mesa3.show();
-                    break;
-                case 4:
-                    mesa4.setIcon(imagen);
-                    System.out.println("ENTRO MESA 4");
-                    mesa4.show();
-                    break;
-                case 5:
-                    mesa5.setIcon(imagen);
-                    System.out.println("ENTRO MESA 5");
-                    mesa5.show();
-                    break;
-                case 6:
-                    mesa6.setIcon(imagen);
-                    System.out.println("ENTRO MESA 6");
-                    mesa6.show();
-                    break;
-                case 7:
-                    mesa7.setIcon(imagen);
-                    System.out.println("ENTRO MESA 7");
-                    mesa7.show();
-                    break;
-                case 8:
-                    mesa8.setIcon(imagen);
-                    System.out.println("ENTRO MESA 8");
-                    mesa8.show();
-                    break;
-                case 9:
-                    mesa9.setIcon(imagen);
-                    System.out.println("ENTRO MESA 9");
-                    mesa9.show();
-                    break;
-                case 10:
-                    mesa10.setIcon(imagen);
-                    System.out.println("ENTRO MESA 10");
-                    break;
-            }
-            this.repaint();
 
-            TVentas venta = new TVentas();
-            venta.setId(numFac.getText());
-            venta.setNombre(nombreClienteVenta);
-            venta.setApellido(apellidoCliente);
-            venta.setTotal(total.getText());
-            venta.setFecha(rSLabelFecha1.getFecha());
-
-            ventaSQL registro = new ventaSQL();
-            registro.registrar(venta);
-
-            registro.listar("");
-
-            
         }
-
     }//GEN-LAST:event_venderActionPerformed
 
     private void calculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculoActionPerformed
@@ -5387,6 +5397,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
     private void rSMaterialButtonRectangle30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonRectangle30ActionPerformed
         fac = pedidos.ObtenerNumeroFactura();
+        TstVentNvoPres = false;
         numFac.setText(String.valueOf(fac));
         rSMaterialButtonRectangle13.setEnabled(true);
         ComboBoxMesas.setEnabled(true);
