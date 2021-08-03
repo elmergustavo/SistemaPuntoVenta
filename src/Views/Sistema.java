@@ -4962,7 +4962,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
             registro.listar("");
 
-            reportePdf.pdfVenta(fac);
+            
         }
 
     }//GEN-LAST:event_venderActionPerformed

@@ -26,23 +26,31 @@ public class PedidoSQL {
 
     public int obtenerUltimoID() {
         int id = 0;
+        String idString = "";
         sql = "SELECT MAX(id) FROM pedido";
         try {
             st = conexion.getConnection().createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                id = Integer.parseInt(rs.getString(1));
+                idString = rs.getString(1);
+            }
+            if (idString == null) {
+                id = 0;
+            } else {
+                id = Integer.parseInt(idString);
             }
         } catch (SQLException ex) {
             Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
         }
         return id;
     }
-    public void GuardarVenta(){
-        
+
+    public void GuardarVenta() {
+
     }
-    public int obtenerFact(){
-        String idString= "";
+
+    public int obtenerFact() {
+        String idString = "";
         int id = 0;
         sql = "SELECT MAX(id) FROM venta";
         try {
@@ -51,11 +59,11 @@ public class PedidoSQL {
             while (rs.next()) {
                 idString = rs.getString(1);
             }
-            if (idString == null){
+            if (idString == null) {
                 id = 0;
             } else {
                 id = Integer.parseInt(idString);
-            }    
+            }
         } catch (SQLException ex) {
             Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -130,7 +138,7 @@ public class PedidoSQL {
             while (rs.next()) {
                 TAlimentos plato = new TAlimentos();
                 plato = obtenerAlimento(rs.getString(2));
-                PlatillosPedido temporal = new PlatillosPedido(plato, Integer.parseInt(rs.getString(3)),0);
+                PlatillosPedido temporal = new PlatillosPedido(plato, Integer.parseInt(rs.getString(3)), 0);
                 temporal.CalcularTotal();
                 Disponibles.add(temporal);
             }
@@ -138,9 +146,8 @@ public class PedidoSQL {
             Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.out.println("DETALLE DE PEDIDO  " + idPedido);
-        for(int a = 0; a <Disponibles.size();a++)
-        {
-            System.out.println("Platillo ID " + Disponibles.get(a).getNuevo().getIdAl() + " CANTIDAD " +Disponibles.get(a).getCantidad() + " PRECIO" + Disponibles.get(a).getNuevo().getPrecio_al() + " TOTAL" + Disponibles.get(a).getTotal());
+        for (int a = 0; a < Disponibles.size(); a++) {
+            System.out.println("Platillo ID " + Disponibles.get(a).getNuevo().getIdAl() + " CANTIDAD " + Disponibles.get(a).getCantidad() + " PRECIO" + Disponibles.get(a).getNuevo().getPrecio_al() + " TOTAL" + Disponibles.get(a).getTotal());
         }
         return Disponibles;
     }
@@ -165,11 +172,10 @@ public class PedidoSQL {
         }
         return platillo;
     }
-    
-    public void CambiarEstado(int id)
-    {
+
+    public void CambiarEstado(int id) {
         sql = "UPDATE pedido SET estado='Cobrado' WHERE id=" + id;
-        System.out.println(sql); 
+        System.out.println(sql);
         int rs = 0;
         try {
             st = conexion.getConnection().prepareStatement(sql);

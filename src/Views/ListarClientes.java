@@ -6,7 +6,6 @@
 package Views;
 
 import Controller.ListarClientesMV;
-import static Views.ListaAlimentos.isNumber;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
