@@ -4970,6 +4970,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
                 }
                 TstVentNvoPres = true;
+                venta.limpiaCampos(tablaPedidosVenta);
             } else {
                 JOptionPane.showMessageDialog(null, "La ventana Detalle venta ya esta abierta!!!");
             }
