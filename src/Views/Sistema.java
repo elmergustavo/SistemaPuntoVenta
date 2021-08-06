@@ -25,8 +25,11 @@ import static Views.ListarClientes.nidCliente;
 import static Views.ListarClientes.nombreClienteVenta;
 import app.bolivia.swing.JCTextField;
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -385,6 +388,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ventasH = new javax.swing.JButton();
         ventasH1 = new javax.swing.JButton();
         fecha = new com.toedter.calendar.JDateChooser();
+        btnGenerarReporteSuministrosPDF2 = new javax.swing.JButton();
+        txtIdVenta = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         tablaVentas = new rojeru_san.complementos.TableMetro();
         jPanel3 = new javax.swing.JPanel();
@@ -2746,11 +2751,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 buscar2KeyTyped(evt);
             }
         });
-        jPanel54.add(buscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 180, -1));
+        jPanel54.add(buscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 180, -1));
 
         codigoL9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         codigoL9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/buscarL.png"))); // NOI18N
-        jPanel54.add(codigoL9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 250, 52));
+        jPanel54.add(codigoL9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 250, 52));
 
         eliminar1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         eliminar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/borrar1.png"))); // NOI18N
@@ -2823,7 +2828,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         jLabel4.setForeground(new java.awt.Color(153, 153, 153));
         jLabel4.setText("Fecha");
-        jPanel54.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
+        jPanel54.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
 
         ventasH.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ventasH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/buscaF1.png"))); // NOI18N
@@ -2840,7 +2845,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 ventasHActionPerformed(evt);
             }
         });
-        jPanel54.add(ventasH, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, -1, -1));
+        jPanel54.add(ventasH, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
 
         ventasH1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ventasH1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/ventasH2.png"))); // NOI18N
@@ -2856,11 +2861,29 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 ventasH1ActionPerformed(evt);
             }
         });
-        jPanel54.add(ventasH1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
+        jPanel54.add(ventasH1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
 
         fecha.setDateFormatString("dd/MM/yyyy");
         fecha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel54.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 150, 30));
+        jPanel54.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 150, 30));
+
+        btnGenerarReporteSuministrosPDF2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnGenerarReporteSuministrosPDF2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/pdf1.png"))); // NOI18N
+        btnGenerarReporteSuministrosPDF2.setText("PDF");
+        btnGenerarReporteSuministrosPDF2.setBorder(null);
+        btnGenerarReporteSuministrosPDF2.setBorderPainted(false);
+        btnGenerarReporteSuministrosPDF2.setContentAreaFilled(false);
+        btnGenerarReporteSuministrosPDF2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnGenerarReporteSuministrosPDF2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnGenerarReporteSuministrosPDF2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/pdf.png"))); // NOI18N
+        btnGenerarReporteSuministrosPDF2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnGenerarReporteSuministrosPDF2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReporteSuministrosPDF2ActionPerformed(evt);
+            }
+        });
+        jPanel54.add(btnGenerarReporteSuministrosPDF2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
+        jPanel54.add(txtIdVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 80, 40));
 
         tablaVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2885,6 +2908,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         tablaVentas.setColorFilasForeground1(new java.awt.Color(0, 112, 192));
         tablaVentas.setColorSelBackgound(new java.awt.Color(0, 112, 192));
         tablaVentas.setFuenteHead(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tablaVentas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaVentasMouseClicked(evt);
+            }
+        });
         jScrollPane8.setViewportView(tablaVentas);
 
         javax.swing.GroupLayout jPanel52Layout = new javax.swing.GroupLayout(jPanel52);
@@ -5493,6 +5521,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         fecha.setDate(null);
         buscar2.setText("");
         registro1.listar("");
+        txtIdVenta.setText("");
     }
     private void eliminarTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarTActionPerformed
 
@@ -5555,6 +5584,29 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private void buscar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscar2MouseClicked
 
     }//GEN-LAST:event_buscar2MouseClicked
+
+    private void btnGenerarReporteSuministrosPDF2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteSuministrosPDF2ActionPerformed
+
+        if (txtIdVenta.getText() == "") {
+            JOptionPane.showMessageDialog(null, "selecciones un pedido we");
+        } else {
+            try {
+                int id = Integer.parseInt(txtIdVenta.getText());
+                File file = new File("src/pdf/venta" + id + ".pdf");
+                Desktop.getDesktop().open(file);
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "selecciones un pedido we");
+            }
+        }
+
+    }//GEN-LAST:event_btnGenerarReporteSuministrosPDF2ActionPerformed
+
+    private void tablaVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaVentasMouseClicked
+
+        // TODO add your handling code here:
+        int fila = tablaVentas.rowAtPoint(evt.getPoint());
+        txtIdVenta.setText(tablaVentas.getValueAt(fila, 0).toString());
+    }//GEN-LAST:event_tablaVentasMouseClicked
 
     // </editor-fold>
     /**
@@ -5675,6 +5727,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JButton btnGenerarReporteSuministros;
     private javax.swing.JButton btnGenerarReporteSuministrosPDF;
     private javax.swing.JButton btnGenerarReporteSuministrosPDF1;
+    private javax.swing.JButton btnGenerarReporteSuministrosPDF2;
     private javax.swing.JButton buscF;
     private javax.swing.JButton busca1;
     private javax.swing.JButton busca2;
@@ -5904,6 +5957,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private org.bolivia.combo.SComboBoxBlue tipoAl;
     private javax.swing.JLabel tipoL;
     public static app.bolivia.swing.JCTextField total;
+    private javax.swing.JLabel txtIdVenta;
     private javax.swing.JButton vender;
     private javax.swing.JButton ventasH;
     private javax.swing.JButton ventasH1;
