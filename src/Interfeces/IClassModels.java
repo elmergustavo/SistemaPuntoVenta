@@ -13,6 +13,7 @@ import Controller.CotizacionesMV;
 import Controller.PedidoVM;
 import Controller.SuministroVM;
 import Controller.VentasVM;
+import Models.PedidoSQL;
 import Models.ventaSQL;
 import Reportes.Pdf;
 
@@ -32,5 +33,6 @@ public interface IClassModels {
     public Pdf reportePdf = new Pdf();
     public VentasVM venta = new VentasVM();
     public ventaSQL registro1 = new ventaSQL();
+    public PedidoSQL pedidoSQL = new PedidoSQL();
     
 }

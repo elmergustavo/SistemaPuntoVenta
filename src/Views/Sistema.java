@@ -60,13 +60,13 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         JTextField categoria = new JTextField();
         categoria.setText("");
         TabbedPanePrincipal.setSelectedIndex(4);
-        // rsscalelabel.RSScaleLabel.setScaleLabel(jLabelImgVentas, "src/Resources/ventas.png");
         //rsscalelabel.RSScaleLabel.setScaleLabel(jLabel6, "src/Resources/logo.png");
         //   TextField_BuscarVentas.setEditable(false);
 
         tablePedidos.setRowHeight(30);
         tablaCotizaciones.setRowHeight(30);
         tablaVentas.setRowHeight(30);
+        tableMostrarPedidos.setRowHeight(30);
 
         registro1.listar("");
         tipoAl.addItemListener(new ItemListener() {
@@ -133,6 +133,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ComboBoxSuministro1.setEnabled(false);
         borrar1.setEnabled(false);
         cancelar1.setEnabled(false);
+        pedidoSQL.listar("");
 
         rSMaterialButtonRectangle13.setEnabled(false);
         ComboBoxMesas.setEnabled(false);
@@ -454,7 +455,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jLabel17 = new javax.swing.JLabel();
         jPanel56 = new javax.swing.JPanel();
         jScrollPane11 = new javax.swing.JScrollPane();
-        tablePedidos1 = new rojerusan.RSTableMetro();
+        tableMostrarPedidos = new rojerusan.RSTableMetro();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         jPanel32 = new javax.swing.JPanel();
         jPanel57 = new javax.swing.JPanel();
         jPanel58 = new javax.swing.JPanel();
@@ -3609,39 +3612,56 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         jTabbedPane3.addTab("Registra Pedido", jPanel46);
 
-        tablePedidos1.setModel(new javax.swing.table.DefaultTableModel(
+        jPanel56.setBackground(new java.awt.Color(255, 255, 255));
+
+        tableMostrarPedidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID PEDIDO", "NO MESA"
+                "ID PEDIDO", "ESTADO", "NÚMERO DE MESA"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane11.setViewportView(tablePedidos1);
+        jScrollPane11.setViewportView(tableMostrarPedidos);
+
+        jLabel21.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("NÚMERO DE PEDIDOS");
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/orden.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel56Layout = new javax.swing.GroupLayout(jPanel56);
         jPanel56.setLayout(jPanel56Layout);
         jPanel56Layout.setHorizontalGroup(
             jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel56Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel56Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 947, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(732, Short.MAX_VALUE))
+                .addGroup(jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 1198, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel56Layout.setVerticalGroup(
             jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel56Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(233, Short.MAX_VALUE))
+                .addGroup(jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel56Layout.createSequentialGroup()
+                        .addComponent(jLabel21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 441, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("Pedidos", jPanel56);
@@ -4965,6 +4985,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
                     ventaSQL registro = new ventaSQL();
                     registro.registrar(venta);
+                    
+                    PedidoSQL actualizarPedido = new PedidoSQL();
+                    actualizarPedido.listar("");
 
                     registro.listar("");
 
@@ -5096,7 +5119,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 }
 
                 pedidos.GuardarPedido(mesa, tablePedidos);
-
+                PedidoSQL actualizarPedido = new PedidoSQL();
+                actualizarPedido.listar("");
+               
                 nuevoPedido.setEnabled(true);
                 numFac1.setText("PEDIDO");
                 registrarPedido.setEnabled(false);
@@ -5685,6 +5710,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -5861,8 +5888,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     public static rojerusan.RSTableMetro tablaCotizaciones;
     public static rojerusan.RSTableMetro tablaPedidosVenta;
     public static rojeru_san.complementos.TableMetro tablaVentas;
+    public static rojerusan.RSTableMetro tableMostrarPedidos;
     public static rojerusan.RSTableMetro tablePedidos;
-    public static rojerusan.RSTableMetro tablePedidos1;
     private org.bolivia.combo.SComboBoxBlue tipoAl;
     private javax.swing.JLabel tipoL;
     public static app.bolivia.swing.JCTextField total;

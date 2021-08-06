@@ -6,12 +6,15 @@
 package Models;
 
 import Conexion.Conexion;
+import static Views.Sistema.tablaVentas;
+import static Views.Sistema.tableMostrarPedidos;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -183,6 +186,35 @@ public class PedidoSQL {
             System.out.println("CORRECTO");
         } catch (SQLException ex) {
             Logger.getLogger(MesaSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    // listar los Todos los pedidos
+    public  void listar(String busca) {
+        DefaultTableModel modelo = (DefaultTableModel) tableMostrarPedidos.getModel();
+
+        while (modelo.getRowCount() > 0) {
+            modelo.removeRow(0);
+        }
+        String sql = "";
+        if (busca.equals("")) {
+            sql = "SELECT * FROM pedido";
+        } else {
+//            sql = "SELECT * FROM venta WHERE (id like'" + busca + "%' or fecha='" + busca + "')"
+//                    + " ORDER BY fecha";
+        }
+        String datos[] = new String[3];
+        try {
+            Statement st = conexion.getConnection().createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                datos[0] = rs.getString("id");
+                datos[1] = rs.getString("estado");
+                datos[2] = rs.getString("Mesa_id");
+                modelo.addRow(datos);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ventaSQL.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
