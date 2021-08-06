@@ -390,11 +390,11 @@ public class Pdf {
     }
     
     
-    public void pdfVenta(int numeroFactura){
+    public void pdfVenta(String numeroFactura){
         try {
             //  int id = Vdao.IdVenta();
             FileOutputStream archivo;
-            File file = new File("C:\\Users\\elmer\\Desktop\\SistemaPuntoVenta\\src\\/pdf/Venta" + "" + ".pdf");
+            File file = new File("C:\\Users\\elmer\\Desktop\\SistemaPuntoVenta\\src\\/pdf/Venta" + numeroFactura + ".pdf");
             archivo = new FileOutputStream(file);
             Document doc = new Document();
             PdfWriter.getInstance(doc, archivo);

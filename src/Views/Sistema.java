@@ -3619,7 +3619,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
             },
             new String [] {
-                "ID PEDIDO", "ESTADO", "NÚMERO DE MESA"
+                "NÚMERO DE PEDIDO", "ESTADO", "NÚMERO DE MESA"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -4985,11 +4985,22 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
                     ventaSQL registro = new ventaSQL();
                     registro.registrar(venta);
-                    
+
                     PedidoSQL actualizarPedido = new PedidoSQL();
                     actualizarPedido.listar("");
 
                     registro.listar("");
+
+                    numFac.setText(String.valueOf(fac));
+                    rSMaterialButtonRectangle13.setEnabled(false);
+                    ComboBoxMesas.setEnabled(false);
+                    ComboBoxMesas.setSelectedIndex(0);
+                    rSMaterialButtonRectangle24.setEnabled(false);
+                    calculo.setEnabled(false);
+                    vender.setEnabled(false);
+                    borrar.setEnabled(false);
+                    cancelar.setEnabled(false);
+                    rSMaterialButtonRectangle12.setEnabled(true);
 
                 }
                 TstVentNvoPres = true;
@@ -5121,7 +5132,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 pedidos.GuardarPedido(mesa, tablePedidos);
                 PedidoSQL actualizarPedido = new PedidoSQL();
                 actualizarPedido.listar("");
-               
+
                 nuevoPedido.setEnabled(true);
                 numFac1.setText("PEDIDO");
                 registrarPedido.setEnabled(false);

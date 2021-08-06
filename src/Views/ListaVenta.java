@@ -13,6 +13,7 @@ import static Views.ListarClientes.nidCliente;
 import static Views.ListarClientes.nombreClienteVenta;
 import static Views.ListarClientes.telefonoCliente;
 import static Views.Pedidos.total;
+import static Views.Sistema.numFac;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -263,7 +264,7 @@ public class ListaVenta extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        reportePdf.pdfVenta(1);
+        reportePdf.pdfVenta(numFac.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
