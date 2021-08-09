@@ -47,7 +47,7 @@ public class controlPedido {
     }
 
     public DefaultTableModel ObtenerPedidosMesa(int idMesa) {
-        String titulos[] = {"IdPedido ", "Total"};
+        String titulos[] = {"Número de Pedido", "Total"};
         DefaultTableModel modelo = new DefaultTableModel(null, titulos);
 
         pedidosMesa = new ArrayList<Pedido>();
@@ -125,5 +125,4 @@ public class controlPedido {
     {
         return pedidoSQL.obtenerFact() + 1;
     }
-
 }
