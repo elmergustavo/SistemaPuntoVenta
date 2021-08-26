@@ -16,9 +16,8 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        this.setLocationRelativeTo(null);
         
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabel1, "src/Resources/password.png");
-        rsscalelabel.RSScaleLabel.setScaleLabel(jLabel2, "src/Resources/wave.png");
     }
 
     /**
@@ -30,28 +29,77 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        rSMetroTextFullPlaceHolderBeanInfo1 = new rojerusan.RSMetroTextFullPlaceHolderBeanInfo();
         jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        rSLabelImage2 = new rojerusan.RSLabelImage();
+        rSLabelImage1 = new rojerusan.RSLabelImage();
+        rSMTextFull1 = new rojeru_san.RSMTextFull();
+        rSMPassView1 = new rojeru_san.RSMPassView();
+        rSButtonRiple1 = new rojeru_san.RSButtonRiple();
+        rSButtonRiple2 = new rojeru_san.RSButtonRiple();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        rSButtonRiple3 = new rojeru_san.RSButtonRiple();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setUndecorated(true);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 550, 600));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 600));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 3, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Login");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 90, 180, 70));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/lbl-user.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 160, 190, 90));
+
+        rSLabelImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/password.png"))); // NOI18N
+        jPanel1.add(rSLabelImage2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 590, 600));
+
+        rSLabelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/wave.png"))); // NOI18N
+        jPanel1.add(rSLabelImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 600));
+
+        rSMTextFull1.setBackground(new java.awt.Color(255, 255, 255));
+        rSMTextFull1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSMTextFull1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(rSMTextFull1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 300, 290, -1));
+
+        rSMPassView1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(rSMPassView1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 290, -1));
+
+        rSButtonRiple1.setBorder(null);
+        rSButtonRiple1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/btn-minimizar.png"))); // NOI18N
+        jPanel1.add(rSButtonRiple1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 10, 40, -1));
+
+        rSButtonRiple2.setBorder(null);
+        rSButtonRiple2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/btn-cerrar.png"))); // NOI18N
+        rSButtonRiple2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonRiple2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(rSButtonRiple2, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 10, 40, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/lbl-pass.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 410, 40, 40));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/lbl-user1.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 300, 40, 40));
+
+        rSButtonRiple3.setBorder(null);
+        rSButtonRiple3.setText("Iniciar Sesión");
+        jPanel1.add(rSButtonRiple3, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 490, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1039, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1022, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -62,6 +110,14 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void rSMTextFull1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMTextFull1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSMTextFull1ActionPerformed
+
+    private void rSButtonRiple2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRiple2ActionPerformed
+        dispose();
+    }//GEN-LAST:event_rSButtonRiple2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -103,5 +159,13 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private rojeru_san.RSButtonRiple rSButtonRiple1;
+    private rojeru_san.RSButtonRiple rSButtonRiple2;
+    private rojeru_san.RSButtonRiple rSButtonRiple3;
+    private rojerusan.RSLabelImage rSLabelImage1;
+    private rojerusan.RSLabelImage rSLabelImage2;
+    private rojeru_san.RSMPassView rSMPassView1;
+    private rojeru_san.RSMTextFull rSMTextFull1;
+    private rojerusan.RSMetroTextFullPlaceHolderBeanInfo rSMetroTextFullPlaceHolderBeanInfo1;
     // End of variables declaration//GEN-END:variables
 }
