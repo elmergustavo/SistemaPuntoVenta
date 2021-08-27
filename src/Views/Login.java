@@ -62,6 +62,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(rSLabelImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 600));
 
         rSMTextFull1.setBackground(new java.awt.Color(255, 255, 255));
+        rSMTextFull1.setPlaceholder("Ingresar Usuario");
         rSMTextFull1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSMTextFull1ActionPerformed(evt);
@@ -70,6 +71,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(rSMTextFull1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 300, 290, -1));
 
         rSMPassView1.setBackground(new java.awt.Color(255, 255, 255));
+        rSMPassView1.setPlaceholder("Ingresar Contraseña");
         jPanel1.add(rSMPassView1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 290, -1));
 
         rSButtonRiple1.setBorder(null);
@@ -78,6 +80,7 @@ public class Login extends javax.swing.JFrame {
 
         rSButtonRiple2.setBorder(null);
         rSButtonRiple2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/btn-cerrar.png"))); // NOI18N
+        rSButtonRiple2.setToolTipText("Cerrar");
         rSButtonRiple2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSButtonRiple2ActionPerformed(evt);
@@ -93,7 +96,12 @@ public class Login extends javax.swing.JFrame {
 
         rSButtonRiple3.setBorder(null);
         rSButtonRiple3.setText("Iniciar Sesión");
-        jPanel1.add(rSButtonRiple3, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 490, -1, -1));
+        rSButtonRiple3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonRiple3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(rSButtonRiple3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 490, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -118,6 +126,13 @@ public class Login extends javax.swing.JFrame {
     private void rSButtonRiple2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRiple2ActionPerformed
         dispose();
     }//GEN-LAST:event_rSButtonRiple2ActionPerformed
+
+    private void rSButtonRiple3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRiple3ActionPerformed
+        Sistema sistema = new Sistema();
+       // sistema.setExtendedState(MAXIMIZED_BOTH);
+        sistema.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_rSButtonRiple3ActionPerformed
 
     /**
      * @param args the command line arguments

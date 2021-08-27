@@ -505,6 +505,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonClienteConfig = new javax.swing.JButton();
         ButtonClienteConfig1 = new javax.swing.JButton();
         rSLabelHora1 = new rojeru_san.RSLabelHora();
+        ButtonClienteConfig2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 102));
@@ -4259,6 +4260,17 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         rSLabelHora1.setForeground(new java.awt.Color(0, 52, 102));
         rSLabelHora1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
 
+        ButtonClienteConfig2.setBackground(new java.awt.Color(51, 51, 51));
+        ButtonClienteConfig2.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonClienteConfig2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/about.png"))); // NOI18N
+        ButtonClienteConfig2.setText("Cerrar sesión");
+        ButtonClienteConfig2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ButtonClienteConfig2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonClienteConfig2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
         jPanel22Layout.setHorizontalGroup(
@@ -4278,6 +4290,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addComponent(ButtonClienteConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52)
                 .addComponent(ButtonClienteConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(ButtonClienteConfig2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel22Layout.setVerticalGroup(
@@ -4290,7 +4304,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                         .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(ButtonClienteConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ButtonClienteConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                .addComponent(ButtonClienteConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(ButtonClienteConfig2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                             .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(ButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                 .addComponent(ButtonCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
@@ -5638,6 +5653,12 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         txtIdVenta.setText(tablaVentas.getValueAt(fila, 0).toString());
     }//GEN-LAST:event_tablaVentasMouseClicked
 
+    private void ButtonClienteConfig2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonClienteConfig2ActionPerformed
+        dispose();
+        Login login = new Login();
+        login.setVisible(true);
+    }//GEN-LAST:event_ButtonClienteConfig2ActionPerformed
+
     // </editor-fold>
     /**
      * @param args the command line arguments
@@ -5678,6 +5699,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JButton ButtonCliente;
     private javax.swing.JButton ButtonClienteConfig;
     private javax.swing.JButton ButtonClienteConfig1;
+    private javax.swing.JButton ButtonClienteConfig2;
     private rojerusan.RSMaterialButtonRectangle ButtonCliente_Agregar;
     private rojerusan.RSMaterialButtonRectangle ButtonCliente_Agregar1;
     private rojerusan.RSMaterialButtonRectangle ButtonCliente_Cancelar;

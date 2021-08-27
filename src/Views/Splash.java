@@ -146,9 +146,14 @@ public class Splash extends javax.swing.JFrame implements Runnable{
                 Thread.sleep(10000);
                 tiempo = null;
                 this.dispose();
-                Sistema sistema = new Sistema();
-                sistema.setExtendedState(MAXIMIZED_BOTH);
-                sistema.setVisible(true);
+                
+                
+//                Sistema sistema = new Sistema();
+//                sistema.setExtendedState(MAXIMIZED_BOTH);
+//                sistema.setVisible(true);
+                Login login = new Login();
+                login.setVisible(true);
+                
             } catch (InterruptedException ex) {
                 Logger.getLogger(Splash.class.getName()).log(Level.SEVERE, null, ex);
             }

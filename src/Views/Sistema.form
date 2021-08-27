@@ -6769,6 +6769,8 @@
                   <Component id="ButtonClienteConfig" min="-2" pref="121" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                   <Component id="ButtonClienteConfig1" min="-2" pref="132" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="ButtonClienteConfig2" min="-2" pref="160" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -6784,6 +6786,7 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="ButtonClienteConfig" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                                   <Component id="ButtonClienteConfig1" alignment="3" pref="0" max="32767" attributes="0"/>
+                                  <Component id="ButtonClienteConfig2" alignment="3" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="ButtonInventario" alignment="3" pref="0" max="32767" attributes="0"/>
@@ -6935,6 +6938,26 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="ButtonClienteConfig2">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="33" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Resources/about.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Cerrar sesi&#xf3;n"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Default Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonClienteConfig2ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
