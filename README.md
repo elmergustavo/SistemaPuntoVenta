@@ -41,7 +41,7 @@ Rosario Gómez
 
 
 <!--teamend-->
-
+![](https://github.com/elmergustavo/SistemaPuntoVenta/blob/master/Capturas/login.PNG)
 ![](https://github.com/elmergustavo/SistemaPuntoVenta/blob/master/Capturas/1.PNG)
 ![](https://github.com/elmergustavo/SistemaPuntoVenta/blob/master/Capturas/2.PNG)
 ![](https://github.com/elmergustavo/SistemaPuntoVenta/blob/master/Capturas/3.PNG)
