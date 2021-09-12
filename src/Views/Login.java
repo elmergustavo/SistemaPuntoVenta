@@ -17,7 +17,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
+
     }
 
     /**
@@ -76,6 +76,11 @@ public class Login extends javax.swing.JFrame {
 
         rSButtonRiple1.setBorder(null);
         rSButtonRiple1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/btn-minimizar.png"))); // NOI18N
+        rSButtonRiple1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonRiple1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(rSButtonRiple1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 10, 40, -1));
 
         rSButtonRiple2.setBorder(null);
@@ -124,15 +129,19 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_rSMTextFull1ActionPerformed
 
     private void rSButtonRiple2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRiple2ActionPerformed
-        dispose();
+        System.exit(0);
     }//GEN-LAST:event_rSButtonRiple2ActionPerformed
 
     private void rSButtonRiple3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRiple3ActionPerformed
         Sistema sistema = new Sistema();
-       // sistema.setExtendedState(MAXIMIZED_BOTH);
+        // sistema.setExtendedState(MAXIMIZED_BOTH);
         sistema.setVisible(true);
         dispose();
     }//GEN-LAST:event_rSButtonRiple3ActionPerformed
+
+    private void rSButtonRiple1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRiple1ActionPerformed
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_rSButtonRiple1ActionPerformed
 
     /**
      * @param args the command line arguments
