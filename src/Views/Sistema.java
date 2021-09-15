@@ -62,7 +62,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         this.setExtendedState(MAXIMIZED_BOTH);
         JTextField categoria = new JTextField();
         categoria.setText("");
-        TabbedPanePrincipal.setSelectedIndex(4);
+        TabbedPanePrincipal.setSelectedIndex(6);
         //rsscalelabel.RSScaleLabel.setScaleLabel(jLabel6, "src/Resources/logo.png");
         //   TextField_BuscarVentas.setEditable(false);
 
@@ -370,7 +370,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         descuento = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         dirCotizacion = new javax.swing.JTextField();
-        jPanel19 = new javax.swing.JPanel();
         jPanel44 = new javax.swing.JPanel();
         jPanel20 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
@@ -497,8 +496,18 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel69 = new javax.swing.JPanel();
         mesa10 = new javax.swing.JLabel();
         rSMaterialButtonRectangle23 = new rojerusan.RSMaterialButtonRectangle();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        jPanel48 = new javax.swing.JPanel();
+        jPanel19 = new javax.swing.JPanel();
+        rSTextFieldIconDos1 = new rsmaterialcomponents.RSTextFieldIconDos();
+        rSTextFieldIconUno1 = new rsmaterialcomponents.RSTextFieldIconUno();
+        rSTextFieldIconDos2 = new rsmaterialcomponents.RSTextFieldIconDos();
+        rSButtonRound1 = new rojerusan.RSButtonRound();
+        rSButtonRound2 = new rojerusan.RSButtonRound();
+        rSButtonRound4 = new rojerusan.RSButtonRound();
+        rSButtonRound5 = new rojerusan.RSButtonRound();
+        rSLabelImage1 = new rojerusan.RSLabelImage();
         jPanel22 = new javax.swing.JPanel();
-        BtnVentas = new javax.swing.JButton();
         ButtonCliente = new javax.swing.JButton();
         ButtonInventario = new javax.swing.JButton();
         ButtonCotizacion = new javax.swing.JButton();
@@ -506,6 +515,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonClienteConfig1 = new javax.swing.JButton();
         rSLabelHora1 = new rojeru_san.RSLabelHora();
         ButtonClienteConfig2 = new javax.swing.JButton();
+        BtnVentas = new rojerusan.RSButtonRound();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 102));
@@ -537,7 +547,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         TabbedPanePrincipal.setBackground(new java.awt.Color(255, 255, 255));
         TabbedPanePrincipal.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
-        TabbedPanePrincipal.setEnabled(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1043,7 +1052,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1278, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 898, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1084,7 +1093,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1266, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 886, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
@@ -1555,7 +1564,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rSMaterialButtonRectangle9, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rSMaterialButtonRectangle8, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
@@ -1688,7 +1697,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rSMaterialButtonRectangle10, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rSMaterialButtonRectangle11, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         jTabbedPaneInventario1.addTab("Categoria", jPanel23);
@@ -1882,14 +1891,14 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel35Layout.createSequentialGroup()
-                .addContainerGap(405, Short.MAX_VALUE)
+                .addContainerGap(319, Short.MAX_VALUE)
                 .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel35Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(240, Short.MAX_VALUE)))
+                    .addContainerGap(154, Short.MAX_VALUE)))
         );
 
         jTabbedPaneInventario1.addTab("Platillos", jPanel35);
@@ -1915,7 +1924,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel24Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1248, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel24Layout.setVerticalGroup(
@@ -1959,7 +1968,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel33Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1248, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel33Layout.setVerticalGroup(
@@ -2003,7 +2012,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel34Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 1248, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel34Layout.setVerticalGroup(
@@ -2113,8 +2122,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                         .addComponent(btnGenerarReportePlatillos)
                         .addGap(37, 37, 37)
                         .addComponent(btnGenerarReporteSuministrosPDF1)
-                        .addGap(0, 789, Short.MAX_VALUE))
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 1248, Short.MAX_VALUE))
+                        .addGap(0, 409, Short.MAX_VALUE))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel36Layout.setVerticalGroup(
@@ -2445,7 +2454,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addComponent(rSMaterialButtonRectangle28, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(busca2)
-                .addContainerGap(903, Short.MAX_VALUE))
+                .addContainerGap(523, Short.MAX_VALUE))
         );
         jPanel73Layout.setVerticalGroup(
             jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2641,7 +2650,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                     .addGroup(jPanel18Layout.createSequentialGroup()
                         .addComponent(jPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 1084, Short.MAX_VALUE))
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE))
                     .addComponent(jPanel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -2662,28 +2671,15 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         jTabbedPane2.addTab("Nueva cotizacion ", jPanel18);
 
-        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
-        jPanel19.setLayout(jPanel19Layout);
-        jPanel19Layout.setHorizontalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1677, Short.MAX_VALUE)
-        );
-        jPanel19Layout.setVerticalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 549, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("Modificar Cotizacion ", jPanel19);
-
         javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
         jPanel44.setLayout(jPanel44Layout);
         jPanel44Layout.setHorizontalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1677, Short.MAX_VALUE)
+            .addGap(0, 1297, Short.MAX_VALUE)
         );
         jPanel44Layout.setVerticalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 549, Short.MAX_VALUE)
+            .addGap(0, 463, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Buscar Cotizacion ", jPanel44);
@@ -2946,7 +2942,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addContainerGap()
                 .addComponent(jPanel54, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 1310, Short.MAX_VALUE))
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 930, Short.MAX_VALUE))
         );
         jPanel52Layout.setVerticalGroup(
             jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2955,7 +2951,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addGroup(jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel54, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel51Layout = new javax.swing.GroupLayout(jPanel51);
@@ -3295,7 +3291,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                     .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel39, javax.swing.GroupLayout.DEFAULT_SIZE, 784, Short.MAX_VALUE)
+                    .addComponent(jPanel39, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
                     .addComponent(jPanel38, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -3313,7 +3309,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                     .addComponent(jPanel37, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE))
                 .addGap(14, 14, 14)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel39, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
+                    .addComponent(jPanel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jPanel40, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -3576,7 +3572,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                                 .addGap(50, 50, 50)
                                 .addComponent(numFac1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(codigoL10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 630, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 250, Short.MAX_VALUE)
                         .addComponent(busca1)
                         .addGap(18, 18, 18))
                     .addGroup(jPanel63Layout.createSequentialGroup()
@@ -3637,7 +3633,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addComponent(jPanel63, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
@@ -3697,7 +3693,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addContainerGap()
                 .addGroup(jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 1198, Short.MAX_VALUE))
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -3712,7 +3708,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 441, Short.MAX_VALUE))
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("Pedidos", jPanel56);
@@ -4124,7 +4120,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel57Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jPanel69, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(534, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
         jPanel57Layout.setVerticalGroup(
             jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4188,19 +4184,126 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         TabbedPanePrincipal.addTab("Pedido", jPanel31);
 
-        jPanel22.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane12.setForeground(new java.awt.Color(255, 255, 255));
+        jScrollPane12.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane12.setAlignmentX(2.0F);
+        jScrollPane12.setAlignmentY(2.0F);
+        jScrollPane12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        BtnVentas.setBackground(new java.awt.Color(51, 51, 51));
-        BtnVentas.setForeground(new java.awt.Color(255, 255, 255));
-        BtnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/shopping_cart.png"))); // NOI18N
-        BtnVentas.setText("Ventas");
-        BtnVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BtnVentas.addActionListener(new java.awt.event.ActionListener() {
+        jPanel48.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel19.setBackground(new java.awt.Color(34, 102, 145));
+        jPanel19.setForeground(new java.awt.Color(102, 102, 255));
+
+        rSTextFieldIconDos1.setText("rSTextFieldIconDos1");
+
+        rSTextFieldIconUno1.setText("rSTextFieldIconUno1");
+
+        rSTextFieldIconDos2.setText("rSTextFieldIconDos2");
+
+        rSButtonRound1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        rSButtonRound1.setText("Inventario");
+        rSButtonRound1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnVentasActionPerformed(evt);
+                rSButtonRound1ActionPerformed(evt);
             }
         });
+
+        rSButtonRound2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/people.png"))); // NOI18N
+        rSButtonRound2.setText("Clientes");
+        rSButtonRound2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonRound2ActionPerformed(evt);
+            }
+        });
+
+        rSButtonRound4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Reporte.png"))); // NOI18N
+        rSButtonRound4.setText("Reportes");
+
+        rSButtonRound5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/shopping_cart.png"))); // NOI18N
+        rSButtonRound5.setText("Ventas");
+        rSButtonRound5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonRound5ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(rSTextFieldIconDos1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                            .addComponent(rSTextFieldIconUno1, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                            .addComponent(rSTextFieldIconDos2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(rSButtonRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(rSButtonRound2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rSButtonRound4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel19Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(rSButtonRound5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rSTextFieldIconDos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(rSTextFieldIconUno1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(rSTextFieldIconDos2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(rSButtonRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(rSButtonRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(rSButtonRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel19Layout.createSequentialGroup()
+                    .addGap(314, 314, 314)
+                    .addComponent(rSButtonRound5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(322, Short.MAX_VALUE)))
+        );
+
+        rSLabelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/b.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel48Layout = new javax.swing.GroupLayout(jPanel48);
+        jPanel48.setLayout(jPanel48Layout);
+        jPanel48Layout.setHorizontalGroup(
+            jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel48Layout.createSequentialGroup()
+                .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(rSLabelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(581, Short.MAX_VALUE))
+        );
+        jPanel48Layout.setVerticalGroup(
+            jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel48Layout.createSequentialGroup()
+                .addGroup(jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel48Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(rSLabelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 221, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+
+        jScrollPane12.setViewportView(jPanel48);
+
+        TabbedPanePrincipal.addTab("tab7", jScrollPane12);
+
+        jPanel22.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         ButtonCliente.setBackground(new java.awt.Color(51, 51, 51));
         ButtonCliente.setForeground(new java.awt.Color(255, 255, 255));
@@ -4263,11 +4366,19 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonClienteConfig2.setBackground(new java.awt.Color(51, 51, 51));
         ButtonClienteConfig2.setForeground(new java.awt.Color(255, 255, 255));
         ButtonClienteConfig2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/about.png"))); // NOI18N
-        ButtonClienteConfig2.setText("Cerrar sesión");
+        ButtonClienteConfig2.setText("Dashboard");
         ButtonClienteConfig2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         ButtonClienteConfig2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonClienteConfig2ActionPerformed(evt);
+            }
+        });
+
+        BtnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/shopping_cart.png"))); // NOI18N
+        BtnVentas.setText("Ventas");
+        BtnVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVentasActionPerformed(evt);
             }
         });
 
@@ -4278,9 +4389,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(rSLabelHora1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BtnVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addComponent(BtnVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(ButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4297,22 +4408,21 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
+                .addGap(0, 5, Short.MAX_VALUE)
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(rSLabelHora1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel22Layout.createSequentialGroup()
                         .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(ButtonClienteConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ButtonClienteConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(ButtonClienteConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, Short.MAX_VALUE)
                                 .addComponent(ButtonClienteConfig2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                             .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(ButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                 .addComponent(ButtonCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel22Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(BtnVentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(ButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(ButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(BtnVentas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())))
         );
 
@@ -4323,7 +4433,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TabbedPanePrincipal)
+                    .addComponent(TabbedPanePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -4335,60 +4445,16 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addGap(1, 1, 1)
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TabbedPanePrincipal)
-                .addContainerGap())
+                .addComponent(TabbedPanePrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    // <editor-fold defaultstate="collapsed" desc="CODIGO DE CLIENTE">
-    // private ClientesVM cliente;
-    private void ButtonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonClienteActionPerformed
-        TabbedPanePrincipal.setSelectedIndex(0);
-        BtnVentas.setEnabled(true);
-        ButtonCliente.setEnabled(false);
-        ButtonInventario.setEnabled(true);
-        ButtonCotizacion.setEnabled(true);
-        //ButtonAdministracion.setEnabled(true);
-        ButtonClienteConfig.setEnabled(true);
-        ArrayList<JLabel> label = new ArrayList();
-        label.add(LabelCliente_Nid);
-        label.add(LabelCliente_Nombre);
-        label.add(LabelCliente_Apellido);
-        label.add(LabelCliente_Email);
-        label.add(LabelCliente_Telefono);
-        label.add(LabelCliente_Direccion);
-        label.add(LabelImage_Cliente);
-        label.add(LabelCliente_Paginas);
-        ArrayList<JTextField> textField = new ArrayList();
-        textField.add(TextFieldCliente_Nid);
-        textField.add(TextFieldCliente_Nombre);
-        textField.add(TextFieldCliente_Apellido);
-        textField.add(TextFieldCliente_Email);
-        textField.add(TextFieldCliente_Telefono);
-        textField.add(TextFieldCliente_Direccion);
-        Object[] objects = {
-            CheckBoxCliente_Credito,
-            Table_Clientes,
-            SpinnerPaginas_Clientes,
-            TableCliente_Report,};
-        cliente.componente(objects, label, textField);
-    }//GEN-LAST:event_ButtonClienteActionPerformed
-
-    private void BtnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVentasActionPerformed
-        TabbedPanePrincipal.setSelectedIndex(4);
-        ButtonCliente.setEnabled(true);
-        ButtonInventario.setEnabled(true);
-        ButtonCotizacion.setEnabled(true);
-        //ButtonAdministracion.setEnabled(true);
-        ButtonClienteConfig.setEnabled(true);
-    }//GEN-LAST:event_BtnVentasActionPerformed
-
     private void ButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInventarioActionPerformed
         TabbedPanePrincipal.setSelectedIndex(1);
         BtnVentas.setEnabled(true);
-        ButtonCliente.setEnabled(true);
+       // rSButtonRound6.setEnabled(true);
         ButtonInventario.setEnabled(false);
         ButtonCotizacion.setEnabled(true);
         // ButtonAdministracion.setEnabled(true);
@@ -4449,7 +4515,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private void ButtonCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCotizacionActionPerformed
         TabbedPanePrincipal.setSelectedIndex(2);
         BtnVentas.setEnabled(true);
-        ButtonCliente.setEnabled(true);
+       // rSButtonRound6.setEnabled(true);
         ButtonInventario.setEnabled(true);
         ButtonCotizacion.setEnabled(false);
         //   ButtonAdministracion.setEnabled(true);
@@ -4459,7 +4525,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
     private void ButtonClienteConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonClienteConfigActionPerformed
         BtnVentas.setEnabled(true);
-        ButtonCliente.setEnabled(true);
+        //rSButtonRound6.setEnabled(true);
         ButtonInventario.setEnabled(true);
         ButtonCotizacion.setEnabled(true);
         //   ButtonAdministracion.setEnabled(true);
@@ -5654,10 +5720,75 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_tablaVentasMouseClicked
 
     private void ButtonClienteConfig2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonClienteConfig2ActionPerformed
-        dispose();
-        Login login = new Login();
-        login.setVisible(true);
+         TabbedPanePrincipal.setSelectedIndex(6);
+         InicializarClientes();
+//        dispose();
+//        Login login = new Login();
+//        login.setVisible(true);
     }//GEN-LAST:event_ButtonClienteConfig2ActionPerformed
+
+    
+    
+    private void InicializarClientes(){
+        BtnVentas.setEnabled(true);
+        ButtonCliente.setEnabled(false);
+        ButtonInventario.setEnabled(true);
+        ButtonCotizacion.setEnabled(true);
+        //ButtonAdministracion.setEnabled(true);
+        ButtonClienteConfig.setEnabled(true);
+        ArrayList<JLabel> label = new ArrayList();
+        label.add(LabelCliente_Nid);
+        label.add(LabelCliente_Nombre);
+        label.add(LabelCliente_Apellido);
+        label.add(LabelCliente_Email);
+        label.add(LabelCliente_Telefono);
+        label.add(LabelCliente_Direccion);
+        label.add(LabelImage_Cliente);
+        label.add(LabelCliente_Paginas);
+        ArrayList<JTextField> textField = new ArrayList();
+        textField.add(TextFieldCliente_Nid);
+        textField.add(TextFieldCliente_Nombre);
+        textField.add(TextFieldCliente_Apellido);
+        textField.add(TextFieldCliente_Email);
+        textField.add(TextFieldCliente_Telefono);
+        textField.add(TextFieldCliente_Direccion);
+        Object[] objects = {
+            CheckBoxCliente_Credito,
+            Table_Clientes,
+            SpinnerPaginas_Clientes,
+            TableCliente_Report,};
+        cliente.componente(objects, label, textField);
+    }
+    
+    private void rSButtonRound1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRound1ActionPerformed
+        TabbedPanePrincipal.setSelectedIndex(1);
+    }//GEN-LAST:event_rSButtonRound1ActionPerformed
+
+    private void BtnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVentasActionPerformed
+        TabbedPanePrincipal.setSelectedIndex(4);
+        TabbedPanePrincipal.setSelectedIndex(4);
+        ButtonCliente.setEnabled(true);
+        ButtonInventario.setEnabled(true);
+        ButtonCotizacion.setEnabled(true);
+        //ButtonAdministracion.setEnabled(true);
+        ButtonClienteConfig.setEnabled(true);
+    }//GEN-LAST:event_BtnVentasActionPerformed
+
+    private void rSButtonRound2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRound2ActionPerformed
+        TabbedPanePrincipal.setSelectedIndex(0);
+        InicializarClientes();
+    }//GEN-LAST:event_rSButtonRound2ActionPerformed
+
+    // <editor-fold defaultstate="collapsed" desc="CODIGO DE CLIENTE">
+    // private ClientesVM cliente;
+    private void ButtonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonClienteActionPerformed
+        TabbedPanePrincipal.setSelectedIndex(0);
+        
+    }//GEN-LAST:event_ButtonClienteActionPerformed
+
+    private void rSButtonRound5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRound5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonRound5ActionPerformed
 
     // </editor-fold>
     /**
@@ -5695,7 +5826,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnVentas;
+    private rojerusan.RSButtonRound BtnVentas;
     private javax.swing.JButton ButtonCliente;
     private javax.swing.JButton ButtonClienteConfig;
     private javax.swing.JButton ButtonClienteConfig1;
@@ -5891,6 +6022,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JPanel jPanel45;
     private javax.swing.JPanel jPanel46;
     private javax.swing.JPanel jPanel47;
+    private javax.swing.JPanel jPanel48;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel51;
     private javax.swing.JPanel jPanel52;
@@ -5921,6 +6053,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -5968,10 +6101,15 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     public static app.bolivia.swing.JCTextField numFac1;
     public static javax.swing.JTextField porcentaje;
     private app.bolivia.swing.JCTextField precio;
+    private rojerusan.RSButtonRound rSButtonRound1;
+    private rojerusan.RSButtonRound rSButtonRound2;
+    private rojerusan.RSButtonRound rSButtonRound4;
+    private rojerusan.RSButtonRound rSButtonRound5;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelFecha rSLabelFecha2;
     private rojeru_san.RSLabelFecha rSLabelFecha3;
     public static rojeru_san.RSLabelHora rSLabelHora1;
+    private rojerusan.RSLabelImage rSLabelImage1;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle10;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle11;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle12;
@@ -5999,6 +6137,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle8;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle9;
     private rojerusan.RSTableMetro rSTableMetro3;
+    private rsmaterialcomponents.RSTextFieldIconDos rSTextFieldIconDos1;
+    private rsmaterialcomponents.RSTextFieldIconDos rSTextFieldIconDos2;
+    private rsmaterialcomponents.RSTextFieldIconUno rSTextFieldIconUno1;
     public static app.bolivia.swing.JCTextField recibi;
     private javax.swing.JButton registrar;
     private javax.swing.JButton registrar1;
