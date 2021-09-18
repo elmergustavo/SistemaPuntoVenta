@@ -113,6 +113,9 @@
             </Container>
             <Component class="rsmaterialcomponents.RSButtonMaterialIconDos" name="rSButtonMaterialIconDos1">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="91" green="66" red="22" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Establecer Fondo"/>
               </Properties>
               <Events>
@@ -121,6 +124,9 @@
             </Component>
             <Component class="rsmaterialcomponents.RSButtonMaterialIconDos" name="rSButtonMaterialIconDos2">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="91" green="66" red="22" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="ESTABLECER COLOR BARRA"/>
               </Properties>
               <Events>

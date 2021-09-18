@@ -66,6 +66,7 @@ public class Dasboard extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        rSButtonMaterialIconDos1.setBackground(new java.awt.Color(34, 102, 145));
         rSButtonMaterialIconDos1.setText("Establecer Fondo");
         rSButtonMaterialIconDos1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,6 +74,7 @@ public class Dasboard extends javax.swing.JPanel {
             }
         });
 
+        rSButtonMaterialIconDos2.setBackground(new java.awt.Color(34, 102, 145));
         rSButtonMaterialIconDos2.setText("ESTABLECER COLOR BARRA");
         rSButtonMaterialIconDos2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

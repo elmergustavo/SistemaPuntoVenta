@@ -1751,7 +1751,7 @@
                                       <Component id="rSMaterialButtonRectangle9" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                                       <Component id="rSMaterialButtonRectangle8" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="49" max="32767" attributes="0"/>
+                                  <EmptySpace pref="51" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2126,7 +2126,7 @@
                                   <Component id="rSMaterialButtonRectangle10" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                                   <Component id="rSMaterialButtonRectangle11" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="31" max="32767" attributes="0"/>
+                              <EmptySpace pref="33" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2255,7 +2255,7 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="318" max="32767" attributes="0"/>
+                              <EmptySpace pref="320" max="32767" attributes="0"/>
                               <Component id="jPanel42" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -2263,7 +2263,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jPanel41" min="-2" pref="297" max="-2" attributes="0"/>
-                                  <EmptySpace pref="153" max="32767" attributes="0"/>
+                                  <EmptySpace pref="155" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -3954,7 +3954,7 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="462" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="464" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
@@ -4068,7 +4068,7 @@
                                       <Component id="jScrollPane8" min="-2" pref="417" max="-2" attributes="0"/>
                                       <Component id="jPanel54" min="-2" pref="417" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="38" max="32767" attributes="0"/>
+                                  <EmptySpace pref="40" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -5580,7 +5580,7 @@
                                   <Component id="jPanel63" min="-2" pref="99" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jScrollPane9" min="-2" pref="299" max="-2" attributes="0"/>
-                                  <EmptySpace pref="40" max="32767" attributes="0"/>
+                                  <EmptySpace pref="42" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -5870,7 +5870,7 @@
                                   </Group>
                                   <Component id="jLabel22" pref="441" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="23" max="32767" attributes="0"/>
+                              <EmptySpace pref="25" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -6675,7 +6675,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane12" pref="560" max="32767" attributes="0"/>
+                  <Component id="jScrollPane12" pref="562" max="32767" attributes="0"/>
                   <Component id="rSPanelsSlider2" alignment="0" pref="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
@@ -6740,6 +6740,9 @@
                     </Component>
                     <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno2">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="91" green="66" red="22" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Resources/Inventario.png"/>
                         </Property>
@@ -6763,6 +6766,9 @@
                     </Component>
                     <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno3">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="91" green="66" red="22" type="rgb"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="     DASBOARD"/>
                         <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
                           <Value id="DASHBOARD"/>
@@ -6779,6 +6785,9 @@
                     </Component>
                     <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno4">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="91" green="66" red="22" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Resources/Inventario.png"/>
                         </Property>
@@ -6799,6 +6808,9 @@
                     </Component>
                     <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno5">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="91" green="66" red="22" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Resources/Inventario.png"/>
                         </Property>
@@ -6819,6 +6831,9 @@
                     </Component>
                     <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno6">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="91" green="66" red="22" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Resources/Inventario.png"/>
                         </Property>
@@ -6839,6 +6854,9 @@
                     </Component>
                     <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno7">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="91" green="66" red="22" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Resources/Inventario.png"/>
                         </Property>
@@ -6861,6 +6879,9 @@
                     </Component>
                     <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno8">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="91" green="66" red="22" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Resources/Inventario.png"/>
                         </Property>
@@ -6881,6 +6902,9 @@
                     </Component>
                     <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno9">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="91" green="66" red="22" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Resources/Inventario.png"/>
                         </Property>
@@ -6901,6 +6925,9 @@
                     </Component>
                     <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno10">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="91" green="66" red="22" type="rgb"/>
+                        </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Resources/Inventario.png"/>
                         </Property>
@@ -6926,6 +6953,13 @@
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="0" y="500" width="250" height="10"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JSeparator" name="jSeparator2">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="0" y="148" width="250" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -6978,11 +7012,9 @@
                   <Component id="ButtonCotizacion" min="-2" pref="144" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   <Component id="ButtonClienteConfig" min="-2" pref="121" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                  <Component id="ButtonClienteConfig1" min="-2" pref="132" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="ButtonClienteConfig2" min="-2" pref="160" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
+                  <Component id="ButtonClienteConfig2" min="-2" pref="160" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -6996,7 +7028,6 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="ButtonClienteConfig" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Component id="ButtonClienteConfig1" alignment="3" pref="41" max="32767" attributes="0"/>
                                   <Component id="ButtonClienteConfig2" alignment="3" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -7094,26 +7125,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonClienteConfigActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="ButtonClienteConfig1">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="33" red="33" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Resources/about.png"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="About"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonClienteConfig1ActionPerformed"/>
           </Events>
         </Component>
         <Component class="rojeru_san.RSLabelHora" name="rSLabelHora1">
