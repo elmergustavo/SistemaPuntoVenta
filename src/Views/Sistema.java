@@ -20,6 +20,8 @@ import Models.ventaSQL;
 import java.sql.Statement;
 import Reportes.Excel;
 import Reportes.Pdf;
+import SaveColor.ReadColor;
+import SaveColor.SaveColor;
 import static Views.ListarClientes.apellidoCliente;
 import static Views.ListarClientes.nidCliente;
 import static Views.ListarClientes.nombreClienteVenta;
@@ -59,6 +61,24 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     public Sistema() {
 
         initComponents();
+        
+        
+//        if(ReadColor.colorFondo.exists()){
+//            jPanel19.setBackground(ReadColor.leerColorFondo());
+//        }
+//        
+//        if(ReadColor.colorBarra.exists()){
+//            jPanel1.setBackground(ReadColor.leerColorBarra());
+//        }
+        
+//        if(ReadColor.colorTexto.exists()){
+//            texto.setForeground(ReadColor.leerColorTexto());
+//        }
+        
+        
+        
+        
+        
         this.setExtendedState(MAXIMIZED_BOTH);
         JTextField categoria = new JTextField();
         categoria.setText("");
@@ -157,7 +177,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanel1Principal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         TabbedPanePrincipal = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
@@ -496,15 +516,20 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel49 = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
         jPanel19 = new javax.swing.JPanel();
-        rSPanelCircleImage1 = new rojerusan.RSPanelCircleImage();
-        rSPasswordIconDos1 = new rsmaterialcomponents.RSPasswordIconDos();
-        rSPasswordIconDos2 = new rsmaterialcomponents.RSPasswordIconDos();
-        rSPasswordIconUno1 = new rsmaterialcomponents.RSPasswordIconUno();
-        rSPasswordTextPlaceHolder1 = new rojerusan.RSPasswordTextPlaceHolder();
-        rSMetroTextPassPlaceHolder1 = new rojerusan.RSMetroTextPassPlaceHolder();
-        rSMetroTextPassPlaceHolder2 = new rojerusan.RSMetroTextPassPlaceHolder();
-        rSPanelsSlider1 = new rojerusan.RSPanelsSlider();
-        prueba22 = new Views.Prueba2();
+        rSLabelCircleImage1 = new rojerusan.RSLabelCircleImage();
+        jLabel11 = new javax.swing.JLabel();
+        rSButtonMaterialIconUno2 = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        rSButtonMaterialIconUno3 = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        rSButtonMaterialIconUno4 = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        rSButtonMaterialIconUno5 = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        rSButtonMaterialIconUno6 = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        rSButtonMaterialIconUno7 = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        rSButtonMaterialIconUno8 = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        rSButtonMaterialIconUno9 = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        rSButtonMaterialIconUno10 = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        jSeparator1 = new javax.swing.JSeparator();
+        rSPanelsSlider2 = new rojerusan.RSPanelsSlider();
+        dasboard2 = new Views.Dasboard();
         jPanel22 = new javax.swing.JPanel();
         ButtonCliente = new javax.swing.JButton();
         ButtonInventario = new javax.swing.JButton();
@@ -518,26 +543,26 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 102));
 
-        jPanel1.setBackground(new java.awt.Color(34, 102, 145));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1Principal.setBackground(new java.awt.Color(34, 102, 145));
+        jPanel1Principal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel1.setFont(new java.awt.Font("Cooper Black", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Sistema punto de ventas");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1PrincipalLayout = new javax.swing.GroupLayout(jPanel1Principal);
+        jPanel1Principal.setLayout(jPanel1PrincipalLayout);
+        jPanel1PrincipalLayout.setHorizontalGroup(
+            jPanel1PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1PrincipalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        jPanel1PrincipalLayout.setVerticalGroup(
+            jPanel1PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1PrincipalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1562,7 +1587,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rSMaterialButtonRectangle9, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rSMaterialButtonRectangle8, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
@@ -1695,7 +1720,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rSMaterialButtonRectangle10, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rSMaterialButtonRectangle11, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         jTabbedPaneInventario1.addTab("Categoria", jPanel23);
@@ -1889,14 +1914,14 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel35Layout.createSequentialGroup()
-                .addContainerGap(319, Short.MAX_VALUE)
+                .addContainerGap(318, Short.MAX_VALUE)
                 .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel35Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(154, Short.MAX_VALUE)))
+                    .addContainerGap(153, Short.MAX_VALUE)))
         );
 
         jTabbedPaneInventario1.addTab("Platillos", jPanel35);
@@ -2677,7 +2702,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         );
         jPanel44Layout.setVerticalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
+            .addGap(0, 462, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Buscar Cotizacion ", jPanel44);
@@ -2917,7 +2942,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addGroup(jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel54, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel51Layout = new javax.swing.GroupLayout(jPanel51);
@@ -3595,7 +3620,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addComponent(jPanel63, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
@@ -3670,7 +3695,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 441, Short.MAX_VALUE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("Pedidos", jPanel56);
@@ -4150,101 +4175,118 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         jScrollPane12.setBackground(new java.awt.Color(102, 102, 255));
         jScrollPane12.setBorder(null);
+        jScrollPane12.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        jPanel19.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel19.setBackground(new java.awt.Color(34, 102, 145));
+        jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout rSPanelCircleImage1Layout = new javax.swing.GroupLayout(rSPanelCircleImage1);
-        rSPanelCircleImage1.setLayout(rSPanelCircleImage1Layout);
-        rSPanelCircleImage1Layout.setHorizontalGroup(
-            rSPanelCircleImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
-        );
-        rSPanelCircleImage1Layout.setVerticalGroup(
-            rSPanelCircleImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
-        );
+        rSLabelCircleImage1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rSLabelCircleImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/xd (2).png"))); // NOI18N
+        jPanel19.add(rSLabelCircleImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 6, 106, 110));
 
-        rSPasswordIconDos1.setText("rSPasswordIconDos1");
+        jLabel11.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Usuario");
+        jPanel19.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 113, 238, 38));
 
-        rSPasswordIconDos2.setText("rSPasswordIconDos2");
+        rSButtonMaterialIconUno2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        rSButtonMaterialIconUno2.setText("     SALIR");
+        rSButtonMaterialIconUno2.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
+        rSButtonMaterialIconUno2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SETTINGS_POWER);
+        rSButtonMaterialIconUno2.setInheritsPopupMenu(true);
+        rSButtonMaterialIconUno2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonMaterialIconUno2ActionPerformed(evt);
+            }
+        });
+        jPanel19.add(rSButtonMaterialIconUno2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 250, 40));
 
-        rSPasswordIconUno1.setText("rSPasswordIconUno1");
+        rSButtonMaterialIconUno3.setText("     DASBOARD");
+        rSButtonMaterialIconUno3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.DASHBOARD);
+        rSButtonMaterialIconUno3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonMaterialIconUno3ActionPerformed(evt);
+            }
+        });
+        jPanel19.add(rSButtonMaterialIconUno3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 250, 40));
 
-        rSPasswordTextPlaceHolder1.setText("rSPasswordTextPlaceHolder1");
+        rSButtonMaterialIconUno4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        rSButtonMaterialIconUno4.setText("     VENTAS");
+        rSButtonMaterialIconUno4.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
+        rSButtonMaterialIconUno4.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ASSESSMENT);
+        rSButtonMaterialIconUno4.setInheritsPopupMenu(true);
+        jPanel19.add(rSButtonMaterialIconUno4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 250, 40));
 
-        rSMetroTextPassPlaceHolder1.setText("rSMetroTextPassPlaceHolder1");
+        rSButtonMaterialIconUno5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        rSButtonMaterialIconUno5.setText("     PEDIDOS");
+        rSButtonMaterialIconUno5.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
+        rSButtonMaterialIconUno5.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PLAYLIST_ADD_CHECK);
+        rSButtonMaterialIconUno5.setInheritsPopupMenu(true);
+        jPanel19.add(rSButtonMaterialIconUno5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 250, 40));
 
-        rSMetroTextPassPlaceHolder2.setText("rSMetroTextPassPlaceHolder1");
+        rSButtonMaterialIconUno6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        rSButtonMaterialIconUno6.setText("     COTIZACIONES");
+        rSButtonMaterialIconUno6.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
+        rSButtonMaterialIconUno6.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        rSButtonMaterialIconUno6.setInheritsPopupMenu(true);
+        jPanel19.add(rSButtonMaterialIconUno6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 250, 40));
 
-        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
-        jPanel19.setLayout(jPanel19Layout);
-        jPanel19Layout.setHorizontalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel19Layout.createSequentialGroup()
-                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel19Layout.createSequentialGroup()
-                                .addGap(57, 57, 57)
-                                .addComponent(rSPanelCircleImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel19Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(rSPasswordIconDos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel19Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(rSPasswordIconDos2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rSPasswordTextPlaceHolder1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel19Layout.createSequentialGroup()
-                                .addComponent(rSMetroTextPassPlaceHolder1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rSPasswordIconUno1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rSMetroTextPassPlaceHolder2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap())
-        );
-        jPanel19Layout.setVerticalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel19Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rSPanelCircleImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(rSPasswordIconDos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(rSPasswordIconDos2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(rSPasswordIconUno1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(rSPasswordTextPlaceHolder1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(rSMetroTextPassPlaceHolder1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSMetroTextPassPlaceHolder2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        rSButtonMaterialIconUno7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        rSButtonMaterialIconUno7.setText("     INVENTARIO");
+        rSButtonMaterialIconUno7.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
+        rSButtonMaterialIconUno7.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CHECK);
+        rSButtonMaterialIconUno7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonMaterialIconUno7ActionPerformed(evt);
+            }
+        });
+        jPanel19.add(rSButtonMaterialIconUno7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 250, 40));
+
+        rSButtonMaterialIconUno8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        rSButtonMaterialIconUno8.setText("     USUARIOS");
+        rSButtonMaterialIconUno8.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
+        rSButtonMaterialIconUno8.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PERM_CONTACT_CALENDAR);
+        rSButtonMaterialIconUno8.setInheritsPopupMenu(true);
+        jPanel19.add(rSButtonMaterialIconUno8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 250, 40));
+
+        rSButtonMaterialIconUno9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        rSButtonMaterialIconUno9.setText("     CONFIGURACIÓN");
+        rSButtonMaterialIconUno9.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
+        rSButtonMaterialIconUno9.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SETTINGS);
+        rSButtonMaterialIconUno9.setInheritsPopupMenu(true);
+        jPanel19.add(rSButtonMaterialIconUno9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 250, 40));
+
+        rSButtonMaterialIconUno10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        rSButtonMaterialIconUno10.setText("     ACERCA DE");
+        rSButtonMaterialIconUno10.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
+        rSButtonMaterialIconUno10.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.MODE_EDIT);
+        rSButtonMaterialIconUno10.setInheritsPopupMenu(true);
+        rSButtonMaterialIconUno10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonMaterialIconUno10ActionPerformed(evt);
+            }
+        });
+        jPanel19.add(rSButtonMaterialIconUno10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 250, 40));
+        jPanel19.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 250, 10));
 
         jScrollPane12.setViewportView(jPanel19);
 
-        rSPanelsSlider1.add(prueba22, "card2");
+        rSPanelsSlider2.add(dasboard2, "card2");
 
         javax.swing.GroupLayout jPanel49Layout = new javax.swing.GroupLayout(jPanel49);
         jPanel49.setLayout(jPanel49Layout);
         jPanel49Layout.setHorizontalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel49Layout.createSequentialGroup()
-                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSPanelsSlider1, javax.swing.GroupLayout.DEFAULT_SIZE, 1016, Short.MAX_VALUE))
+                .addComponent(rSPanelsSlider2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel49Layout.setVerticalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane12)
-            .addComponent(rSPanelsSlider1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
+            .addComponent(rSPanelsSlider2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
         TabbedPanePrincipal.addTab("tab7", jPanel49);
@@ -4381,14 +4423,14 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TabbedPanePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1Principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1Principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -5671,9 +5713,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jLabel1.setText("Panel Administrativo");
         TabbedPanePrincipal.setSelectedIndex(6);
         InicializarClientes();
-//        dispose();
-//        Login login = new Login();
-//        login.setVisible(true);
+
     }//GEN-LAST:event_ButtonClienteConfig2ActionPerformed
 
     private void InicializarClientes() {
@@ -5723,6 +5763,24 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         TabbedPanePrincipal.setSelectedIndex(0);
 
     }//GEN-LAST:event_ButtonClienteActionPerformed
+
+    private void rSButtonMaterialIconUno3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconUno3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonMaterialIconUno3ActionPerformed
+
+    private void rSButtonMaterialIconUno2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconUno2ActionPerformed
+        dispose();
+        Login login = new Login();
+        login.setVisible(true);
+    }//GEN-LAST:event_rSButtonMaterialIconUno2ActionPerformed
+
+    private void rSButtonMaterialIconUno7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconUno7ActionPerformed
+        TabbedPanePrincipal.setSelectedIndex(1);
+    }//GEN-LAST:event_rSButtonMaterialIconUno7ActionPerformed
+
+    private void rSButtonMaterialIconUno10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconUno10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonMaterialIconUno10ActionPerformed
 
     // </editor-fold>
     /**
@@ -5872,6 +5930,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel codigoL7;
     private javax.swing.JLabel codigoL8;
     private javax.swing.JLabel codigoL9;
+    private Views.Dasboard dasboard2;
     public static javax.swing.JTextField descuento;
     public static javax.swing.JTextField dirCotizacion;
     private javax.swing.JButton eliminar;
@@ -5880,6 +5939,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private com.toedter.calendar.JDateChooser fecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -5912,7 +5972,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel jLabelInventario_platillosTipo;
     private javax.swing.JLabel jLabelInventario_platillosTipo1;
     private javax.swing.JLabel jLabelInventario_platillosTipo2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -5922,7 +5981,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
+    public static javax.swing.JPanel jPanel19;
+    public static javax.swing.JPanel jPanel1Principal;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel22;
@@ -5993,6 +6053,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
@@ -6032,7 +6093,16 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     public static app.bolivia.swing.JCTextField numFac1;
     public static javax.swing.JTextField porcentaje;
     private app.bolivia.swing.JCTextField precio;
-    private Views.Prueba2 prueba22;
+    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno10;
+    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno2;
+    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno3;
+    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno4;
+    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno5;
+    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno6;
+    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno7;
+    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno8;
+    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno9;
+    private rojerusan.RSLabelCircleImage rSLabelCircleImage1;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelFecha rSLabelFecha2;
     private rojeru_san.RSLabelFecha rSLabelFecha3;
@@ -6063,14 +6133,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle7;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle8;
     private rojerusan.RSMaterialButtonRectangle rSMaterialButtonRectangle9;
-    private rojerusan.RSMetroTextPassPlaceHolder rSMetroTextPassPlaceHolder1;
-    private rojerusan.RSMetroTextPassPlaceHolder rSMetroTextPassPlaceHolder2;
-    private rojerusan.RSPanelCircleImage rSPanelCircleImage1;
-    private rojerusan.RSPanelsSlider rSPanelsSlider1;
-    private rsmaterialcomponents.RSPasswordIconDos rSPasswordIconDos1;
-    private rsmaterialcomponents.RSPasswordIconDos rSPasswordIconDos2;
-    private rsmaterialcomponents.RSPasswordIconUno rSPasswordIconUno1;
-    private rojerusan.RSPasswordTextPlaceHolder rSPasswordTextPlaceHolder1;
+    private rojerusan.RSPanelsSlider rSPanelsSlider2;
     private rojerusan.RSTableMetro rSTableMetro3;
     public static app.bolivia.swing.JCTextField recibi;
     private javax.swing.JButton registrar;

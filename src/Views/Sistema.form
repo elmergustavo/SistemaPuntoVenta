@@ -30,7 +30,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="TabbedPanePrincipal" pref="0" max="32767" attributes="0"/>
-                  <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jPanel1Principal" alignment="0" max="32767" attributes="0"/>
                   <Component id="jPanel22" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -40,7 +40,7 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <Component id="jPanel1Principal" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
               <Component id="jPanel22" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -50,7 +50,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="jPanel1Principal">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="91" green="66" red="22" type="rgb"/>
@@ -61,6 +61,9 @@
           </Border>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -1748,7 +1751,7 @@
                                       <Component id="rSMaterialButtonRectangle9" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                                       <Component id="rSMaterialButtonRectangle8" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="50" max="32767" attributes="0"/>
+                                  <EmptySpace pref="49" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2123,7 +2126,7 @@
                                   <Component id="rSMaterialButtonRectangle10" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                                   <Component id="rSMaterialButtonRectangle11" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="32" max="32767" attributes="0"/>
+                              <EmptySpace pref="31" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2252,7 +2255,7 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="319" max="32767" attributes="0"/>
+                              <EmptySpace pref="318" max="32767" attributes="0"/>
                               <Component id="jPanel42" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -2260,7 +2263,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jPanel41" min="-2" pref="297" max="-2" attributes="0"/>
-                                  <EmptySpace pref="154" max="32767" attributes="0"/>
+                                  <EmptySpace pref="153" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -3951,7 +3954,7 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="463" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="462" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
@@ -4065,7 +4068,7 @@
                                       <Component id="jScrollPane8" min="-2" pref="417" max="-2" attributes="0"/>
                                       <Component id="jPanel54" min="-2" pref="417" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="39" max="32767" attributes="0"/>
+                                  <EmptySpace pref="38" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -5577,7 +5580,7 @@
                                   <Component id="jPanel63" min="-2" pref="99" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jScrollPane9" min="-2" pref="299" max="-2" attributes="0"/>
-                                  <EmptySpace pref="41" max="32767" attributes="0"/>
+                                  <EmptySpace pref="40" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -5867,7 +5870,7 @@
                                   </Group>
                                   <Component id="jLabel22" pref="441" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="24" max="32767" attributes="0"/>
+                              <EmptySpace pref="23" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -6664,16 +6667,16 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane12" min="-2" pref="291" max="-2" attributes="0"/>
+                      <Component id="jScrollPane12" min="-2" pref="250" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="rSPanelsSlider1" pref="1016" max="32767" attributes="0"/>
+                      <Component id="rSPanelsSlider2" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane12" max="32767" attributes="0"/>
-                  <Component id="rSPanelsSlider1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jScrollPane12" pref="560" max="32767" attributes="0"/>
+                  <Component id="rSPanelsSlider2" alignment="0" pref="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -6686,6 +6689,7 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
+                <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
               </Properties>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
@@ -6693,131 +6697,247 @@
                 <Container class="javax.swing.JPanel" name="jPanel19">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="66" green="66" red="66" type="rgb"/>
+                      <Color blue="91" green="66" red="22" type="rgb"/>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
 
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                                              <Component id="rSPanelCircleImage1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="rSPasswordIconDos1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="rSPasswordIconDos2" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="rSPasswordTextPlaceHolder1" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="rSMetroTextPassPlaceHolder1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="rSPasswordIconUno1" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="rSMetroTextPassPlaceHolder2" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="rSPanelCircleImage1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="rSPasswordIconDos1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="rSPasswordIconDos2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="rSPasswordIconUno1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="rSPasswordTextPlaceHolder1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="rSMetroTextPassPlaceHolder1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="rSMetroTextPassPlaceHolder2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                    <Property name="useNullLayout" type="boolean" value="false"/>
                   </Layout>
                   <SubComponents>
-                    <Container class="rojerusan.RSPanelCircleImage" name="rSPanelCircleImage1">
-
-                      <Layout>
-                        <DimensionLayout dim="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="150" max="32767" attributes="0"/>
-                          </Group>
-                        </DimensionLayout>
-                        <DimensionLayout dim="1">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="150" max="32767" attributes="0"/>
-                          </Group>
-                        </DimensionLayout>
-                      </Layout>
-                    </Container>
-                    <Component class="rsmaterialcomponents.RSPasswordIconDos" name="rSPasswordIconDos1">
+                    <Component class="rojerusan.RSLabelCircleImage" name="rSLabelCircleImage1">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="rSPasswordIconDos1"/>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Resources/xd (2).png"/>
+                        </Property>
                       </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="69" y="6" width="106" height="110"/>
+                        </Constraint>
+                      </Constraints>
                     </Component>
-                    <Component class="rsmaterialcomponents.RSPasswordIconDos" name="rSPasswordIconDos2">
+                    <Component class="javax.swing.JLabel" name="jLabel11">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="rSPasswordIconDos2"/>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Dialog" size="18" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
+                        <Property name="text" type="java.lang.String" value="Usuario"/>
                       </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="6" y="113" width="238" height="38"/>
+                        </Constraint>
+                      </Constraints>
                     </Component>
-                    <Component class="rsmaterialcomponents.RSPasswordIconUno" name="rSPasswordIconUno1">
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno2">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="rSPasswordIconUno1"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Resources/Inventario.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="     SALIR"/>
+                        <Property name="effectButton" type="rsmaterialcomponents.RSButtonMaterialIconUno$EFFECTBUTTON" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="RAISED"/>
+                        </Property>
+                        <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="SETTINGS_POWER"/>
+                        </Property>
+                        <Property name="inheritsPopupMenu" type="boolean" value="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonMaterialIconUno2ActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="0" y="510" width="250" height="40"/>
+                        </Constraint>
+                      </Constraints>
                     </Component>
-                    <Component class="rojerusan.RSPasswordTextPlaceHolder" name="rSPasswordTextPlaceHolder1">
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno3">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="rSPasswordTextPlaceHolder1"/>
+                        <Property name="text" type="java.lang.String" value="     DASBOARD"/>
+                        <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="DASHBOARD"/>
+                        </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonMaterialIconUno3ActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="0" y="160" width="250" height="40"/>
+                        </Constraint>
+                      </Constraints>
                     </Component>
-                    <Component class="rojerusan.RSMetroTextPassPlaceHolder" name="rSMetroTextPassPlaceHolder1">
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno4">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="rSMetroTextPassPlaceHolder1"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Resources/Inventario.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="     VENTAS"/>
+                        <Property name="effectButton" type="rsmaterialcomponents.RSButtonMaterialIconUno$EFFECTBUTTON" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="RAISED"/>
+                        </Property>
+                        <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="ASSESSMENT"/>
+                        </Property>
+                        <Property name="inheritsPopupMenu" type="boolean" value="true"/>
                       </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="0" y="200" width="250" height="40"/>
+                        </Constraint>
+                      </Constraints>
                     </Component>
-                    <Component class="rojerusan.RSMetroTextPassPlaceHolder" name="rSMetroTextPassPlaceHolder2">
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno5">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="rSMetroTextPassPlaceHolder1"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Resources/Inventario.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="     PEDIDOS"/>
+                        <Property name="effectButton" type="rsmaterialcomponents.RSButtonMaterialIconUno$EFFECTBUTTON" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="RAISED"/>
+                        </Property>
+                        <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="PLAYLIST_ADD_CHECK"/>
+                        </Property>
+                        <Property name="inheritsPopupMenu" type="boolean" value="true"/>
                       </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="0" y="240" width="250" height="40"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno6">
+                      <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Resources/Inventario.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="     COTIZACIONES"/>
+                        <Property name="effectButton" type="rsmaterialcomponents.RSButtonMaterialIconUno$EFFECTBUTTON" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="RAISED"/>
+                        </Property>
+                        <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="SEARCH"/>
+                        </Property>
+                        <Property name="inheritsPopupMenu" type="boolean" value="true"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="0" y="280" width="250" height="40"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno7">
+                      <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Resources/Inventario.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="     INVENTARIO"/>
+                        <Property name="effectButton" type="rsmaterialcomponents.RSButtonMaterialIconUno$EFFECTBUTTON" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="RAISED"/>
+                        </Property>
+                        <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="CHECK"/>
+                        </Property>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonMaterialIconUno7ActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="0" y="320" width="250" height="40"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno8">
+                      <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Resources/Inventario.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="     USUARIOS"/>
+                        <Property name="effectButton" type="rsmaterialcomponents.RSButtonMaterialIconUno$EFFECTBUTTON" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="RAISED"/>
+                        </Property>
+                        <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="PERM_CONTACT_CALENDAR"/>
+                        </Property>
+                        <Property name="inheritsPopupMenu" type="boolean" value="true"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="0" y="360" width="250" height="40"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno9">
+                      <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Resources/Inventario.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="     CONFIGURACI&#xd3;N"/>
+                        <Property name="effectButton" type="rsmaterialcomponents.RSButtonMaterialIconUno$EFFECTBUTTON" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="RAISED"/>
+                        </Property>
+                        <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="SETTINGS"/>
+                        </Property>
+                        <Property name="inheritsPopupMenu" type="boolean" value="true"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="0" y="400" width="250" height="40"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno10">
+                      <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Resources/Inventario.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="     ACERCA DE"/>
+                        <Property name="effectButton" type="rsmaterialcomponents.RSButtonMaterialIconUno$EFFECTBUTTON" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="RAISED"/>
+                        </Property>
+                        <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="MODE_EDIT"/>
+                        </Property>
+                        <Property name="inheritsPopupMenu" type="boolean" value="true"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonMaterialIconUno10ActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="0" y="440" width="250" height="40"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JSeparator" name="jSeparator1">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="0" y="500" width="250" height="10"/>
+                        </Constraint>
+                      </Constraints>
                     </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>
             </Container>
-            <Container class="rojerusan.RSPanelsSlider" name="rSPanelsSlider1">
+            <Container class="rojerusan.RSPanelsSlider" name="rSPanelsSlider2">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
               <SubComponents>
-                <Component class="Views.Prueba2" name="prueba22">
+                <Component class="Views.Dasboard" name="dasboard2">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                       <CardConstraints cardName="card2"/>
