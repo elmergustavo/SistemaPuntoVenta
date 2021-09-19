@@ -37,6 +37,14 @@ public class Dasboard extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         rSButtonMaterialIconDos1 = new rsmaterialcomponents.RSButtonMaterialIconDos();
         rSButtonMaterialIconDos2 = new rsmaterialcomponents.RSButtonMaterialIconDos();
+        rSPanelImage3 = new rojerusan.RSPanelImage();
+        rSButtonIconUno3 = new rsmaterialcomponents.RSButtonIconUno();
+        rSPanelImage4 = new rojerusan.RSPanelImage();
+        rSButtonIconUno4 = new rsmaterialcomponents.RSButtonIconUno();
+        rSPanelImage5 = new rojerusan.RSPanelImage();
+        rSButtonIconUno5 = new rsmaterialcomponents.RSButtonIconUno();
+        rSPanelImage6 = new rojerusan.RSPanelImage();
+        rSButtonIconUno6 = new rsmaterialcomponents.RSButtonIconUno();
 
         jScrollPane1.setBorder(null);
 
@@ -53,9 +61,8 @@ public class Dasboard extends javax.swing.JPanel {
         rSPanelGradiente1.setLayout(rSPanelGradiente1Layout);
         rSPanelGradiente1Layout.setHorizontalGroup(
             rSPanelGradiente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rSPanelGradiente1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelGradiente1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         rSPanelGradiente1Layout.setVerticalGroup(
@@ -82,26 +89,151 @@ public class Dasboard extends javax.swing.JPanel {
             }
         });
 
+        rSPanelImage3.setImagen(new javax.swing.ImageIcon(getClass().getResource("/Resources/panel 3.png"))); // NOI18N
+
+        rSButtonIconUno3.setBackground(new java.awt.Color(34, 102, 145));
+        rSButtonIconUno3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.MORE_VERT);
+        rSButtonIconUno3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonIconUno3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout rSPanelImage3Layout = new javax.swing.GroupLayout(rSPanelImage3);
+        rSPanelImage3.setLayout(rSPanelImage3Layout);
+        rSPanelImage3Layout.setHorizontalGroup(
+            rSPanelImage3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rSPanelImage3Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(rSButtonIconUno3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(201, Short.MAX_VALUE))
+        );
+        rSPanelImage3Layout.setVerticalGroup(
+            rSPanelImage3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rSPanelImage3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rSButtonIconUno3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        rSPanelImage4.setImagen(new javax.swing.ImageIcon(getClass().getResource("/Resources/panel 3.png"))); // NOI18N
+
+        rSButtonIconUno4.setBackground(new java.awt.Color(34, 102, 145));
+        rSButtonIconUno4.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.MORE_VERT);
+        rSButtonIconUno4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonIconUno4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout rSPanelImage4Layout = new javax.swing.GroupLayout(rSPanelImage4);
+        rSPanelImage4.setLayout(rSPanelImage4Layout);
+        rSPanelImage4Layout.setHorizontalGroup(
+            rSPanelImage4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rSPanelImage4Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(rSButtonIconUno4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(201, Short.MAX_VALUE))
+        );
+        rSPanelImage4Layout.setVerticalGroup(
+            rSPanelImage4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rSPanelImage4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rSButtonIconUno4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        rSPanelImage5.setImagen(new javax.swing.ImageIcon(getClass().getResource("/Resources/Group 2.png"))); // NOI18N
+
+        rSButtonIconUno5.setBackground(new java.awt.Color(34, 102, 145));
+        rSButtonIconUno5.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.MORE_VERT);
+        rSButtonIconUno5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonIconUno5ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout rSPanelImage5Layout = new javax.swing.GroupLayout(rSPanelImage5);
+        rSPanelImage5.setLayout(rSPanelImage5Layout);
+        rSPanelImage5Layout.setHorizontalGroup(
+            rSPanelImage5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rSPanelImage5Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(rSButtonIconUno5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(189, Short.MAX_VALUE))
+        );
+        rSPanelImage5Layout.setVerticalGroup(
+            rSPanelImage5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rSPanelImage5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rSButtonIconUno5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        rSPanelImage6.setImagen(new javax.swing.ImageIcon(getClass().getResource("/Resources/Group 2.png"))); // NOI18N
+
+        rSButtonIconUno6.setBackground(new java.awt.Color(34, 102, 145));
+        rSButtonIconUno6.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.MORE_VERT);
+        rSButtonIconUno6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonIconUno6ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout rSPanelImage6Layout = new javax.swing.GroupLayout(rSPanelImage6);
+        rSPanelImage6.setLayout(rSPanelImage6Layout);
+        rSPanelImage6Layout.setHorizontalGroup(
+            rSPanelImage6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rSPanelImage6Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(rSButtonIconUno6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(207, Short.MAX_VALUE))
+        );
+        rSPanelImage6Layout.setVerticalGroup(
+            rSPanelImage6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rSPanelImage6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rSButtonIconUno6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(85, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rSPanelGradiente1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(rSPanelGradiente1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(rSButtonMaterialIconDos1, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
-                    .addComponent(rSButtonMaterialIconDos2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(rSPanelImage3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rSPanelImage5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rSPanelImage4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rSPanelImage6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(rSButtonMaterialIconDos1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(rSButtonMaterialIconDos2, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(rSPanelGradiente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(rSButtonMaterialIconDos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(rSButtonMaterialIconDos2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 364, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(rSPanelImage3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rSPanelImage5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rSPanelImage4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rSPanelImage6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rSButtonMaterialIconDos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonMaterialIconDos2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -126,13 +258,37 @@ public class Dasboard extends javax.swing.JPanel {
         SaveColor.colorBarra(jPanel1Principal);
     }//GEN-LAST:event_rSButtonMaterialIconDos2ActionPerformed
 
+    private void rSButtonIconUno3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconUno3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonIconUno3ActionPerformed
+
+    private void rSButtonIconUno4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconUno4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonIconUno4ActionPerformed
+
+    private void rSButtonIconUno5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconUno5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonIconUno5ActionPerformed
+
+    private void rSButtonIconUno6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconUno6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonIconUno6ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private rsmaterialcomponents.RSButtonIconUno rSButtonIconUno3;
+    private rsmaterialcomponents.RSButtonIconUno rSButtonIconUno4;
+    private rsmaterialcomponents.RSButtonIconUno rSButtonIconUno5;
+    private rsmaterialcomponents.RSButtonIconUno rSButtonIconUno6;
     private rsmaterialcomponents.RSButtonMaterialIconDos rSButtonMaterialIconDos1;
     private rsmaterialcomponents.RSButtonMaterialIconDos rSButtonMaterialIconDos2;
     private rspanelgradiente.RSPanelGradiente rSPanelGradiente1;
+    private rojerusan.RSPanelImage rSPanelImage3;
+    private rojerusan.RSPanelImage rSPanelImage4;
+    private rojerusan.RSPanelImage rSPanelImage5;
+    private rojerusan.RSPanelImage rSPanelImage6;
     // End of variables declaration//GEN-END:variables
 }
