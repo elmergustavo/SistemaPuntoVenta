@@ -23,18 +23,19 @@ public class SistemaPuntoDeVentas {
      */
     public static void main(String[] args) {
         try {
-            //     UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+           //UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+           //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
 
 //           UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
             
         }
-        Sistema sistema = new Sistema();
-        //sistema.setExtendedState(MAXIMIZED_BOTH);
-        sistema.setVisible(true);
-//        Splash splash = new Splash();
-//        splash.setVisible(true);
+//        Sistema sistema = new Sistema();
+//        //sistema.setExtendedState(MAXIMIZED_BOTH);
+//        sistema.setVisible(true);
+        Splash splash = new Splash();
+        splash.setVisible(true);
         
     }
     
