@@ -18,7 +18,7 @@ public class Conexion {
     private String db = "punto_de_ventas";
     private String user = "root";
     private String password = "hacker.net";
-    private String urlMysql = "jdbc:mysql://localhost:3310/";
+    private String urlMysql = "jdbc:mysql://localhost:3306/";
     private String urlSql = "jdbc:sqlserver://localhost:1433;databaseName=" + db
             + ";integratedSecurity=true;";
     private Connection conn = null;
