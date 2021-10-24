@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="396" pageHeight="720" columnWidth="356" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d4df7c67-8a14-4ebb-9ed0-c1e654449490">
+	<property name="ireport.zoom" value="1.3310000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     alimentos.`Nombre_al` AS alimentos_Nombre_al,
+     alimentos.`Precio_al` AS alimentos_Precio_al,
+     alimentos.`Tipo_al` AS alimentos_Tipo_al
+FROM
+     `alimentos` alimentos]]>
+	</queryString>
+	<field name="alimentos_Nombre_al" class="java.lang.String"/>
+	<field name="alimentos_Precio_al" class="java.math.BigDecimal"/>
+	<field name="alimentos_Tipo_al" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="135" y="40" width="83" height="39" uuid="46f9fa34-0768-4c00-8871-cb7fdbe3d394"/>
+				<textElement textAlignment="Justified">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Factura ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="83" height="40" uuid="23a4f796-2863-4f73-a3bc-f5004efac9ac"/>
+				<imageExpression><![CDATA["C:\\Users\\Gustavo\\Desktop\\logo.jpg"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="256" y="40" width="100" height="20" uuid="a08bf77f-b9cd-4137-832a-636108bd2f9d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="256" y="40" width="100" height="20" uuid="305b1d1e-3092-4cd8-a4c0-194f2361b041"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[No Factura: ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="256" y="0" width="100" height="20" uuid="201bdf47-7de9-4092-a638-121aed056286"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="0" width="100" height="20" uuid="ad52cf07-6a6b-410d-8e64-b0efdb5086db"/>
+				<text><![CDATA[Nombre	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="0" width="100" height="20" uuid="8001b3ae-7904-4e75-acc2-7031bfd0c5f3"/>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="0" width="100" height="20" uuid="31e187d9-1989-4287-887c-af9be99a4362"/>
+				<text><![CDATA[Tipo Alimento]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="22" width="100" height="20" uuid="3b108d71-6ca5-40c7-9328-98753e5092ed"/>
+				<textFieldExpression><![CDATA[$F{alimentos_Nombre_al}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="135" y="22" width="100" height="20" uuid="248bc832-9e72-440b-901f-908ce0948799"/>
+				<textFieldExpression><![CDATA[$F{alimentos_Precio_al}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="256" y="22" width="100" height="20" uuid="63f837c8-91eb-46fb-843b-20e8e3d564bd"/>
+				<textFieldExpression><![CDATA[$F{alimentos_Tipo_al}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="101" y="3" width="80" height="20" uuid="dd715a24-6c44-4610-8c11-7f0610fbc9ac"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="181" y="3" width="40" height="20" uuid="d734fa20-d611-41b7-ad40-a706bb015b1a"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
