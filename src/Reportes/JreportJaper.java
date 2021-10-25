@@ -31,7 +31,7 @@ public class JreportJaper {
         try {          
             Connection conn = (Connection) conexion.getConnection();
             JasperReport reporte = null;
-            String path = "src\\JReport\\Ventas.jasper";
+            String path = "C://Users//Gustavo//Desktop//SistemaPuntoVenta//src//JReport//Ventas.jasper";
             
 //            Map parametro = new HashMap();
 //            parametro.put("id_estado", 36);

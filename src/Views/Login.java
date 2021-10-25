@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 package Views;
+import Controller.LoginVM;
+import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -19,7 +24,6 @@ public class Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
 
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,13 +38,15 @@ public class Login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         rSLabelImage2 = new rojerusan.RSLabelImage();
         rSLabelImage1 = new rojerusan.RSLabelImage();
-        rSMTextFull1 = new rojeru_san.RSMTextFull();
-        rSMPassView1 = new rojeru_san.RSMPassView();
+        rSMTextFullUsuario = new rojeru_san.RSMTextFull();
+        rSMPassViewPassword = new rojeru_san.RSMPassView();
         rSButtonRiple1 = new rojeru_san.RSButtonRiple();
         rSButtonRiple2 = new rojeru_san.RSButtonRiple();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         rSButtonRiple3 = new rojeru_san.RSButtonRiple();
+        JlabelUsuario = new javax.swing.JLabel();
+        JlabelPassword = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -61,18 +67,26 @@ public class Login extends javax.swing.JFrame {
         rSLabelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/wave.png"))); // NOI18N
         jPanel1.add(rSLabelImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 600));
 
-        rSMTextFull1.setBackground(new java.awt.Color(255, 255, 255));
-        rSMTextFull1.setPlaceholder("Ingresar Usuario");
-        rSMTextFull1.addActionListener(new java.awt.event.ActionListener() {
+        rSMTextFullUsuario.setPlaceholder("Ingresar Usuario");
+        rSMTextFullUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMTextFull1ActionPerformed(evt);
+                rSMTextFullUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(rSMTextFull1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 300, 290, -1));
+        rSMTextFullUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                rSMTextFullUsuarioKeyReleased(evt);
+            }
+        });
+        jPanel1.add(rSMTextFullUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 300, 290, -1));
 
-        rSMPassView1.setBackground(new java.awt.Color(255, 255, 255));
-        rSMPassView1.setPlaceholder("Ingresar Contraseña");
-        jPanel1.add(rSMPassView1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 290, -1));
+        rSMPassViewPassword.setPlaceholder("Ingresar Contraseña");
+        rSMPassViewPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                rSMPassViewPasswordKeyReleased(evt);
+            }
+        });
+        jPanel1.add(rSMPassViewPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 290, -1));
 
         rSButtonRiple1.setBorder(null);
         rSButtonRiple1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/btn-minimizar.png"))); // NOI18N
@@ -107,6 +121,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(rSButtonRiple3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 490, -1, -1));
+        jPanel1.add(JlabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 270, 190, 30));
+        jPanel1.add(JlabelPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 390, 130, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,24 +140,51 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void rSMTextFull1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMTextFull1ActionPerformed
+    private void rSMTextFullUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMTextFullUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rSMTextFull1ActionPerformed
+    }//GEN-LAST:event_rSMTextFullUsuarioActionPerformed
 
     private void rSButtonRiple2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRiple2ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_rSButtonRiple2ActionPerformed
 
+    private LoginVM login;
     private void rSButtonRiple3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRiple3ActionPerformed
-        Sistema sistema = new Sistema();
-        // sistema.setExtendedState(MAXIMIZED_BOTH);
-        sistema.setVisible(true);
-        dispose();
+//        Sistema sistema = new Sistema();
+//        // sistema.setExtendedState(MAXIMIZED_BOTH);
+//        sistema.setVisible(true);
+//        dispose();
+        ArrayList<JLabel> label = new ArrayList();
+        label.add(JlabelUsuario);
+        label.add(JlabelPassword);
+        ArrayList<JTextField> texFile = new ArrayList();
+        texFile.add(rSMTextFullUsuario);
+        texFile.add(rSMPassViewPassword);
+        login = new LoginVM(label, texFile);
+        Object[] objects = login.Login();
     }//GEN-LAST:event_rSButtonRiple3ActionPerformed
 
     private void rSButtonRiple1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRiple1ActionPerformed
         this.setExtendedState(ICONIFIED);
     }//GEN-LAST:event_rSButtonRiple1ActionPerformed
+
+    private void rSMTextFullUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rSMTextFullUsuarioKeyReleased
+        if (rSMTextFullUsuario.getText().equals("")) {
+            JlabelUsuario.setForeground(new Color(102, 102, 102));
+        } else {
+            JlabelUsuario.setText("Usuario");
+            JlabelUsuario.setForeground(new Color(0, 153, 51));
+        }
+    }//GEN-LAST:event_rSMTextFullUsuarioKeyReleased
+
+    private void rSMPassViewPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rSMPassViewPasswordKeyReleased
+        if (rSMPassViewPassword.getText().equals("")) {
+            JlabelPassword.setForeground(new Color(102, 102, 102));
+        } else {
+            JlabelPassword.setText("Password");
+            JlabelPassword.setForeground(new Color(0, 153, 51));
+        }
+    }//GEN-LAST:event_rSMPassViewPasswordKeyReleased
 
     /**
      * @param args the command line arguments
@@ -179,6 +222,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel JlabelPassword;
+    private javax.swing.JLabel JlabelUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -188,8 +233,8 @@ public class Login extends javax.swing.JFrame {
     private rojeru_san.RSButtonRiple rSButtonRiple3;
     private rojerusan.RSLabelImage rSLabelImage1;
     private rojerusan.RSLabelImage rSLabelImage2;
-    private rojeru_san.RSMPassView rSMPassView1;
-    private rojeru_san.RSMTextFull rSMTextFull1;
+    private rojeru_san.RSMPassView rSMPassViewPassword;
+    private rojeru_san.RSMTextFull rSMTextFullUsuario;
     private rojerusan.RSMetroTextFullPlaceHolderBeanInfo rSMetroTextFullPlaceHolderBeanInfo1;
     // End of variables declaration//GEN-END:variables
 }
