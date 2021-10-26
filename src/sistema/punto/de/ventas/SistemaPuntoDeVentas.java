@@ -6,9 +6,13 @@
 package sistema.punto.de.ventas;
 
 
+import Controller.LoginVM;
+import Models.Usuarios.TUsuarios;
+import Views.Login;
 import Views.Sistema;
 import Views.Splash;
 import static java.awt.Frame.MAXIMIZED_BOTH;
+import java.util.List;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -34,8 +38,24 @@ public class SistemaPuntoDeVentas {
 //        Sistema sistema = new Sistema();
 //        //sistema.setExtendedState(MAXIMIZED_BOTH);
 //        sistema.setVisible(true);
-        Splash splash = new Splash();
-        splash.setVisible(true);
+
+        LoginVM login = new LoginVM();
+        Object[] objects = login.Verificar();
+        
+        List<TUsuarios> listUsuario = (List<TUsuarios>) objects[0];
+        if (!listUsuario.isEmpty()) {
+            Sistema sisten = new Sistema(listUsuario.get(0));
+            sisten.setVisible(true);
+            sisten.setExtendedState(MAXIMIZED_BOTH);
+        } else {
+            Login sistema = new Login();
+            // sistema.setExtendedState(MAXIMIZED_BOTH);
+            sistema.setVisible(true);
+        }
+        
+        
+//        Splash splash = new Splash();
+//        splash.setVisible(true);
         
     }
     

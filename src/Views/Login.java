@@ -4,10 +4,17 @@
  * and open the template in the editor.
  */
 package Views;
+
 import Controller.LoginVM;
+import Models.Usuarios.TUsuarios;
 import java.awt.Color;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -24,6 +31,7 @@ public class Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
 
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -67,7 +75,7 @@ public class Login extends javax.swing.JFrame {
         rSLabelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/wave.png"))); // NOI18N
         jPanel1.add(rSLabelImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 600));
 
-        rSMTextFullUsuario.setPlaceholder("Ingresar Usuario");
+        rSMTextFullUsuario.setPlaceholder("Ingresar un email");
         rSMTextFullUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSMTextFullUsuarioActionPerformed(evt);
@@ -150,18 +158,26 @@ public class Login extends javax.swing.JFrame {
 
     private LoginVM login;
     private void rSButtonRiple3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRiple3ActionPerformed
-//        Sistema sistema = new Sistema();
-//        // sistema.setExtendedState(MAXIMIZED_BOTH);
-//        sistema.setVisible(true);
-//        dispose();
-        ArrayList<JLabel> label = new ArrayList();
-        label.add(JlabelUsuario);
-        label.add(JlabelPassword);
-        ArrayList<JTextField> texFile = new ArrayList();
-        texFile.add(rSMTextFullUsuario);
-        texFile.add(rSMPassViewPassword);
-        login = new LoginVM(label, texFile);
-        Object[] objects = login.Login();
+        try {
+        
+            ArrayList<JLabel> label = new ArrayList();
+            label.add(JlabelUsuario);
+            label.add(JlabelPassword);
+            ArrayList<JTextField> texFile = new ArrayList();
+            texFile.add(rSMTextFullUsuario);
+            texFile.add(rSMPassViewPassword);
+            login = new LoginVM(label, texFile);
+            Object[] objects = login.Login();
+            List<TUsuarios> listUsuario = (List<TUsuarios>) objects[0];
+            if (!listUsuario.isEmpty()) {
+                Sistema sisten = new Sistema(listUsuario.get(0));
+                sisten.setVisible(true);
+                sisten.setExtendedState(MAXIMIZED_BOTH);
+                this.setVisible(false);
+            }
+        } catch (SQLException ex) {
+            
+        }
     }//GEN-LAST:event_rSButtonRiple3ActionPerformed
 
     private void rSButtonRiple1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRiple1ActionPerformed

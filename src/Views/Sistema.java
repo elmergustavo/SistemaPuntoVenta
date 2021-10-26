@@ -7,12 +7,14 @@ package Views;
 
 import Conexion.Conexion;
 import Controller.CotizacionesMV;
+import Controller.LoginVM;
 import Library.Objectos;
 import Controller.PedidoVM;
 import Controller.VentasVM;
 import Interfeces.IClassModels;
 import Models.PedidoSQL;
 import Models.TVentas;
+import Models.Usuarios.TUsuarios;
 import Models.Venta;
 import Models.controlMesa;
 import Models.controlPedido;
@@ -33,6 +35,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -47,10 +50,11 @@ import rojerusan.RSNotifyFade;
  * @author Gustavo
  */
 public class Sistema extends javax.swing.JFrame implements IClassModels {
-
+    
     /**
      * Creates new form Sistema
      */
+    private LoginVM login;
     private int idCliente = 0;
     private Conexion conexion = Conexion.createInstance();
     private String sql = "";
@@ -59,11 +63,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     controlPedido pedidos = new controlPedido();
     private int fac;
 
-    public Sistema() {
+    public Sistema(TUsuarios usuario) {
 
         initComponents();
-        
-        
+        // CODIGO DE USUARIO
+        login = new LoginVM();
 //        if(ReadColor.colorFondo.exists()){
 //            jPanel19.setBackground(ReadColor.leerColorFondo());
 //        }
@@ -71,15 +75,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 //        if(ReadColor.colorBarra.exists()){
 //            jPanel1.setBackground(ReadColor.leerColorBarra());
 //        }
-        
 //        if(ReadColor.colorTexto.exists()){
 //            texto.setForeground(ReadColor.leerColorTexto());
 //        }
-        
-        
-        
-        
-        
         this.setExtendedState(MAXIMIZED_BOTH);
         JTextField categoria = new JTextField();
         categoria.setText("");
@@ -543,6 +541,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 102));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jPanel1Principal.setBackground(new java.awt.Color(34, 102, 145));
         jPanel1Principal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -2260,7 +2263,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedPaneInventario1, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+                    .addComponent(jTabbedPaneInventario1)
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addComponent(jTabbedPaneInventario2, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3338,10 +3341,10 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jTabbedPane3AncestorAdded(evt);
             }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
                 jTabbedPane3AncestorMoved(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -4166,7 +4169,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addContainerGap()
                 .addComponent(PanelNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
+                .addComponent(jTabbedPane3)
                 .addContainerGap())
         );
 
@@ -4435,7 +4438,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addGap(1, 1, 1)
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TabbedPanePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 619, Short.MAX_VALUE)
+                .addComponent(TabbedPanePrincipal)
                 .addContainerGap())
         );
 
@@ -5784,6 +5787,18 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jasper.jasper();
     }//GEN-LAST:event_rSButtonMaterialIconUno4ActionPerformed
 
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        if (JOptionPane.YES_NO_OPTION == JOptionPane.showConfirmDialog(null,
+                "Estas seguro de salir del sistema ? ", "Cerrar sesión ",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)) {
+            try {
+                login.Close();
+            } catch (SQLException ex) {
+            }
+
+        }
+    }//GEN-LAST:event_formWindowClosing
+
     // </editor-fold>
     /**
      * @param args the command line arguments
@@ -5814,7 +5829,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new Sistema().setVisible(true);
+                new Sistema(null).setVisible(true);
             }
         });
     }

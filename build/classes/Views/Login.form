@@ -98,7 +98,7 @@
         </Component>
         <Component class="rojeru_san.RSMTextFull" name="rSMTextFullUsuario">
           <Properties>
-            <Property name="placeholder" type="java.lang.String" value="Ingresar Usuario"/>
+            <Property name="placeholder" type="java.lang.String" value="Ingresar un email"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSMTextFullUsuarioActionPerformed"/>
