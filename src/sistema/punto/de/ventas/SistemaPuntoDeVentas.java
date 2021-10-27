@@ -39,23 +39,11 @@ public class SistemaPuntoDeVentas {
 //        //sistema.setExtendedState(MAXIMIZED_BOTH);
 //        sistema.setVisible(true);
 
-        LoginVM login = new LoginVM();
-        Object[] objects = login.Verificar();
-        
-        List<TUsuarios> listUsuario = (List<TUsuarios>) objects[0];
-        if (!listUsuario.isEmpty()) {
-            Sistema sisten = new Sistema(listUsuario.get(0));
-            sisten.setVisible(true);
-            sisten.setExtendedState(MAXIMIZED_BOTH);
-        } else {
-            Login sistema = new Login();
-            // sistema.setExtendedState(MAXIMIZED_BOTH);
-            sistema.setVisible(true);
-        }
         
         
-//        Splash splash = new Splash();
-//        splash.setVisible(true);
+        
+        Splash splash = new Splash();
+        splash.setVisible(true);
         
     }
     

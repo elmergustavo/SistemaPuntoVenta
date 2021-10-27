@@ -43,11 +43,13 @@ public class LoginVM extends UsuarioSQL {
             _label.get(0).setText("Ingrese el usario");
             _label.get(0).setForeground(Color.RED);
             _textField.get(0).requestFocus();
+            
         } else {
             if (!Objectos.eventos.isEmail(_textField.get(0).getText())) {
                 _label.get(0).setText("Ingrese un email valido");
                 _label.get(0).setForeground(Color.RED);
                 _textField.get(0).requestFocus();
+                System.exit(0);
             } else {
                 if (_textField.get(1).getText().equals("")) {
                     _label.get(1).setText("Ingrese el password");

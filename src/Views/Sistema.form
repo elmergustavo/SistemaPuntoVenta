@@ -294,7 +294,7 @@
                 <Container class="javax.swing.JTabbedPane" name="TabbedPaneCliente1">
                   <Properties>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Cursor Por defecto"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -454,7 +454,7 @@
                                   </Border>
                                 </Property>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Cursor Por defecto"/>
                                 </Property>
                               </Properties>
                               <Events>
@@ -1225,7 +1225,7 @@
                       <Image iconType="3" name="/Resources/Left.png"/>
                     </Property>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Cursor Por defecto"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -1244,7 +1244,7 @@
                       <Image iconType="3" name="/Resources/Left-12.png"/>
                     </Property>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Cursor Por defecto"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -1263,7 +1263,7 @@
                       <Image iconType="3" name="/Resources/Right.png"/>
                     </Property>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Cursor Por defecto"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -1282,7 +1282,7 @@
                       <Image iconType="3" name="/Resources/Right-12.png"/>
                     </Property>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Cursor Por defecto"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -1611,7 +1611,7 @@
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Cursor Por defecto"/>
                                 </Property>
                                 <Property name="horizontalTextPosition" type="int" value="0"/>
                                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1638,7 +1638,7 @@
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Cursor Por defecto"/>
                                 </Property>
                                 <Property name="horizontalTextPosition" type="int" value="0"/>
                                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -2562,7 +2562,7 @@
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Cursor Por defecto"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                             <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -2589,7 +2589,7 @@
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Cursor Por defecto"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                             <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -2616,7 +2616,7 @@
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Cursor Por defecto"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                             <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -2643,7 +2643,7 @@
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Cursor Por defecto"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                             <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -3023,7 +3023,7 @@
                         <Property name="borderPainted" type="boolean" value="false"/>
                         <Property name="contentAreaFilled" type="boolean" value="false"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Cursor Por defecto"/>
                         </Property>
                         <Property name="horizontalTextPosition" type="int" value="0"/>
                         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -3050,7 +3050,7 @@
                         <Property name="borderPainted" type="boolean" value="false"/>
                         <Property name="contentAreaFilled" type="boolean" value="false"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Cursor Por defecto"/>
                         </Property>
                         <Property name="horizontalTextPosition" type="int" value="0"/>
                         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -3099,7 +3099,7 @@
                   <Image iconType="3" name="/Resources/Right-12.png"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Cursor Por defecto"/>
                 </Property>
               </Properties>
               <Events>
@@ -3118,7 +3118,7 @@
                   <Image iconType="3" name="/Resources/Left-12.png"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Cursor Por defecto"/>
                 </Property>
               </Properties>
               <Events>
@@ -3137,7 +3137,7 @@
                   <Image iconType="3" name="/Resources/Right.png"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Cursor Por defecto"/>
                 </Property>
               </Properties>
               <Events>
@@ -3156,7 +3156,7 @@
                   <Image iconType="3" name="/Resources/Left.png"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Cursor Por defecto"/>
                 </Property>
               </Properties>
               <Events>
@@ -3445,7 +3445,7 @@
                             </Property>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Cursor Por defecto"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                             <Property name="verticalTextPosition" type="int" value="3"/>
@@ -3467,7 +3467,7 @@
                             </Property>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Cursor Por defecto"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                             <Property name="verticalTextPosition" type="int" value="3"/>
@@ -3602,7 +3602,7 @@
                             </Property>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Cursor Por defecto"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                             <Property name="verticalTextPosition" type="int" value="3"/>
@@ -4158,7 +4158,7 @@
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Cursor Por defecto"/>
                                 </Property>
                                 <Property name="horizontalTextPosition" type="int" value="0"/>
                                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -4193,7 +4193,7 @@
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Cursor Por defecto"/>
                                 </Property>
                                 <Property name="horizontalTextPosition" type="int" value="0"/>
                                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -4228,7 +4228,7 @@
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Cursor Por defecto"/>
                                 </Property>
                                 <Property name="horizontalTextPosition" type="int" value="0"/>
                                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -4260,7 +4260,7 @@
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Cursor Por defecto"/>
                                 </Property>
                                 <Property name="horizontalTextPosition" type="int" value="0"/>
                                 <Property name="verticalTextPosition" type="int" value="3"/>
@@ -4302,7 +4302,7 @@
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Cursor Por defecto"/>
                                 </Property>
                                 <Property name="horizontalTextPosition" type="int" value="0"/>
                                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -4334,7 +4334,7 @@
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Cursor Por defecto"/>
                                 </Property>
                                 <Property name="horizontalTextPosition" type="int" value="0"/>
                                 <Property name="verticalTextPosition" type="int" value="3"/>
@@ -4376,7 +4376,7 @@
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Cursor Por defecto"/>
                                 </Property>
                                 <Property name="horizontalTextPosition" type="int" value="0"/>
                                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -4822,7 +4822,7 @@
                     </Property>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Cursor Por defecto"/>
                     </Property>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                     <Property name="verticalTextPosition" type="int" value="3"/>
@@ -4849,7 +4849,7 @@
                     </Property>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Cursor Por defecto"/>
                     </Property>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                     <Property name="verticalTextPosition" type="int" value="3"/>
@@ -4876,7 +4876,7 @@
                     </Property>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Cursor Por defecto"/>
                     </Property>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                     <Property name="verticalTextPosition" type="int" value="3"/>
@@ -4903,7 +4903,7 @@
                     </Property>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Cursor Por defecto"/>
                     </Property>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                     <Property name="verticalTextPosition" type="int" value="3"/>
@@ -5439,7 +5439,7 @@
                             </Property>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Cursor Por defecto"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                             <Property name="verticalTextPosition" type="int" value="3"/>
@@ -5461,7 +5461,7 @@
                             </Property>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Cursor Por defecto"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                             <Property name="verticalTextPosition" type="int" value="3"/>
@@ -5717,7 +5717,7 @@
                                 </Property>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Cursor Por defecto"/>
                                 </Property>
                                 <Property name="horizontalTextPosition" type="int" value="0"/>
                                 <Property name="verticalTextPosition" type="int" value="3"/>
@@ -5741,7 +5741,7 @@
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                                  <Color id="Default Cursor"/>
+                                  <Color id="Cursor Por defecto"/>
                                 </Property>
                                 <Property name="horizontalTextPosition" type="int" value="0"/>
                                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -5764,6 +5764,7 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="enabled" type="boolean" value="false"/>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Tahoma" size="14" style="1"/>
                                 </Property>
@@ -6673,7 +6674,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jScrollPane12" min="-2" pref="250" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="rSPanelsSlider2" max="32767" attributes="0"/>
+                      <Component id="rSPanelsSlider2" pref="925" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -6712,23 +6713,26 @@
                     <Property name="useNullLayout" type="boolean" value="false"/>
                   </Layout>
                   <SubComponents>
-                    <Component class="rojerusan.RSLabelCircleImage" name="rSLabelCircleImage1">
+                    <Component class="rojerusan.RSLabelCircleImage" name="rSLabelCircleImageUsuario">
                       <Properties>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/Resources/xd (2).png"/>
+                          <Image iconType="3" name="/Resources/lbl-user.png"/>
                         </Property>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="69" y="6" width="106" height="110"/>
+                          <AbsoluteConstraints x="69" y="6" width="110" height="110"/>
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel11">
+                    <Component class="javax.swing.JLabel" name="jLabelNombreUsuario">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Dialog" size="18" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="text" type="java.lang.String" value="Usuario"/>
@@ -6921,6 +6925,9 @@
                         </Property>
                         <Property name="inheritsPopupMenu" type="boolean" value="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonMaterialIconUno9ActionPerformed"/>
+                      </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="0" y="400" width="250" height="40"/>
@@ -6975,6 +6982,20 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
               <SubComponents>
+                <Component class="Views.Configuracion" name="configuracion1">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                      <CardConstraints cardName="card4"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="Views.Usuarios" name="usuarios2">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                      <CardConstraints cardName="card3"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
                 <Component class="Views.Dasboard" name="dasboard2">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
@@ -7064,7 +7085,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Clientes"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
           <Events>
@@ -7084,7 +7105,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Inventario"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
           <Events>
@@ -7104,7 +7125,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cotizaciones"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
           <Events>
@@ -7124,7 +7145,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Pedido"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
           <Events>
@@ -7157,7 +7178,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Dashboard"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
           <Events>

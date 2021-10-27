@@ -10,7 +10,7 @@ import Controller.CotizacionesMV;
 import Controller.LoginVM;
 import Library.Objectos;
 import Controller.PedidoVM;
-import Controller.VentasVM;
+import Controller.UsuariosVM;
 import Interfeces.IClassModels;
 import Models.PedidoSQL;
 import Models.TVentas;
@@ -28,6 +28,7 @@ import SaveColor.SaveColor;
 import static Views.ListarClientes.apellidoCliente;
 import static Views.ListarClientes.nidCliente;
 import static Views.ListarClientes.nombreClienteVenta;
+import alertas.AlertError;
 import app.bolivia.swing.JCTextField;
 import java.awt.Color;
 import java.awt.Desktop;
@@ -50,11 +51,14 @@ import rojerusan.RSNotifyFade;
  * @author Gustavo
  */
 public class Sistema extends javax.swing.JFrame implements IClassModels {
-    
+
     /**
      * Creates new form Sistema
      */
     private LoginVM login;
+    private UsuariosVM usuario;
+    private static TUsuarios _dataUsuario;
+
     private int idCliente = 0;
     private Conexion conexion = Conexion.createInstance();
     private String sql = "";
@@ -63,21 +67,28 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     controlPedido pedidos = new controlPedido();
     private int fac;
 
-    public Sistema(TUsuarios usuario) {
+    public Sistema(TUsuarios dataUsuario) {
 
         initComponents();
-        // CODIGO DE USUARIO
+
+        _dataUsuario = dataUsuario;
+        //CODIGO DE USUARIO
         login = new LoginVM();
+        Object[] perfil = {
+            jLabelNombreUsuario,
+            rSLabelCircleImageUsuario,};
+        usuario = new UsuariosVM(dataUsuario, perfil);
+
 //        if(ReadColor.colorFondo.exists()){
-//            jPanel19.setBackground(ReadColor.leerColorFondo());
-//        }
-//        
-//        if(ReadColor.colorBarra.exists()){
-//            jPanel1.setBackground(ReadColor.leerColorBarra());
-//        }
-//        if(ReadColor.colorTexto.exists()){
-//            texto.setForeground(ReadColor.leerColorTexto());
-//        }
+        //            jPanel19.setBackground(ReadColor.leerColorFondo());
+        //        }
+        //        
+        //        if(ReadColor.colorBarra.exists()){
+        //            jPanel1.setBackground(ReadColor.leerColorBarra());
+        //        }
+        //        if(ReadColor.colorTexto.exists()){
+        //            texto.setForeground(ReadColor.leerColorTexto());
+        //        }
         this.setExtendedState(MAXIMIZED_BOTH);
         JTextField categoria = new JTextField();
         categoria.setText("");
@@ -515,8 +526,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel49 = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
         jPanel19 = new javax.swing.JPanel();
-        rSLabelCircleImage1 = new rojerusan.RSLabelCircleImage();
-        jLabel11 = new javax.swing.JLabel();
+        rSLabelCircleImageUsuario = new rojerusan.RSLabelCircleImage();
+        jLabelNombreUsuario = new javax.swing.JLabel();
         rSButtonMaterialIconUno2 = new rsmaterialcomponents.RSButtonMaterialIconUno();
         rSButtonMaterialIconUno3 = new rsmaterialcomponents.RSButtonMaterialIconUno();
         rSButtonMaterialIconUno4 = new rsmaterialcomponents.RSButtonMaterialIconUno();
@@ -529,6 +540,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         rSPanelsSlider2 = new rojerusan.RSPanelsSlider();
+        configuracion1 = new Views.Configuracion();
+        usuarios2 = new Views.Usuarios();
         dasboard2 = new Views.Dasboard();
         jPanel22 = new javax.swing.JPanel();
         ButtonCliente = new javax.swing.JButton();
@@ -3338,11 +3351,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         );
 
         jTabbedPane3.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                jTabbedPane3AncestorAdded(evt);
-            }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
                 jTabbedPane3AncestorMoved(evt);
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jTabbedPane3AncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -3524,6 +3537,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         TotalPedidos.setBackground(new java.awt.Color(34, 102, 145));
         TotalPedidos.setBorder(null);
         TotalPedidos.setForeground(new java.awt.Color(255, 255, 255));
+        TotalPedidos.setEnabled(false);
         TotalPedidos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         TotalPedidos.setOpaque(false);
         TotalPedidos.setPhColor(new java.awt.Color(255, 255, 255));
@@ -4184,14 +4198,15 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel19.setBackground(new java.awt.Color(34, 102, 145));
         jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        rSLabelCircleImage1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        rSLabelCircleImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/xd (2).png"))); // NOI18N
-        jPanel19.add(rSLabelCircleImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 6, 106, 110));
+        rSLabelCircleImageUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rSLabelCircleImageUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/lbl-user.png"))); // NOI18N
+        jPanel19.add(rSLabelCircleImageUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 6, 110, 110));
 
-        jLabel11.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Usuario");
-        jPanel19.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 113, 238, 38));
+        jLabelNombreUsuario.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabelNombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelNombreUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelNombreUsuario.setText("Usuario");
+        jPanel19.add(jLabelNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 113, 238, 38));
 
         rSButtonMaterialIconUno2.setBackground(new java.awt.Color(34, 102, 145));
         rSButtonMaterialIconUno2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
@@ -4271,6 +4286,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         rSButtonMaterialIconUno9.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
         rSButtonMaterialIconUno9.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SETTINGS);
         rSButtonMaterialIconUno9.setInheritsPopupMenu(true);
+        rSButtonMaterialIconUno9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonMaterialIconUno9ActionPerformed(evt);
+            }
+        });
         jPanel19.add(rSButtonMaterialIconUno9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 250, 40));
 
         rSButtonMaterialIconUno10.setBackground(new java.awt.Color(34, 102, 145));
@@ -4290,6 +4310,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         jScrollPane12.setViewportView(jPanel19);
 
+        rSPanelsSlider2.add(configuracion1, "card4");
+        rSPanelsSlider2.add(usuarios2, "card3");
         rSPanelsSlider2.add(dasboard2, "card2");
 
         javax.swing.GroupLayout jPanel49Layout = new javax.swing.GroupLayout(jPanel49);
@@ -4299,7 +4321,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             .addGroup(jPanel49Layout.createSequentialGroup()
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSPanelsSlider2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(rSPanelsSlider2, javax.swing.GroupLayout.DEFAULT_SIZE, 925, Short.MAX_VALUE))
         );
         jPanel49Layout.setVerticalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4507,13 +4529,21 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_ButtonInventarioActionPerformed
 
     private void ButtonCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCotizacionActionPerformed
-        TabbedPanePrincipal.setSelectedIndex(2);
-        BtnVentas.setEnabled(true);
-        // rSButtonRound6.setEnabled(true);
-        ButtonInventario.setEnabled(true);
-        ButtonCotizacion.setEnabled(false);
-        //   ButtonAdministracion.setEnabled(true);
-        ButtonClienteConfig.setEnabled(true);
+
+        if (_dataUsuario.getRole().equals("Admin")) {
+            TabbedPanePrincipal.setSelectedIndex(2);
+            BtnVentas.setEnabled(true);
+            // rSButtonRound6.setEnabled(true);
+            ButtonInventario.setEnabled(true);
+            ButtonCotizacion.setEnabled(false);
+            //   ButtonAdministracion.setEnabled(true);
+            ButtonClienteConfig.setEnabled(true);
+        } else {
+            AlertError error = new AlertError(this, true);
+            error.Texto("Acceso Denegado");
+            error.setVisible(true);
+        }
+
 
     }//GEN-LAST:event_ButtonCotizacionActionPerformed
 
@@ -5770,6 +5800,10 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
     private void rSButtonMaterialIconUno2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconUno2ActionPerformed
         dispose();
+        try {
+            login.Close();
+        } catch (SQLException ex) {
+        }
         Login login = new Login();
         login.setVisible(true);
     }//GEN-LAST:event_rSButtonMaterialIconUno2ActionPerformed
@@ -5798,6 +5832,16 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         }
     }//GEN-LAST:event_formWindowClosing
+
+    private void rSButtonMaterialIconUno9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconUno9ActionPerformed
+        if (_dataUsuario.getRole().equals("Admin")) {
+
+        } else {
+            AlertError error = new AlertError(this, true);
+            error.Texto("Acceso Denegado");
+            error.setVisible(true);
+        }
+    }//GEN-LAST:event_rSButtonMaterialIconUno9ActionPerformed
 
     // </editor-fold>
     /**
@@ -5946,6 +5990,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel codigoL7;
     private javax.swing.JLabel codigoL8;
     private javax.swing.JLabel codigoL9;
+    private Views.Configuracion configuracion1;
     private Views.Dasboard dasboard2;
     public static javax.swing.JTextField descuento;
     public static javax.swing.JTextField dirCotizacion;
@@ -5955,7 +6000,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private com.toedter.calendar.JDateChooser fecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -5988,6 +6032,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel jLabelInventario_platillosTipo;
     private javax.swing.JLabel jLabelInventario_platillosTipo1;
     private javax.swing.JLabel jLabelInventario_platillosTipo2;
+    private javax.swing.JLabel jLabelNombreUsuario;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -6119,7 +6164,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno7;
     private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno8;
     private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno9;
-    private rojerusan.RSLabelCircleImage rSLabelCircleImage1;
+    private rojerusan.RSLabelCircleImage rSLabelCircleImageUsuario;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelFecha rSLabelFecha2;
     private rojeru_san.RSLabelFecha rSLabelFecha3;
@@ -6165,6 +6210,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel tipoL;
     public static app.bolivia.swing.JCTextField total;
     private javax.swing.JLabel txtIdVenta;
+    private Views.Usuarios usuarios2;
     private javax.swing.JButton vender;
     private javax.swing.JButton ventasH;
     private javax.swing.JButton ventasH1;

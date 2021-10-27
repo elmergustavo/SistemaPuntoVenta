@@ -6,7 +6,11 @@
 package Views;
 
 //import principal.AWTUtilities;
+import Controller.LoginVM;
+import Models.Usuarios.TUsuarios;
 import java.awt.Color;
+import static java.awt.Frame.MAXIMIZED_BOTH;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,17 +18,18 @@ import java.util.logging.Logger;
  *
  * @author Rojeru San
  */
-public class Splash extends javax.swing.JFrame implements Runnable{
+public class Splash extends javax.swing.JFrame implements Runnable {
 
     private Thread tiempo = null;
+
     /**
      * Creates new form Splash
      */
     public Splash() {
         initComponents();
-        Splash.this.setBackground(new Color(0,0,0,0));
+        Splash.this.setBackground(new Color(0, 0, 0, 0));
         this.setLocationRelativeTo(null);
-       // AWTUtilities.setOpaque(this, false);
+        // AWTUtilities.setOpaque(this, false);
         tiempo = new Thread(this);
         tiempo.start();
     }
@@ -119,7 +124,7 @@ public class Splash extends javax.swing.JFrame implements Runnable{
         }
         //</editor-fold>
         //</editor-fold>
-        
+
         //</editor-fold>
         //</editor-fold>
 
@@ -141,19 +146,29 @@ public class Splash extends javax.swing.JFrame implements Runnable{
 
     @Override
     public void run() {
-        while(tiempo != null){
+        while (tiempo != null) {
             try {
                 Thread.sleep(10000);
                 tiempo = null;
                 this.dispose();
-                
-                
+
 //                Sistema sistema = new Sistema();
 //                sistema.setExtendedState(MAXIMIZED_BOTH);
 //                sistema.setVisible(true);
-                Login login = new Login();
-                login.setVisible(true);
-                
+                LoginVM login = new LoginVM();
+                Object[] objects = login.Verificar();
+
+                List<TUsuarios> listUsuario = (List<TUsuarios>) objects[0];
+                if (!listUsuario.isEmpty()) {
+                    Sistema sisten = new Sistema(listUsuario.get(0));
+                    sisten.setVisible(true);
+                    sisten.setExtendedState(MAXIMIZED_BOTH);
+                } else {
+                    Login sistema = new Login();
+                    // sistema.setExtendedState(MAXIMIZED_BOTH);
+                    sistema.setVisible(true);
+                }
+
             } catch (InterruptedException ex) {
                 Logger.getLogger(Splash.class.getName()).log(Level.SEVERE, null, ex);
             }
