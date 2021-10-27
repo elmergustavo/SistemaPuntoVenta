@@ -22,7 +22,8 @@ import javax.swing.JTextField;
  * @author elmer
  */
 public class Login extends javax.swing.JFrame {
-
+    
+    private static TUsuarios _dataUsuario;
     /**
      * Creates new form Login
      */
@@ -174,6 +175,8 @@ public class Login extends javax.swing.JFrame {
                 sisten.setVisible(true);
                 sisten.setExtendedState(MAXIMIZED_BOTH);
                 this.setVisible(false);
+                
+               // Configuracion config = new Configuracion(listUsuario.get(0));
             }
         } catch (SQLException ex) {
             

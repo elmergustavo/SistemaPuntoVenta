@@ -394,12 +394,12 @@ public class Pdf {
         try {
             //  int id = Vdao.IdVenta();
             FileOutputStream archivo;
-            File file = new File("C:\\Users\\elmer\\Desktop\\SistemaPuntoVenta\\src\\/pdf/Venta" + numeroFactura + ".pdf");
+            File file = new File("C:\\Users\\gustavo\\Desktop\\SistemaPuntoVenta\\src\\/pdf/Venta" + numeroFactura + ".pdf");
             archivo = new FileOutputStream(file);
             Document doc = new Document();
             PdfWriter.getInstance(doc, archivo);
             doc.open();
-            Image img = Image.getInstance("C:\\Users\\elmer\\Desktop\\SistemaPuntoVenta\\src\\Resources/logo.png");
+            Image img = Image.getInstance("C:\\Users\\gustavo\\Desktop\\SistemaPuntoVenta\\src\\Resources/logo.png");
 
             Paragraph fecha = new Paragraph();
             Font negrita = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLACK);
@@ -516,7 +516,7 @@ public class Pdf {
 
             Desktop.getDesktop().open(file);
         } catch (DocumentException | IOException e) {
-
+            
         }
     }
     

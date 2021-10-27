@@ -5,17 +5,23 @@
  */
 package Views;
 
+import Models.Usuarios.TUsuarios;
+import alertas.AlertError;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Gustavo
  */
 public class Configuracion extends javax.swing.JPanel {
 
+    private static TUsuarios _dataUsuario;
     /**
      * Creates new form Configuracion
      */
     public Configuracion() {
         initComponents();
+//         _dataUsuario = dataUsuario;
     }
 
     /**
@@ -299,6 +305,14 @@ public class Configuracion extends javax.swing.JPanel {
 //            a.msj3.setVisible(false);
 //            a.setVisible(true);
 //        }
+
+        if (_dataUsuario.getRole().equals("Admin")) {
+            JOptionPane.showConfirmDialog(null, "Bienvenido");
+        } else {
+            AlertError error = new AlertError(null, true);
+            error.Texto("Acceso Denegado");
+            error.setVisible(true);
+        }
     }//GEN-LAST:event_btnBackupActionPerformed
 
     private void rSButtonMetro5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro5ActionPerformed
