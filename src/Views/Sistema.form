@@ -6769,7 +6769,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno3">
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="btnDasboard">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="91" green="66" red="22" type="rgb"/>
@@ -6780,7 +6780,7 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonMaterialIconUno3ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDasboardActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -6788,7 +6788,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno4">
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="btnVentas">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="91" green="66" red="22" type="rgb"/>
@@ -6806,7 +6806,7 @@
                         <Property name="inheritsPopupMenu" type="boolean" value="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonMaterialIconUno4ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVentasActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -6814,7 +6814,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno5">
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="btnPedidos">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="91" green="66" red="22" type="rgb"/>
@@ -6837,7 +6837,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno6">
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="btnContizaciones">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="91" green="66" red="22" type="rgb"/>
@@ -6860,7 +6860,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno7">
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="btnInventario">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="91" green="66" red="22" type="rgb"/>
@@ -6877,7 +6877,7 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonMaterialIconUno7ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInventarioActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -6885,7 +6885,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno8">
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="btnUsuarios">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="91" green="66" red="22" type="rgb"/>
@@ -6902,13 +6902,16 @@
                         </Property>
                         <Property name="inheritsPopupMenu" type="boolean" value="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUsuariosActionPerformed"/>
+                      </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="0" y="360" width="250" height="40"/>
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno9">
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="btnConfiguracion">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="91" green="66" red="22" type="rgb"/>
@@ -6926,7 +6929,7 @@
                         <Property name="inheritsPopupMenu" type="boolean" value="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonMaterialIconUno9ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfiguracionActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -6934,7 +6937,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="rSButtonMaterialIconUno10">
+                    <Component class="rsmaterialcomponents.RSButtonMaterialIconUno" name="btnAbout">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="91" green="66" red="22" type="rgb"/>
@@ -6952,7 +6955,7 @@
                         <Property name="inheritsPopupMenu" type="boolean" value="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonMaterialIconUno10ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAboutActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -6982,24 +6985,33 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
               <SubComponents>
-                <Component class="Views.Configuracion" name="configuracion1">
+                <Component class="Views.Dasboard" name="Dasboard">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="Dasboard" noResource="true"/>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                      <CardConstraints cardName="card2"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="Views.Configuracion" name="pnlConfiguracion">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="pnlConfiguracion" noResource="true"/>
+                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                       <CardConstraints cardName="card4"/>
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="Views.Usuarios" name="usuarios2">
+                <Component class="Views.Usuarios" name="pnlUsuario">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="pnlUsuario" noResource="true"/>
+                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                       <CardConstraints cardName="card3"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="Views.Dasboard" name="dasboard2">
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                      <CardConstraints cardName="card2"/>
                     </Constraint>
                   </Constraints>
                 </Component>

@@ -45,6 +45,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import rojerusan.RSNotifyFade;
+import rojerusan.RSPanelsSlider;
 
 /**
  *
@@ -529,20 +530,20 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         rSLabelCircleImageUsuario = new rojerusan.RSLabelCircleImage();
         jLabelNombreUsuario = new javax.swing.JLabel();
         rSButtonMaterialIconUno2 = new rsmaterialcomponents.RSButtonMaterialIconUno();
-        rSButtonMaterialIconUno3 = new rsmaterialcomponents.RSButtonMaterialIconUno();
-        rSButtonMaterialIconUno4 = new rsmaterialcomponents.RSButtonMaterialIconUno();
-        rSButtonMaterialIconUno5 = new rsmaterialcomponents.RSButtonMaterialIconUno();
-        rSButtonMaterialIconUno6 = new rsmaterialcomponents.RSButtonMaterialIconUno();
-        rSButtonMaterialIconUno7 = new rsmaterialcomponents.RSButtonMaterialIconUno();
-        rSButtonMaterialIconUno8 = new rsmaterialcomponents.RSButtonMaterialIconUno();
-        rSButtonMaterialIconUno9 = new rsmaterialcomponents.RSButtonMaterialIconUno();
-        rSButtonMaterialIconUno10 = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        btnDasboard = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        btnVentas = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        btnPedidos = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        btnContizaciones = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        btnInventario = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        btnUsuarios = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        btnConfiguracion = new rsmaterialcomponents.RSButtonMaterialIconUno();
+        btnAbout = new rsmaterialcomponents.RSButtonMaterialIconUno();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         rSPanelsSlider2 = new rojerusan.RSPanelsSlider();
-        configuracion1 = new Views.Configuracion();
-        usuarios2 = new Views.Usuarios();
-        dasboard2 = new Views.Dasboard();
+        Dasboard = new Views.Dasboard();
+        pnlConfiguracion = new Views.Configuracion();
+        pnlUsuario = new Views.Usuarios();
         jPanel22 = new javax.swing.JPanel();
         ButtonCliente = new javax.swing.JButton();
         ButtonInventario = new javax.swing.JButton();
@@ -4221,98 +4222,108 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         });
         jPanel19.add(rSButtonMaterialIconUno2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 250, 40));
 
-        rSButtonMaterialIconUno3.setBackground(new java.awt.Color(34, 102, 145));
-        rSButtonMaterialIconUno3.setText("     DASBOARD");
-        rSButtonMaterialIconUno3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.DASHBOARD);
-        rSButtonMaterialIconUno3.addActionListener(new java.awt.event.ActionListener() {
+        btnDasboard.setBackground(new java.awt.Color(34, 102, 145));
+        btnDasboard.setText("     DASBOARD");
+        btnDasboard.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.DASHBOARD);
+        btnDasboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonMaterialIconUno3ActionPerformed(evt);
+                btnDasboardActionPerformed(evt);
             }
         });
-        jPanel19.add(rSButtonMaterialIconUno3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 250, 40));
+        jPanel19.add(btnDasboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 250, 40));
 
-        rSButtonMaterialIconUno4.setBackground(new java.awt.Color(34, 102, 145));
-        rSButtonMaterialIconUno4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
-        rSButtonMaterialIconUno4.setText("     VENTAS");
-        rSButtonMaterialIconUno4.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
-        rSButtonMaterialIconUno4.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ASSESSMENT);
-        rSButtonMaterialIconUno4.setInheritsPopupMenu(true);
-        rSButtonMaterialIconUno4.addActionListener(new java.awt.event.ActionListener() {
+        btnVentas.setBackground(new java.awt.Color(34, 102, 145));
+        btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        btnVentas.setText("     VENTAS");
+        btnVentas.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
+        btnVentas.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ASSESSMENT);
+        btnVentas.setInheritsPopupMenu(true);
+        btnVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonMaterialIconUno4ActionPerformed(evt);
+                btnVentasActionPerformed(evt);
             }
         });
-        jPanel19.add(rSButtonMaterialIconUno4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 250, 40));
+        jPanel19.add(btnVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 250, 40));
 
-        rSButtonMaterialIconUno5.setBackground(new java.awt.Color(34, 102, 145));
-        rSButtonMaterialIconUno5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
-        rSButtonMaterialIconUno5.setText("     PEDIDOS");
-        rSButtonMaterialIconUno5.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
-        rSButtonMaterialIconUno5.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PLAYLIST_ADD_CHECK);
-        rSButtonMaterialIconUno5.setInheritsPopupMenu(true);
-        jPanel19.add(rSButtonMaterialIconUno5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 250, 40));
+        btnPedidos.setBackground(new java.awt.Color(34, 102, 145));
+        btnPedidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        btnPedidos.setText("     PEDIDOS");
+        btnPedidos.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
+        btnPedidos.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PLAYLIST_ADD_CHECK);
+        btnPedidos.setInheritsPopupMenu(true);
+        jPanel19.add(btnPedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 250, 40));
 
-        rSButtonMaterialIconUno6.setBackground(new java.awt.Color(34, 102, 145));
-        rSButtonMaterialIconUno6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
-        rSButtonMaterialIconUno6.setText("     COTIZACIONES");
-        rSButtonMaterialIconUno6.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
-        rSButtonMaterialIconUno6.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        rSButtonMaterialIconUno6.setInheritsPopupMenu(true);
-        jPanel19.add(rSButtonMaterialIconUno6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 250, 40));
+        btnContizaciones.setBackground(new java.awt.Color(34, 102, 145));
+        btnContizaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        btnContizaciones.setText("     COTIZACIONES");
+        btnContizaciones.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
+        btnContizaciones.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        btnContizaciones.setInheritsPopupMenu(true);
+        jPanel19.add(btnContizaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 250, 40));
 
-        rSButtonMaterialIconUno7.setBackground(new java.awt.Color(34, 102, 145));
-        rSButtonMaterialIconUno7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
-        rSButtonMaterialIconUno7.setText("     INVENTARIO");
-        rSButtonMaterialIconUno7.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
-        rSButtonMaterialIconUno7.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CHECK);
-        rSButtonMaterialIconUno7.addActionListener(new java.awt.event.ActionListener() {
+        btnInventario.setBackground(new java.awt.Color(34, 102, 145));
+        btnInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        btnInventario.setText("     INVENTARIO");
+        btnInventario.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
+        btnInventario.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CHECK);
+        btnInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonMaterialIconUno7ActionPerformed(evt);
+                btnInventarioActionPerformed(evt);
             }
         });
-        jPanel19.add(rSButtonMaterialIconUno7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 250, 40));
+        jPanel19.add(btnInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 250, 40));
 
-        rSButtonMaterialIconUno8.setBackground(new java.awt.Color(34, 102, 145));
-        rSButtonMaterialIconUno8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
-        rSButtonMaterialIconUno8.setText("     USUARIOS");
-        rSButtonMaterialIconUno8.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
-        rSButtonMaterialIconUno8.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PERM_CONTACT_CALENDAR);
-        rSButtonMaterialIconUno8.setInheritsPopupMenu(true);
-        jPanel19.add(rSButtonMaterialIconUno8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 250, 40));
-
-        rSButtonMaterialIconUno9.setBackground(new java.awt.Color(34, 102, 145));
-        rSButtonMaterialIconUno9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
-        rSButtonMaterialIconUno9.setText("     CONFIGURACIÓN");
-        rSButtonMaterialIconUno9.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
-        rSButtonMaterialIconUno9.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SETTINGS);
-        rSButtonMaterialIconUno9.setInheritsPopupMenu(true);
-        rSButtonMaterialIconUno9.addActionListener(new java.awt.event.ActionListener() {
+        btnUsuarios.setBackground(new java.awt.Color(34, 102, 145));
+        btnUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        btnUsuarios.setText("     USUARIOS");
+        btnUsuarios.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
+        btnUsuarios.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PERM_CONTACT_CALENDAR);
+        btnUsuarios.setInheritsPopupMenu(true);
+        btnUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonMaterialIconUno9ActionPerformed(evt);
+                btnUsuariosActionPerformed(evt);
             }
         });
-        jPanel19.add(rSButtonMaterialIconUno9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 250, 40));
+        jPanel19.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 250, 40));
 
-        rSButtonMaterialIconUno10.setBackground(new java.awt.Color(34, 102, 145));
-        rSButtonMaterialIconUno10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
-        rSButtonMaterialIconUno10.setText("     ACERCA DE");
-        rSButtonMaterialIconUno10.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
-        rSButtonMaterialIconUno10.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.MODE_EDIT);
-        rSButtonMaterialIconUno10.setInheritsPopupMenu(true);
-        rSButtonMaterialIconUno10.addActionListener(new java.awt.event.ActionListener() {
+        btnConfiguracion.setBackground(new java.awt.Color(34, 102, 145));
+        btnConfiguracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        btnConfiguracion.setText("     CONFIGURACIÓN");
+        btnConfiguracion.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
+        btnConfiguracion.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SETTINGS);
+        btnConfiguracion.setInheritsPopupMenu(true);
+        btnConfiguracion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonMaterialIconUno10ActionPerformed(evt);
+                btnConfiguracionActionPerformed(evt);
             }
         });
-        jPanel19.add(rSButtonMaterialIconUno10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 250, 40));
+        jPanel19.add(btnConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 250, 40));
+
+        btnAbout.setBackground(new java.awt.Color(34, 102, 145));
+        btnAbout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
+        btnAbout.setText("     ACERCA DE");
+        btnAbout.setEffectButton(rsmaterialcomponents.RSButtonMaterialIconUno.EFFECTBUTTON.RAISED);
+        btnAbout.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.MODE_EDIT);
+        btnAbout.setInheritsPopupMenu(true);
+        btnAbout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAboutActionPerformed(evt);
+            }
+        });
+        jPanel19.add(btnAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 250, 40));
         jPanel19.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 250, 10));
         jPanel19.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 148, 250, -1));
 
         jScrollPane12.setViewportView(jPanel19);
 
-        rSPanelsSlider2.add(configuracion1, "card4");
-        rSPanelsSlider2.add(usuarios2, "card3");
-        rSPanelsSlider2.add(dasboard2, "card2");
+        Dasboard.setName("Dasboard"); // NOI18N
+        rSPanelsSlider2.add(Dasboard, "card2");
+
+        pnlConfiguracion.setName("pnlConfiguracion"); // NOI18N
+        rSPanelsSlider2.add(pnlConfiguracion, "card4");
+
+        pnlUsuario.setName("pnlUsuario"); // NOI18N
+        rSPanelsSlider2.add(pnlUsuario, "card3");
 
         javax.swing.GroupLayout jPanel49Layout = new javax.swing.GroupLayout(jPanel49);
         jPanel49.setLayout(jPanel49Layout);
@@ -5794,9 +5805,19 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
     }//GEN-LAST:event_ButtonClienteActionPerformed
 
-    private void rSButtonMaterialIconUno3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconUno3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSButtonMaterialIconUno3ActionPerformed
+    private void btnDasboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDasboardActionPerformed
+        if (!this.btnDasboard.isSelected()) {
+            this.btnDasboard.setSelected(true);
+            this.btnAbout.setSelected(false);
+            this.btnConfiguracion.setSelected(false);
+            this.btnContizaciones.setSelected(false);
+            this.btnUsuarios.setSelected(false);
+            this.btnInventario.setSelected(false);
+
+            this.rSPanelsSlider2.slidPanel(5, Dasboard, RSPanelsSlider.direct.Right);
+        }
+        
+    }//GEN-LAST:event_btnDasboardActionPerformed
 
     private void rSButtonMaterialIconUno2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconUno2ActionPerformed
         dispose();
@@ -5808,18 +5829,18 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         login.setVisible(true);
     }//GEN-LAST:event_rSButtonMaterialIconUno2ActionPerformed
 
-    private void rSButtonMaterialIconUno7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconUno7ActionPerformed
+    private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
         TabbedPanePrincipal.setSelectedIndex(1);
-    }//GEN-LAST:event_rSButtonMaterialIconUno7ActionPerformed
+    }//GEN-LAST:event_btnInventarioActionPerformed
 
-    private void rSButtonMaterialIconUno10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconUno10ActionPerformed
+    private void btnAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutActionPerformed
         new about.About(this, "", true).setVisible(true);
-    }//GEN-LAST:event_rSButtonMaterialIconUno10ActionPerformed
+    }//GEN-LAST:event_btnAboutActionPerformed
 
-    private void rSButtonMaterialIconUno4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconUno4ActionPerformed
+    private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
         JreportJaper jasper = new JreportJaper();
         jasper.jasper();
-    }//GEN-LAST:event_rSButtonMaterialIconUno4ActionPerformed
+    }//GEN-LAST:event_btnVentasActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         if (JOptionPane.YES_NO_OPTION == JOptionPane.showConfirmDialog(null,
@@ -5833,15 +5854,21 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         }
     }//GEN-LAST:event_formWindowClosing
 
-    private void rSButtonMaterialIconUno9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconUno9ActionPerformed
-        if (_dataUsuario.getRole().equals("Admin")) {
+    private void btnConfiguracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfiguracionActionPerformed
+//        if (_dataUsuario.getRole().equals("Admin")) {
+//
+//        } else {
+//            AlertError error = new AlertError(this, true);
+//            error.Texto("Acceso Denegado");
+//            error.setVisible(true);
+//        }
 
-        } else {
-            AlertError error = new AlertError(this, true);
-            error.Texto("Acceso Denegado");
-            error.setVisible(true);
-        }
-    }//GEN-LAST:event_rSButtonMaterialIconUno9ActionPerformed
+        this.rSPanelsSlider2.slidPanel(5, pnlConfiguracion, RSPanelsSlider.direct.Right);
+    }//GEN-LAST:event_btnConfiguracionActionPerformed
+
+    private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
+        this.rSPanelsSlider2.slidPanel(5, pnlUsuario, RSPanelsSlider.direct.Right);
+    }//GEN-LAST:event_btnUsuariosActionPerformed
 
     // </editor-fold>
     /**
@@ -5900,6 +5927,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private org.bolivia.combo.SComboBoxBlue ComboBoxMesas;
     private org.bolivia.combo.SComboBoxBlue ComboBoxSuministro;
     private org.bolivia.combo.SComboBoxBlue ComboBoxSuministro1;
+    private Views.Dasboard Dasboard;
     private javax.swing.JLabel LabelCliente_Apellido;
     private javax.swing.JLabel LabelCliente_Direccion;
     private javax.swing.JLabel LabelCliente_Email;
@@ -5958,11 +5986,19 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JButton borrar;
     private javax.swing.JButton borrar1;
     private javax.swing.JButton borrar2;
+    private rsmaterialcomponents.RSButtonMaterialIconUno btnAbout;
+    private rsmaterialcomponents.RSButtonMaterialIconUno btnConfiguracion;
+    private rsmaterialcomponents.RSButtonMaterialIconUno btnContizaciones;
+    private rsmaterialcomponents.RSButtonMaterialIconUno btnDasboard;
     private javax.swing.JButton btnGenerarReportePlatillos;
     private javax.swing.JButton btnGenerarReporteSuministros;
     private javax.swing.JButton btnGenerarReporteSuministrosPDF;
     private javax.swing.JButton btnGenerarReporteSuministrosPDF1;
     private javax.swing.JButton btnGenerarReporteSuministrosPDF2;
+    private rsmaterialcomponents.RSButtonMaterialIconUno btnInventario;
+    private rsmaterialcomponents.RSButtonMaterialIconUno btnPedidos;
+    private rsmaterialcomponents.RSButtonMaterialIconUno btnUsuarios;
+    private rsmaterialcomponents.RSButtonMaterialIconUno btnVentas;
     private javax.swing.JButton buscF;
     private javax.swing.JButton busca1;
     private javax.swing.JButton busca2;
@@ -5990,8 +6026,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel codigoL7;
     private javax.swing.JLabel codigoL8;
     private javax.swing.JLabel codigoL9;
-    private Views.Configuracion configuracion1;
-    private Views.Dasboard dasboard2;
     public static javax.swing.JTextField descuento;
     public static javax.swing.JTextField dirCotizacion;
     private javax.swing.JButton eliminar;
@@ -6153,17 +6187,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private rojerusan.RSMaterialButtonRectangle nuevoPedido;
     public static app.bolivia.swing.JCTextField numFac;
     public static app.bolivia.swing.JCTextField numFac1;
+    private Views.Configuracion pnlConfiguracion;
+    private Views.Usuarios pnlUsuario;
     public static javax.swing.JTextField porcentaje;
     private app.bolivia.swing.JCTextField precio;
-    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno10;
     private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno2;
-    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno3;
-    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno4;
-    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno5;
-    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno6;
-    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno7;
-    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno8;
-    private rsmaterialcomponents.RSButtonMaterialIconUno rSButtonMaterialIconUno9;
     private rojerusan.RSLabelCircleImage rSLabelCircleImageUsuario;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelFecha rSLabelFecha2;
@@ -6210,7 +6238,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel tipoL;
     public static app.bolivia.swing.JCTextField total;
     private javax.swing.JLabel txtIdVenta;
-    private Views.Usuarios usuarios2;
     private javax.swing.JButton vender;
     private javax.swing.JButton ventasH;
     private javax.swing.JButton ventasH1;
