@@ -203,9 +203,6 @@
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="91" green="66" red="22" type="rgb"/>
                     </Property>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="null"/>
-                    </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
@@ -1605,9 +1602,6 @@
                                   <Image iconType="3" name="/Resources/excel.png"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Excel"/>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
-                                </Property>
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -1632,9 +1626,6 @@
                                   <Image iconType="3" name="/Resources/pdf1.png"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="PDF"/>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
-                                </Property>
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -1861,9 +1852,6 @@
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="91" green="66" red="22" type="rgb"/>
                                 </Property>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
-                                </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
@@ -1902,9 +1890,6 @@
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="91" green="66" red="22" type="rgb"/>
                                 </Property>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
-                                </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
@@ -1932,9 +1917,6 @@
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="91" green="66" red="22" type="rgb"/>
-                                </Property>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
                                 </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2301,9 +2283,6 @@
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="91" green="66" red="22" type="rgb"/>
                             </Property>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="null"/>
-                            </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
@@ -2388,9 +2367,6 @@
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="91" green="66" red="22" type="rgb"/>
                             </Property>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="null"/>
-                            </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
@@ -2429,9 +2405,6 @@
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="91" green="66" red="22" type="rgb"/>
-                            </Property>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="null"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2556,9 +2529,6 @@
                               <Image iconType="3" name="/Resources/regis1.png"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Registrar"/>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="null"/>
-                            </Property>
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -2583,9 +2553,6 @@
                               <Image iconType="3" name="/Resources/actualizar.png"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Actualizar"/>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="null"/>
-                            </Property>
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -2610,9 +2577,6 @@
                               <Image iconType="3" name="/Resources/borrar1.png"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Eliminar"/>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="null"/>
-                            </Property>
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -2637,9 +2601,6 @@
                               <Image iconType="3" name="/Resources/limpiar1.png"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Limpiar Campos"/>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="null"/>
-                            </Property>
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -2940,9 +2901,6 @@
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="91" green="66" red="22" type="rgb"/>
                             </Property>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="null"/>
-                            </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
@@ -3017,9 +2975,6 @@
                           <Image iconType="3" name="/Resources/excel.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Excel"/>
-                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                          <Border info="null"/>
-                        </Property>
                         <Property name="borderPainted" type="boolean" value="false"/>
                         <Property name="contentAreaFilled" type="boolean" value="false"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -3044,9 +2999,6 @@
                           <Image iconType="3" name="/Resources/pdf1.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="PDF"/>
-                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                          <Border info="null"/>
-                        </Property>
                         <Property name="borderPainted" type="boolean" value="false"/>
                         <Property name="contentAreaFilled" type="boolean" value="false"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -3439,9 +3391,6 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Resources/elimina2.png"/>
                             </Property>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="null"/>
-                            </Property>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                               <Color id="Cursor Por defecto"/>
@@ -3460,9 +3409,6 @@
                             </Property>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Resources/cancela2.png"/>
-                            </Property>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="null"/>
                             </Property>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -3504,9 +3450,6 @@
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="91" green="66" red="22" type="rgb"/>
-                                </Property>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
                                 </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -3595,9 +3538,6 @@
                             </Property>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Resources/alimento2.png"/>
-                            </Property>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="null"/>
                             </Property>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -3802,9 +3742,6 @@
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="91" green="66" red="22" type="rgb"/>
-                            </Property>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="null"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -4103,9 +4040,6 @@
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="91" green="66" red="22" type="rgb"/>
                                 </Property>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
-                                </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
@@ -4151,9 +4085,6 @@
                                   <Image iconType="3" name="/Resources/borrar1.png"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Eliminar"/>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
-                                </Property>
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -4186,9 +4117,6 @@
                                   <Image iconType="3" name="/Resources/borrarT1.png"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Eliminar Todo"/>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
-                                </Property>
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -4221,9 +4149,6 @@
                                   <Image iconType="3" name="/Resources/limpiar1.png"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Limpiar Campos"/>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
-                                </Property>
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -4253,9 +4178,6 @@
                                   <Font name="Tahoma" size="12" style="1"/>
                                 </Property>
                                 <Property name="toolTipText" type="java.lang.String" value="Buscar"/>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
-                                </Property>
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -4295,9 +4217,6 @@
                                   <Image iconType="3" name="/Resources/buscaF1.png"/>
                                 </Property>
                                 <Property name="toolTipText" type="java.lang.String" value="Buscar"/>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
-                                </Property>
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -4327,9 +4246,6 @@
                                   <Image iconType="3" name="/Resources/ventasH2.png"/>
                                 </Property>
                                 <Property name="toolTipText" type="java.lang.String" value="Buscar"/>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
-                                </Property>
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -4369,9 +4285,6 @@
                                   <Image iconType="3" name="/Resources/pdf1.png"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="PDF"/>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
-                                </Property>
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -4609,9 +4522,6 @@
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="91" green="66" red="22" type="rgb"/>
                     </Property>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="null"/>
-                    </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
@@ -4651,9 +4561,6 @@
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="91" green="66" red="22" type="rgb"/>
-                    </Property>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="null"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -4748,9 +4655,6 @@
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="91" green="66" red="22" type="rgb"/>
                     </Property>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="null"/>
-                    </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
@@ -4816,9 +4720,6 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Resources/calculo2.png"/>
                     </Property>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="null"/>
-                    </Property>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Cursor Por defecto"/>
@@ -4842,9 +4743,6 @@
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Resources/venta2.png"/>
-                    </Property>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="null"/>
                     </Property>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -4870,9 +4768,6 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Resources/elimina2.png"/>
                     </Property>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="null"/>
-                    </Property>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Cursor Por defecto"/>
@@ -4896,9 +4791,6 @@
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Resources/cancela2.png"/>
-                    </Property>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="null"/>
                     </Property>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -5017,9 +4909,6 @@
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="91" green="66" red="22" type="rgb"/>
-                    </Property>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="null"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -5433,9 +5322,6 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Resources/elimina2.png"/>
                             </Property>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="null"/>
-                            </Property>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                               <Color id="Cursor Por defecto"/>
@@ -5454,9 +5340,6 @@
                             </Property>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Resources/cancela2.png"/>
-                            </Property>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="null"/>
                             </Property>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -5711,9 +5594,6 @@
                                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                                   <Image iconType="3" name="/Resources/alimento2.png"/>
                                 </Property>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
-                                </Property>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                                   <Color id="Cursor Por defecto"/>
@@ -5734,9 +5614,6 @@
                                   <Image iconType="3" name="/Resources/restaurante.png"/>
                                 </Property>
                                 <Property name="toolTipText" type="java.lang.String" value="Estado de Mesa"/>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
-                                </Property>
                                 <Property name="borderPainted" type="boolean" value="false"/>
                                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -5756,9 +5633,6 @@
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="91" green="66" red="22" type="rgb"/>
-                                </Property>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
                                 </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -5792,9 +5666,6 @@
                                 <Property name="editable" type="boolean" value="false"/>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="91" green="66" red="22" type="rgb"/>
-                                </Property>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="null"/>
                                 </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -6690,9 +6561,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="66" red="66" type="rgb"/>
                 </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="null"/>
-                </Property>
                 <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
               </Properties>
 
@@ -7372,7 +7240,7 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="921" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="948" max="32767" attributes="0"/>
                               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                                   <Component id="jPanel76" alignment="0" max="32767" attributes="0"/>
                               </Group>
@@ -7380,7 +7248,7 @@
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="593" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="689" max="32767" attributes="0"/>
                               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                                   <Component id="jPanel76" alignment="0" max="32767" attributes="0"/>
                               </Group>
@@ -7398,30 +7266,36 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jTabbedPane1" min="-2" pref="298" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel30" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                                      <Component id="jTabbedPane5" min="-2" pref="634" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jPanel77" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="scrollUsuarios" pref="564" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel30" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txtNombre1" min="-2" pref="207" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jPanel77" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="scrollUsuarios" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="txtNombre1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel30" max="32767" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jTabbedPane1" max="32767" attributes="0"/>
+                                          <Component id="jTabbedPane5" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -7438,212 +7312,406 @@
                                 <Property name="text" type="java.lang.String" value="USUARIOS"/>
                               </Properties>
                             </Component>
-                            <Container class="javax.swing.JPanel" name="jPanel77">
+                            <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                </Property>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                                    <TitledBorder title="DATOS">
-                                      <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                                        <EtchetBorder/>
-                                      </Border>
-                                      <Font PropertyName="font" name="Roboto" size="12" style="1"/>
-                                      <Color PropertyName="color" blue="c0" green="70" red="0" type="rgb"/>
-                                    </TitledBorder>
-                                  </Border>
                                 </Property>
                               </Properties>
 
-                              <Layout>
-                                <DimensionLayout dim="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="txtNombre" alignment="0" pref="297" max="32767" attributes="0"/>
-                                              <Component id="txtUser" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="txtPass" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="comboTipo" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="btnRegistrar" alignment="0" max="32767" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="lblID" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Component id="btnCancelar" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txtNombre1" alignment="1" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                </DimensionLayout>
-                                <DimensionLayout dim="1">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="txtNombre1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                          <Component id="txtNombre" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="txtUser" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="txtPass" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="comboTipo" min="-2" pref="41" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="lblID" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="66" max="32767" attributes="0"/>
-                                          <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="btnRegistrar" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                </DimensionLayout>
-                              </Layout>
+                              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
                               <SubComponents>
-                                <Component class="rojerusan.RSMetroTextFullPlaceHolder" name="txtNombre">
+                                <Container class="javax.swing.JScrollPane" name="jScrollPane13">
                                   <Properties>
-                                    <Property name="mayusculas" type="boolean" value="true"/>
-                                    <Property name="placeholder" type="java.lang.String" value="NOMBRE COMPLETO"/>
-                                    <Property name="soloLetras" type="boolean" value="true"/>
+                                    <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
                                   </Properties>
-                                  <AuxValues>
-                                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                                  </AuxValues>
-                                </Component>
-                                <Component class="rojerusan.RSMetroTextFullPlaceHolder" name="txtUser">
+                                  <Constraints>
+                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                                      <JTabbedPaneConstraints tabName="Registro">
+                                        <Property name="tabTitle" type="java.lang.String" value="Registro"/>
+                                      </JTabbedPaneConstraints>
+                                    </Constraint>
+                                  </Constraints>
+
+                                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                                  <SubComponents>
+                                    <Container class="javax.swing.JPanel" name="jPanel77">
+                                      <Properties>
+                                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                        </Property>
+                                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                                            <TitledBorder title="DATOS">
+                                              <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                                                <EtchetBorder/>
+                                              </Border>
+                                              <Font PropertyName="font" name="Roboto" size="12" style="1"/>
+                                              <Color PropertyName="color" blue="c0" green="70" red="0" type="rgb"/>
+                                            </TitledBorder>
+                                          </Border>
+                                        </Property>
+                                      </Properties>
+
+                                      <Layout>
+                                        <DimensionLayout dim="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="txtNombre" alignment="0" pref="259" max="32767" attributes="0"/>
+                                                      <Component id="txtUser" alignment="1" pref="259" max="32767" attributes="0"/>
+                                                      <Component id="txtPass" alignment="0" pref="259" max="32767" attributes="0"/>
+                                                      <Component id="comboTipo" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="btnRegistrar" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="btnCancelar" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="txtUser1" alignment="0" pref="259" max="32767" attributes="0"/>
+                                                      <Component id="txtUser2" alignment="0" pref="259" max="32767" attributes="0"/>
+                                                      <Component id="txtUser3" alignment="0" pref="259" max="32767" attributes="0"/>
+                                                      <Component id="txtUser4" alignment="0" pref="259" max="32767" attributes="0"/>
+                                                      <Component id="txtUser5" alignment="0" pref="259" max="32767" attributes="0"/>
+                                                      <Group type="102" attributes="0">
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="lblID" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                        </DimensionLayout>
+                                        <DimensionLayout dim="1">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="txtNombre" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="txtUser2" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="txtUser1" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="txtUser" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="txtUser3" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="txtUser5" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="txtUser4" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="txtPass" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="comboTipo" min="-2" pref="41" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="lblID" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace pref="14" max="32767" attributes="0"/>
+                                                  <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="btnRegistrar" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                        </DimensionLayout>
+                                      </Layout>
+                                      <SubComponents>
+                                        <Component class="rojerusan.RSMetroTextFullPlaceHolder" name="txtNombre">
+                                          <Properties>
+                                            <Property name="mayusculas" type="boolean" value="true"/>
+                                            <Property name="placeholder" type="java.lang.String" value="NOMBRES"/>
+                                            <Property name="soloLetras" type="boolean" value="true"/>
+                                          </Properties>
+                                          <AuxValues>
+                                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                                          </AuxValues>
+                                        </Component>
+                                        <Component class="rojerusan.RSMetroTextFullPlaceHolder" name="txtUser">
+                                          <Properties>
+                                            <Property name="placeholder" type="java.lang.String" value="CORREO EL&#xc9;CTRONICO"/>
+                                          </Properties>
+                                          <AuxValues>
+                                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                                          </AuxValues>
+                                        </Component>
+                                        <Component class="rojerusan.RSMetroTextPassPlaceHolderView" name="txtPass">
+                                          <Properties>
+                                            <Property name="placeholder" type="java.lang.String" value="CONTRASE&#xd1;A"/>
+                                          </Properties>
+                                          <AuxValues>
+                                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                                          </AuxValues>
+                                        </Component>
+                                        <Component class="rojerusan.RSComboMetro" name="comboTipo">
+                                          <Properties>
+                                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                              <StringArray count="3">
+                                                <StringItem index="0" value="TIPO DE USUARIO"/>
+                                                <StringItem index="1" value="ADMINISTRADOR"/>
+                                                <StringItem index="2" value="USUARIO"/>
+                                              </StringArray>
+                                            </Property>
+                                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                              <Font name="Roboto" size="14" style="1"/>
+                                            </Property>
+                                          </Properties>
+                                          <AuxValues>
+                                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                                          </AuxValues>
+                                        </Component>
+                                        <Component class="rojerusan.RSButtonHover" name="btnRegistrar">
+                                          <Properties>
+                                            <Property name="text" type="java.lang.String" value="REGISTRAR"/>
+                                          </Properties>
+                                          <Events>
+                                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistrarActionPerformed"/>
+                                          </Events>
+                                          <AuxValues>
+                                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                                          </AuxValues>
+                                        </Component>
+                                        <Component class="javax.swing.JLabel" name="lblID">
+                                          <Properties>
+                                            <Property name="text" type="java.lang.String" value="jLabel2"/>
+                                          </Properties>
+                                          <AuxValues>
+                                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                                          </AuxValues>
+                                        </Component>
+                                        <Component class="rojerusan.RSButtonHover" name="btnCancelar">
+                                          <Properties>
+                                            <Property name="text" type="java.lang.String" value="CANCELAR"/>
+                                          </Properties>
+                                          <Events>
+                                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarActionPerformed"/>
+                                          </Events>
+                                          <AuxValues>
+                                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                                          </AuxValues>
+                                        </Component>
+                                        <Component class="rojerusan.RSMetroTextFullPlaceHolder" name="txtUser1">
+                                          <Properties>
+                                            <Property name="placeholder" type="java.lang.String" value="APELLIDOS"/>
+                                          </Properties>
+                                          <AuxValues>
+                                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                                          </AuxValues>
+                                        </Component>
+                                        <Component class="rojerusan.RSMetroTextFullPlaceHolder" name="txtUser2">
+                                          <Properties>
+                                            <Property name="placeholder" type="java.lang.String" value="APELLIDOS"/>
+                                          </Properties>
+                                          <Events>
+                                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUser2ActionPerformed"/>
+                                          </Events>
+                                          <AuxValues>
+                                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                                          </AuxValues>
+                                        </Component>
+                                        <Component class="rojerusan.RSMetroTextFullPlaceHolder" name="txtUser3">
+                                          <Properties>
+                                            <Property name="placeholder" type="java.lang.String" value="TEL&#xc9;FONO"/>
+                                          </Properties>
+                                          <AuxValues>
+                                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                                          </AuxValues>
+                                        </Component>
+                                        <Component class="rojerusan.RSMetroTextFullPlaceHolder" name="txtUser4">
+                                          <Properties>
+                                            <Property name="placeholder" type="java.lang.String" value="USUARIO"/>
+                                          </Properties>
+                                          <Events>
+                                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUser4ActionPerformed"/>
+                                          </Events>
+                                          <AuxValues>
+                                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                                          </AuxValues>
+                                        </Component>
+                                        <Component class="rojerusan.RSMetroTextFullPlaceHolder" name="txtUser5">
+                                          <Properties>
+                                            <Property name="placeholder" type="java.lang.String" value="DIRECCI&#xd3;N"/>
+                                          </Properties>
+                                          <Events>
+                                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUser5ActionPerformed"/>
+                                          </Events>
+                                          <AuxValues>
+                                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                                          </AuxValues>
+                                        </Component>
+                                        <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+                                          <Properties>
+                                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                              <Font name="Tahoma" size="18" style="0"/>
+                                            </Property>
+                                            <Property name="text" type="java.lang.String" value="Estado"/>
+                                          </Properties>
+                                        </Component>
+                                      </SubComponents>
+                                    </Container>
+                                  </SubComponents>
+                                </Container>
+                                <Container class="javax.swing.JPanel" name="jPanel75">
                                   <Properties>
-                                    <Property name="placeholder" type="java.lang.String" value="NOMBRE DE USUARIO"/>
-                                  </Properties>
-                                  <AuxValues>
-                                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                                  </AuxValues>
-                                </Component>
-                                <Component class="rojerusan.RSMetroTextPassPlaceHolderView" name="txtPass">
-                                  <Properties>
-                                    <Property name="placeholder" type="java.lang.String" value="CONTRASE&#xd1;A"/>
-                                  </Properties>
-                                  <AuxValues>
-                                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                                  </AuxValues>
-                                </Component>
-                                <Component class="rojerusan.RSComboMetro" name="comboTipo">
-                                  <Properties>
-                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                      <StringArray count="3">
-                                        <StringItem index="0" value="TIPO DE USUARIO"/>
-                                        <StringItem index="1" value="ADMINISTRADOR"/>
-                                        <StringItem index="2" value="USUARIO"/>
-                                      </StringArray>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                     </Property>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Roboto" size="14" style="1"/>
-                                    </Property>
                                   </Properties>
-                                  <AuxValues>
-                                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                                  </AuxValues>
-                                </Component>
-                                <Component class="rojerusan.RSButtonHover" name="btnRegistrar">
-                                  <Properties>
-                                    <Property name="text" type="java.lang.String" value="REGISTRAR"/>
-                                  </Properties>
-                                  <Events>
-                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistrarActionPerformed"/>
-                                  </Events>
-                                  <AuxValues>
-                                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                                  </AuxValues>
-                                </Component>
-                                <Component class="javax.swing.JLabel" name="lblID">
-                                  <Properties>
-                                    <Property name="text" type="java.lang.String" value="jLabel2"/>
-                                  </Properties>
-                                  <AuxValues>
-                                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                                  </AuxValues>
-                                </Component>
-                                <Component class="rojerusan.RSButtonHover" name="btnCancelar">
-                                  <Properties>
-                                    <Property name="text" type="java.lang.String" value="CANCELAR"/>
-                                  </Properties>
-                                  <Events>
-                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarActionPerformed"/>
-                                  </Events>
-                                  <AuxValues>
-                                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                                  </AuxValues>
-                                </Component>
-                                <Component class="rojerusan.RSMetroTextFullPlaceHolder" name="txtNombre1">
-                                  <Properties>
-                                    <Property name="mayusculas" type="boolean" value="true"/>
-                                    <Property name="placeholder" type="java.lang.String" value="BUSCAR USUARIO"/>
-                                    <Property name="soloLetras" type="boolean" value="true"/>
-                                  </Properties>
-                                  <AuxValues>
-                                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                                  </AuxValues>
-                                </Component>
+                                  <Constraints>
+                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                                      <JTabbedPaneConstraints tabName="Foto">
+                                        <Property name="tabTitle" type="java.lang.String" value="Foto"/>
+                                      </JTabbedPaneConstraints>
+                                    </Constraint>
+                                  </Constraints>
+
+                                  <Layout>
+                                    <DimensionLayout dim="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="rSFotoSquare1" alignment="1" pref="293" max="32767" attributes="0"/>
+                                      </Group>
+                                    </DimensionLayout>
+                                    <DimensionLayout dim="1">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="rSFotoSquare1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="416" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                    </DimensionLayout>
+                                  </Layout>
+                                  <SubComponents>
+                                    <Component class="rojerusan.RSFotoSquare" name="rSFotoSquare1">
+                                    </Component>
+                                  </SubComponents>
+                                </Container>
                               </SubComponents>
                             </Container>
-                            <Container class="javax.swing.JScrollPane" name="scrollUsuarios">
+                            <Component class="rojerusan.RSMetroTextFullPlaceHolder" name="txtNombre1">
                               <Properties>
-                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                </Property>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                    <LineBorder thickness="3">
-                                      <Color PropertyName="color" blue="c0" green="70" red="0" type="rgb"/>
-                                    </LineBorder>
-                                  </Border>
-                                </Property>
+                                <Property name="mayusculas" type="boolean" value="true"/>
+                                <Property name="placeholder" type="java.lang.String" value="BUSCAR USUARIO"/>
+                                <Property name="soloLetras" type="boolean" value="true"/>
                               </Properties>
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                               </AuxValues>
+                            </Component>
+                            <Container class="javax.swing.JTabbedPane" name="jTabbedPane5">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                </Property>
+                              </Properties>
 
-                              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
                               <SubComponents>
-                                <Component class="rojerusan.RSTableMetro" name="tablaUsuarios">
+                                <Container class="javax.swing.JScrollPane" name="scrollUsuarios">
                                   <Properties>
-                                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                      <Table columnCount="4" rowCount="0">
-                                        <Column editable="false" title="ID" type="java.lang.Object"/>
-                                        <Column editable="false" title="NOMBRE" type="java.lang.Object"/>
-                                        <Column editable="false" title="USUARIO" type="java.lang.Object"/>
-                                        <Column editable="false" title="TIPO USUARIO" type="java.lang.Object"/>
-                                      </Table>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                     </Property>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Tahoma" size="36" style="1"/>
-                                    </Property>
-                                    <Property name="fuenteFilas" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Roboto" size="12" style="1"/>
-                                    </Property>
-                                    <Property name="fuenteFilasSelect" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Roboto" size="12" style="1"/>
-                                    </Property>
-                                    <Property name="fuenteHead" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Roboto" size="15" style="1"/>
-                                    </Property>
-                                    <Property name="grosorBordeFilas" type="int" value="0"/>
-                                    <Property name="grosorBordeHead" type="int" value="0"/>
-                                    <Property name="multipleSeleccion" type="boolean" value="false"/>
-                                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                                      <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                        <LineBorder thickness="3">
+                                          <Color PropertyName="color" blue="c0" green="70" red="0" type="rgb"/>
+                                        </LineBorder>
+                                      </Border>
                                     </Property>
                                   </Properties>
-                                  <Events>
-                                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tablaUsuariosMouseClicked"/>
-                                  </Events>
                                   <AuxValues>
                                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                                   </AuxValues>
-                                </Component>
+                                  <Constraints>
+                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                                      <JTabbedPaneConstraints tabName="Lista de Usuarios">
+                                        <Property name="tabTitle" type="java.lang.String" value="Lista de Usuarios"/>
+                                      </JTabbedPaneConstraints>
+                                    </Constraint>
+                                  </Constraints>
+
+                                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                                  <SubComponents>
+                                    <Component class="rojerusan.RSTableMetro" name="tablaUsuarios">
+                                      <Properties>
+                                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                                          <Table columnCount="7" rowCount="0">
+                                            <Column editable="false" title="NOMBRE" type="java.lang.Object"/>
+                                            <Column editable="false" title="APELLIDO" type="java.lang.Object"/>
+                                            <Column editable="false" title="TELEFONO" type="java.lang.Object"/>
+                                            <Column editable="false" title="EMAIL" type="java.lang.Object"/>
+                                            <Column editable="false" title="USUARIO" type="java.lang.Object"/>
+                                            <Column editable="false" title="ROLE" type="java.lang.Object"/>
+                                            <Column editable="false" title="ESTADO" type="java.lang.Object"/>
+                                          </Table>
+                                        </Property>
+                                        <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                                          <TableColumnModel selectionModel="0">
+                                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                              <Title/>
+                                              <Editor/>
+                                              <Renderer/>
+                                            </Column>
+                                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                              <Title/>
+                                              <Editor/>
+                                              <Renderer/>
+                                            </Column>
+                                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                              <Title/>
+                                              <Editor/>
+                                              <Renderer/>
+                                            </Column>
+                                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                              <Title/>
+                                              <Editor/>
+                                              <Renderer/>
+                                            </Column>
+                                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                              <Title/>
+                                              <Editor/>
+                                              <Renderer/>
+                                            </Column>
+                                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                              <Title/>
+                                              <Editor/>
+                                              <Renderer/>
+                                            </Column>
+                                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                              <Title/>
+                                              <Editor/>
+                                              <Renderer/>
+                                            </Column>
+                                          </TableColumnModel>
+                                        </Property>
+                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Tahoma" size="36" style="1"/>
+                                        </Property>
+                                        <Property name="fuenteFilas" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Roboto" size="12" style="1"/>
+                                        </Property>
+                                        <Property name="fuenteFilasSelect" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Roboto" size="12" style="1"/>
+                                        </Property>
+                                        <Property name="fuenteHead" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Roboto" size="15" style="1"/>
+                                        </Property>
+                                        <Property name="grosorBordeFilas" type="int" value="0"/>
+                                        <Property name="grosorBordeHead" type="int" value="0"/>
+                                        <Property name="multipleSeleccion" type="boolean" value="false"/>
+                                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                                          <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                                        </Property>
+                                      </Properties>
+                                      <Events>
+                                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tablaUsuariosMouseClicked"/>
+                                      </Events>
+                                      <AuxValues>
+                                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                                      </AuxValues>
+                                    </Component>
+                                  </SubComponents>
+                                </Container>
                               </SubComponents>
                             </Container>
                           </SubComponents>

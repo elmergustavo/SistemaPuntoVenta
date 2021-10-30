@@ -10,6 +10,7 @@ import Library.*;
 import Models.ClienteSQL;
 import Models.TClientes;
 import Models.TReportes_clientes;
+import Models.Usuarios.TUsuarios;
 import Views.ListarClientes;
 import java.awt.Color;
 import java.sql.SQLException;
@@ -25,6 +26,11 @@ import org.apache.commons.dbutils.handlers.ColumnListHandler;
  *
  * @author Gustavo
  */
+
+
+
+
+
 public class ClientesVM extends ClienteSQL {
 
     private String _accion = "insert";
@@ -46,10 +52,13 @@ public class ClientesVM extends ClienteSQL {
     private  Conexion conexion;
     private String Id;
     private String sql;
-
+    private static TUsuarios _dataUsuario;
     
-    public  ClientesVM() {
-        
+    public ClientesVM() {
+    }
+
+    public ClientesVM(TUsuarios dataUsuario) {
+        _dataUsuario = dataUsuario;
     }
     
 

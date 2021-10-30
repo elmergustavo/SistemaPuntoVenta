@@ -5,7 +5,9 @@
  */
 package Views;
 
+import /*Backup*/HerrBD.BackupMySQL;
 import Conexion.Conexion;
+import Controller.ClientesVM;
 import Controller.CotizacionesMV;
 import Controller.LoginVM;
 import Library.Objectos;
@@ -57,9 +59,12 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     /**
      * Creates new form Sistema
      */
+    // loging
     private LoginVM login;
     private UsuariosVM usuario;
     private static TUsuarios _dataUsuario;
+    
+
 
     private int idCliente = 0;
     private Conexion conexion = Conexion.createInstance();
@@ -80,6 +85,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             jLabelNombreUsuario,
             rSLabelCircleImageUsuario,};
         usuario = new UsuariosVM(dataUsuario, perfil);
+        
+        //CODIGO DE CLIENTE
+       // cliente = new ClientesVM(dataUsuario);
 
 //        if(ReadColor.colorFondo.exists()){
         //            jPanel19.setBackground(ReadColor.leerColorFondo());
@@ -564,6 +572,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         pnlUsuarios = new javax.swing.JPanel();
         jPanel76 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jScrollPane13 = new javax.swing.JScrollPane();
         jPanel77 = new javax.swing.JPanel();
         txtNombre = new rojerusan.RSMetroTextFullPlaceHolder();
         txtUser = new rojerusan.RSMetroTextFullPlaceHolder();
@@ -572,7 +582,16 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         btnRegistrar = new rojerusan.RSButtonHover();
         lblID = new javax.swing.JLabel();
         btnCancelar = new rojerusan.RSButtonHover();
+        txtUser1 = new rojerusan.RSMetroTextFullPlaceHolder();
+        txtUser2 = new rojerusan.RSMetroTextFullPlaceHolder();
+        txtUser3 = new rojerusan.RSMetroTextFullPlaceHolder();
+        txtUser4 = new rojerusan.RSMetroTextFullPlaceHolder();
+        txtUser5 = new rojerusan.RSMetroTextFullPlaceHolder();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jPanel75 = new javax.swing.JPanel();
+        rSFotoSquare1 = new rojerusan.RSFotoSquare();
         txtNombre1 = new rojerusan.RSMetroTextFullPlaceHolder();
+        jTabbedPane5 = new javax.swing.JTabbedPane();
         scrollUsuarios = new javax.swing.JScrollPane();
         tablaUsuarios = new rojerusan.RSTableMetro();
         pnlDasboard = new javax.swing.JPanel();
@@ -639,7 +658,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 7, -1, -1));
 
         buscar1.setBackground(new java.awt.Color(34, 102, 145));
-        buscar1.setBorder(null);
         buscar1.setForeground(new java.awt.Color(255, 255, 255));
         buscar1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         buscar1.setOpaque(false);
@@ -1372,7 +1390,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         btnGenerarReporteSuministros.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnGenerarReporteSuministros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/excel.png"))); // NOI18N
         btnGenerarReporteSuministros.setText("Excel");
-        btnGenerarReporteSuministros.setBorder(null);
         btnGenerarReporteSuministros.setBorderPainted(false);
         btnGenerarReporteSuministros.setContentAreaFilled(false);
         btnGenerarReporteSuministros.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -1388,7 +1405,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         btnGenerarReporteSuministrosPDF.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnGenerarReporteSuministrosPDF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/pdf1.png"))); // NOI18N
         btnGenerarReporteSuministrosPDF.setText("PDF");
-        btnGenerarReporteSuministrosPDF.setBorder(null);
         btnGenerarReporteSuministrosPDF.setBorderPainted(false);
         btnGenerarReporteSuministrosPDF.setContentAreaFilled(false);
         btnGenerarReporteSuministrosPDF.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -1523,7 +1539,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         TextFieldInventario_codigo.setEditable(false);
         TextFieldInventario_codigo.setBackground(new java.awt.Color(34, 102, 145));
-        TextFieldInventario_codigo.setBorder(null);
         TextFieldInventario_codigo.setForeground(new java.awt.Color(255, 255, 255));
         TextFieldInventario_codigo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         TextFieldInventario_codigo.setOpaque(false);
@@ -1535,7 +1550,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel30.add(codigoL8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 250, 60));
 
         TextFieldInventario_precio.setBackground(new java.awt.Color(34, 102, 145));
-        TextFieldInventario_precio.setBorder(null);
         TextFieldInventario_precio.setForeground(new java.awt.Color(255, 255, 255));
         TextFieldInventario_precio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         TextFieldInventario_precio.setOpaque(false);
@@ -1557,7 +1571,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel30.add(TextFieldInventario_precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 180, -1));
 
         TextFieldInventario_nombreg1.setBackground(new java.awt.Color(34, 102, 145));
-        TextFieldInventario_nombreg1.setBorder(null);
         TextFieldInventario_nombreg1.setForeground(new java.awt.Color(255, 255, 255));
         TextFieldInventario_nombreg1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         TextFieldInventario_nombreg1.setOpaque(false);
@@ -1788,7 +1801,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         codigo.setEditable(false);
         codigo.setBackground(new java.awt.Color(34, 102, 145));
-        codigo.setBorder(null);
         codigo.setForeground(new java.awt.Color(255, 255, 255));
         codigo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         codigo.setOpaque(false);
@@ -1817,7 +1829,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel41.add(codigoL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 250, 60));
 
         nombre.setBackground(new java.awt.Color(34, 102, 145));
-        nombre.setBorder(null);
         nombre.setForeground(new java.awt.Color(255, 255, 255));
         nombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         nombre.setOpaque(false);
@@ -1837,7 +1848,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel41.add(nombreL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 250, 60));
 
         precio.setBackground(new java.awt.Color(34, 102, 145));
-        precio.setBorder(null);
         precio.setForeground(new java.awt.Color(255, 255, 255));
         precio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         precio.setOpaque(false);
@@ -1863,7 +1873,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         registrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         registrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/regis1.png"))); // NOI18N
         registrar.setText("Registrar");
-        registrar.setBorder(null);
         registrar.setBorderPainted(false);
         registrar.setContentAreaFilled(false);
         registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -1879,7 +1888,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         actualizar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/actualizar.png"))); // NOI18N
         actualizar.setText("Actualizar");
-        actualizar.setBorder(null);
         actualizar.setBorderPainted(false);
         actualizar.setContentAreaFilled(false);
         actualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -1895,7 +1903,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         eliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/borrar1.png"))); // NOI18N
         eliminar.setText("Eliminar");
-        eliminar.setBorder(null);
         eliminar.setBorderPainted(false);
         eliminar.setContentAreaFilled(false);
         eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -1911,7 +1918,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         limpiar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/limpiar1.png"))); // NOI18N
         limpiar.setText("Limpiar Campos");
-        limpiar.setBorder(null);
         limpiar.setBorderPainted(false);
         limpiar.setContentAreaFilled(false);
         limpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -2110,7 +2116,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel43.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buscar.setBackground(new java.awt.Color(34, 102, 145));
-        buscar.setBorder(null);
         buscar.setForeground(new java.awt.Color(255, 255, 255));
         buscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         buscar.setOpaque(false);
@@ -2158,7 +2163,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         btnGenerarReportePlatillos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnGenerarReportePlatillos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/excel.png"))); // NOI18N
         btnGenerarReportePlatillos.setText("Excel");
-        btnGenerarReportePlatillos.setBorder(null);
         btnGenerarReportePlatillos.setBorderPainted(false);
         btnGenerarReportePlatillos.setContentAreaFilled(false);
         btnGenerarReportePlatillos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -2174,7 +2178,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         btnGenerarReporteSuministrosPDF1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnGenerarReporteSuministrosPDF1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/pdf1.png"))); // NOI18N
         btnGenerarReporteSuministrosPDF1.setText("PDF");
-        btnGenerarReporteSuministrosPDF1.setBorder(null);
         btnGenerarReporteSuministrosPDF1.setBorderPainted(false);
         btnGenerarReporteSuministrosPDF1.setContentAreaFilled(false);
         btnGenerarReporteSuministrosPDF1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -2391,7 +2394,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         borrar2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         borrar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/elimina2.png"))); // NOI18N
-        borrar2.setBorder(null);
         borrar2.setContentAreaFilled(false);
         borrar2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         borrar2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -2404,7 +2406,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         cancelar2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cancelar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/cancela2.png"))); // NOI18N
-        cancelar2.setBorder(null);
         cancelar2.setContentAreaFilled(false);
         cancelar2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cancelar2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -2428,7 +2429,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel72.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TextFieldInventario_codigo1.setBackground(new java.awt.Color(34, 102, 145));
-        TextFieldInventario_codigo1.setBorder(null);
         TextFieldInventario_codigo1.setForeground(new java.awt.Color(255, 255, 255));
         TextFieldInventario_codigo1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         TextFieldInventario_codigo1.setOpaque(false);
@@ -2491,7 +2491,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         busca2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         busca2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/alimento2.png"))); // NOI18N
-        busca2.setBorder(null);
         busca2.setContentAreaFilled(false);
         busca2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         busca2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -2567,7 +2566,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel47.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, java.awt.Color.lightGray));
 
         TotalCotizacion.setBackground(new java.awt.Color(34, 102, 145));
-        TotalCotizacion.setBorder(null);
         TotalCotizacion.setForeground(new java.awt.Color(255, 255, 255));
         TotalCotizacion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         TotalCotizacion.setOpaque(false);
@@ -2796,7 +2794,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel54.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buscar2.setBackground(new java.awt.Color(34, 102, 145));
-        buscar2.setBorder(null);
         buscar2.setForeground(new java.awt.Color(255, 255, 255));
         buscar2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         buscar2.setOpaque(false);
@@ -2824,7 +2821,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         eliminar1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         eliminar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/borrar1.png"))); // NOI18N
         eliminar1.setText("Eliminar");
-        eliminar1.setBorder(null);
         eliminar1.setBorderPainted(false);
         eliminar1.setContentAreaFilled(false);
         eliminar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -2842,7 +2838,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         eliminarT.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         eliminarT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/borrarT1.png"))); // NOI18N
         eliminarT.setText("Eliminar Todo");
-        eliminarT.setBorder(null);
         eliminarT.setBorderPainted(false);
         eliminarT.setContentAreaFilled(false);
         eliminarT.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -2860,7 +2855,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         limpiar1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         limpiar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/limpiar1.png"))); // NOI18N
         limpiar1.setText("Limpiar Campos");
-        limpiar1.setBorder(null);
         limpiar1.setBorderPainted(false);
         limpiar1.setContentAreaFilled(false);
         limpiar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -2877,7 +2871,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         buscF.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         buscF.setToolTipText("Buscar");
-        buscF.setBorder(null);
         buscF.setBorderPainted(false);
         buscF.setContentAreaFilled(false);
         buscF.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -2897,7 +2890,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ventasH.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ventasH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/buscaF1.png"))); // NOI18N
         ventasH.setToolTipText("Buscar");
-        ventasH.setBorder(null);
         ventasH.setBorderPainted(false);
         ventasH.setContentAreaFilled(false);
         ventasH.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -2914,7 +2906,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ventasH1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ventasH1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/ventasH2.png"))); // NOI18N
         ventasH1.setToolTipText("Buscar");
-        ventasH1.setBorder(null);
         ventasH1.setBorderPainted(false);
         ventasH1.setContentAreaFilled(false);
         ventasH1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -2934,7 +2925,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         btnGenerarReporteSuministrosPDF2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnGenerarReporteSuministrosPDF2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/pdf1.png"))); // NOI18N
         btnGenerarReporteSuministrosPDF2.setText("PDF");
-        btnGenerarReporteSuministrosPDF2.setBorder(null);
         btnGenerarReporteSuministrosPDF2.setBorderPainted(false);
         btnGenerarReporteSuministrosPDF2.setContentAreaFilled(false);
         btnGenerarReporteSuministrosPDF2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -3076,7 +3066,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel37.add(codigoL5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 250, 50));
 
         recibi.setBackground(new java.awt.Color(34, 102, 145));
-        recibi.setBorder(null);
         recibi.setForeground(new java.awt.Color(255, 255, 255));
         recibi.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         recibi.setOpaque(false);
@@ -3090,7 +3079,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         cambio.setEditable(false);
         cambio.setBackground(new java.awt.Color(34, 102, 145));
-        cambio.setBorder(null);
         cambio.setForeground(new java.awt.Color(255, 255, 255));
         cambio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cambio.setOpaque(false);
@@ -3122,7 +3110,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         numFac.setEditable(false);
         numFac.setBackground(new java.awt.Color(34, 102, 145));
-        numFac.setBorder(null);
         numFac.setForeground(new java.awt.Color(255, 255, 255));
         numFac.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         numFac.setOpaque(false);
@@ -3140,7 +3127,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         calculo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         calculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/calculo2.png"))); // NOI18N
-        calculo.setBorder(null);
         calculo.setContentAreaFilled(false);
         calculo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         calculo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -3154,7 +3140,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         vender.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         vender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/venta2.png"))); // NOI18N
-        vender.setBorder(null);
         vender.setContentAreaFilled(false);
         vender.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         vender.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -3168,7 +3153,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         borrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         borrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/elimina2.png"))); // NOI18N
-        borrar.setBorder(null);
         borrar.setContentAreaFilled(false);
         borrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         borrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -3182,7 +3166,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         cancelar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/cancela2.png"))); // NOI18N
-        cancelar.setBorder(null);
         cancelar.setContentAreaFilled(false);
         cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cancelar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -3232,7 +3215,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         total.setEditable(false);
         total.setBackground(new java.awt.Color(34, 102, 145));
-        total.setBorder(null);
         total.setForeground(new java.awt.Color(255, 255, 255));
         total.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         total.setOpaque(false);
@@ -3414,7 +3396,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         borrar1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         borrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/elimina2.png"))); // NOI18N
-        borrar1.setBorder(null);
         borrar1.setContentAreaFilled(false);
         borrar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         borrar1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -3427,7 +3408,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         cancelar1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cancelar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/cancela2.png"))); // NOI18N
-        cancelar1.setBorder(null);
         cancelar1.setContentAreaFilled(false);
         cancelar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cancelar1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -3544,7 +3524,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         busca1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         busca1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/alimento2.png"))); // NOI18N
-        busca1.setBorder(null);
         busca1.setContentAreaFilled(false);
         busca1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         busca1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -3558,7 +3537,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         registrar1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         registrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/restaurante.png"))); // NOI18N
         registrar1.setToolTipText("Estado de Mesa");
-        registrar1.setBorder(null);
         registrar1.setBorderPainted(false);
         registrar1.setContentAreaFilled(false);
         registrar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -3572,7 +3550,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         });
 
         TotalPedidos.setBackground(new java.awt.Color(34, 102, 145));
-        TotalPedidos.setBorder(null);
         TotalPedidos.setForeground(new java.awt.Color(255, 255, 255));
         TotalPedidos.setEnabled(false);
         TotalPedidos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -3589,7 +3566,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         numFac1.setEditable(false);
         numFac1.setBackground(new java.awt.Color(34, 102, 145));
-        numFac1.setBorder(null);
         numFac1.setForeground(new java.awt.Color(255, 255, 255));
         numFac1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         numFac1.setOpaque(false);
@@ -4229,7 +4205,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel49.setBackground(new java.awt.Color(255, 255, 255));
 
         jScrollPane12.setBackground(new java.awt.Color(102, 102, 255));
-        jScrollPane12.setBorder(null);
         jScrollPane12.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jPanel19.setBackground(new java.awt.Color(34, 102, 145));
@@ -4574,14 +4549,18 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jLabel30.setForeground(new java.awt.Color(35, 114, 194));
         jLabel30.setText("USUARIOS");
 
+        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane13.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
         jPanel77.setBackground(new java.awt.Color(255, 255, 255));
         jPanel77.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "DATOS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto", 1, 12), new java.awt.Color(0, 112, 192))); // NOI18N
 
         txtNombre.setMayusculas(true);
-        txtNombre.setPlaceholder("NOMBRE COMPLETO");
+        txtNombre.setPlaceholder("NOMBRES");
         txtNombre.setSoloLetras(true);
 
-        txtUser.setPlaceholder("NOMBRE DE USUARIO");
+        txtUser.setPlaceholder("CORREO ELÉCTRONICO");
 
         txtPass.setPlaceholder("CONTRASEÑA");
 
@@ -4604,9 +4583,33 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             }
         });
 
-        txtNombre1.setMayusculas(true);
-        txtNombre1.setPlaceholder("BUSCAR USUARIO");
-        txtNombre1.setSoloLetras(true);
+        txtUser1.setPlaceholder("APELLIDOS");
+
+        txtUser2.setPlaceholder("APELLIDOS");
+        txtUser2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUser2ActionPerformed(evt);
+            }
+        });
+
+        txtUser3.setPlaceholder("TELÉFONO");
+
+        txtUser4.setPlaceholder("USUARIO");
+        txtUser4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUser4ActionPerformed(evt);
+            }
+        });
+
+        txtUser5.setPlaceholder("DIRECCIÓN");
+        txtUser5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUser5ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jCheckBox1.setText("Estado");
 
         javax.swing.GroupLayout jPanel77Layout = new javax.swing.GroupLayout(jPanel77);
         jPanel77.setLayout(jPanel77Layout);
@@ -4615,39 +4618,81 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             .addGroup(jPanel77Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
-                    .addComponent(txtUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                    .addComponent(txtUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                    .addComponent(txtPass, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
                     .addComponent(comboTipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel77Layout.createSequentialGroup()
-                        .addComponent(lblID)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtNombre1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtUser1, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                    .addComponent(txtUser2, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                    .addComponent(txtUser3, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                    .addComponent(txtUser4, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                    .addComponent(txtUser5, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                    .addGroup(jPanel77Layout.createSequentialGroup()
+                        .addGroup(jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCheckBox1)
+                            .addComponent(lblID))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel77Layout.setVerticalGroup(
             jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel77Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtUser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtUser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtUser3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtUser5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtUser4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(comboTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblID)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(jCheckBox1)
+                .addGap(18, 18, 18)
                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
+
+        jScrollPane13.setViewportView(jPanel77);
+
+        jTabbedPane1.addTab("Registro", jScrollPane13);
+
+        jPanel75.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel75Layout = new javax.swing.GroupLayout(jPanel75);
+        jPanel75.setLayout(jPanel75Layout);
+        jPanel75Layout.setHorizontalGroup(
+            jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(rSFotoSquare1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
+        );
+        jPanel75Layout.setVerticalGroup(
+            jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel75Layout.createSequentialGroup()
+                .addComponent(rSFotoSquare1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 416, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Foto", jPanel75);
+
+        txtNombre1.setMayusculas(true);
+        txtNombre1.setPlaceholder("BUSCAR USUARIO");
+        txtNombre1.setSoloLetras(true);
+
+        jTabbedPane5.setBackground(new java.awt.Color(255, 255, 255));
 
         scrollUsuarios.setBackground(new java.awt.Color(255, 255, 255));
         scrollUsuarios.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 112, 192), 3));
@@ -4657,11 +4702,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
             },
             new String [] {
-                "ID", "NOMBRE", "USUARIO", "TIPO USUARIO"
+                "NOMBRE", "APELLIDO", "TELEFONO", "EMAIL", "USUARIO", "ROLE", "ESTADO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -4683,43 +4728,48 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         });
         scrollUsuarios.setViewportView(tablaUsuarios);
 
+        jTabbedPane5.addTab("Lista de Usuarios", scrollUsuarios);
+
         javax.swing.GroupLayout jPanel76Layout = new javax.swing.GroupLayout(jPanel76);
         jPanel76.setLayout(jPanel76Layout);
         jPanel76Layout.setHorizontalGroup(
             jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel76Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(67, 67, 67))
-            .addGroup(jPanel76Layout.createSequentialGroup()
-                .addComponent(jPanel77, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(scrollUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTabbedPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(jPanel76Layout.createSequentialGroup()
+                .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel76Layout.setVerticalGroup(
             jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel76Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel30)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel76Layout.createSequentialGroup()
+                        .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7))
+                    .addGroup(jPanel76Layout.createSequentialGroup()
+                        .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel77, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollUsuarios))
-                .addContainerGap())
+                    .addComponent(jTabbedPane1)
+                    .addComponent(jTabbedPane5)))
         );
 
         javax.swing.GroupLayout pnlUsuariosLayout = new javax.swing.GroupLayout(pnlUsuarios);
         pnlUsuarios.setLayout(pnlUsuariosLayout);
         pnlUsuariosLayout.setHorizontalGroup(
             pnlUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 921, Short.MAX_VALUE)
+            .addGap(0, 948, Short.MAX_VALUE)
             .addGroup(pnlUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel76, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlUsuariosLayout.setVerticalGroup(
             pnlUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 593, Short.MAX_VALUE)
+            .addGap(0, 689, Short.MAX_VALUE)
             .addGroup(pnlUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel76, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -6414,6 +6464,18 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         //        }
     }//GEN-LAST:event_tablaUsuariosMouseClicked
 
+    private void txtUser2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUser2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUser2ActionPerformed
+
+    private void txtUser5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUser5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUser5ActionPerformed
+
+    private void txtUser4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUser4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUser4ActionPerformed
+
     // </editor-fold>
     /**
      * @param args the command line arguments
@@ -6579,6 +6641,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JButton eliminar1;
     private javax.swing.JButton eliminarT;
     private com.toedter.calendar.JDateChooser fecha;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -6697,6 +6760,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JPanel jPanel72;
     private javax.swing.JPanel jPanel73;
     private javax.swing.JPanel jPanel74;
+    private javax.swing.JPanel jPanel75;
     private javax.swing.JPanel jPanel76;
     private javax.swing.JPanel jPanel77;
     private javax.swing.JPanel jPanel78;
@@ -6706,6 +6770,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -6716,9 +6781,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
+    private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTabbedPane jTabbedPaneInventario1;
     private javax.swing.JTabbedPane jTabbedPaneInventario2;
     private javax.swing.JLabel labelCliente_Deuda;
@@ -6763,6 +6830,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private rojerusan.RSButtonMetro rSButtonMetro1;
     private rojerusan.RSButtonMetro rSButtonMetro3;
     private rojerusan.RSButtonMetro rSButtonMetro5;
+    private rojerusan.RSFotoSquare rSFotoSquare1;
     private rojerusan.RSLabelCircleImage rSLabelCircleImageUsuario;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelFecha rSLabelFecha2;
@@ -6818,6 +6886,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     public static rojerusan.RSMetroTextFullPlaceHolder txtNombre1;
     public static rojerusan.RSMetroTextPassPlaceHolderView txtPass;
     public static rojerusan.RSMetroTextFullPlaceHolder txtUser;
+    public static rojerusan.RSMetroTextFullPlaceHolder txtUser1;
+    public static rojerusan.RSMetroTextFullPlaceHolder txtUser2;
+    public static rojerusan.RSMetroTextFullPlaceHolder txtUser3;
+    public static rojerusan.RSMetroTextFullPlaceHolder txtUser4;
+    public static rojerusan.RSMetroTextFullPlaceHolder txtUser5;
     private javax.swing.JButton vender;
     private javax.swing.JButton ventasH;
     private javax.swing.JButton ventasH1;
@@ -6829,7 +6902,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         a.setVisible(true);
 
         if (a.txtNombre.getText().length() != 0) {
-           // new BackupMySQL().exportDB(a.txtNombre.getText());
+            new BackupMySQL().exportDB(a.txtNombre.getText());
         }
         
         
