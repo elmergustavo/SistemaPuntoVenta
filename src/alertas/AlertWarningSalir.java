@@ -61,6 +61,8 @@ public class AlertWarningSalir extends javax.swing.JDialog {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         org.jdesktop.swingx.border.DropShadowBorder dropShadowBorder1 = new org.jdesktop.swingx.border.DropShadowBorder();
+        dropShadowBorder1.setShowLeftShadow(true);
+        dropShadowBorder1.setShowTopShadow(true);
         jPanel1.setBorder(dropShadowBorder1);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -68,7 +70,7 @@ public class AlertWarningSalir extends javax.swing.JDialog {
 
         titulo.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titulo.setText("ALERT WARNING");
+        titulo.setText("¿Deseas salir del sistema?");
 
         jPanel3.setBackground(new java.awt.Color(255, 153, 0));
 

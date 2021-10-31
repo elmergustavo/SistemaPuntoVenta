@@ -93,7 +93,7 @@
               <Font name="Tahoma" size="20" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="ALERT WARNING"/>
+            <Property name="text" type="java.lang.String" value="&#xbf;Deseas salir del sistema?"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -142,7 +142,7 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="CANCELAR"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Cursor Por defecto"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Roboto Medium" size="18" style="1"/>
@@ -162,7 +162,7 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="ACEPTAR"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Cursor Por defecto"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Roboto Medium" size="18" style="1"/>
