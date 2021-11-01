@@ -198,6 +198,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel21 = new javax.swing.JPanel();
         jPanel1Principal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnCerrar = new rojerusan.RSButtonMetro();
@@ -581,7 +582,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         TextFieldUsuario_Nombre = new rojerusan.RSMetroTextFullPlaceHolder();
         TextFieldUsuario_Email = new rojerusan.RSMetroTextFullPlaceHolder();
         TextFieldUsuario_Password = new rojerusan.RSMetroTextPassPlaceHolderView();
-        comboTipo = new rojerusan.RSComboMetro();
+        ComboBoxUsuario_Role = new rojerusan.RSComboMetro();
         btnRegistrar = new rojerusan.RSButtonHover();
         lblID = new javax.swing.JLabel();
         btnCancelar = new rojerusan.RSButtonHover();
@@ -590,7 +591,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         TextFieldUsuario_Telefono = new rojerusan.RSMetroTextFullPlaceHolder();
         TextFieldUsuario_Usuario = new rojerusan.RSMetroTextFullPlaceHolder();
         TextFieldUsuario_Direccion = new rojerusan.RSMetroTextFullPlaceHolder();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        CheckBoxUsuario_State = new javax.swing.JCheckBox();
         jPanel75 = new javax.swing.JPanel();
         rSFotoSquare1 = new rojerusan.RSFotoSquare();
         txtNombre1 = new rojerusan.RSMetroTextFullPlaceHolder();
@@ -603,6 +604,10 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         rSPanelGradiente1 = new rspanelgradiente.RSPanelGradiente();
         jLabel12 = new javax.swing.JLabel();
         rSLabelImage4 = new rojerusan.RSLabelImage();
+        pnlUsuarioDenegado = new javax.swing.JPanel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
         ButtonCliente = new javax.swing.JButton();
         ButtonInventario = new javax.swing.JButton();
@@ -611,6 +616,17 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         rSLabelHora1 = new rojeru_san.RSLabelHora();
         ButtonClienteConfig2 = new javax.swing.JButton();
         BtnVentas = new rojerusan.RSButtonRound();
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 102));
@@ -640,7 +656,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         });
 
         btnCerrar1.setBackground(new java.awt.Color(255, 0, 51));
-        btnCerrar1.setText("-");
+        btnCerrar1.setText("__");
         btnCerrar1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         btnCerrar1.setGrosorLinea(3);
         btnCerrar1.addActionListener(new java.awt.event.ActionListener() {
@@ -679,6 +695,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         TabbedPanePrincipal.setBackground(new java.awt.Color(255, 255, 255));
         TabbedPanePrincipal.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
+        TabbedPanePrincipal.setEnabled(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -4605,9 +4622,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         TextFieldUsuario_Password.setForeground(new java.awt.Color(34, 102, 145));
         TextFieldUsuario_Password.setPlaceholder("CONTRASEÑA");
 
-        comboTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TIPO DE USUARIO", "ADMINISTRADOR", "USUARIO" }));
-        comboTipo.setColorBorde(new java.awt.Color(34, 102, 145));
-        comboTipo.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        ComboBoxUsuario_Role.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TIPO DE USUARIO", "ADMINISTRADOR", "USUARIO" }));
+        ComboBoxUsuario_Role.setColorBorde(new java.awt.Color(34, 102, 145));
+        ComboBoxUsuario_Role.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
 
         btnRegistrar.setBackground(new java.awt.Color(34, 102, 145));
         btnRegistrar.setText("REGISTRAR");
@@ -4629,6 +4646,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         TextFieldUsuario_Apellido.setForeground(new java.awt.Color(34, 102, 145));
         TextFieldUsuario_Apellido.setPlaceholder("APELLIDOS");
+        TextFieldUsuario_Apellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TextFieldUsuario_ApellidoKeyReleased(evt);
+            }
+        });
 
         TextFieldUsuario_Nid.setForeground(new java.awt.Color(34, 102, 145));
         TextFieldUsuario_Nid.setPlaceholder("NID");
@@ -4637,9 +4659,19 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 TextFieldUsuario_NidActionPerformed(evt);
             }
         });
+        TextFieldUsuario_Nid.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TextFieldUsuario_NidKeyReleased(evt);
+            }
+        });
 
         TextFieldUsuario_Telefono.setForeground(new java.awt.Color(34, 102, 145));
         TextFieldUsuario_Telefono.setPlaceholder("TELÉFONO");
+        TextFieldUsuario_Telefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TextFieldUsuario_TelefonoKeyReleased(evt);
+            }
+        });
 
         TextFieldUsuario_Usuario.setForeground(new java.awt.Color(34, 102, 145));
         TextFieldUsuario_Usuario.setPlaceholder("USUARIO");
@@ -4657,8 +4689,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             }
         });
 
-        jCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jCheckBox1.setText("Estado");
+        CheckBoxUsuario_State.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        CheckBoxUsuario_State.setText("Estado");
 
         javax.swing.GroupLayout jPanel77Layout = new javax.swing.GroupLayout(jPanel77);
         jPanel77.setLayout(jPanel77Layout);
@@ -4667,10 +4699,10 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             .addGroup(jPanel77Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jCheckBox1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CheckBoxUsuario_State, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblID, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(comboTipo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ComboBoxUsuario_Role, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(TextFieldUsuario_Password, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
                     .addComponent(TextFieldUsuario_Usuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(TextFieldUsuario_Direccion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -4701,11 +4733,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TextFieldUsuario_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(comboTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ComboBoxUsuario_Role, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblID)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jCheckBox1)
+                .addComponent(CheckBoxUsuario_State)
                 .addGap(18, 18, 18)
                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -4719,11 +4751,13 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         jPanel75.setBackground(new java.awt.Color(255, 255, 255));
 
+        rSFotoSquare1.setImagenDefault(null);
+
         javax.swing.GroupLayout jPanel75Layout = new javax.swing.GroupLayout(jPanel75);
         jPanel75.setLayout(jPanel75Layout);
         jPanel75Layout.setHorizontalGroup(
             jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rSFotoSquare1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
+            .addComponent(rSFotoSquare1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
         );
         jPanel75Layout.setVerticalGroup(
             jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4782,11 +4816,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel76Layout.setHorizontalGroup(
             jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel76Layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTabbedPane5))
             .addGroup(jPanel76Layout.createSequentialGroup()
-                .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 824, Short.MAX_VALUE)
+                .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -4809,7 +4843,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         pnlUsuarios.setLayout(pnlUsuariosLayout);
         pnlUsuariosLayout.setHorizontalGroup(
             pnlUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1035, Short.MAX_VALUE)
+            .addGap(0, 921, Short.MAX_VALUE)
             .addGroup(pnlUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel76, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -4843,7 +4877,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             rSPanelGradiente1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rSPanelGradiente1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 1015, Short.MAX_VALUE)
+                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 901, Short.MAX_VALUE)
                 .addContainerGap())
         );
         rSPanelGradiente1Layout.setVerticalGroup(
@@ -4885,7 +4919,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         pnlDasboard.setLayout(pnlDasboardLayout);
         pnlDasboardLayout.setHorizontalGroup(
             pnlDasboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1035, Short.MAX_VALUE)
+            .addGap(0, 921, Short.MAX_VALUE)
             .addGroup(pnlDasboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -4898,11 +4932,53 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         rSPanelsSlider1.add(pnlDasboard, "card3");
 
+        pnlUsuarioDenegado.setBackground(new java.awt.Color(255, 255, 255));
+        pnlUsuarioDenegado.setName("pnlUsuarioDenegado"); // NOI18N
+
+        jLabel38.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(35, 114, 194));
+        jLabel38.setText("USUARIOS");
+
+        jLabel39.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(200, 0, 0));
+        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel39.setText("SIN ACCESO");
+
+        jLabel46.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(200, 0, 0));
+        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/denegado.png"))); // NOI18N
+
+        javax.swing.GroupLayout pnlUsuarioDenegadoLayout = new javax.swing.GroupLayout(pnlUsuarioDenegado);
+        pnlUsuarioDenegado.setLayout(pnlUsuarioDenegadoLayout);
+        pnlUsuarioDenegadoLayout.setHorizontalGroup(
+            pnlUsuarioDenegadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, 921, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlUsuarioDenegadoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlUsuarioDenegadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlUsuarioDenegadoLayout.setVerticalGroup(
+            pnlUsuarioDenegadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlUsuarioDenegadoLayout.createSequentialGroup()
+                .addComponent(jLabel38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+                .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel39)
+                .addContainerGap(187, Short.MAX_VALUE))
+        );
+
+        rSPanelsSlider1.add(pnlUsuarioDenegado, "card8");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rSPanelsSlider1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(rSPanelsSlider1, javax.swing.GroupLayout.DEFAULT_SIZE, 921, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6442,53 +6518,62 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_btnConfiguracionActionPerformed
 
     private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
-        this.rSPanelsSlider1.slidPanel(5, pnlUsuarios, RSPanelsSlider.direct.Right);
 
-        // TabbedPanePrincipal.setSelectedIndex(2);
-        ArrayList<JLabel> label = new ArrayList();
-        // label.add(LabelUsuario_Nid);
+        if (_dataUsuario.getRole().equals("Users")) {
+            this.rSPanelsSlider1.slidPanel(5, pnlUsuarios, RSPanelsSlider.direct.Right);
+
+            // TabbedPanePrincipal.setSelectedIndex(2);
+            ArrayList<JLabel> label = new ArrayList();
+            // label.add(LabelUsuario_Nid);
 //          label.add(LabelUsuario_Nid);
 //          label.add(LabelUsuario_Nombre);
-        //label.add(LabelUsuario_Email);
+            //label.add(LabelUsuario_Email);
 //        label.add(LabelUsuario_Apellido);
 //        label.add(LabelUsuario_Telefono);
 //        label.add(LabelUsuario_Direccion);
 //        label.add(LabelUsuario_Usuario);
 //        label.add(LabelUsuario_Password);
 //        
-        //label.add(LabelImage_Usuario);
+            //label.add(LabelImage_Usuario);
 //        label.add(LabelUsuario_Paginas);
 //        
-        ArrayList<JTextField> textField = new ArrayList();
-        textField.add(TextFieldUsuario_Nid);
-        textField.add(TextFieldUsuario_Nombre);
-        textField.add(TextFieldUsuario_Email);
-        textField.add(TextFieldUsuario_Apellido);
-        textField.add(TextFieldUsuario_Telefono);
-        textField.add(TextFieldUsuario_Direccion);
-        textField.add(TextFieldUsuario_Usuario);
-        textField.add(TextFieldUsuario_Password);
+            ArrayList<JTextField> textField = new ArrayList();
+            textField.add(TextFieldUsuario_Nid);
+            textField.add(TextFieldUsuario_Nombre);
+            textField.add(TextFieldUsuario_Email);
+            textField.add(TextFieldUsuario_Apellido);
+            textField.add(TextFieldUsuario_Telefono);
+            textField.add(TextFieldUsuario_Direccion);
+            textField.add(TextFieldUsuario_Usuario);
+            textField.add(TextFieldUsuario_Password);
 
-        Object[] objects = {
-            LabelImage_Usuario,
-            Table_Usuarios,};
-//        usuario = new UsuariosVM(objects, textField,label);
+            Object[] objects = {
+                rSFotoSquare1,
+                CheckBoxUsuario_State,
+                Table_Usuarios,
+                ComboBoxUsuario_Role,};
+            usuario = new UsuariosVM(objects, textField);
 //        EnabledButton(ButtonUsuario);
+
+        } else {
+            this.rSPanelsSlider1.slidPanel(5, pnlUsuarioDenegado, RSPanelsSlider.direct.Right);
+        }
 
 
     }//GEN-LAST:event_btnUsuariosActionPerformed
 
     private CambiarUsuario cambiarUsuario;
     private void rSButtonMetro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro1ActionPerformed
-       cambiarUsuario = new CambiarUsuario();
-       cambiarUsuario.setVisible(true);
+        cambiarUsuario = new CambiarUsuario();
+        cambiarUsuario.setVisible(true);
+
     }//GEN-LAST:event_rSButtonMetro1ActionPerformed
 
     private CambiarContraseña cambiarConstraseña;
     private void rSButtonMetro3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro3ActionPerformed
-       // new CambiarPassword(this, true).setVisible(true);
-       cambiarConstraseña = new CambiarContraseña();
-       cambiarConstraseña.setVisible(true);
+        // new CambiarPassword(this, true).setVisible(true);
+        cambiarConstraseña = new CambiarContraseña();
+        cambiarConstraseña.setVisible(true);
     }//GEN-LAST:event_rSButtonMetro3ActionPerformed
 
     private void btnBackupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackupActionPerformed
@@ -6531,10 +6616,12 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         //                guardarUser();
         //            }
         //        }
+        usuario.RegistrarUsuario();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         //        limpiarCampos();
+        usuario.Restablecer();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void Table_UsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Table_UsuariosMouseClicked
@@ -6561,14 +6648,14 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_TextFieldUsuario_UsuarioActionPerformed
 
     private void TextFieldUsuario_NombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldUsuario_NombreKeyReleased
-        // TODO add your handling code here:
+        Objectos.eventos.textKeyPress(evt);
     }//GEN-LAST:event_TextFieldUsuario_NombreKeyReleased
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         AlertWarningSalir a = new AlertWarningSalir(this, false);
         a.setTitle("¿Deseas salir del sistema?");
         a.setVisible(true);
-        
+
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnCerrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrar1ActionPerformed
@@ -6580,6 +6667,18 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             minimiza = true;
         }
     }//GEN-LAST:event_btnCerrar1ActionPerformed
+
+    private void TextFieldUsuario_NidKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldUsuario_NidKeyReleased
+        Objectos.eventos.numberKeyPres(evt);
+    }//GEN-LAST:event_TextFieldUsuario_NidKeyReleased
+
+    private void TextFieldUsuario_ApellidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldUsuario_ApellidoKeyReleased
+        Objectos.eventos.textKeyPress(evt);
+    }//GEN-LAST:event_TextFieldUsuario_ApellidoKeyReleased
+
+    private void TextFieldUsuario_TelefonoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldUsuario_TelefonoKeyReleased
+        Objectos.eventos.numberKeyPres(evt);
+    }//GEN-LAST:event_TextFieldUsuario_TelefonoKeyReleased
 
     // </editor-fold>
     /**
@@ -6635,9 +6734,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JButton ButtonCotizacion;
     private javax.swing.JButton ButtonInventario;
     private javax.swing.JCheckBox CheckBoxCliente_Credito;
+    private javax.swing.JCheckBox CheckBoxUsuario_State;
     private org.bolivia.combo.SComboBoxBlue ComboBoxMesas;
     private org.bolivia.combo.SComboBoxBlue ComboBoxSuministro;
     private org.bolivia.combo.SComboBoxBlue ComboBoxSuministro1;
+    public static rojerusan.RSComboMetro ComboBoxUsuario_Role;
     private javax.swing.JLabel LabelCliente_Apellido;
     private javax.swing.JLabel LabelCliente_Direccion;
     private javax.swing.JLabel LabelCliente_Email;
@@ -6751,14 +6852,12 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel codigoL7;
     private javax.swing.JLabel codigoL8;
     private javax.swing.JLabel codigoL9;
-    public static rojerusan.RSComboMetro comboTipo;
     public static javax.swing.JTextField descuento;
     public static javax.swing.JTextField dirCotizacion;
     private javax.swing.JButton eliminar;
     private javax.swing.JButton eliminar1;
     private javax.swing.JButton eliminarT;
     private com.toedter.calendar.JDateChooser fecha;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -6780,6 +6879,8 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
@@ -6787,6 +6888,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -6819,6 +6921,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     public static javax.swing.JPanel jPanel1Principal;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
@@ -6940,6 +7043,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     public static app.bolivia.swing.JCTextField numFac1;
     private javax.swing.JPanel pnlConf;
     private javax.swing.JPanel pnlDasboard;
+    private javax.swing.JPanel pnlUsuarioDenegado;
     private javax.swing.JPanel pnlUsuarios;
     public static javax.swing.JTextField porcentaje;
     private app.bolivia.swing.JCTextField precio;
