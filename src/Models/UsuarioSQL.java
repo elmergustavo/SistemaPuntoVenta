@@ -6,6 +6,7 @@ package Models;
 
 import Conexion.Conexion;
 import Models.Ordenador.Tordenadores;
+import Models.Usuarios.TRoles;
 import Models.Usuarios.TUsuarios;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -41,5 +42,16 @@ public class UsuarioSQL {
             JOptionPane.showMessageDialog(null, "Error : " + e);
         }
         return odenadores;
+    }
+    
+    public List<TRoles> roles() {
+        List<TRoles> role = new ArrayList();
+        try {
+            role = (List<TRoles>) QR.query(conexion.getConnection(), "SELECT * FROM troles",
+                    new BeanListHandler(TRoles.class));
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error : " + e);
+        }
+        return role;
     }
 }

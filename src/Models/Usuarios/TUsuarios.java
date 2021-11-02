@@ -12,6 +12,7 @@ import java.util.Date;
  */
 public class TUsuarios {
     public int IdUsuario;
+    public String Nid;
     public String Nombre;
     public String Apellido;
     public String Telefono;
@@ -27,6 +28,16 @@ public class TUsuarios {
 
     public TUsuarios() {
     }
+
+    public String getNid() {
+        return Nid;
+    }
+
+    public void setNid(String Nid) {
+        this.Nid = Nid;
+    }
+    
+    
 
     public int getIdUsuario() {
         return IdUsuario;

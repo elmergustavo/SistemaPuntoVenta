@@ -1146,7 +1146,7 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane1" alignment="1" pref="849" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" alignment="1" pref="735" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
@@ -1211,7 +1211,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane2" pref="829" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane2" pref="715" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -2700,7 +2700,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" pref="827" max="32767" attributes="0"/>
+                              <Component id="jScrollPane3" pref="713" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -2761,7 +2761,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane4" pref="827" max="32767" attributes="0"/>
+                              <Component id="jScrollPane4" pref="713" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -2826,7 +2826,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane5" pref="827" max="32767" attributes="0"/>
+                              <Component id="jScrollPane5" pref="713" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -2898,9 +2898,9 @@
                                       <Component id="btnGenerarReportePlatillos" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                       <Component id="btnGenerarReporteSuministrosPDF1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="304" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="190" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="jScrollPane7" pref="827" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane7" pref="713" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -3311,7 +3311,7 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jPanel47" min="-2" pref="295" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane10" pref="657" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane10" pref="543" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="jPanel73" max="32767" attributes="0"/>
                               </Group>
@@ -3565,7 +3565,7 @@
                                   <Component id="rSMaterialButtonRectangle28" min="-2" pref="152" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="busca2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="437" max="32767" attributes="0"/>
+                                  <EmptySpace pref="323" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3944,7 +3944,7 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1268" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="1154" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -4051,7 +4051,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jPanel54" min="-2" pref="337" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane8" pref="891" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane8" pref="777" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -7409,13 +7409,11 @@
                                       <Layout>
                                         <DimensionLayout dim="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                                       <Component id="CheckBoxUsuario_State" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="lblID" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       <Component id="btnCancelar" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="ComboBoxUsuario_Role" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="TextFieldUsuario_Password" alignment="0" pref="260" max="32767" attributes="0"/>
                                                       <Component id="TextFieldUsuario_Usuario" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="TextFieldUsuario_Direccion" alignment="0" max="32767" attributes="0"/>
@@ -7425,6 +7423,7 @@
                                                       <Component id="TextFieldUsuario_Nombre" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="TextFieldUsuario_Nid" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="btnRegistrar" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="ComboBoxUsuario_Role" max="32767" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace pref="52" max="32767" attributes="0"/>
                                               </Group>
@@ -7449,16 +7448,14 @@
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="TextFieldUsuario_Password" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="ComboBoxUsuario_Role" min="-2" pref="41" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="lblID" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace pref="26" max="32767" attributes="0"/>
+                                                  <Component id="ComboBoxUsuario_Role" min="-2" pref="40" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Component id="CheckBoxUsuario_State" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="btnRegistrar" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <EmptySpace pref="62" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                         </DimensionLayout>
@@ -7502,26 +7499,6 @@
                                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                                           </AuxValues>
                                         </Component>
-                                        <Component class="rojerusan.RSComboMetro" name="ComboBoxUsuario_Role">
-                                          <Properties>
-                                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                              <StringArray count="3">
-                                                <StringItem index="0" value="TIPO DE USUARIO"/>
-                                                <StringItem index="1" value="ADMINISTRADOR"/>
-                                                <StringItem index="2" value="USUARIO"/>
-                                              </StringArray>
-                                            </Property>
-                                            <Property name="colorBorde" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                              <Color blue="91" green="66" red="22" type="rgb"/>
-                                            </Property>
-                                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                              <Font name="Roboto" size="14" style="1"/>
-                                            </Property>
-                                          </Properties>
-                                          <AuxValues>
-                                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                                          </AuxValues>
-                                        </Component>
                                         <Component class="rojerusan.RSButtonHover" name="btnRegistrar">
                                           <Properties>
                                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -7532,14 +7509,6 @@
                                           <Events>
                                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistrarActionPerformed"/>
                                           </Events>
-                                          <AuxValues>
-                                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                                          </AuxValues>
-                                        </Component>
-                                        <Component class="javax.swing.JLabel" name="lblID">
-                                          <Properties>
-                                            <Property name="text" type="java.lang.String" value="jLabel2"/>
-                                          </Properties>
                                           <AuxValues>
                                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                                           </AuxValues>
@@ -7637,6 +7606,23 @@
                                             <Property name="text" type="java.lang.String" value="Estado"/>
                                           </Properties>
                                         </Component>
+                                        <Component class="rojerusan.RSComboMetro" name="ComboBoxUsuario_Role">
+                                          <Properties>
+                                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                              <StringArray count="3">
+                                                <StringItem index="0" value="TIPO DE USUARIO"/>
+                                                <StringItem index="1" value="ADMINISTRADOR"/>
+                                                <StringItem index="2" value="USUARIO"/>
+                                              </StringArray>
+                                            </Property>
+                                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                              <Font name="Roboto" size="14" style="1"/>
+                                            </Property>
+                                          </Properties>
+                                          <AuxValues>
+                                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                                          </AuxValues>
+                                        </Component>
                                       </SubComponents>
                                     </Container>
                                   </SubComponents>
@@ -7658,26 +7644,52 @@
                                   <Layout>
                                     <DimensionLayout dim="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="rSFotoSquare1" alignment="1" pref="289" max="32767" attributes="0"/>
+                                          <Component id="jPanel79" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                     </DimensionLayout>
                                     <DimensionLayout dim="1">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="rSFotoSquare1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="451" max="32767" attributes="0"/>
+                                              <Component id="jPanel79" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="436" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
                                   </Layout>
                                   <SubComponents>
-                                    <Component class="rojerusan.RSFotoSquare" name="rSFotoSquare1">
-                                      <Properties>
-                                        <Property name="imagenDefault" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                          <Image iconType="0" name="null"/>
-                                        </Property>
-                                      </Properties>
-                                    </Component>
+                                    <Container class="javax.swing.JPanel" name="jPanel79">
+
+                                      <Layout>
+                                        <DimensionLayout dim="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="rSFotoSquare1" pref="269" max="32767" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                        </DimensionLayout>
+                                        <DimensionLayout dim="1">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="rSFotoSquare1" pref="189" max="32767" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                        </DimensionLayout>
+                                      </Layout>
+                                      <SubComponents>
+                                        <Component class="javax.swing.JLabel" name="rSFotoSquare1">
+                                          <Properties>
+                                            <Property name="horizontalAlignment" type="int" value="0"/>
+                                          </Properties>
+                                          <Events>
+                                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rSFotoSquare1MouseClicked"/>
+                                          </Events>
+                                        </Component>
+                                      </SubComponents>
+                                    </Container>
                                   </SubComponents>
                                 </Container>
                               </SubComponents>
@@ -7980,11 +7992,11 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="155" max="32767" attributes="0"/>
+                                  <EmptySpace pref="166" max="32767" attributes="0"/>
                                   <Component id="jLabel46" min="-2" pref="269" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="32767" attributes="0"/>
                                   <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="187" max="32767" attributes="0"/>
+                                  <EmptySpace pref="198" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
