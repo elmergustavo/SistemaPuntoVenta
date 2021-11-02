@@ -179,7 +179,7 @@ public class Login extends javax.swing.JFrame {
                // Configuracion config = new Configuracion(listUsuario.get(0));
             }
         } catch (SQLException ex) {
-            
+            System.out.println(ex);
         }
     }//GEN-LAST:event_rSButtonRiple3ActionPerformed
 

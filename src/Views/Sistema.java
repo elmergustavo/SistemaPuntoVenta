@@ -594,10 +594,14 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel75 = new javax.swing.JPanel();
         jPanel79 = new javax.swing.JPanel();
         rSFotoSquare1 = new javax.swing.JLabel();
-        txtNombre1 = new rojerusan.RSMetroTextFullPlaceHolder();
+        TextField_BuscarUsuario = new rojerusan.RSMetroTextFullPlaceHolder();
         jTabbedPane5 = new javax.swing.JTabbedPane();
         scrollUsuarios = new javax.swing.JScrollPane();
-        Table_Usuarios = new rojerusan.RSTableMetro();
+        Table_Usuarios =   Table_Usuarios = new rojerusan.RSTableMetro(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
         pnlDasboard = new javax.swing.JPanel();
         jPanel78 = new javax.swing.JPanel();
         rSLabelImage1 = new rojerusan.RSLabelImage();
@@ -4736,7 +4740,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane13.setViewportView(jPanel77);
@@ -4779,14 +4783,19 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel75Layout.createSequentialGroup()
                 .addComponent(jPanel79, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 436, Short.MAX_VALUE))
+                .addGap(0, 379, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Foto", jPanel75);
 
-        txtNombre1.setMayusculas(true);
-        txtNombre1.setPlaceholder("BUSCAR USUARIO");
-        txtNombre1.setSoloLetras(true);
+        TextField_BuscarUsuario.setMayusculas(true);
+        TextField_BuscarUsuario.setPlaceholder("BUSCAR USUARIO");
+        TextField_BuscarUsuario.setSoloLetras(true);
+        TextField_BuscarUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TextField_BuscarUsuarioKeyReleased(evt);
+            }
+        });
 
         jTabbedPane5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -4823,6 +4832,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                 Table_UsuariosMouseClicked(evt);
             }
         });
+        Table_Usuarios.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Table_UsuariosKeyReleased(evt);
+            }
+        });
         scrollUsuarios.setViewportView(Table_Usuarios);
 
         jTabbedPane5.addTab("Lista de Usuarios", scrollUsuarios);
@@ -4838,20 +4852,20 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             .addGroup(jPanel76Layout.createSequentialGroup()
                 .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(TextField_BuscarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel76Layout.setVerticalGroup(
             jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel76Layout.createSequentialGroup()
                 .addGroup(jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel76Layout.createSequentialGroup()
-                        .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TextField_BuscarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(7, 7, 7))
                     .addGroup(jPanel76Layout.createSequentialGroup()
                         .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE)
                     .addComponent(jTabbedPane5)))
         );
 
@@ -6539,7 +6553,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             this.rSPanelsSlider1.slidPanel(5, pnlUsuarios, RSPanelsSlider.direct.Right);
 
             // TabbedPanePrincipal.setSelectedIndex(2);
-           
             // label.add(LabelUsuario_Nid);
 //          label.add(LabelUsuario_Nid);
 //          label.add(LabelUsuario_Nombre);
@@ -6649,6 +6662,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         //        } else {
         //            this.tablaUsuarios.setRowSelectionInterval(row, row);
         //        }
+        if (Table_Usuarios.getSelectedRows().length > 0) {
+            usuario.GetUsuario();
+        }
     }//GEN-LAST:event_Table_UsuariosMouseClicked
 
     private void TextFieldUsuario_NidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldUsuario_NidActionPerformed
@@ -6699,6 +6715,16 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private void rSFotoSquare1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSFotoSquare1MouseClicked
         Objectos.uploadimage.CargarImagen(rSFotoSquare1);
     }//GEN-LAST:event_rSFotoSquare1MouseClicked
+
+    private void TextField_BuscarUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextField_BuscarUsuarioKeyReleased
+        usuario.SearchUsuarios(TextField_BuscarUsuario.getText());
+    }//GEN-LAST:event_TextField_BuscarUsuarioKeyReleased
+
+    private void Table_UsuariosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Table_UsuariosKeyReleased
+        if (Table_Usuarios.getSelectedRows().length > 0) {
+            usuario.GetUsuario();
+        }
+    }//GEN-LAST:event_Table_UsuariosKeyReleased
 
     // </editor-fold>
     /**
@@ -6820,6 +6846,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     public static rojerusan.RSMetroTextFullPlaceHolder TextFieldUsuario_Telefono;
     public static rojerusan.RSMetroTextFullPlaceHolder TextFieldUsuario_Usuario;
     private javax.swing.JTextField TextField_BuscarInventario;
+    public static rojerusan.RSMetroTextFullPlaceHolder TextField_BuscarUsuario;
     public static app.bolivia.swing.JCTextField TotalCotizacion;
     public static app.bolivia.swing.JCTextField TotalPedidos;
     private javax.swing.JButton actualizar;
@@ -7121,7 +7148,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel tipoL;
     public static app.bolivia.swing.JCTextField total;
     private javax.swing.JLabel txtIdVenta;
-    public static rojerusan.RSMetroTextFullPlaceHolder txtNombre1;
     private javax.swing.JButton vender;
     private javax.swing.JButton ventasH;
     private javax.swing.JButton ventasH1;

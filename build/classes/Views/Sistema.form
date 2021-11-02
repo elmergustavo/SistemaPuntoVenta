@@ -7328,7 +7328,7 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel30" pref="710" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtNombre1" min="-2" pref="207" max="-2" attributes="0"/>
+                                      <Component id="TextField_BuscarUsuario" min="-2" pref="207" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -7337,7 +7337,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Component id="txtNombre1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="TextField_BuscarUsuario" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
@@ -7346,7 +7346,7 @@
                                           </Group>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jTabbedPane1" pref="675" max="32767" attributes="0"/>
+                                          <Component id="jTabbedPane1" pref="618" max="32767" attributes="0"/>
                                           <Component id="jTabbedPane5" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -7455,7 +7455,7 @@
                                                   <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="btnRegistrar" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace pref="62" max="32767" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                         </DimensionLayout>
@@ -7651,7 +7651,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jPanel79" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="436" max="32767" attributes="0"/>
+                                              <EmptySpace min="0" pref="379" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
@@ -7694,12 +7694,15 @@
                                 </Container>
                               </SubComponents>
                             </Container>
-                            <Component class="rojerusan.RSMetroTextFullPlaceHolder" name="txtNombre1">
+                            <Component class="rojerusan.RSMetroTextFullPlaceHolder" name="TextField_BuscarUsuario">
                               <Properties>
                                 <Property name="mayusculas" type="boolean" value="true"/>
                                 <Property name="placeholder" type="java.lang.String" value="BUSCAR USUARIO"/>
                                 <Property name="soloLetras" type="boolean" value="true"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextField_BuscarUsuarioKeyReleased"/>
+                              </Events>
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                               </AuxValues>
@@ -7816,8 +7819,10 @@
                                       </Properties>
                                       <Events>
                                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Table_UsuariosMouseClicked"/>
+                                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Table_UsuariosKeyReleased"/>
                                       </Events>
                                       <AuxValues>
+                                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="  Table_Usuarios = new rojerusan.RSTableMetro(){&#xd;&#xa;    public boolean isCellEditable(int rowIndex, int colIndex) {&#xd;&#xa;        return false; //Disallow the editing of any cell&#xd;&#xa;    }&#xd;&#xa;};"/>
                                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                                       </AuxValues>
                                     </Component>

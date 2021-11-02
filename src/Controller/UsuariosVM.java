@@ -6,11 +6,13 @@ package Controller;
 
 import Library.Encriptar;
 import Library.Objectos;
+import Library.Render_CheckBox;
 import Library.Uploadimage;
 import Models.UsuarioSQL;
 import Models.Usuarios.TRoles;
 import Models.Usuarios.TUsuarios;
 import alertas.AlertError;
+import alertas.AlertSuccess;
 import java.awt.Color;
 import java.sql.SQLException;
 import java.util.Date;
@@ -25,6 +27,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.ColumnListHandler;
 import rojerusan.RSFotoSquare;
@@ -47,6 +50,10 @@ public class UsuariosVM extends UsuarioSQL {
     private JSpinner _spinnerPaginas;
     private String _accion = "insert";
     private Uploadimage _uploadimage = new Uploadimage();
+    private DefaultTableModel modelo1;
+    private int _reg_por_pagina = 10;
+    private int _num_pagina = 1;
+    private int _seccion = 1;
 
     public UsuariosVM(TUsuarios dataUsuario, Object[] perfil) {
         _dataUsuario = dataUsuario;
@@ -145,6 +152,48 @@ public class UsuariosVM extends UsuarioSQL {
                                                             }
                                                         }
                                                         break;
+                                                    case "update":
+                                                        if (count == 2) {
+                                                            if (listEmail.get(0).getIdUsuario() == _idUsuario
+                                                                    && listNid.get(0).getIdUsuario() == _idUsuario) {
+                                                                SaveData();
+                                                            } else {
+                                                                if (listNid.get(0).getIdUsuario() != _idUsuario) {
+                                                                    AlertError error = new AlertError(null, true);
+                                                                    error.Texto("El Nid ya esta registrado");
+                                                                    error.setVisible(true);
+                                                                }
+                                                                if (listEmail.get(0).getIdUsuario() != _idUsuario) {
+                                                                    AlertError error = new AlertError(null, true);
+                                                                    error.Texto("El Email ya esta registrado");
+                                                                    error.setVisible(true);
+                                                                }
+                                                            }
+                                                        } else {
+                                                            if (count == 0) {
+                                                                SaveData();
+                                                            } else {
+                                                                if (!listNid.isEmpty()) {
+                                                                    if (listNid.get(0).getIdUsuario() == _idUsuario) {
+                                                                        SaveData();
+                                                                    } else {
+                                                                        AlertError error = new AlertError(null, true);
+                                                                        error.Texto("El Nid ya esta registrado");
+                                                                        error.setVisible(true);
+                                                                    }
+                                                                }
+                                                                if (!listEmail.isEmpty()) {
+                                                                    if (listEmail.get(0).getIdUsuario() == _idUsuario) {
+                                                                        SaveData();
+                                                                    } else {
+                                                                        AlertError error = new AlertError(null, true);
+                                                                        error.Texto("El Email ya esta registrado");
+                                                                        error.setVisible(true);
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        break;
                                                 }
                                             } catch (Exception e) {
                                                 JOptionPane.showMessageDialog(null, e);
@@ -168,12 +217,13 @@ public class UsuariosVM extends UsuarioSQL {
             if (image == null) {
                 image = Objectos.uploadimage.getTransFoto(_imagePicture);
             }
+            TRoles role = (TRoles) _comboBoxRoles.getSelectedItem();
             switch (_accion) {
                 case "insert":
                     String sqlUsuario1 = "INSERT INTO tusuarios(Nid,Nombre,Apellido,Direccion"
                             + ",Telefono,Email,Usuario,Password,Role,Imagen,Is_active"
                             + ",State,Fecha) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
-                    TRoles role = (TRoles) _comboBoxRoles.getSelectedItem();
+
                     Object[] dataUsuario1 = {
                         _textField.get(0).getText(),
                         _textField.get(1).getText(),
@@ -190,17 +240,125 @@ public class UsuariosVM extends UsuarioSQL {
                         new Date()
                     };
                     qr.insert(conexion.getConnection(), sqlUsuario1, new ColumnListHandler(), dataUsuario1);
+                    AlertSuccess ingresado = new AlertSuccess(null, true);
+                    ingresado.Texto("Usuario registrado correctamente");
+                    ingresado.setVisible(true);
+                    break;
+
+                case "update":
+                    Object[] dataUsuario2 = {
+                        _textField.get(0).getText(),
+                        _textField.get(1).getText(),
+                        _textField.get(3).getText(),
+                        _textField.get(2).getText(),
+                        _textField.get(4).getText(),
+                        _textField.get(5).getText(),
+                        _textField.get(6).getText(),
+                        _checkBoxState.isSelected(),
+                        role.getRole(),
+                        image
+                    };
+                    String sqlUsuario2 = "UPDATE tusuarios SET Nid = ?,Nombre = ?,"
+                            + "Apellido = ?,Email = ?,Telefono = ?,Direccion = ?,"
+                            + "Usuario = ?,State = ?,Role = ?,Imagen = ?"
+                            + " WHERE IdUsuario =" + _idUsuario;
+                    qr.update(conexion.getConnection(), sqlUsuario2, dataUsuario2);
+                    AlertSuccess actualizado = new AlertSuccess(null, true);
+                    actualizado.Texto("Usuario Actualizado correctamente");
+                    actualizado.setVisible(true);
                     break;
             }
             conexion.getConnection().commit();
             Restablecer();
+
         } catch (Exception e) {
             conexion.getConnection().rollback();
-            JOptionPane.showMessageDialog(null, e);
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void SearchUsuarios(String campo) {
+        List<TUsuarios> usuariosFilter;
+        String[] titulos = {"Id", "Nid", "Nombre", "Apellido",
+            "Email", "Direccion", "Telefono", "Usuario", "Role", "Estado", "Image"};
+        modelo1 = new DefaultTableModel(null, titulos);
+        int inicio = (_num_pagina - 1) * _reg_por_pagina;
+        if (campo.equals("")) {
+            usuariosFilter = Usuarios().stream()
+                    .skip(inicio).limit(_reg_por_pagina)
+                    .collect(Collectors.toList());
+        } else {
+            usuariosFilter = Usuarios().stream()
+                    .filter(C -> C.getNid().startsWith(campo) || C.getNombre().startsWith(campo)
+                    || C.getApellido().startsWith(campo))
+                    .skip(inicio).limit(_reg_por_pagina)
+                    .collect(Collectors.toList());
+        }
+        if (!usuariosFilter.isEmpty()) {
+            usuariosFilter.forEach(item -> {
+                Object[] registros = {
+                    item.getIdUsuario(),
+                    item.getNid(),
+                    item.getNombre(),
+                    item.getApellido(),
+                    item.getEmail(),
+                    item.getDireccion(),
+                    item.getTelefono(),
+                    item.getUsuario(),
+                    item.getRole(),
+                    item.isState(),
+                    item.getImagen()
+                };
+                modelo1.addRow(registros);
+            });
+        }
+        _tableUser.setModel(modelo1);
+        _tableUser.setRowHeight(30);
+        _tableUser.getColumnModel().getColumn(0).setMaxWidth(0);
+        _tableUser.getColumnModel().getColumn(0).setMinWidth(0);
+        _tableUser.getColumnModel().getColumn(0).setPreferredWidth(0);
+        _tableUser.getColumnModel().getColumn(10).setMaxWidth(0);
+        _tableUser.getColumnModel().getColumn(10).setMinWidth(0);
+        _tableUser.getColumnModel().getColumn(10).setPreferredWidth(0);
+        _tableUser.getColumnModel().getColumn(9).setCellRenderer(new Render_CheckBox());
+
+    }
+
+    private int _idUsuario = 0;
+
+    public void GetUsuario() {
+        _accion = "update";
+        int filas = _tableUser.getSelectedRow();
+        _idUsuario = (Integer) modelo1.getValueAt(filas, 0);
+        _textField.get(0).setText((String) modelo1.getValueAt(filas, 1));
+        _textField.get(1).setText((String) modelo1.getValueAt(filas, 2));
+        _textField.get(3).setText((String) modelo1.getValueAt(filas, 3));
+        _textField.get(2).setText((String) modelo1.getValueAt(filas, 4));
+        _textField.get(5).setText((String) modelo1.getValueAt(filas, 5));
+        _textField.get(4).setText((String) modelo1.getValueAt(filas, 6));
+        _textField.get(6).setText((String) modelo1.getValueAt(filas, 7));
+        _textField.get(7).setText("********");
+        _textField.get(7).setEnabled(false);
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        TRoles role = new TRoles();
+        String rol = (String) modelo1.getValueAt(filas, 8);
+        role.setRole(rol);
+        model.addElement(role);
+        roles().forEach(item -> {
+            if (!rol.equals(item.getRole())) {
+                model.addElement(item);
+            }
+        });
+        _comboBoxRoles.setModel(model);
+        _checkBoxState.setSelected((Boolean) modelo1.getValueAt(filas, 9));
+        byte[] image = (byte[]) modelo1.getValueAt(filas, 10);
+        if (image != null) {
+            Objectos.uploadimage.byteImage(_imagePicture, image);
         }
     }
 
     public final void Restablecer() {
+        _seccion = 1;
         _accion = "insert";
         for (int i = 0; i < _textField.size(); i++) {
             _textField.get(i).setText("");
@@ -209,8 +367,9 @@ public class UsuariosVM extends UsuarioSQL {
         _checkBoxState.setForeground(new Color(102, 102, 102));
         _imagePicture.setIcon(new ImageIcon(getClass().getClassLoader()
                 .getResource("Resources/login.png")));
+        _textField.get(7).setEnabled(true);
         getRoles();
-
+        SearchUsuarios("");
     }
 
     public void getRoles() {
