@@ -40,43 +40,48 @@ public class Uploadimage extends javax.swing.JFrame {
         if (respuesta == JFileChooser.APPROVE_OPTION) {
             archivo = abrirArchivo.getSelectedFile();
             urlOrigen = archivo.getAbsolutePath();
-            Image foto = getToolkit().getImage(urlOrigen);
-            foto = foto.getScaledInstance(140, 140, 1);
-            label.setIcon(new ImageIcon(foto));
+            Image image = getToolkit().getImage(urlOrigen);
+            ImageIcon foto = new ImageIcon(image);
+            Icon icono = new ImageIcon(foto.getImage().getScaledInstance(label.getWidth(),
+                    label.getHeight(), Image.SCALE_DEFAULT));
+            label.setIcon(icono);
             try {
                 BufferedImage bImage = ImageIO.read(archivo);
                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
                 ImageIO.write(bImage, "png", bos);
                 imageByte = bos.toByteArray();
             } catch (IOException ex) {
-               
+
             }
         }
     }
-    public byte[] getTransFoto(JLabel label){
+
+    public byte[] getTransFoto(JLabel label) {
         ByteArrayOutputStream baos = null;
-        try{
+        try {
             Icon ico = label.getIcon();
             // Create a buffered image
             BufferedImage bufferedImage = new BufferedImage(ico.getIconWidth(), ico.getIconHeight(),
                     BufferedImage.TYPE_INT_RGB);
             baos = new ByteArrayOutputStream();
             ImageIO.write(bufferedImage, "png", baos);
-        }catch (IOException e){
-            
+        } catch (IOException e) {
+
         }
         return baos.toByteArray();
     }
-    public void byteImage(JLabel label, byte[] imgFoto){
-        try{
-            Image foto;
+
+    public void byteImage(JLabel label, byte[] imgFoto) {
+        try {
+            ImageIcon foto;
             BufferedImage image;
             ByteArrayInputStream bis = new ByteArrayInputStream(imgFoto);
             image = ImageIO.read(bis);
-            foto = new ImageIcon(image).getImage();
-            foto = foto.getScaledInstance(140, 140, 1);
-            label.setIcon(new ImageIcon(foto));
-        }catch (IOException ex) {
+            foto = new ImageIcon(image);
+            Icon icono = new ImageIcon(foto.getImage().getScaledInstance(label.getWidth(),
+                    label.getHeight(), Image.SCALE_DEFAULT));
+            label.setIcon(icono);
+        } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
     }

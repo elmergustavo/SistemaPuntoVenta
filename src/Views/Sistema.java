@@ -33,6 +33,7 @@ import static Views.ListarClientes.nombreClienteVenta;
 import alertas.AlertError;
 import alertas.AlertWarningSalir;
 import alertas.WarningBackup;
+import alertas.WarningRestore;
 import app.bolivia.swing.JCTextField;
 import java.awt.Color;
 import java.awt.Desktop;
@@ -50,6 +51,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import necesario.RSFileChooser;
 import rojerusan.RSNotifyFade;
 import rojerusan.RSPanelsSlider;
 
@@ -69,7 +72,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
     private boolean minimiza = false;
     private int idCliente = 0;
-    private Conexion conexion = Conexion.createInstance();
+    //  private Conexion conexion = Conexion.createInstance();
     private String sql = "";
     private Statement st;
     controlMesa mesas = new controlMesa();
@@ -555,6 +558,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jSeparator2 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         rSPanelsSlider1 = new rojerusan.RSPanelsSlider();
+        pnlInicio = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        rSCalendar1 = new rojerusan.RSCalendar();
         pnlConf = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
         jPanel48 = new javax.swing.JPanel();
@@ -4277,7 +4283,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         rSButtonMaterialIconUno2.setBackground(new java.awt.Color(34, 102, 145));
         rSButtonMaterialIconUno2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
-        rSButtonMaterialIconUno2.setText("     SALIR");
+        rSButtonMaterialIconUno2.setText("     CERRAR SESIÓN");
         rSButtonMaterialIconUno2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         rSButtonMaterialIconUno2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.POWER_SETTINGS_NEW);
         rSButtonMaterialIconUno2.setInheritsPopupMenu(true);
@@ -4287,6 +4293,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             }
         });
         jPanel19.add(rSButtonMaterialIconUno2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 250, 40));
+        rSButtonMaterialIconUno2.getAccessibleContext().setAccessibleName("     CERRAR SESIÓN");
 
         btnDasboard.setBackground(new java.awt.Color(34, 102, 145));
         btnDasboard.setText("     DASBOARD");
@@ -4376,10 +4383,44 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             }
         });
         jPanel19.add(btnAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 250, 40));
+        btnAbout.getAccessibleContext().setAccessibleName("ACERCA DE");
+
         jPanel19.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 250, 10));
         jPanel19.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 148, 250, -1));
 
         jScrollPane12.setViewportView(jPanel19);
+
+        pnlInicio.setBackground(new java.awt.Color(255, 255, 255));
+        pnlInicio.setName("panelInicio"); // NOI18N
+
+        jLabel25.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(35, 114, 194));
+        jLabel25.setText("INICIO");
+
+        rSCalendar1.setAltoFilas(70);
+        rSCalendar1.setAltoHead(90);
+        rSCalendar1.setFuenteFilas(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        rSCalendar1.setFuenteHead(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+
+        javax.swing.GroupLayout pnlInicioLayout = new javax.swing.GroupLayout(pnlInicio);
+        pnlInicio.setLayout(pnlInicioLayout);
+        pnlInicioLayout.setHorizontalGroup(
+            pnlInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 921, Short.MAX_VALUE)
+            .addGroup(pnlInicioLayout.createSequentialGroup()
+                .addComponent(rSCalendar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlInicioLayout.setVerticalGroup(
+            pnlInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlInicioLayout.createSequentialGroup()
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rSCalendar1, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        rSPanelsSlider1.add(pnlInicio, "card2");
 
         pnlConf.setBackground(new java.awt.Color(255, 255, 255));
         pnlConf.setName("pnlConf"); // NOI18N
@@ -4749,6 +4790,9 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         jPanel75.setBackground(new java.awt.Color(255, 255, 255));
 
+        jPanel79.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel79.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.lightGray, java.awt.Color.lightGray, java.awt.Color.lightGray));
+
         rSFotoSquare1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         rSFotoSquare1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -4760,10 +4804,10 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jPanel79.setLayout(jPanel79Layout);
         jPanel79Layout.setHorizontalGroup(
             jPanel79Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel79Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rSFotoSquare1, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel79Layout.createSequentialGroup()
+                .addContainerGap(49, Short.MAX_VALUE)
+                .addComponent(rSFotoSquare1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
         );
         jPanel79Layout.setVerticalGroup(
             jPanel79Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6549,7 +6593,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
     private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
 
-        if (_dataUsuario.getRole().equals("Users")) {
+        if (_dataUsuario.getRole().equals("Admin")) {
             this.rSPanelsSlider1.slidPanel(5, pnlUsuarios, RSPanelsSlider.direct.Right);
 
             // TabbedPanePrincipal.setSelectedIndex(2);
@@ -6607,7 +6651,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
     private void btnBackupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackupActionPerformed
 
-        if (_dataUsuario.getRole().equals("Users")) {
+        if (_dataUsuario.getRole().equals("Admin")) {
             GeneraBackup();
         } else {
             AlertError error = new AlertError(this, true);
@@ -6617,15 +6661,13 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     }//GEN-LAST:event_btnBackupActionPerformed
 
     private void rSButtonMetro5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro5ActionPerformed
-        //        if (!this.lblTipo_us.getText().equals("USUARIO")) {
-        //            RestoreBackup();
-        //        }else{
-        //            ErrorAlert a = new ErrorAlert(null, true);
-        //            a.msj1.setText("Sin acceso.");
-        //            a.msj2.setVisible(false);
-        //            a.msj3.setVisible(false);
-        //            a.setVisible(true);
-        //        }
+        if (this._dataUsuario.getRole().equals("Admin")) {
+            RestoreBackup();
+        } else {
+            AlertError error = new AlertError(this, true);
+            error.Texto("Sin Acceso");
+            error.setVisible(true);
+        }
     }//GEN-LAST:event_rSButtonMetro5ActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
@@ -6922,6 +6964,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel36;
@@ -7090,6 +7133,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     public static app.bolivia.swing.JCTextField numFac1;
     private javax.swing.JPanel pnlConf;
     private javax.swing.JPanel pnlDasboard;
+    private javax.swing.JPanel pnlInicio;
     private javax.swing.JPanel pnlUsuarioDenegado;
     private javax.swing.JPanel pnlUsuarios;
     public static javax.swing.JTextField porcentaje;
@@ -7098,6 +7142,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private rojerusan.RSButtonMetro rSButtonMetro1;
     private rojerusan.RSButtonMetro rSButtonMetro3;
     private rojerusan.RSButtonMetro rSButtonMetro5;
+    private rojerusan.RSCalendar rSCalendar1;
     private javax.swing.JLabel rSFotoSquare1;
     private rojeru_san.RSLabelFecha rSLabelFecha1;
     private rojeru_san.RSLabelFecha rSLabelFecha2;
@@ -7162,6 +7207,45 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             new BackupMySQL().exportDB(a.txtNombre.getText());
         }
 
+    }
+
+    public static File existe = null;
+    private Conexion conexion = Conexion.createInstance();
+
+    private void RestoreBackup() {
+        RSFileChooser fileChooser = new RSFileChooser();
+        fileChooser.setCurrentDirectory(new java.io.File("Respaldos/"));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos SQL (*.sql)", "sql");
+        fileChooser.setAcceptAllFileFilterUsed(false);
+        fileChooser.setFileFilter(filter);
+        fileChooser.setDialogTitle("SELECCIONAR RESPALDO");
+        if (fileChooser.showOpenDialog(this) == RSFileChooser.APPROVE_OPTION) {
+            existe = fileChooser.getSelectedFile();
+            if (existe.exists()) {
+
+                WarningRestore a = new WarningRestore(this, true);
+                a.msj1.setText("Has seleccionado un respaldo y la aplicación");
+                a.msj2.setText("se reiniciara al terminar de restaurar la");
+                a.msj3.setText("Base de Datos. Se recomienda que haga");
+                a.msj4.setText("un respaldo antes de continuar.");
+                a.lblTipo.setText("Restaurar");
+                a.lblTipo.setVisible(false);
+                a.setVisible(true);
+
+                if (a.continuar) {
+                    // new CargandoRestore(this, true).setVisible(true);
+                    this.dispose();
+                    Splash splash = new Splash();
+                    splash.setVisible(true);
+                }
+
+            } else {
+                AlertError a = new AlertError(this, true);
+                a.Texto("Archivo no encontrado.");
+                a.setVisible(true);
+            }
+        }
+//        new conexion.getConnection();
     }
 
 }
