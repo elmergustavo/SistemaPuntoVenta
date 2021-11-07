@@ -6,6 +6,8 @@
 package Reportes;
 
 import Conexion.Conexion;
+import static Views.ListaVenta.pedidos;
+import static Views.Sistema.numFac;
 import com.mysql.jdbc.Connection;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,14 +29,44 @@ import net.sf.jasperreports.view.JasperViewer;
 public class JreportJaper {
     private Conexion conexion = Conexion.createInstance();
     
-    public void jasper (){
+    public void jasper (int idFac){
         try {          
             Connection conn = (Connection) conexion.getConnection();
             JasperReport reporte = null;
-            String path = "C://Users//Gustavo//Desktop//SistemaPuntoVenta//src//JReport//Ventas.jasper";
+            String path = "C://Users//Gustavo//Desktop//SistemaPuntoVenta//src//JReport//Factura.jasper";
             
-//            Map parametro = new HashMap();
-//            parametro.put("id_estado", 36);
+            
+            System.out.println(idFac);
+            Map parametro = new HashMap();
+            parametro.put("id_Mesa", 4);
+            parametro.put("id_Cliente",3);
+            parametro.put("id_Venta", 10);
+            
+            
+            
+            reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
+            
+            JasperPrint jprint = JasperFillManager.fillReport(reporte, parametro, conn);
+            
+            JasperViewer view = new JasperViewer(jprint, false);
+            
+            view.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            
+            view.setVisible(true);
+            
+        } catch (JRException ex) {
+            JOptionPane.showMessageDialog(null, "Error : " + ex);
+        }
+    }
+    
+    public void jasperAlimento (){
+        try {          
+            Connection conn = (Connection) conexion.getConnection();
+            JasperReport reporte = null;
+            String path = "C://Users//Gustavo//Desktop//SistemaPuntoVenta//src//JReport//Alimentos.jasper";
+            
+            
+            
             
             reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
             

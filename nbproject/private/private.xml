@@ -3,21 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Models/MesaSQL.java</file>
-            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Conexion/Conexion.java</file>
-            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/alertas/AlertWarning.java</file>
-            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Interfeces/IClassModels.java</file>
-            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/sistema/punto/de/ventas/SistemaPuntoDeVentas.java</file>
-            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Controller/LoginVM.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Models/PedidoSQL.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Models/Pedido.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/JReport/Factura.jrxml</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Controller/VentasVM.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Reportes/JreportJaper.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Models/controlPedido.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Controller/PedidoVM.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Reportes/Pdf.java</file>
             <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Views/Sistema.java</file>
-            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Controller/UsuariosVM.java</file>
-            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Library/Uploadimage.java</file>
-            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Views/Splash.java</file>
-            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Controller/SuministroVM.java</file>
-            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Models/Usuarios/TUsuarios.java</file>
-            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/alertas/AlertWarningSalir.java</file>
-            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Views/Login.java</file>
-            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/alertas/AlertError.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Views/ListaVenta.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Views/Pedidos.java</file>
         </group>
     </open-files>
 </project-private>

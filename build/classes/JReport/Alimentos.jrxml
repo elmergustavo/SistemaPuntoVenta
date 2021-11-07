@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9263e645-2822-4abd-9576-ccd601c57e52">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="217"/>
+	<queryString>
+		<![CDATA[SELECT
+     alimentos.`Codigo_al` AS alimentos_Codigo_al,
+     alimentos.`Nombre_al` AS alimentos_Nombre_al,
+     alimentos.`Precio_al` AS alimentos_Precio_al,
+     alimentos.`Tipo_al` AS alimentos_Tipo_al,
+     tordenadores.`Usuario` AS tordenadores_Usuario
+FROM
+     `alimentos` alimentos,
+     `tordenadores` tordenadores]]>
+	</queryString>
+	<field name="alimentos_Codigo_al" class="java.lang.String"/>
+	<field name="alimentos_Nombre_al" class="java.lang.String"/>
+	<field name="alimentos_Precio_al" class="java.math.BigDecimal"/>
+	<field name="alimentos_Tipo_al" class="java.lang.String"/>
+	<field name="tordenadores_Usuario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="258" splitType="Stretch">
+			<staticText>
+				<reportElement x="69" y="13" width="184" height="31" uuid="007f7740-35e9-465c-b478-2377ca946781"/>
+				<textElement>
+					<font fontName="Arial" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INVENTARIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="44" width="154" height="23" forecolor="#999999" uuid="d7af95eb-4bf5-4ccb-8ed7-2e6d6a23b88b"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[ALIMENTOS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="386" y="6" width="204" height="87" uuid="ca05fd2a-34eb-4708-ab38-1d51c937b50d"/>
+				<imageExpression><![CDATA["C:\\Users\\Gustavo\\Desktop\\logo.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="103" width="554" height="1" uuid="4a3398a4-f038-442c-bd1d-e2b9fde71a05"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="149" width="554" height="1" uuid="014fd64c-741f-4aab-8511-a564507f8ebc"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="252" width="554" height="1" uuid="9190376d-92f3-487d-9421-e363a896eb15"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="150" width="1" height="102" uuid="832db953-589f-4233-8816-a5ac3123ac2f"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="114" width="554" height="1" uuid="c1186f3a-a034-42ed-b589-cb7883bb0421"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="138" width="554" height="1" uuid="19166681-96c5-4078-aa2f-1d88247fe380"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="116" width="1" height="23" uuid="ada5be46-2260-4d27-aa1f-b7a664ef9d38"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="554" y="114" width="1" height="24" uuid="ea9045be-2cf1-412f-a3a2-07f109d3d218"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="4" y="114" width="550" height="25" uuid="76d85eaf-dd94-477e-b3fa-fffc4a550809"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESTAURANTE CALLE REAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="181" width="65" height="20" uuid="b25b8495-9da8-4d9c-a48a-edc13c6d174f"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELEFONO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="69" y="181" width="100" height="20" uuid="76bdc5e0-3bad-479d-a2e2-c877ad8e8df7"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[564545465]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="253" y="150" width="65" height="15" uuid="8c7d2dda-7035-439c-9f4a-e310bfe4d64d"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECCIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="234" y="165" width="109" height="36" uuid="a8a102d7-b58f-4707-899d-d0216b11e284"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[4ta calle D12-09 zona 1 Quetzaltenango]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="446" y="149" width="108" height="21" uuid="85d2add5-022a-4610-97c1-17ac67225702"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA GENERADA:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="555" y="149" width="1" height="103" uuid="75ba7f38-a0c3-41d0-b41e-9c79390db729"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="1" y="150" width="68" height="20" uuid="15236039-44c7-4803-82a8-f8dc84c72333"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIT:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="69" y="150" width="100" height="20" uuid="ef77a772-e4dc-4754-9933-7c209512b342"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[564545465]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="137" width="100" height="20" uuid="dc91611f-2cba-44e1-bf97-4cb68e944ec4"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="446" y="170" width="100" height="20" uuid="50e2a81d-7650-44bb-acd2-bb3b615e79ea"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="216" width="65" height="20" uuid="15d957bd-2e34-4e3c-b25e-01094be1a1f7"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[USUARIO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="69" y="216" width="100" height="20" uuid="0f03ed3b-01f9-4437-9767-c1bd1970a8ec"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tordenadores_Usuario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<elementGroup>
+				<rectangle>
+					<reportElement x="0" y="0" width="555" height="36" backcolor="#006699" uuid="754a1727-2a12-4a4c-a3e9-142d479e8a9c"/>
+				</rectangle>
+			</elementGroup>
+			<staticText>
+				<reportElement x="1" y="2" width="100" height="34" forecolor="#FFFFFF" uuid="238b1bcf-a25d-4047-8ce8-55a32bef843a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CÓDIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="2" width="191" height="34" forecolor="#FFFFFF" uuid="d09e6008-12bd-4adf-b4e4-b2208705f95c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALIMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="454" y="2" width="100" height="34" forecolor="#FFFFFF" uuid="680ae7c7-b396-42a8-9b38-e41da1353a8d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRECIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="292" y="2" width="162" height="34" forecolor="#FFFFFF" uuid="6162f831-0132-4600-86b8-4088415cfc46"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO ALIMENTO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="3" width="100" height="20" uuid="37f50f15-cb45-4e6c-97c4-7d7756b2022a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{alimentos_Codigo_al}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="1" y="22" width="555" height="1" uuid="5cc4c679-4839-4928-86da-5e18e22c5a73"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="101" y="3" width="191" height="20" uuid="08778005-5b68-4e9a-a14a-ba3b02f12a50"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{alimentos_Nombre_al}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="465" y="0" width="89" height="20" uuid="66bcc398-6d1f-4d02-891b-1b798cd0e7b4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{alimentos_Precio_al}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="454" y="3" width="11" height="17" uuid="bb94cfe4-f4e4-45ca-9ab8-e59b9576cb8c"/>
+				<textElement verticalAlignment="Top"/>
+				<text><![CDATA[Q]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="0" width="162" height="20" uuid="dee19857-e0ba-4414-97fd-b83c5804420c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{alimentos_Tipo_al}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

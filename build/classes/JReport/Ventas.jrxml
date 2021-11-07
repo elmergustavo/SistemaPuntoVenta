@@ -18,41 +18,76 @@ FROM
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="80" splitType="Stretch">
-			<staticText>
-				<reportElement x="135" y="40" width="83" height="39" uuid="46f9fa34-0768-4c00-8871-cb7fdbe3d394"/>
-				<textElement textAlignment="Justified">
-					<font size="24"/>
-				</textElement>
-				<text><![CDATA[Factura ]]></text>
-			</staticText>
+		<band height="184" splitType="Stretch">
 			<image>
-				<reportElement x="0" y="0" width="83" height="40" uuid="23a4f796-2863-4f73-a3bc-f5004efac9ac"/>
+				<reportElement x="120" y="0" width="155" height="72" uuid="23a4f796-2863-4f73-a3bc-f5004efac9ac"/>
 				<imageExpression><![CDATA["C:\\Users\\Gustavo\\Desktop\\logo.jpg"]]></imageExpression>
 			</image>
-			<rectangle>
-				<reportElement x="256" y="40" width="100" height="20" uuid="a08bf77f-b9cd-4137-832a-636108bd2f9d"/>
-			</rectangle>
-			<staticText>
-				<reportElement x="256" y="40" width="100" height="20" uuid="305b1d1e-3092-4cd8-a4c0-194f2361b041"/>
-				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[No Factura: ]]></text>
-			</staticText>
 			<textField pattern="dd/MM/yyyy h.mm a">
-				<reportElement x="256" y="0" width="100" height="20" uuid="201bdf47-7de9-4092-a638-121aed056286"/>
+				<reportElement x="44" y="155" width="100" height="20" uuid="201bdf47-7de9-4092-a638-121aed056286"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
+			<image>
+				<reportElement x="0" y="123" width="31" height="20" uuid="6f1ae65b-cea1-4386-8984-9d73fdde791d"/>
+				<imageExpression><![CDATA["C:\\Users\\Gustavo\\Downloads\\WhatsApp Image 2021-11-06 at 10.33.07 PM.jpeg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="31" y="123" width="100" height="20" uuid="fe8306f0-2f8c-4a12-8478-89c6a4eaa13a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[7725-0397]]></text>
+			</staticText>
+			<image>
+				<reportElement x="-4" y="88" width="31" height="33" uuid="db848277-31eb-41f8-af1a-7927aad658e5"/>
+				<imageExpression><![CDATA["C:\\Users\\Gustavo\\Downloads\\WhatsApp Image 2021-11-06 at 10.33.07 PM (1).jpeg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="27" y="88" width="133" height="33" uuid="f8955f72-a3f0-495f-87b1-239aefb959b6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[4ta calle D12-09 zona 1 Quetzaltenango]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="155" width="44" height="20" uuid="de402818-e11d-4288-aad5-6f9208e402ee"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="72" width="356" height="16" uuid="7a14386e-07e9-4e52-8d9b-ced40f325a4d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[RESTAURANTE DE COMIDA TÍPICA CALLE REAL]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="253" y="89" width="100" height="54" backcolor="#006699" uuid="34bfb039-6238-4f36-9451-ee7e6dbfbe0f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="250" y="90" width="100" height="20" forecolor="#FFFFFF" uuid="ee74893b-d1a5-47aa-a703-1f126e14bf8b"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="175" y="155" width="100" height="20" uuid="e4e776b6-52b8-444d-8a66-6839b4ea567b"/>
+				<text><![CDATA[alimentos_Nombre_al]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="1" width="100" height="20" uuid="ff7bc4e6-6f05-4604-8c6f-943842774925"/>
+				<text><![CDATA[alimentos_Precio_al]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
 		<band splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="20" splitType="Stretch">
-			<staticText>
-				<reportElement x="20" y="0" width="100" height="20" uuid="ad52cf07-6a6b-410d-8e64-b0efdb5086db"/>
-				<text><![CDATA[Nombre	]]></text>
-			</staticText>
+		<band height="23" splitType="Stretch">
 			<staticText>
 				<reportElement x="135" y="0" width="100" height="20" uuid="8001b3ae-7904-4e75-acc2-7031bfd0c5f3"/>
 				<text><![CDATA[Precio]]></text>
@@ -61,20 +96,24 @@ FROM
 				<reportElement x="256" y="0" width="100" height="20" uuid="31e187d9-1989-4287-887c-af9be99a4362"/>
 				<text><![CDATA[Tipo Alimento]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="20" y="0" width="100" height="20" uuid="ad52cf07-6a6b-410d-8e64-b0efdb5086db"/>
+				<text><![CDATA[Nombre	]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="43" splitType="Stretch">
+		<band height="22" splitType="Stretch">
 			<textField>
-				<reportElement x="20" y="22" width="100" height="20" uuid="3b108d71-6ca5-40c7-9328-98753e5092ed"/>
+				<reportElement x="20" y="2" width="100" height="20" uuid="3b108d71-6ca5-40c7-9328-98753e5092ed"/>
 				<textFieldExpression><![CDATA[$F{alimentos_Nombre_al}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="135" y="22" width="100" height="20" uuid="248bc832-9e72-440b-901f-908ce0948799"/>
+				<reportElement x="135" y="2" width="100" height="20" uuid="248bc832-9e72-440b-901f-908ce0948799"/>
 				<textFieldExpression><![CDATA[$F{alimentos_Precio_al}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="256" y="22" width="100" height="20" uuid="63f837c8-91eb-46fb-843b-20e8e3d564bd"/>
+				<reportElement x="256" y="2" width="100" height="20" uuid="63f837c8-91eb-46fb-843b-20e8e3d564bd"/>
 				<textFieldExpression><![CDATA[$F{alimentos_Tipo_al}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -83,7 +122,7 @@ FROM
 		<band splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="29" splitType="Stretch">
+		<band height="26" splitType="Stretch">
 			<textField>
 				<reportElement x="101" y="3" width="80" height="20" uuid="dd715a24-6c44-4610-8c11-7f0610fbc9ac"/>
 				<textElement textAlignment="Right"/>
@@ -96,6 +135,6 @@ FROM
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="42" splitType="Stretch"/>
+		<band height="15" splitType="Stretch"/>
 	</summary>
 </jasperReport>

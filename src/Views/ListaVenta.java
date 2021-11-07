@@ -6,6 +6,7 @@
 package Views;
 
 import static Interfeces.IClassModels.reportePdf;
+import Reportes.JreportJaper;
 import static Views.ListarClientes.apellidoCliente;
 import static Views.ListarClientes.direccionCliente;
 import static Views.ListarClientes.emailCliente;
@@ -25,8 +26,6 @@ public class ListaVenta extends javax.swing.JFrame {
     /**
      * Creates new form ListaVenta
      */
-    
-
     public ListaVenta(DefaultTableModel modelo) {
         initComponents();
         ObtenerDatosCliente();
@@ -264,7 +263,9 @@ public class ListaVenta extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        reportePdf.pdfVenta(numFac.getText());
+//        reportePdf.pdfVenta(numFac.getText());
+//        JreportJaper jasper = new JreportJaper();
+//        jasper.jasper(Integer.parseInt(numFac.getText()));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
