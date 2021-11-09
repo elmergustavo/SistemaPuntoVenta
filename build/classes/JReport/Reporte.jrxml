@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3aeb0688-936d-4526-ab22-f933fc4775c3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     tordenadores.`Usuario` AS tordenadores_Usuario,
+     venta.`nombre` AS venta_nombre,
+     venta.`apellido` AS venta_apellido,
+     venta.`total` AS venta_total,
+     venta.`fecha` AS venta_fecha,
+     venta.`id` AS venta_id
+FROM
+     `tordenadores` tordenadores,
+     `venta` venta]]>
+	</queryString>
+	<field name="tordenadores_Usuario" class="java.lang.String"/>
+	<field name="venta_nombre" class="java.lang.String"/>
+	<field name="venta_apellido" class="java.lang.String"/>
+	<field name="venta_total" class="java.math.BigDecimal"/>
+	<field name="venta_fecha" class="java.lang.String"/>
+	<field name="venta_id" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="252" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -3,17 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Views/Configuracion.java</file>
             <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Models/PedidoSQL.java</file>
             <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Models/Pedido.java</file>
             <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Controller/VentasVM.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/SaveColor/ReadColor.java</file>
             <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Controller/ListarClientesMV.java</file>
             <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Reportes/JreportJaper.java</file>
             <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Models/controlPedido.java</file>
-            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Views/ListarClientes.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Views/Dasboard.java</file>
             <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Controller/PedidoVM.java</file>
             <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Reportes/Pdf.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Views/ListaAlimentos.java</file>
             <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Views/Sistema.java</file>
             <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Views/ListaVenta.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/SaveColor/SaveColor.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Views/ListarClientes.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Views/CambiarContraseña.java</file>
+            <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Views/CambiarUsuario.java</file>
             <file>file:/C:/Users/Gustavo/Desktop/SistemaPuntoVenta/src/Views/Pedidos.java</file>
         </group>
     </open-files>

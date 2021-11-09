@@ -92,7 +92,7 @@ WHERE
 				<imageExpression><![CDATA["C:\\Users\\Gustavo\\Downloads\\WhatsApp Image 2021-11-06 at 10.33.07 PM (1).jpeg"]]></imageExpression>
 			</image>
 			<rectangle>
-				<reportElement x="244" y="88" width="112" height="67" backcolor="#006699" uuid="8b58bb25-db47-4442-b502-005b594c128e"/>
+				<reportElement x="244" y="88" width="112" height="55" backcolor="#006699" uuid="8b58bb25-db47-4442-b502-005b594c128e"/>
 			</rectangle>
 			<staticText>
 				<reportElement x="6" y="155" width="44" height="20" uuid="e7a19005-575a-4906-abc2-9b40d3b84689"/>
@@ -155,10 +155,17 @@ WHERE
 				<textFieldExpression><![CDATA[$F{tclientes_Direccion}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="244" y="103" width="112" height="20" forecolor="#FFFFFF" uuid="2e0a52f7-1b67-4c85-ad5e-adab56788634"/>
+				<reportElement x="244" y="121" width="112" height="20" forecolor="#FFFFFF" uuid="2e0a52f7-1b67-4c85-ad5e-adab56788634"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{venta_id}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="244" y="88" width="112" height="33" forecolor="#FFFFFF" uuid="605f97b7-cbf5-4de9-9315-46d6c75e5f89"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No. FACTURA]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>

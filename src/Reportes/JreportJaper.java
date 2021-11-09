@@ -84,4 +84,24 @@ public class JreportJaper {
             JOptionPane.showMessageDialog(null, "Error : " + ex);
         }
     }
+    
+    public void jasperVentas (){
+        try {          
+            Connection conn = (Connection) conexion.getConnection();
+            JasperReport reporte = null;
+            String path = "C://Users//Gustavo//Desktop//SistemaPuntoVenta//src//JReport//Reporte.jasper";       
+            reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
+            
+            JasperPrint jprint = JasperFillManager.fillReport(reporte, null, conn);
+            
+            JasperViewer view = new JasperViewer(jprint, false);
+            
+            view.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            
+            view.setVisible(true);
+            
+        } catch (JRException ex) {
+            JOptionPane.showMessageDialog(null, "Error : " + ex);
+        }
+    }
 }
