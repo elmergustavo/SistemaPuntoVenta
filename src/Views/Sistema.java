@@ -28,6 +28,7 @@ import Reportes.Pdf;
 import SaveColor.ReadColor;
 import SaveColor.SaveColor;
 import static Views.ListarClientes.apellidoCliente;
+import static Views.ListarClientes.idCliente;
 import static Views.ListarClientes.nidCliente;
 import static Views.ListarClientes.nombreClienteVenta;
 import alertas.AlertError;
@@ -71,7 +72,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
     private static TUsuarios _dataUsuario;
 
     private boolean minimiza = false;
-    private int idCliente = 0;
     //  private Conexion conexion = Conexion.createInstance();
     private String sql = "";
     private Statement st;
@@ -5824,7 +5824,6 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
     public static boolean TstVentNvoPres = false;
     private void venderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_venderActionPerformed
-
         if (tablaPedidosVenta.getRowCount() == 0) {
             JOptionPane.showMessageDialog(null, "No existen datos!!!");
         } else {
@@ -5833,17 +5832,14 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                     JOptionPane.showMessageDialog(null, "Seleccion Un Cliente.", "Registro Venta", 0,
                             new ImageIcon(getClass().getResource("/Resources/info.png")));
                 } else {
-                    ListaVenta ventana = new ListaVenta(pedidos.ObtenerDetallePedidoVenta());
+                    //ListaVenta ventana = new ListaVenta(pedidos.ObtenerDetallePedidoVenta());
 
                     
                     //this.repaint();
-                    ventana.setVisible(true);
+                   // ventana.setVisible(true);
                     int id = 0;
                     int idMesa = ComboBoxMesas.getSelectedIndex();
-                    for (int a = 0; a < tablaPedidosVenta.getRowCount(); a++) {
-                        id = Integer.parseInt(tablaPedidosVenta.getValueAt(a, 0).toString());
-                        pedidos.CambiarEstadoPedido(id);
-                    }
+                    
                     ImageIcon imagen = mesas.cambiarEstadoCobrado(idMesa);
                     switch (idMesa) {
                         case 1:
@@ -5917,8 +5913,13 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
                     
                     
                     JreportJaper jasper = new JreportJaper();
-                    jasper.jasper(Integer.parseInt(numFac.getText()) -1);
+                    jasper.jasper(Integer.parseInt(numFac.getText()), idMesa, idCliente);
                     
+                    
+                    for (int a = 0; a < tablaPedidosVenta.getRowCount(); a++) {
+                        id = Integer.parseInt(tablaPedidosVenta.getValueAt(a, 0).toString());
+                        pedidos.CambiarEstadoPedido(id);
+                    }
                     
                     
                     rSMaterialButtonRectangle13.setEnabled(false);

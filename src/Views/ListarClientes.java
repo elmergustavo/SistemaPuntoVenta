@@ -74,7 +74,7 @@ public class ListarClientes extends javax.swing.JFrame {
                     new ImageIcon(getClass().getResource("/Resources/info.png")));
         }
     }
-
+    public static int idCliente;
     public static String nidCliente = "";
     public static String nombreClienteVenta;
     public static String apellidoCliente;
@@ -95,6 +95,8 @@ public class ListarClientes extends javax.swing.JFrame {
                 if (fila == -1) {
                     JOptionPane.showMessageDialog(null, "Seleccione un registro.");
                 } else {
+                    idCliente = (int) TablaListadoClientes.getValueAt(fila, 0);
+                    System.out.println("TE AMO SHIRO:" + idCliente);
                     nidCliente = TablaListadoClientes.getValueAt(fila, 1).toString();
                     nombreClienteVenta = TablaListadoClientes.getValueAt(fila, 2).toString();
                     apellidoCliente = TablaListadoClientes.getValueAt(fila, 3).toString();

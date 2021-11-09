@@ -29,7 +29,7 @@ import net.sf.jasperreports.view.JasperViewer;
 public class JreportJaper {
     private Conexion conexion = Conexion.createInstance();
     
-    public void jasper (int idFac){
+    public void jasper (int idFac, int idMesa, int idCliente){
         try {          
             Connection conn = (Connection) conexion.getConnection();
             JasperReport reporte = null;
@@ -38,9 +38,11 @@ public class JreportJaper {
             
             System.out.println(idFac);
             Map parametro = new HashMap();
-            parametro.put("id_Mesa", 4);
-            parametro.put("id_Cliente",3);
-            parametro.put("id_Venta", 10);
+            parametro.put("id_Mesa", idMesa);
+            System.out.println("La gran Puta");
+            System.out.println(idCliente);
+            parametro.put("id_Cliente",idCliente);
+            parametro.put("id_Venta", idFac);
             
             
             
