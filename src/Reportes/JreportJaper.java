@@ -89,7 +89,7 @@ public class JreportJaper {
         try {          
             Connection conn = (Connection) conexion.getConnection();
             JasperReport reporte = null;
-            String path = "C://Users//Gustavo//Desktop//SistemaPuntoVenta//src//JReport//Reporte.jasper";       
+            String path = "C://Users//Gustavo//Desktop//SistemaPuntoVenta//src//JReport//NuevoReport.jasper";       
             reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
             
             JasperPrint jprint = JasperFillManager.fillReport(reporte, null, conn);

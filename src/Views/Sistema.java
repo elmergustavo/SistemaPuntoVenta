@@ -3063,6 +3063,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
 
         jTabbedPane4.addTab("Información de ventas", jPanel51);
 
+        rSButtonIconI1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Inventario.png"))); // NOI18N
         rSButtonIconI1.setText("Reporte Ventas");
         rSButtonIconI1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3443,13 +3444,13 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         );
 
         jTabbedPane3.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-                jTabbedPane3AncestorMoved(evt);
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jTabbedPane3AncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+                jTabbedPane3AncestorMoved(evt);
             }
         });
 
@@ -5267,6 +5268,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonCotizacion.setEnabled(true);
         // ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(true);
+        ButtonCliente.setEnabled(true);
         //  aqui van a ir todos los datos del inventario registro de suministro
         ArrayList<JLabel> label = new ArrayList();
         label.add(LabelInventario_codigo);
@@ -5328,6 +5330,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
             // rSButtonRound6.setEnabled(true);
             ButtonInventario.setEnabled(true);
             ButtonCotizacion.setEnabled(false);
+            ButtonCliente.setEnabled(true);
             //   ButtonAdministracion.setEnabled(true);
             ButtonClienteConfig.setEnabled(true);
         } else {
@@ -5346,6 +5349,7 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         ButtonCotizacion.setEnabled(true);
         //   ButtonAdministracion.setEnabled(true);
         ButtonClienteConfig.setEnabled(false);
+        ButtonCliente.setEnabled(true);
         TabbedPanePrincipal.setSelectedIndex(5);
 
         this.repaint();
@@ -6545,6 +6549,11 @@ public class Sistema extends javax.swing.JFrame implements IClassModels {
         jLabel1.setText("Panel Administrativo");
         TabbedPanePrincipal.setSelectedIndex(6);
         ButtonCliente.setEnabled(true);
+        BtnVentas.setEnabled(true);
+        ButtonInventario.setEnabled(true);
+        ButtonCotizacion.setEnabled(true);
+        ButtonClienteConfig.setEnabled(true);
+        
        // InicializarClientes();
 
     }//GEN-LAST:event_ButtonClienteConfig2ActionPerformed
